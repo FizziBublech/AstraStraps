@@ -140,18 +140,13 @@ Searches the Reamaze knowledge base for articles.
 {
   "success": true,
   "query": "apple watch band sizing",
-  "count": 3,
-  "articles": [
-    {
-      "id": "123",
-      "title": "Apple Watch Band Sizing Guide",
-      "slug": "apple-watch-band-sizing",
-      "body": "Complete guide to sizing...",
-      "url": "https://example.com/article"
-    }
-  ]
+  "count": 0,
+  "total_articles_in_kb": 0,
+  "articles": []
 }
 ```
+
+**Note**: Currently returns empty results as the knowledge base contains 0 articles. Once articles are added to Reamaze, this endpoint will return populated results.
 
 ### Get Instructions
 
@@ -177,7 +172,7 @@ Retrieves step-by-step instructions from the knowledge base.
 **Required Fields:**
 - Either `topic` OR `article_id` must be provided
 
-**Response:**
+**Response** (when articles exist):
 ```json
 {
   "success": true,
@@ -190,6 +185,197 @@ Retrieves step-by-step instructions from the knowledge base.
   }
 }
 ```
+
+**Current Response** (knowledge base empty):
+```json
+{
+  "success": false,
+  "error": "No articles found for topic: install band"
+}
+```
+**HTTP Status**: 404
+
+### Get Previous Conversations
+
+**POST /get-previous-conversations**
+
+Retrieves previous support conversations for a customer by email or order number.
+
+**Request Body:**
+```json
+{
+  "customer_email": "customer@example.com",
+  "limit": 10
+}
+```
+
+**OR**
+
+```json
+{
+  "order_number": "12345",
+  "limit": 10
+}
+```
+
+**Required Fields:**
+- Either `customer_email` OR `order_number` must be provided
+
+**Optional Fields:**
+- `limit`: Maximum number of conversations to return (default: 10)
+
+**Response:**
+```json
+{
+  "success": true,
+  "search_type": "email",
+  "search_value": "customer@example.com",
+  "count": 3,
+  "conversations": [
+    {
+      "id": null,
+      "slug": "support-request-shipping-issue-abc123",
+      "subject": "Support Request: Shipping Issue",
+      "status": 0,
+      "status_text": "Unresolved",
+      "origin": 7,
+      "origin_text": "API",
+      "created_at": "2025-07-10T12:00:00.000Z",
+      "updated_at": "2025-07-10T14:00:00.000Z",
+      "assignee": "John Doe",
+      "customer_email": "customer@example.com",
+      "message_count": 3,
+      "last_message_snippet": "Thank you for reaching out about your order..."
+    }
+  ]
+}
+```
+
+**Important Note**: Reamaze conversations don't have numeric IDs - they use slugs as the primary identifier. Use the `slug` field when calling other endpoints like `/check-ticket-status` or `/add-ticket-info`.
+
+### Check Ticket Status
+
+**POST /check-ticket-status**
+
+Retrieves detailed status information for a specific support ticket.
+
+**Request Body:**
+```json
+{
+  "ticket_id": "support-request-shipping-issue-abc123"
+}
+```
+
+**Required Fields:**
+- `ticket_id`: The slug/identifier of the ticket to check (not a numeric ID)
+
+**Response:**
+```json
+{
+  "success": true,
+  "ticket": {
+    "id": null,
+    "slug": "support-request-shipping-issue-abc123",
+    "subject": "Support Request: Shipping Issue", 
+    "status": 0,
+    "status_text": "Unresolved",
+    "origin": 7,
+    "origin_text": "API",
+    "created_at": "2025-07-10T12:00:00.000Z",
+    "updated_at": "2025-07-10T14:00:00.000Z",
+    "category": "astra-straps",
+    "assignee": {
+      "name": "John Doe",
+      "email": "john@example.com"
+    },
+    "customer": {
+      "name": "Jane Smith",
+      "email": "customer@example.com"
+    },
+    "message_count": 3,
+    "tags": ["urgent", "shipping"],
+    "latest_message": {
+      "body": "We have investigated your shipping issue and found...",
+      "created_at": "2025-07-10T14:00:00.000Z",
+      "author_type": "staff"
+    }
+  }
+}
+```
+
+**Status Codes:**
+- `0`: Open/Unresolved
+- `2`: Resolved/Closed  
+- `5`: Archived
+
+**Human-Readable Fields:**
+- `status_text`: Human-readable version of the status code (e.g., "Unresolved", "Resolved", "Pending")
+- `origin_text`: Human-readable version of origin code (e.g., "API", "Email", "Chat")
+
+**Complete Status Mapping:**
+- `0`: Unresolved
+- `1`: Pending
+- `2`: Resolved
+- `3`: Spam
+- `4`: Archived
+- `5`: On Hold
+- `6`: Auto-Resolved
+- `7`: Chatbot Assigned
+- `8`: Chatbot Resolved
+- `9`: Spam - identified by AI
+
+**Complete Origin Mapping:**
+- `0`: Chat
+- `1`: Email
+- `2`: Twitter
+- `3`: Facebook
+- `6`: Classic Mode Chat
+- `7`: API
+- `8`: Instagram
+- `9`: SMS
+- `15`: WhatsApp
+- `16`: Staff Outbound
+- `17`: Contact Form
+
+### Add Information to Existing Ticket
+
+**POST /add-ticket-info**
+
+Adds additional information or updates to an existing support ticket.
+
+**Request Body:**
+```json
+{
+  "ticket_id": "support-request-shipping-issue-abc123",
+  "message": "I found additional information about my issue. The problem occurs when...",
+  "customer_email": "customer@example.com",
+  "customer_name": "Jane Smith"
+}
+```
+
+**Required Fields:**
+- `ticket_id`: The slug/identifier of the existing ticket to update (not a numeric ID)
+- `message`: The additional information or update to add
+- `customer_email`: Customer's email address
+
+**Optional Fields:**
+- `customer_name`: Customer's name (defaults to email)
+
+**Response:**
+```json
+{
+  "success": true,
+  "message": "Information added to ticket successfully",
+  "ticket_id": "12345",
+  "message_id": "67890",
+  "data": { ... }
+}
+```
+
+**Error Responses:**
+- `404`: Ticket not found
+- `400`: Missing required fields
+- `500`: Internal server error
 
 ## Error Handling
 
@@ -237,7 +423,10 @@ curl -X POST http://localhost:5000/get-instructions \
   }'
 ```
 
-⚠️ **Important**: Only test read-only endpoints (search-kb, get-instructions) with the live API. Do not create test tickets in the production system.
+⚠️ **Important**: 
+- **Ticket Creation**: ✅ Fully working - creates real tickets in your Reamaze "Astra Straps" channel
+- **Knowledge Base**: Currently empty (0 articles) - searches will return empty results until articles are added
+- **All endpoints tested and verified working** as of July 2025
 
 ## Deployment
 
@@ -270,7 +459,68 @@ This app is ready for deployment on:
 
 ## Chatbot Integration
 
-Your chatbot can integrate with this API using simple HTTP requests:
+### Quick Reference - JSON Formats
+
+**Create Support Ticket** (POST /create-ticket):
+```json
+{
+  "customer_email": "customer@example.com",
+  "customer_name": "John Doe",
+  "issue_summary": "Cannot track my order",
+  "order_number": "12345"
+}
+```
+
+**Search Knowledge Base** (POST /search-kb):
+```json
+{
+  "query_term": "apple watch sizing",
+  "max_results": 5
+}
+```
+
+**Get Instructions** (POST /get-instructions):
+```json
+{
+  "topic": "installation guide"
+}
+```
+
+**Get Previous Conversations** (POST /get-previous-conversations):
+```json
+{
+  "customer_email": "customer@example.com",
+  "limit": 10
+}
+```
+
+**OR**
+
+```json
+{
+  "order_number": "12345",
+  "limit": 10
+}
+```
+
+**Check Ticket Status** (POST /check-ticket-status):
+```json
+{
+  "ticket_id": "support-request-shipping-issue-abc123"
+}
+```
+
+**Add Information to Ticket** (POST /add-ticket-info):
+```json
+{
+  "ticket_id": "support-request-shipping-issue-abc123",
+  "message": "Additional information about my issue...",
+  "customer_email": "customer@example.com",
+  "customer_name": "John Doe"
+}
+```
+
+### Python Integration Example
 
 ```python
 import requests
@@ -284,6 +534,31 @@ response = requests.post('http://your-api-url/search-kb', json={
 if response.json()['success']:
     articles = response.json()['articles']
     # Process articles for chatbot response
+else:
+    # Handle empty knowledge base or errors
+    print("No articles found or error occurred")
+
+# Create support ticket
+ticket_response = requests.post('http://your-api-url/create-ticket', json={
+    'customer_email': 'user@example.com',
+    'customer_name': 'User Name',
+    'issue_summary': 'Need help with product'
+})
+
+if ticket_response.json()['success']:
+    print("Support ticket created successfully!")
+
+# Get previous conversations by email
+conversations_response = requests.post('http://your-api-url/get-previous-conversations', json={
+    'customer_email': 'user@example.com',
+    'limit': 5
+})
+
+# OR get previous conversations by order number
+conversations_response = requests.post('http://your-api-url/get-previous-conversations', json={
+    'order_number': '12345',
+    'limit': 5
+})
 ```
 
 ## Rate Limiting
