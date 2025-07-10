@@ -529,19 +529,43 @@ def check_ticket_status():
                 "email": result.get("user", {}).get("email")
             } if result.get("user") else None,
             "message_count": len(result.get("messages", [])),
-            "tags": result.get("tags", [])
+            "tags": result.get("tags", []),
+            "messages": []  # Initialize messages list
         }
         
-        # Get latest message info
+        # Process all messages for conversation history
         messages = result.get("messages", [])
         if messages:
-            latest_message = messages[-1]
-            ticket_info["latest_message"] = {
-                "body": latest_message.get("body", "")[:200] + "..." if len(latest_message.get("body", "")) > 200 else latest_message.get("body", ""),
-                "created_at": latest_message.get("created_at"),
-                "author_type": latest_message.get("author_type")  # "staff" or "customer"
-            }
-        
+            for message in messages:
+                author_name = "Unknown"
+                if message.get("user"):
+                    author_name = message["user"].get("name", message["user"].get("email", "Unknown"))
+                
+                ticket_info["messages"].append({
+                    "body": message.get("body"),
+                    "created_at": message.get("created_at"),
+                    "author_name": author_name,
+                    "author_type": "staff" if message.get("visible_to_customer") is False else "customer"
+                })
+
+            # If top-level customer is null, try to find it from messages
+            if not ticket_info["customer"] and any(msg["author_type"] == "customer" for msg in ticket_info["messages"]):
+                first_customer_msg = next((msg for msg in messages if msg.get("user") and msg.get("visible_to_customer") is not False), None)
+                if first_customer_msg:
+                    ticket_info["customer"] = {
+                        "name": first_customer_msg["user"].get("name"),
+                        "email": first_customer_msg["user"].get("email")
+                    }
+
+            # If top-level assignee is null, try to find it from staff messages
+            if not ticket_info["assignee"] and any(msg["author_type"] == "staff" for msg in ticket_info["messages"]):
+                first_staff_msg = next((msg for msg in messages if msg.get("user") and msg.get("visible_to_customer") is False), None)
+                if first_staff_msg:
+                     ticket_info["assignee"] = {
+                        "name": first_staff_msg["user"].get("name"),
+                        "email": first_staff_msg["user"].get("email")
+                    }
+
         logger.info(f"Retrieved ticket status for ID: {ticket_id}")
         return jsonify({
             "success": True,

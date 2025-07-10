@@ -276,14 +276,19 @@ Retrieves detailed status information for a specific support ticket.
   "ticket": {
     "id": null,
     "slug": "support-request-shipping-issue-abc123",
-    "subject": "Support Request: Shipping Issue", 
+    "subject": "Support Request: Shipping Issue",
     "status": 0,
     "status_text": "Unresolved",
     "origin": 7,
     "origin_text": "API",
     "created_at": "2025-07-10T12:00:00.000Z",
     "updated_at": "2025-07-10T14:00:00.000Z",
-    "category": "astra-straps",
+    "category": {
+      "channel": 1,
+      "email": "support@astrastraps.com",
+      "name": "Astra Straps",
+      "slug": "astra-straps"
+    },
     "assignee": {
       "name": "John Doe",
       "email": "john@example.com"
@@ -292,16 +297,27 @@ Retrieves detailed status information for a specific support ticket.
       "name": "Jane Smith",
       "email": "customer@example.com"
     },
-    "message_count": 3,
+    "message_count": 2,
     "tags": ["urgent", "shipping"],
-    "latest_message": {
-      "body": "We have investigated your shipping issue and found...",
-      "created_at": "2025-07-10T14:00:00.000Z",
-      "author_type": "staff"
-    }
+    "messages": [
+      {
+        "body": "Hello, I'm having an issue with my recent order. Can you help?",
+        "created_at": "2025-07-10T12:00:00.000Z",
+        "author_name": "Jane Smith",
+        "author_type": "customer"
+      },
+      {
+        "body": "We have investigated your shipping issue and found...",
+        "created_at": "2025-07-10T14:00:00.000Z",
+        "author_name": "John Doe",
+        "author_type": "staff"
+      }
+    ]
   }
 }
 ```
+
+**Note on `assignee` and `customer` fields**: If these fields are not available at the top level of the ticket data, the system will attempt to populate them from the first staff and customer messages in the conversation history.
 
 **Status Codes:**
 - `0`: Open/Unresolved
