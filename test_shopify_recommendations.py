@@ -47,23 +47,16 @@ def main() -> int:
             "Apple Watch strap with filters (Series 7, 45mm, leather, black)",
             {
                 "query_text": "apple watch strap",
-                "filters": {
-                    "watch_model": "Series 7",
-                    "size": "45mm",
-                    "material": "leather",
-                    "color": "black",
-                },
+                "watch_model": "Series 7",
+                "size": "45mm",
+                "material": "leather",
+                "color": "black",
                 "limit": 3,
             },
         ),
         (
             "Material-only filter (leather)",
-            {
-                "filters": {
-                    "material": "leather"
-                },
-                "limit": 3,
-            },
+            {"material": "leather", "limit": 3},
         ),
         (
             "Free-text: 'nylon strap 41mm'",
@@ -75,52 +68,23 @@ def main() -> int:
         ),
         (
             "Budget filter under $25 (any material)",
-            {
-                "filters": {
-                    "price_max": 25
-                },
-                "limit": 5,
-            },
+            {"price_max": 25, "limit": 5},
         ),
         (
             "Color filter: blue or pink (any strap)",
-            {
-                "filters": {
-                    "colors": ["blue", "pink"]
-                },
-                "limit": 5,
-            },
+            {"colors": ["blue", "pink"], "limit": 5},
         ),
         (
             "On sale only (compare_at_price > price)",
-            {
-                "filters": {
-                    "on_sale": True
-                },
-                "limit": 5,
-            },
+            {"on_sale": True, "limit": 5},
         ),
         (
             "Watch model + size + budget (Series 7, 41mm, <= $30)",
-            {
-                "filters": {
-                    "watch_model": "Series 7",
-                    "size": "41mm",
-                    "price_max": 30
-                },
-                "limit": 5,
-            },
+            {"watch_model": "Series 7", "size": "41mm", "price_max": 30, "limit": 5},
         ),
         (
             "Leather under $40 in brown or black",
-            {
-                "filters": {
-                    "material": "leather",
-                    "colors": ["brown", "black"],
-                    "price_max": 40
-                },
-                "limit": 5,
-            },
+            {"material": "leather", "colors": ["brown", "black"], "price_max": 40, "limit": 5},
         ),
     ]
 

@@ -1056,10 +1056,27 @@ def recommend_products():
     try:
         data = request.get_json() or {}
         query_text = data.get('query_text')
-        filters = data.get('filters', {})
         limit = int(data.get('limit', 5))
 
-        result = shopify_client.search_products(query_text=query_text, filters=filters, limit=limit)
+        # Accept flat one-level JSON; merge with optional legacy nested 'filters'
+        flat_keys = [
+            'product_type', 'vendor', 'tag',
+            'watch_model', 'size', 'material', 'color', 'colors',
+            'price_min', 'price_max', 'on_sale'
+        ]
+        filters = {k: data.get(k) for k in flat_keys if k in data}
+
+        # Normalize color(s)
+        if 'color' in filters and 'colors' not in filters:
+            filters['colors'] = [filters.pop('color')]
+        elif 'colors' in filters and isinstance(filters['colors'], str):
+            filters['colors'] = [filters['colors']]
+
+        # Merge legacy nested filters if provided (flat keys take precedence)
+        legacy_filters = data.get('filters', {}) if isinstance(data.get('filters'), dict) else {}
+        merged_filters = {**legacy_filters, **filters}
+
+        result = shopify_client.search_products(query_text=query_text, filters=merged_filters, limit=limit)
         if "error" in result:
             return jsonify({
                 "success": False,

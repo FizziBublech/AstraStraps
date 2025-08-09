@@ -463,12 +463,13 @@ Return product recommendations based on free-text query and/or structured filter
 ```json
 {
   "query_text": "apple watch strap",
-  "filters": {
-    "watch_model": "Series 7",
-    "size": "45mm",
-    "material": "leather",
-    "color": "black"
-  },
+  "watch_model": "Series 7",
+  "size": "45mm",
+  "material": "leather",
+  "color": "black",
+  "price_min": 20,
+  "price_max": 40,
+  "on_sale": true,
   "limit": 5
 }
 ```
@@ -487,7 +488,16 @@ Return product recommendations based on free-text query and/or structured filter
       "url": "https://your-shop.myshopify.com/products/leather-strap",
       "image": "https://cdn.shopify.com/...jpg",
       "variants": [
-        { "id": "gid://shopify/ProductVariant/111", "title": "Black / 45mm", "sku": "ASTRA-LE-45-BLK", "price": "39.00", "currency": "USD" }
+        {
+          "id": "gid://shopify/ProductVariant/111",
+          "title": "Black / 45mm",
+          "sku": "ASTRA-LE-45-BLK",
+          "price": "39.00",
+          "compare_at_price": "49.00",
+          "currency": "USD",
+          "image": "https://cdn.shopify.com/...variant.jpg",
+          "url": "https://your-shop.myshopify.com/products/leather-strap?variant=111"
+        }
       ]
     }
   ]
@@ -496,6 +506,18 @@ Return product recommendations based on free-text query and/or structured filter
 
 **Errors:**
 - `500`: Internal server error
+
+### When to use these endpoints
+
+- `track-order`:
+  - When the user provides an order number or asks for order status/tracking.
+  - Ask for the order number (with or without a leading `#`). If needed, optionally confirm the shipping ZIP for safety.
+  - Returns status, customer/shipping, line items, and tracking links if available.
+
+- `recommend-products`:
+  - When the user requests product suggestions or asks for options by material, color, size, model, budget, or “on sale”.
+  - Collect: `watch_model`, `size` (41/45/49mm), `material`, `color/colors`, `price_max` (or `price_min` and `price_max`), `on_sale`.
+  - Returns product list with variant-level `image` and deep `url` (including `?variant=`), so the exact option opens on the PDP.
 
 ## Error Handling
 
