@@ -380,9 +380,27 @@ class ShopifyAPIClient:
                     })
                 
                 # Post-filtering by price/colors/size/sale if provided
-                price_min = filters.get('price_min')
-                price_max = filters.get('price_max')
-                on_sale = bool(filters.get('on_sale'))
+                def to_float_or_none(value):
+                    if value is None:
+                        return None
+                    if isinstance(value, (int, float)):
+                        return float(value)
+                    try:
+                        s = str(value).strip()
+                        if not s:
+                            return None
+                        return float(s)
+                    except Exception:
+                        return None
+
+                price_min_val = to_float_or_none(filters.get('price_min'))
+                price_max_val = to_float_or_none(filters.get('price_max'))
+
+                on_sale_raw = filters.get('on_sale')
+                if isinstance(on_sale_raw, str):
+                    on_sale = on_sale_raw.strip().lower() in ("1", "true", "yes", "y")
+                else:
+                    on_sale = bool(on_sale_raw)
                 # Accept 'color' or 'colors'
                 colors_filter = filters.get('colors') or filters.get('color')
                 if isinstance(colors_filter, str):
@@ -396,10 +414,10 @@ class ShopifyAPIClient:
                     try:
                         p = float(v.get('price')) if v.get('price') is not None else None
                     except ValueError:
-                        return False if (price_min or price_max) else True
-                    if price_min is not None and p is not None and p < float(price_min):
+                        return False if (price_min_val is not None or price_max_val is not None) else True
+                    if price_min_val is not None and p is not None and p < price_min_val:
                         return False
-                    if price_max is not None and p is not None and p > float(price_max):
+                    if price_max_val is not None and p is not None and p > price_max_val:
                         return False
                     return True
 
@@ -420,8 +438,8 @@ class ShopifyAPIClient:
                     if not on_sale:
                         return True
                     try:
-                        price = float(v.get('price')) if v.get('price') is not None else None
-                        cap = float(v.get('compare_at_price')) if v.get('compare_at_price') is not None else None
+                        price = float(v.get('price')) if v.get('price') not in (None, "") else None
+                        cap = float(v.get('compare_at_price')) if v.get('compare_at_price') not in (None, "") else None
                         return price is not None and cap is not None and cap > price
                     except ValueError:
                         return False
