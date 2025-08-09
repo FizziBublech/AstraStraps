@@ -228,60 +228,52 @@ class ShopifyAPIClient:
             return {"error": str(e), "status_code": 500}
 
     def get_order_by_number(self, order_number: str):
-        """Find a single order by scanning recent orders and matching by display name (e.g., #1001)."""
-        # Pull recent orders with full detail and match locally by name
-        gql = """
-        query($first: Int!) {
-          orders(first: $first, sortKey: PROCESSED_AT, reverse: true) {
-            edges {
-              node {
-                id
-                name
-                processedAt
-                cancelledAt
-                closedAt
-                displayFinancialStatus
-                displayFulfillmentStatus
-                customer { displayName email }
-                shippingAddress { name address1 address2 city province country zip phone }
-                fulfillments {
-                  createdAt
-                  status
-                  trackingInfo { number url company }
-                }
-                lineItems(first: 50) {
-                  edges {
-                    node {
-                      name
-                      quantity
-                      sku
-                      variant {
-                        id
-                        title
-                        image { url }
-                        product { id title handle onlineStoreUrl }
-                      }
-                    }
-                  }
-                }
-              }
-            }
+        """Find a single order by name (e.g., #1001), using GraphQL search and a wider recent scan."""
+        # 1) Try GraphQL search by name (with and without #)
+        potential_names = [f"#{str(order_number).strip()}", str(order_number).strip()]
+        search_gql = """
+        query($q: String!) {
+          orders(first: 1, query: $q) {
+            edges { node { id name processedAt cancelledAt closedAt displayFinancialStatus displayFulfillmentStatus
+              customer { displayName email }
+              shippingAddress { name address1 address2 city province country zip phone }
+              fulfillments { createdAt status trackingInfo { number url company } }
+              lineItems(first: 50) { edges { node { name quantity sku variant { id title image { url } product { id title handle onlineStoreUrl } } } } }
+            } }
           }
         }
         """
+        for name in potential_names:
+            q = f'name:"{name}"'
+            data = self._graphql(search_gql, {"q": q})
+            if isinstance(data, dict):
+                edges = (((data or {}).get('orders') or {}).get('edges'))
+                if edges:
+                    return edges[0].get('node')
 
-        data = self._graphql(gql, {"first": 50})
-        if "error" in data:
+        # 2) Scan a wider recent window (up to 250 most recent) and match by name
+        scan_gql = """
+        query($first: Int!) {
+          orders(first: $first, sortKey: PROCESSED_AT, reverse: true) {
+            edges { node { id name processedAt cancelledAt closedAt displayFinancialStatus displayFulfillmentStatus
+              customer { displayName email }
+              shippingAddress { name address1 address2 city province country zip phone }
+              fulfillments { createdAt status trackingInfo { number url company } }
+              lineItems(first: 50) { edges { node { name quantity sku variant { id title image { url } product { id title handle onlineStoreUrl } } } } }
+            } }
+          }
+        }
+        """
+        data = self._graphql(scan_gql, {"first": 250})
+        if not isinstance(data, dict):
             return None
-        edges = (((data or {}).get('orders') or {}).get('edges')) if isinstance(data, dict) else None
+        edges = (((data or {}).get('orders') or {}).get('edges'))
         if not edges:
             return None
-        # Normalize inputs we're willing to match
-        targets = {str(order_number).strip(), f"#{str(order_number).strip()}"}
+        targets = set(potential_names)
         for edge in edges:
             node = edge.get('node', {})
-            name = node.get('name')
-            if name and name in targets:
+            if node.get('name') in targets:
                 return node
         return None
 
@@ -1114,28 +1106,29 @@ def recommend_products():
             "error": "Internal server error"
         }), 500
 
-@app.route('/list-recent-orders', methods=['GET'])
-def list_recent_orders():
-    """Helper endpoint: list recent Shopify order names/numbers for testing"""
-    try:
-        limit = int(request.args.get('limit', 5))
-        result = shopify_client.list_recent_orders(limit=limit)
-        if "error" in result:
+if app.config.get('DEBUG', False):
+    @app.route('/list-recent-orders', methods=['GET'])
+    def list_recent_orders():
+        """Helper endpoint: list recent Shopify order names/numbers for testing (DEBUG only)"""
+        try:
+            limit = int(request.args.get('limit', 5))
+            result = shopify_client.list_recent_orders(limit=limit)
+            if "error" in result:
+                return jsonify({
+                    "success": False,
+                    "error": result.get('error', 'Unknown error')
+                }), result.get('status_code', 500)
+            return jsonify({
+                "success": True,
+                "count": len(result.get('orders', [])),
+                "orders": result.get('orders', [])
+            })
+        except Exception as e:
+            logger.error(f"Error listing recent orders: {e}")
             return jsonify({
                 "success": False,
-                "error": result.get('error', 'Unknown error')
-            }), result.get('status_code', 500)
-        return jsonify({
-            "success": True,
-            "count": len(result.get('orders', [])),
-            "orders": result.get('orders', [])
-        })
-    except Exception as e:
-        logger.error(f"Error listing recent orders: {e}")
-        return jsonify({
-            "success": False,
-            "error": "Internal server error"
-        }), 500
+                "error": "Internal server error"
+            }), 500
 
 if __name__ == '__main__':
     app.run(debug=app.config['DEBUG'], host='0.0.0.0', port=5000) 
