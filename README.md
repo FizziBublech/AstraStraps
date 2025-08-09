@@ -393,6 +393,110 @@ Adds additional information or updates to an existing support ticket.
 - `400`: Missing required fields
 - `500`: Internal server error
 
+### Track Order (Shopify)
+
+**POST /track-order**
+
+Find and return order status and tracking details by order number (e.g., `1001` or `#1001`).
+
+Shopify Admin API credentials must be configured.
+
+**Request Body:**
+```json
+{
+  "order_number": "1001"
+}
+```
+
+**Response:**
+```json
+{
+  "success": true,
+  "order": {
+    "id": "gid://shopify/Order/1234567890",
+    "name": "#1001",
+    "order_number": 1001,
+    "processed_at": "2025-07-10T12:00:00Z",
+    "closed_at": null,
+    "cancelled_at": null,
+    "financial_status": "PAID",
+    "fulfillment_status": "PARTIALLY_FULFILLED",
+    "customer": {
+      "displayName": "Jane Smith",
+      "email": "customer@example.com"
+    },
+    "shipping_address": { "name": "Jane Smith", "city": "Austin", "country": "US", "zip": "78701" },
+    "fulfillments": [
+      {
+        "created_at": "2025-07-11T10:00:00Z",
+        "status": "SUCCESS",
+        "tracking": [ { "number": "1Z...", "url": "https://...", "company": "UPS" } ]
+      }
+    ],
+    "items": [
+      {
+        "name": "Leather Strap - 45mm",
+        "quantity": 1,
+        "sku": "ASTRA-LE-45-BLK",
+        "variant_title": "Black / 45mm",
+        "product_title": "Leather Strap",
+        "product_url": "https://your-shop.myshopify.com/products/leather-strap",
+        "variant_image": "https://cdn.shopify.com/...jpg"
+      }
+    ]
+  }
+}
+```
+
+**Errors:**
+- `400`: Missing `order_number`
+- `404`: Order not found
+- `500`: Internal server error
+
+### Recommend Products (Shopify)
+
+**POST /recommend-products**
+
+Return product recommendations based on free-text query and/or structured filters. Designed for chatbot use; provide as much context as available.
+
+**Request Body (example):**
+```json
+{
+  "query_text": "apple watch strap",
+  "filters": {
+    "watch_model": "Series 7",
+    "size": "45mm",
+    "material": "leather",
+    "color": "black"
+  },
+  "limit": 5
+}
+```
+
+**Response:**
+```json
+{
+  "success": true,
+  "query": "apple watch strap title:Series 7 tag:\"Series 7\" title:45mm tag:\"45mm\" title:leather tag:\"leather\" title:black tag:\"black\"",
+  "count": 2,
+  "products": [
+    {
+      "id": "gid://shopify/Product/123",
+      "title": "Leather Strap",
+      "handle": "leather-strap",
+      "url": "https://your-shop.myshopify.com/products/leather-strap",
+      "image": "https://cdn.shopify.com/...jpg",
+      "variants": [
+        { "id": "gid://shopify/ProductVariant/111", "title": "Black / 45mm", "sku": "ASTRA-LE-45-BLK", "price": "39.00", "currency": "USD" }
+      ]
+    }
+  ]
+}
+```
+
+**Errors:**
+- `500`: Internal server error
+
 ## Error Handling
 
 All endpoints return consistent error responses:
@@ -462,6 +566,9 @@ export REAMAZE_API_TOKEN=your-production-token
 export FLASK_DEBUG=False
 export SECRET_KEY=your-secure-secret-key
 export LOG_LEVEL=WARNING
+export SHOPIFY_STORE_DOMAIN=rtoprcostmetics.myshopify.com
+export SHOPIFY_ADMIN_TOKEN=shpat_...
+export SHOPIFY_API_VERSION=2024-10
 ```
 
 ### Deployment Platforms

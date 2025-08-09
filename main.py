@@ -184,6 +184,305 @@ class ReamazeAPIClient:
 # Initialize API client
 reamaze_client = ReamazeAPIClient()
 
+class ShopifyAPIClient:
+    """Client for interacting with the Shopify Admin API (REST + GraphQL)"""
+
+    def __init__(self):
+        self.store_domain = app.config.get('SHOPIFY_STORE_DOMAIN')
+        self.admin_token = app.config.get('SHOPIFY_ADMIN_TOKEN')
+        self.api_version = app.config.get('SHOPIFY_API_VERSION')
+        self.rest_base_url = app.config.get('SHOPIFY_ADMIN_REST_BASE_URL')
+        self.graphql_url = app.config.get('SHOPIFY_ADMIN_GRAPHQL_URL')
+
+        if not self.store_domain or not self.admin_token:
+            logger.warning("Shopify configuration not set. Shopify endpoints will not function until configured.")
+
+        self.rest_headers = {
+            'X-Shopify-Access-Token': self.admin_token or '',
+            'Content-Type': 'application/json',
+            'Accept': 'application/json'
+        }
+
+    def _graphql(self, query: str, variables: dict):
+        if not self.graphql_url:
+            return {"error": "Shopify not configured", "status_code": 500}
+        try:
+            response = requests.post(
+                self.graphql_url,
+                headers={
+                    'X-Shopify-Access-Token': self.admin_token,
+                    'Content-Type': 'application/json',
+                    'Accept': 'application/json'
+                },
+                json={"query": query, "variables": variables},
+                timeout=30
+            )
+            logger.info(f"Shopify GraphQL status: {response.status_code}")
+            response.raise_for_status()
+            data = response.json()
+            if 'errors' in data and data['errors']:
+                return {"error": str(data['errors']), "status_code": 400}
+            return data.get('data', {})
+        except requests.exceptions.RequestException as e:
+            logger.error(f"Shopify GraphQL request failed: {e}")
+            return {"error": str(e), "status_code": 500}
+
+    def get_order_by_number(self, order_number: str):
+        """Find a single order by scanning recent orders and matching by display name (e.g., #1001)."""
+        # Pull recent orders with full detail and match locally by name
+        gql = """
+        query($first: Int!) {
+          orders(first: $first, sortKey: PROCESSED_AT, reverse: true) {
+            edges {
+              node {
+                id
+                name
+                processedAt
+                cancelledAt
+                closedAt
+                displayFinancialStatus
+                displayFulfillmentStatus
+                customer { displayName email }
+                shippingAddress { name address1 address2 city province country zip phone }
+                fulfillments {
+                  createdAt
+                  status
+                  trackingInfo { number url company }
+                }
+                lineItems(first: 50) {
+                  edges {
+                    node {
+                      name
+                      quantity
+                      sku
+                      variant {
+                        id
+                        title
+                        image { url }
+                        product { id title handle onlineStoreUrl }
+                      }
+                    }
+                  }
+                }
+              }
+            }
+          }
+        }
+        """
+
+        data = self._graphql(gql, {"first": 50})
+        if "error" in data:
+            return None
+        edges = (((data or {}).get('orders') or {}).get('edges')) if isinstance(data, dict) else None
+        if not edges:
+            return None
+        # Normalize inputs we're willing to match
+        targets = {str(order_number).strip(), f"#{str(order_number).strip()}"}
+        for edge in edges:
+            node = edge.get('node', {})
+            name = node.get('name')
+            if name and name in targets:
+                return node
+        return None
+
+    def search_products(self, query_text: str = None, filters: dict = None, limit: int = 5):
+        """Search products via GraphQL using Shopify's search syntax"""
+        tokens = []
+        filters = filters or {}
+        if query_text:
+            tokens.append(query_text)
+        # Common structured filters mapped to tags/title/vendor/type
+        if filters.get('product_type'):
+            tokens.append(f"product_type:{filters['product_type']}")
+        if filters.get('vendor'):
+            tokens.append(f"vendor:{filters['vendor']}")
+        if filters.get('tag'):
+            tokens.append(f"tag:\"{filters['tag']}\"")
+        # Map watch related hints into generic tokens (tags/title contains)
+        for key in ['watch_model', 'size', 'material', 'color']:
+            if filters.get(key):
+                value = str(filters[key]).strip()
+                if value:
+                    tokens.append(f"title:{value}")
+                    tokens.append(f"tag:\"{value}\"")
+
+        q = " ".join(tokens) if tokens else None
+        if not q:
+            # Fallback to return recently updated products
+            q = "status:active"
+
+        gql = """
+        query($q: String!, $first: Int!) {
+          products(first: $first, query: $q) {
+            edges {
+              node {
+                id
+                title
+                handle
+                onlineStoreUrl
+                featuredImage { url }
+                variants(first: 10) {
+                  edges {
+                    node {
+                      id
+                      title
+                      sku
+                      price
+                      compareAtPrice
+                      image { url }
+                    }
+                  }
+                }
+              }
+            }
+          }
+        }
+        """
+
+        data = self._graphql(gql, {"q": q, "first": max(1, min(limit, 25))})
+        if "error" in data:
+            return data
+
+        edges = (((data or {}).get('products') or {}).get('edges')) if isinstance(data, dict) else None
+        products = []
+        if edges:
+            for edge in edges:
+                node = edge.get('node', {})
+                handle = node.get('handle')
+                online_url = node.get('onlineStoreUrl') or (f"https://{self.store_domain}/products/{handle}" if self.store_domain and handle else None)
+                image = (node.get('featuredImage') or {}).get('url')
+                # Build variants
+                variants = []
+                for v_edge in (node.get('variants', {}).get('edges') or []):
+                    v = v_edge.get('node', {})
+                    # Extract numeric variant id for storefront URLs
+                    variant_gid = v.get('id') or ''
+                    variant_numeric_id = None
+                    if isinstance(variant_gid, str) and '/' in variant_gid:
+                        variant_numeric_id = variant_gid.split('/')[-1]
+                    # Variant-specific URL if possible
+                    variant_url = None
+                    if online_url and variant_numeric_id:
+                        separator = '&' if '?' in (online_url or '') else '?'
+                        variant_url = f"{online_url}{separator}variant={variant_numeric_id}"
+
+                    # Variant image fallback to product image
+                    variant_image = ((v.get('image') or {}).get('url')) or image
+                    variants.append({
+                        "id": v.get('id'),
+                        "title": v.get('title'),
+                        "sku": v.get('sku'),
+                        "price": v.get('price'),
+                        "compare_at_price": v.get('compareAtPrice'),
+                        "currency": None,
+                        "image": variant_image,
+                        "url": variant_url
+                    })
+                
+                # Post-filtering by price/colors/size/sale if provided
+                price_min = filters.get('price_min')
+                price_max = filters.get('price_max')
+                on_sale = bool(filters.get('on_sale'))
+                # Accept 'color' or 'colors'
+                colors_filter = filters.get('colors') or filters.get('color')
+                if isinstance(colors_filter, str):
+                    colors = [colors_filter]
+                else:
+                    colors = colors_filter or []
+                colors = [str(c).strip().lower() for c in colors if str(c).strip()]
+                size_filter = str(filters.get('size', '')).strip().lower() if filters.get('size') else None
+
+                def price_in_range(v):
+                    try:
+                        p = float(v.get('price')) if v.get('price') is not None else None
+                    except ValueError:
+                        return False if (price_min or price_max) else True
+                    if price_min is not None and p is not None and p < float(price_min):
+                        return False
+                    if price_max is not None and p is not None and p > float(price_max):
+                        return False
+                    return True
+
+                def matches_colors(v, product_title: str):
+                    if not colors:
+                        return True
+                    vt = (v.get('title') or '').lower()
+                    pt = (product_title or '').lower()
+                    return any(c in vt or c in pt for c in colors)
+
+                def matches_size(v):
+                    if not size_filter:
+                        return True
+                    vt = (v.get('title') or '').lower()
+                    return size_filter in vt
+
+                def matches_sale(v):
+                    if not on_sale:
+                        return True
+                    try:
+                        price = float(v.get('price')) if v.get('price') is not None else None
+                        cap = float(v.get('compare_at_price')) if v.get('compare_at_price') is not None else None
+                        return price is not None and cap is not None and cap > price
+                    except ValueError:
+                        return False
+
+                filtered_variants = [
+                    v for v in variants
+                    if price_in_range(v)
+                    and matches_colors(v, node.get('title'))
+                    and matches_size(v)
+                    and matches_sale(v)
+                ]
+
+                if not filtered_variants:
+                    continue
+                products.append({
+                    "id": node.get('id'),
+                    "title": node.get('title'),
+                    "handle": handle,
+                    "url": online_url,
+                    "image": image,
+                    "variants": filtered_variants
+                })
+        return {"products": products, "query": q}
+
+    def list_recent_orders(self, limit: int = 5):
+        """List recent orders to help locate a valid order number for testing"""
+        gql = """
+        query($first: Int!) {
+          orders(first: $first, sortKey: PROCESSED_AT, reverse: true) {
+            edges {
+              node {
+                id
+                name
+                processedAt
+                displayFulfillmentStatus
+              }
+            }
+          }
+        }
+        """
+        data = self._graphql(gql, {"first": max(1, min(limit, 25))})
+        if "error" in data:
+            return data
+        edges = (((data or {}).get('orders') or {}).get('edges')) if isinstance(data, dict) else None
+        orders = []
+        if edges:
+            for edge in edges:
+                node = edge.get('node', {})
+                # name typically contains the display order number like #1001
+                orders.append({
+                    "id": node.get('id'),
+                    "name": node.get('name'),
+                    "order_number_hint": node.get('name'),
+                    "processed_at": node.get('processedAt'),
+                    "fulfillment_status": node.get('displayFulfillmentStatus')
+                })
+        return {"orders": orders}
+
+# Initialize Shopify client
+shopify_client = ShopifyAPIClient()
+
 @app.route('/', methods=['GET'])
 def health_check():
     """Health check endpoint"""
@@ -658,6 +957,150 @@ def internal_error(error):
         "success": False,
         "error": "Internal server error"
     }), 500
+
+# ==========================
+# Shopify Endpoints
+# ==========================
+
+@app.route('/track-order', methods=['POST'])
+def track_order():
+    """Track an order by order number (e.g., 1001 or #1001) via Shopify Admin GraphQL"""
+    try:
+        data = request.get_json() or {}
+        order_number = str(data.get('order_number', '')).strip()
+        if not order_number:
+            return jsonify({
+                "success": False,
+                "error": "Missing required field: order_number"
+            }), 400
+
+        order = shopify_client.get_order_by_number(order_number)
+        if not order:
+            return jsonify({
+                "success": False,
+                "error": f"Order not found: {order_number}"
+            }), 404
+
+        # Normalize output
+        fulfillments = []
+        for f in (order.get('fulfillments') or []):
+            tracking = []
+            for t in (f.get('trackingInfo') or []):
+                tracking.append({
+                    "number": t.get('number'),
+                    "url": t.get('url'),
+                    "company": t.get('company')
+                })
+            fulfillments.append({
+                "created_at": f.get('createdAt'),
+                "status": f.get('status'),
+                "tracking": tracking
+            })
+
+        items = []
+        for edge in (order.get('lineItems', {}).get('edges') or []):
+            node = edge.get('node', {})
+            variant = node.get('variant') or {}
+            product = (variant.get('product') or {})
+            items.append({
+                "name": node.get('name'),
+                "quantity": node.get('quantity'),
+                "sku": node.get('sku'),
+                "variant_title": variant.get('title'),
+                "product_title": product.get('title'),
+                "product_url": product.get('onlineStoreUrl'),
+                "variant_image": (variant.get('image') or {}).get('url')
+            })
+
+        return jsonify({
+            "success": True,
+            "order": {
+                "id": order.get('id'),
+                "name": order.get('name'),
+                "order_number": order.get('orderNumber'),
+                "processed_at": order.get('processedAt'),
+                "closed_at": order.get('closedAt'),
+                "cancelled_at": order.get('cancelledAt'),
+                "financial_status": order.get('displayFinancialStatus'),
+                "fulfillment_status": order.get('displayFulfillmentStatus'),
+                "customer": order.get('customer'),
+                "shipping_address": order.get('shippingAddress'),
+                "fulfillments": fulfillments,
+                "items": items
+            }
+        })
+    except Exception as e:
+        logger.error(f"Error tracking order: {e}")
+        return jsonify({
+            "success": False,
+            "error": "Internal server error"
+        }), 500
+
+
+@app.route('/recommend-products', methods=['POST'])
+def recommend_products():
+    """Return product recommendations based on structured filters and/or a query string.
+
+    Expected JSON body (flexible):
+      {
+        "query_text": "apple watch strap",
+        "filters": {
+          "watch_model": "Series 7",
+          "size": "45mm",
+          "material": "leather",
+          "color": "black"
+        },
+        "limit": 5
+      }
+    """
+    try:
+        data = request.get_json() or {}
+        query_text = data.get('query_text')
+        filters = data.get('filters', {})
+        limit = int(data.get('limit', 5))
+
+        result = shopify_client.search_products(query_text=query_text, filters=filters, limit=limit)
+        if "error" in result:
+            return jsonify({
+                "success": False,
+                "error": result.get('error', 'Unknown error')
+            }), result.get('status_code', 500)
+
+        return jsonify({
+            "success": True,
+            "query": result.get('query'),
+            "count": len(result.get('products', [])),
+            "products": result.get('products', [])
+        })
+    except Exception as e:
+        logger.error(f"Error recommending products: {e}")
+        return jsonify({
+            "success": False,
+            "error": "Internal server error"
+        }), 500
+
+@app.route('/list-recent-orders', methods=['GET'])
+def list_recent_orders():
+    """Helper endpoint: list recent Shopify order names/numbers for testing"""
+    try:
+        limit = int(request.args.get('limit', 5))
+        result = shopify_client.list_recent_orders(limit=limit)
+        if "error" in result:
+            return jsonify({
+                "success": False,
+                "error": result.get('error', 'Unknown error')
+            }), result.get('status_code', 500)
+        return jsonify({
+            "success": True,
+            "count": len(result.get('orders', [])),
+            "orders": result.get('orders', [])
+        })
+    except Exception as e:
+        logger.error(f"Error listing recent orders: {e}")
+        return jsonify({
+            "success": False,
+            "error": "Internal server error"
+        }), 500
 
 if __name__ == '__main__':
     app.run(debug=app.config['DEBUG'], host='0.0.0.0', port=5000) 

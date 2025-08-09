@@ -18,12 +18,12 @@
 ### **1. Order Information Not Available**
 - **Issue:** Reamaze doesn't contain order data - cannot provide order tracking, status updates, or modifications
 - **Impact:** Bot cannot answer "Where is my order?" or provide ETAs/tracking numbers
-- **Solution Needed:** CRM integration to access order information
+- **Solution Needed:** Shopify integration to access order information
 
 ### **2. Knowledge Base Empty**
 - **Issue:** Reamaze knowledge base has 0 articles
-- **Impact:** Bot uses website content only for self-service (limited compared to dedicated KB)
-- **Current Workaround:** Uses `get-company-info` to pull information from website
+- **Impact:** Bot uses website content only for self-service (limited to publicly available information)
+- **Current Workaround:** Pulls all information form website
 
 ## **🔄 Current Workflow**
 
@@ -54,7 +54,7 @@
 5. **Complex issue handling** - Complex issues create support tickets for your team
 
 ### **What Won't Work Yet:**
-- Order tracking/status (needs CRM integration)
+- Order tracking/status (needs Shopify integration)
 
 
 
