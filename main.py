@@ -278,51 +278,14 @@ class ShopifyAPIClient:
         return None
 
     def search_products(self, query_text: str = None, filters: dict = None, limit: int = 5):
-        """Search products via GraphQL using Shopify's search syntax"""
-        tokens = []
+        """Search products using simple natural language query + basic filters"""
         filters = filters or {}
-        if query_text:
-            tokens.append(query_text)
-        # Common structured filters mapped to tags/title/vendor/type
-        if filters.get('product_type'):
-            tokens.append(f"product_type:{filters['product_type']}")
-        if filters.get('vendor'):
-            tokens.append(f"vendor:{filters['vendor']}")
-        if filters.get('tag'):
-            tokens.append(f"tag:\"{filters['tag']}\"")
-        # Map watch related hints into generic tokens (tags/title contains)
-        # Special handling for Apple Watch series -> size mapping
-        if filters.get('watch_model'):
-            model = str(filters['watch_model']).strip().lower()
-            # Map Apple Watch series to compatible sizes
-            if 'series 7' in model or 'series 8' in model or 'series 9' in model:
-                # Series 7/8/9 come in 41mm and 45mm - don't add size filter, filter variants later
-                if not filters.get('size'):
-                    filters['compatible_sizes'] = ['41mm', '45mm']  # Custom filter for post-processing
-            elif 'series 4' in model or 'series 5' in model or 'series 6' in model:
-                # Series 4/5/6 come in 40mm and 44mm - don't add size filter, filter variants later
-                if not filters.get('size'):
-                    filters['compatible_sizes'] = ['40mm', '44mm']  # Custom filter for post-processing
-            elif 'ultra' in model:
-                # Apple Watch Ultra is 49mm
-                if not filters.get('size'):
-                    tokens.append(f"title:49mm")
-            else:
-                # For other models, search by model name
-                tokens.append(f"title:{filters['watch_model']}")
-                tokens.append(f"tag:\"{filters['watch_model']}\"")
         
-        # Handle other attributes
-        for key in ['size', 'material', 'color']:
-            if filters.get(key):
-                value = str(filters[key]).strip()
-                if value:
-                    tokens.append(f"title:{value}")
-                    tokens.append(f"tag:\"{value}\"")
-
-        q = " ".join(tokens) if tokens else None
-        if not q:
-            # Fallback to return recently updated products
+        # Use query_text as-is - Shopify's search is quite good with natural language
+        if query_text:
+            q = query_text.strip()
+        else:
+            # Fallback to return recently updated products  
             q = "status:active"
 
         gql = """
@@ -393,71 +356,35 @@ class ShopifyAPIClient:
                         "url": variant_url
                     })
                 
-                # Post-filtering by price/colors/size/sale if provided
+                # Simple post-filtering for essential filters only
                 def to_float_or_none(value):
-                    if value is None:
+                    if value is None or value == "":
                         return None
-                    if isinstance(value, (int, float)):
-                        return float(value)
                     try:
-                        s = str(value).strip()
-                        if not s:
-                            return None
-                        return float(s)
-                    except Exception:
+                        return float(value)
+                    except (ValueError, TypeError):
                         return None
 
                 price_min_val = to_float_or_none(filters.get('price_min'))
                 price_max_val = to_float_or_none(filters.get('price_max'))
 
+                # Handle on_sale filter
                 on_sale_raw = filters.get('on_sale')
                 if isinstance(on_sale_raw, str):
                     stripped = on_sale_raw.strip().lower()
-                    if stripped == "":
-                        on_sale = False  # Empty string = no filter
-                    else:
-                        on_sale = stripped in ("1", "true", "yes", "y")
+                    on_sale = stripped in ("1", "true", "yes", "y") if stripped else False
                 else:
                     on_sale = bool(on_sale_raw) if on_sale_raw is not None else False
-                # Accept 'color' or 'colors'
-                colors_filter = filters.get('colors') or filters.get('color')
-                if isinstance(colors_filter, str):
-                    colors = [colors_filter]
-                else:
-                    colors = colors_filter or []
-                colors = [str(c).strip().lower() for c in colors if str(c).strip()]
-                size_filter = str(filters.get('size', '')).strip().lower() if filters.get('size') else None
 
                 def price_in_range(v):
                     try:
-                        p = float(v.get('price')) if v.get('price') is not None else None
-                    except ValueError:
-                        return False if (price_min_val is not None or price_max_val is not None) else True
+                        p = float(v.get('price')) if v.get('price') not in (None, "") else None
+                    except (ValueError, TypeError):
+                        return True if (price_min_val is None and price_max_val is None) else False
                     if price_min_val is not None and p is not None and p < price_min_val:
                         return False
                     if price_max_val is not None and p is not None and p > price_max_val:
                         return False
-                    return True
-
-                def matches_colors(v, product_title: str):
-                    if not colors:
-                        return True
-                    vt = (v.get('title') or '').lower()
-                    pt = (product_title or '').lower()
-                    return any(c in vt or c in pt for c in colors)
-
-                def matches_size(v):
-                    # Check explicit size filter
-                    if size_filter:
-                        vt = (v.get('title') or '').lower()
-                        return size_filter in vt
-                    
-                    # Check compatible sizes (for Apple Watch series mapping)
-                    compatible_sizes = filters.get('compatible_sizes')
-                    if compatible_sizes:
-                        vt = (v.get('title') or '').lower()
-                        return any(size.lower() in vt for size in compatible_sizes)
-                    
                     return True
 
                 def matches_sale(v):
@@ -467,15 +394,13 @@ class ShopifyAPIClient:
                         price = float(v.get('price')) if v.get('price') not in (None, "") else None
                         cap = float(v.get('compare_at_price')) if v.get('compare_at_price') not in (None, "") else None
                         return price is not None and cap is not None and cap > price
-                    except ValueError:
+                    except (ValueError, TypeError):
                         return False
 
+                # Apply only essential filters
                 filtered_variants = [
                     v for v in variants
-                    if price_in_range(v)
-                    and matches_colors(v, node.get('title'))
-                    and matches_size(v)
-                    and matches_sale(v)
+                    if price_in_range(v) and matches_sale(v)
                 ]
 
                 if not filtered_variants:
@@ -1116,49 +1041,43 @@ def recommend_products():
         else:
             data = raw_data
             
-        query_text = data.get('query_text')
+        # Build smart query_text from user input
+        query_parts = []
+        base_query = data.get('query_text', '').strip()
+        if base_query:
+            query_parts.append(base_query)
         
-        # Handle limit - could be string or int
+        # Add key descriptors to query_text for better natural language search
+        if data.get('watch_model') and data.get('watch_model') not in ("any", "all", "none", ""):
+            query_parts.append(str(data['watch_model']))
+        if data.get('material') and data.get('material') not in ("any", "all", "none", ""):
+            query_parts.append(str(data['material']))
+        if data.get('color') and data.get('color') not in ("any", "all", "none", ""):
+            query_parts.append(str(data['color']))
+        if data.get('size') and data.get('size') not in ("any", "all", "none", ""):
+            query_parts.append(str(data['size']))
+            
+        query_text = " ".join(query_parts) if query_parts else None
+        
+        # Handle limit
         limit_raw = data.get('limit', 5)
         try:
             limit = int(limit_raw) if limit_raw not in (None, "") else 5
         except (ValueError, TypeError):
             limit = 5
 
-        # Accept flat one-level JSON; merge with optional legacy nested 'filters'
-        flat_keys = [
-            'product_type', 'vendor', 'tag',
-            'watch_model', 'size', 'material', 'color', 'colors',
-            'price_min', 'price_max', 'on_sale'
-        ]
-        # Filter out empty, None, and placeholder values like "any"
-        # Special handling: keep price_min=0 as it's valid, but filter out other 0 values
-        filters = {}
-        for k in flat_keys:
-            if k in data:
-                value = data.get(k)
-                # Skip None and empty strings
-                if value in (None, ""):
-                    continue
-                # Skip placeholder text values
-                if isinstance(value, str) and value.lower() in ("any", "all", "none"):
-                    continue
-                # Skip 0 for non-price fields (but keep price_min=0)
-                if value == 0 and k not in ('price_min', 'price_max'):
-                    continue
-                filters[k] = value
+        # Only keep essential filters: price and sale
+        essential_filters = {}
+        for key in ['price_min', 'price_max', 'on_sale']:
+            value = data.get(key)
+            if value not in (None, "", "any", "all", "none"):
+                if key in ('price_min', 'price_max'):
+                    # Keep 0 as valid for prices
+                    essential_filters[key] = value
+                elif key == 'on_sale':
+                    essential_filters[key] = value
 
-        # Normalize color(s)
-        if 'color' in filters and 'colors' not in filters:
-            filters['colors'] = [filters.pop('color')]
-        elif 'colors' in filters and isinstance(filters['colors'], str):
-            filters['colors'] = [filters['colors']]
-
-        # Merge legacy nested filters if provided (flat keys take precedence)
-        legacy_filters = data.get('filters', {}) if isinstance(data.get('filters'), dict) else {}
-        merged_filters = {**legacy_filters, **filters}
-
-        result = shopify_client.search_products(query_text=query_text, filters=merged_filters, limit=limit)
+        result = shopify_client.search_products(query_text=query_text, filters=essential_filters, limit=limit)
         if "error" in result:
             return jsonify({
                 "success": False,
