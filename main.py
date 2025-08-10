@@ -390,9 +390,13 @@ class ShopifyAPIClient:
 
                 on_sale_raw = filters.get('on_sale')
                 if isinstance(on_sale_raw, str):
-                    on_sale = on_sale_raw.strip().lower() in ("1", "true", "yes", "y")
+                    stripped = on_sale_raw.strip().lower()
+                    if stripped == "":
+                        on_sale = False  # Empty string = no filter
+                    else:
+                        on_sale = stripped in ("1", "true", "yes", "y")
                 else:
-                    on_sale = bool(on_sale_raw)
+                    on_sale = bool(on_sale_raw) if on_sale_raw is not None else False
                 # Accept 'color' or 'colors'
                 colors_filter = filters.get('colors') or filters.get('color')
                 if isinstance(colors_filter, str):
@@ -1062,11 +1066,34 @@ def recommend_products():
         },
         "limit": 5
       }
+      
+    OR new nested format:
+      {
+        "tool_payload": {
+          "query_text": "apple watch strap",
+          "watch_model": "Series 7",
+          "on_sale": true,
+          "limit": 5
+        }
+      }
     """
     try:
-        data = request.get_json() or {}
+        raw_data = request.get_json() or {}
+        
+        # Handle nested tool_payload structure
+        if 'tool_payload' in raw_data:
+            data = raw_data['tool_payload']
+        else:
+            data = raw_data
+            
         query_text = data.get('query_text')
-        limit = int(data.get('limit', 5))
+        
+        # Handle limit - could be string or int
+        limit_raw = data.get('limit', 5)
+        try:
+            limit = int(limit_raw) if limit_raw not in (None, "") else 5
+        except (ValueError, TypeError):
+            limit = 5
 
         # Accept flat one-level JSON; merge with optional legacy nested 'filters'
         flat_keys = [
@@ -1074,7 +1101,7 @@ def recommend_products():
             'watch_model', 'size', 'material', 'color', 'colors',
             'price_min', 'price_max', 'on_sale'
         ]
-        filters = {k: data.get(k) for k in flat_keys if k in data}
+        filters = {k: data.get(k) for k in flat_keys if k in data and data.get(k) not in (None, "")}
 
         # Normalize color(s)
         if 'color' in filters and 'colors' not in filters:
