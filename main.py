@@ -291,7 +291,29 @@ class ShopifyAPIClient:
         if filters.get('tag'):
             tokens.append(f"tag:\"{filters['tag']}\"")
         # Map watch related hints into generic tokens (tags/title contains)
-        for key in ['watch_model', 'size', 'material', 'color']:
+        # Special handling for Apple Watch series -> size mapping
+        if filters.get('watch_model'):
+            model = str(filters['watch_model']).strip().lower()
+            # Map Apple Watch series to compatible sizes
+            if 'series 7' in model or 'series 8' in model or 'series 9' in model:
+                # Series 7/8/9 come in 41mm and 45mm - don't add size filter, filter variants later
+                if not filters.get('size'):
+                    filters['compatible_sizes'] = ['41mm', '45mm']  # Custom filter for post-processing
+            elif 'series 4' in model or 'series 5' in model or 'series 6' in model:
+                # Series 4/5/6 come in 40mm and 44mm - don't add size filter, filter variants later
+                if not filters.get('size'):
+                    filters['compatible_sizes'] = ['40mm', '44mm']  # Custom filter for post-processing
+            elif 'ultra' in model:
+                # Apple Watch Ultra is 49mm
+                if not filters.get('size'):
+                    tokens.append(f"title:49mm")
+            else:
+                # For other models, search by model name
+                tokens.append(f"title:{filters['watch_model']}")
+                tokens.append(f"tag:\"{filters['watch_model']}\"")
+        
+        # Handle other attributes
+        for key in ['size', 'material', 'color']:
             if filters.get(key):
                 value = str(filters[key]).strip()
                 if value:
@@ -425,10 +447,18 @@ class ShopifyAPIClient:
                     return any(c in vt or c in pt for c in colors)
 
                 def matches_size(v):
-                    if not size_filter:
-                        return True
-                    vt = (v.get('title') or '').lower()
-                    return size_filter in vt
+                    # Check explicit size filter
+                    if size_filter:
+                        vt = (v.get('title') or '').lower()
+                        return size_filter in vt
+                    
+                    # Check compatible sizes (for Apple Watch series mapping)
+                    compatible_sizes = filters.get('compatible_sizes')
+                    if compatible_sizes:
+                        vt = (v.get('title') or '').lower()
+                        return any(size.lower() in vt for size in compatible_sizes)
+                    
+                    return True
 
                 def matches_sale(v):
                     if not on_sale:
@@ -1101,7 +1131,22 @@ def recommend_products():
             'watch_model', 'size', 'material', 'color', 'colors',
             'price_min', 'price_max', 'on_sale'
         ]
-        filters = {k: data.get(k) for k in flat_keys if k in data and data.get(k) not in (None, "")}
+        # Filter out empty, None, and placeholder values like "any"
+        # Special handling: keep price_min=0 as it's valid, but filter out other 0 values
+        filters = {}
+        for k in flat_keys:
+            if k in data:
+                value = data.get(k)
+                # Skip None and empty strings
+                if value in (None, ""):
+                    continue
+                # Skip placeholder text values
+                if isinstance(value, str) and value.lower() in ("any", "all", "none"):
+                    continue
+                # Skip 0 for non-price fields (but keep price_min=0)
+                if value == 0 and k not in ('price_min', 'price_max'):
+                    continue
+                filters[k] = value
 
         # Normalize color(s)
         if 'color' in filters and 'colors' not in filters:
