@@ -477,7 +477,7 @@ def create_ticket():
         data = extract_payload(raw_data)
         
         # Validate required fields
-        required_fields = ['customer_email', 'issue_summary']
+        required_fields = ['customer_email', 'issue']
         missing_fields = [field for field in required_fields if not data.get(field)]
         
         if missing_fields:
@@ -489,15 +489,15 @@ def create_ticket():
         # Extract data
         customer_email = data['customer_email']
         customer_name = data.get('customer_name', customer_email)
-        issue_summary = data['issue_summary']
+        issue = data['issue']
         order_number = data.get('order_number')
         
         # Create ticket subject and body
-        subject = f"Support Request: {issue_summary}"
+        subject = f"Support Request: {issue}"
         body_parts = [
             f"Customer: {customer_name}",
             f"Email: {customer_email}",
-            f"Issue: {issue_summary}"
+            f"Issue: {issue}"
         ]
         
         if order_number:
