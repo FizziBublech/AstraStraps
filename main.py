@@ -64,6 +64,26 @@ CHANNEL_CODES = {
     9: "SMS"
 }
 
+def extract_payload(raw_data):
+    """Extract payload from either flat JSON or nested tool_payload structure."""
+    if not raw_data:
+        return {}
+    
+    # Handle nested tool_payload structure
+    if 'tool_payload' in raw_data:
+        return raw_data['tool_payload']
+    else:
+        return raw_data
+
+def safe_float(value):
+    """Safely convert a value to float, returning None if conversion fails."""
+    if value is None or value == '':
+        return None
+    try:
+        return float(value)
+    except (ValueError, TypeError):
+        return None
+
 class ReamazeAPIClient:
     """Client for interacting with the Reamaze API"""
     
@@ -357,16 +377,8 @@ class ShopifyAPIClient:
                     })
                 
                 # Simple post-filtering for essential filters only
-                def to_float_or_none(value):
-                    if value is None or value == "":
-                        return None
-                    try:
-                        return float(value)
-                    except (ValueError, TypeError):
-                        return None
-
-                price_min_val = to_float_or_none(filters.get('price_min'))
-                price_max_val = to_float_or_none(filters.get('price_max'))
+                price_min_val = safe_float(filters.get('price_min'))
+                price_max_val = safe_float(filters.get('price_max'))
 
                 # Handle on_sale filter
                 on_sale_raw = filters.get('on_sale')
@@ -377,9 +389,8 @@ class ShopifyAPIClient:
                     on_sale = bool(on_sale_raw) if on_sale_raw is not None else False
 
                 def price_in_range(v):
-                    try:
-                        p = float(v.get('price')) if v.get('price') not in (None, "") else None
-                    except (ValueError, TypeError):
+                    p = safe_float(v.get('price'))
+                    if p is None:
                         return True if (price_min_val is None and price_max_val is None) else False
                     if price_min_val is not None and p is not None and p < price_min_val:
                         return False
@@ -390,12 +401,9 @@ class ShopifyAPIClient:
                 def matches_sale(v):
                     if not on_sale:
                         return True
-                    try:
-                        price = float(v.get('price')) if v.get('price') not in (None, "") else None
-                        cap = float(v.get('compare_at_price')) if v.get('compare_at_price') not in (None, "") else None
-                        return price is not None and cap is not None and cap > price
-                    except (ValueError, TypeError):
-                        return False
+                    price = safe_float(v.get('price'))
+                    cap = safe_float(v.get('compare_at_price'))
+                    return price is not None and cap is not None and cap > price
 
                 # Apply only essential filters
                 filtered_variants = [
@@ -465,7 +473,8 @@ def health_check():
 def create_ticket():
     """Create a support ticket in Reamaze"""
     try:
-        data = request.get_json()
+        raw_data = request.get_json()
+        data = extract_payload(raw_data)
         
         # Validate required fields
         required_fields = ['customer_email', 'issue_summary']
@@ -535,7 +544,8 @@ def create_ticket():
 def search_knowledge_base():
     """Search knowledge base articles"""
     try:
-        data = request.get_json()
+        raw_data = request.get_json()
+        data = extract_payload(raw_data)
         
         # Validate required fields
         if not data.get('query_term'):
@@ -589,7 +599,8 @@ def search_knowledge_base():
 def get_instructions():
     """Get step-by-step instructions from knowledge base"""
     try:
-        data = request.get_json()
+        raw_data = request.get_json()
+        data = extract_payload(raw_data)
         
         # Validate input
         topic = data.get('topic')
@@ -662,7 +673,8 @@ def get_instructions():
 def get_previous_conversations():
     """Retrieve previous conversations for a customer"""
     try:
-        data = request.get_json()
+        raw_data = request.get_json()
+        data = extract_payload(raw_data)
         
         # Validate input - need either email or order_number
         customer_email = data.get('customer_email')
@@ -749,7 +761,8 @@ def get_previous_conversations():
 def check_ticket_status():
     """Check the status of a specific ticket/conversation"""
     try:
-        data = request.get_json()
+        raw_data = request.get_json()
+        data = extract_payload(raw_data)
         
         # Validate required field
         ticket_id = data.get('ticket_id')
@@ -851,7 +864,8 @@ def check_ticket_status():
 def add_ticket_info():
     """Add new information to an existing ticket/conversation"""
     try:
-        data = request.get_json()
+        raw_data = request.get_json()
+        data = extract_payload(raw_data)
         
         # Validate required fields
         required_fields = ['ticket_id', 'message', 'customer_email']
@@ -935,7 +949,8 @@ def internal_error(error):
 def track_order():
     """Track an order by order number (e.g., 1001 or #1001) via Shopify Admin GraphQL"""
     try:
-        data = request.get_json() or {}
+        raw_data = request.get_json() or {}
+        data = extract_payload(raw_data)
         order_number = str(data.get('order_number', '')).strip()
         if not order_number:
             return jsonify({
@@ -1034,12 +1049,7 @@ def recommend_products():
     """
     try:
         raw_data = request.get_json() or {}
-        
-        # Handle nested tool_payload structure
-        if 'tool_payload' in raw_data:
-            data = raw_data['tool_payload']
-        else:
-            data = raw_data
+        data = extract_payload(raw_data)
             
         # Build smart query_text from user input
         query_parts = []
