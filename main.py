@@ -297,8 +297,90 @@ class ShopifyAPIClient:
                 return node
         return None
 
+    def _determine_sort_strategy(self, query_text: str = None, filters: dict = None):
+        """Determine the best sorting strategy based on query context"""
+        if not query_text:
+            # For general queries, use relevance
+            return {"sortKey": "RELEVANCE", "reverse": False}
+        
+        query_lower = query_text.lower()
+        
+        # If user is looking for sales/deals, prioritize by relevance first, then price
+        if any(word in query_lower for word in ['sale', 'deal', 'discount', 'cheap', 'budget', 'under']):
+            return {"sortKey": "RELEVANCE", "reverse": False}
+        
+        # If user is looking for specific materials or styles, use relevance
+        if any(word in query_lower for word in ['leather', 'metal', 'silicone', 'nylon', 'magnetic', 'sport']):
+            return {"sortKey": "RELEVANCE", "reverse": False}
+        
+        # If user is looking for specific watch models, use relevance
+        if any(word in query_lower for word in ['apple watch', 'galaxy watch', 'pixel watch', 'fitbit', 'series']):
+            return {"sortKey": "RELEVANCE", "reverse": False}
+        
+        # Default to relevance for general queries
+        return {"sortKey": "RELEVANCE", "reverse": False}
+
+    def _sort_products_python(self, products, query_text: str = None, filters: dict = None):
+        """Apply Python-based sorting for better product recommendations"""
+        if not products:
+            return products
+        
+        def calculate_product_score(product):
+            """Calculate a score for product ranking"""
+            score = 0
+            variants = product.get('variants', [])
+            
+            if not variants:
+                return score
+            
+            # Get the first variant for scoring
+            first_variant = variants[0]
+            price = safe_float(first_variant.get('price'))
+            compare_price = safe_float(first_variant.get('compare_at_price'))
+            
+            # Boost score for products on sale
+            if price is not None and compare_price is not None and compare_price > price:
+                score += 100
+            
+            # Boost score for products with multiple variants (more options)
+            score += min(len(variants) * 5, 25)  # Cap at 25 points
+            
+            # Boost score for lower prices (more affordable)
+            if price is not None and price > 0:
+                if price <= 20:
+                    score += 30  # Very affordable
+                elif price <= 40:
+                    score += 20  # Affordable
+                elif price <= 60:
+                    score += 10  # Moderate
+            
+            # Boost score for products with images
+            if product.get('image'):
+                score += 5
+            
+            # Boost score for recently updated products
+            updated_at = product.get('updated_at')
+            if updated_at:
+                try:
+                    from datetime import datetime, timezone
+                    update_time = datetime.fromisoformat(updated_at.replace('Z', '+00:00'))
+                    days_old = (datetime.now(timezone.utc) - update_time).days
+                    if days_old <= 30:
+                        score += 15  # Recently updated
+                    elif days_old <= 90:
+                        score += 5   # Somewhat recent
+                except:
+                    pass  # Ignore date parsing errors
+            
+            return score
+        
+        # Sort by calculated score (highest first), then by title for consistency
+        products.sort(key=lambda p: (-calculate_product_score(p), p.get('title', '').lower()))
+        
+        return products
+
     def search_products(self, query_text: str = None, filters: dict = None, limit: int = 5):
-        """Search products using simple natural language query + basic filters"""
+        """Search products using simple natural language query + basic filters with smart sorting"""
         filters = filters or {}
         
         # Use query_text as-is - Shopify's search is quite good with natural language
@@ -308,9 +390,12 @@ class ShopifyAPIClient:
             # Fallback to return recently updated products  
             q = "status:active"
 
+        # Determine best sorting strategy based on query context
+        sort_strategy = self._determine_sort_strategy(query_text, filters)
+        
         gql = """
-        query($q: String!, $first: Int!) {
-          products(first: $first, query: $q) {
+        query($q: String!, $first: Int!, $sortKey: ProductSortKeys!, $reverse: Boolean!) {
+          products(first: $first, query: $q, sortKey: $sortKey, reverse: $reverse) {
             edges {
               node {
                 id
@@ -318,6 +403,8 @@ class ShopifyAPIClient:
                 handle
                 onlineStoreUrl
                 featuredImage { url }
+                createdAt
+                updatedAt
                 variants(first: 10) {
                   edges {
                     node {
@@ -336,7 +423,12 @@ class ShopifyAPIClient:
         }
         """
 
-        data = self._graphql(gql, {"q": q, "first": max(1, min(limit, 25))})
+        data = self._graphql(gql, {
+            "q": q, 
+            "first": max(1, min(limit, 25)),
+            "sortKey": sort_strategy["sortKey"],
+            "reverse": sort_strategy["reverse"]
+        })
         if "error" in data:
             return data
 
@@ -419,8 +511,14 @@ class ShopifyAPIClient:
                     "handle": handle,
                     "url": online_url,
                     "image": image,
-                    "variants": filtered_variants
+                    "variants": filtered_variants,
+                    "created_at": node.get('createdAt'),
+                    "updated_at": node.get('updatedAt')
                 })
+        
+        # Apply Python-based sorting for better control
+        products = self._sort_products_python(products, query_text, filters)
+        
         return {"products": products, "query": q}
 
     def list_recent_orders(self, limit: int = 5):
