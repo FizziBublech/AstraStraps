@@ -1,0 +1,52 @@
+[
+  {
+    "id": "JwRVjfVvPA7Fj35",
+    "date": "2025-12-16 19:34:52",
+    "analysis": "*   **Technical/Functional Error:** The bot processed the request (\"Shop bands on sale\") but failed to deliver the immediate result (the actual listed bands or a link to the sale page), instead jumping immediately to filter options.\n*   **Unresolved Issue:** The customer's primary intent\u2014to see the items currently on sale\u2014remains unfulfilled at the end of the transcript.\n*   **Customer Dissatisfaction:** No signs of customer frustration, repeated questioning, or aggressive language were detected in this brief exchange."
+  },
+  {
+    "id": "4CaQ4CoIGf79OCF",
+    "date": "2025-12-02 19:24:17",
+    "analysis": "**Summary of Findings:**\n\n1.  **Customer Dissatisfaction/Frustration:** High initial customer frustration is evident. The human immediately escalates the interaction by threatening to report the company to their bank as a scam if the order status is not clarified.\n2.  **Unanswered Questions/Unresolved Issues:** The core issue (a discrepancy between the carrier status \"Delivered\" and the customer's claim \"was not delivered to me\") remains unresolved. The bot accurately identified the data but the actual package location issue requires a manual investigation.\n3.  **Technical Errors:** No technical errors were detected. The bot successfully parsed the order number, retrieved the correct delivery and tracking information, and offered the appropriate and accurate escalation path (opening a support ticket) to address the delivery discrepancy."
+  },
+  {
+    "id": "c40pXpoy9rnQEkQ",
+    "date": "2025-12-02 17:57:29",
+    "analysis": "The analysis of the transcript reveals severe technical failure leading to a complete breakdown in resolution.\n\n### Summary of Findings\n\n*   **Technical Error (Critical Failure):** The chatbot suffered a catastrophic technical error, entering an endless loop of repeating holding messages (over 180 iterations) immediately after the customer agreed to create a priority support ticket.\n*   **Unresolved Issue and Failure to Act:** The bot failed to perform the critical requested action (opening the support ticket) and ultimately admitted failure (\"unable to create a support ticket at this time due to a technical issue\"), forcing the customer to abandon the chat and contact support manually via email or phone.\n*   **Compounded Dissatisfaction:** Customer frustration was high prior to the loop (expressing concern about feeling \"scammed\"), and the immediate technical breakdown following this statement would have significantly compounded the negative experience and mistrust."
+  },
+  {
+    "id": "BRQcdwhCQKbZ5tv",
+    "date": "2025-12-02 17:37:29",
+    "analysis": "No issues detected."
+  },
+  {
+    "id": "BiJ59JO1Ig9b0A2",
+    "date": "2025-12-02 17:37:06",
+    "analysis": "No issues detected."
+  },
+  {
+    "id": "R8Qidci1a7VXzXz",
+    "date": "2025-12-02 17:25:08",
+    "analysis": "*   **Technical Errors:** No significant technical errors were detected. The bot processed requests efficiently, provided accurate and comprehensive data (status, dates, full address, item list), and included a correctly formatted external tracking link.\n*   **Customer Dissatisfaction/Frustration:** The customer expresses confusion and mild frustration with the delivery status (\"Whats taking so long for it to be delivered\") despite the system reporting the package as delivered days earlier, indicating a delivery failure/misplacement issue.\n*   **Unanswered Questions or Unresolved Issues:** While the bot accurately reported the status and provided troubleshooting tips, the customer\u2019s core problem (the whereabouts of their package) remains unresolved, requiring escalation to a support ticket for investigation."
+  },
+  {
+    "id": "I8RqL9WlVVumPlS",
+    "date": "2025-12-02 17:19:32",
+    "analysis": "1. The customer's primary objective (tracking the order) remains unresolved.\n2. The bot strictly enforced a specific input format (order number must start with '#'), resulting in a failed lookup despite the bot providing clear guidance on the format beforehand.\n3. No technical errors (loops, crashes, broken links) or explicit signs of customer dissatisfaction were detected in this short segment."
+  },
+  {
+    "id": "afKbaqIn0P2TX3k",
+    "date": "2025-12-02 16:35:24",
+    "analysis": "No issues detected."
+  },
+  {
+    "id": "KHdPUehyDr7FjG4",
+    "date": "2025-12-02 15:35:25",
+    "analysis": "Based on the transcript analysis, the following issues were found:\n\n*   **Technical/Parsing Error:** The bot failed to correctly parse and capture the detailed issue description provided by the customer, leading to a redundant step where the bot summarizes the information and forces the customer into a restrictive confirmation loop (\"Please reply with: 'Yes, that's correct.'\").\n*   **Customer Dissatisfaction & Flow Failure:** The bot ignored the customer\u2019s request to \"Speak with someone\" (live agent transfer) twice, instead forcing the customer down the self-service ticket creation path, causing immediate frustration and repeated inputs.\n*   **Unresolved Issues:** The customer's primary request (speaking to an agent) was ignored, and the core issue (missing confirmation email, unauthorized charge, and past lack of response) remains completely unresolved, as the support ticket was not successfully generated."
+  },
+  {
+    "id": "SwLeMOJnSPR88bS",
+    "date": "2025-12-02 15:24:31",
+    "analysis": "1. **Technical Errors:** A critical technical failure prevented the bot from fulfilling its promised action (creating a support ticket), leading to a delay loop (`alright 1 sec...`, `be right back...`) and the eventual termination of the intended resolution process.\n2. **Customer Dissatisfaction:** The customer expressed clear dissatisfaction (\"Thats not the status i see... and i have not received my order\") after the bot provided incorrect status information, and the subsequent failure to create the ticket increased the inconvenience by forcing the user to manually contact support.\n3. **Unanswered Questions/Unresolved Issues:** The core issue (investigation of the missing, \"delivered\" package) remains entirely unresolved, and the customer's direct request for the support ticket number was abandoned by the bot."
+  }
+]

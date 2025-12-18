@@ -22,23 +22,27 @@ A Flask application that acts as a lightweight API bridge between chatbots and t
 ### Installation
 
 1. Clone the repository:
+
 ```bash
 git clone <repository-url>
 cd reamaze-api-bridge
 ```
 
 2. Install dependencies:
+
 ```bash
 pip install -r requirements.txt
 ```
 
 3. Set up environment variables:
+
 ```bash
 cp .env.example .env
 # Edit .env with your Reamaze credentials
 ```
 
 4. Run the application:
+
 ```bash
 python main.py
 ```
@@ -68,11 +72,12 @@ RATE_LIMIT_DELAY=60
 
 ### Health Check
 
-**GET /** 
+**GET /**
 
 Returns the service status and timestamp.
 
 **Response:**
+
 ```json
 {
   "status": "healthy",
@@ -88,24 +93,28 @@ Returns the service status and timestamp.
 Creates a new support ticket in Reamaze.
 
 **Request Body:**
+
 ```json
 {
   "customer_email": "customer@example.com",
   "customer_name": "John Doe",
-  "issue_summary": "Unable to track my order",
+  "issue": "Unable to track my order",
   "order_number": "12345"
 }
 ```
 
 **Required Fields:**
-- `customer_email`: Customer's email address
-- `issue_summary`: Brief description of the issue
+
+- `customer_email`: Customer's email address (also accepts `email`)
+- `issue`: Brief description of the issue (also accepts `issue_summary` or `summary`)
 
 **Optional Fields:**
+
 - `customer_name`: Customer's name (defaults to email)
 - `order_number`: Order number if applicable
 
 **Response:**
+
 ```json
 {
   "success": true,
@@ -122,6 +131,7 @@ Creates a new support ticket in Reamaze.
 Searches the Reamaze knowledge base for articles.
 
 **Request Body:**
+
 ```json
 {
   "query_term": "apple watch band sizing",
@@ -130,12 +140,15 @@ Searches the Reamaze knowledge base for articles.
 ```
 
 **Required Fields:**
+
 - `query_term`: Search query
 
 **Optional Fields:**
+
 - `max_results`: Maximum number of results (default: 5)
 
 **Response:**
+
 ```json
 {
   "success": true,
@@ -155,6 +168,7 @@ Searches the Reamaze knowledge base for articles.
 Retrieves step-by-step instructions from the knowledge base.
 
 **Request Body:**
+
 ```json
 {
   "topic": "install band"
@@ -170,9 +184,11 @@ Retrieves step-by-step instructions from the knowledge base.
 ```
 
 **Required Fields:**
+
 - Either `topic` OR `article_id` must be provided
 
 **Response** (when articles exist):
+
 ```json
 {
   "success": true,
@@ -187,12 +203,14 @@ Retrieves step-by-step instructions from the knowledge base.
 ```
 
 **Current Response** (knowledge base empty):
+
 ```json
 {
   "success": false,
   "error": "No articles found for topic: install band"
 }
 ```
+
 **HTTP Status**: 404
 
 ### Get Previous Conversations
@@ -202,6 +220,7 @@ Retrieves step-by-step instructions from the knowledge base.
 Retrieves previous support conversations for a customer by email or order number.
 
 **Request Body:**
+
 ```json
 {
   "customer_email": "customer@example.com",
@@ -219,12 +238,15 @@ Retrieves previous support conversations for a customer by email or order number
 ```
 
 **Required Fields:**
+
 - Either `customer_email` OR `order_number` must be provided
 
 **Optional Fields:**
+
 - `limit`: Maximum number of conversations to return (default: 10)
 
 **Response:**
+
 ```json
 {
   "success": true,
@@ -260,6 +282,7 @@ Retrieves previous support conversations for a customer by email or order number
 Retrieves detailed status information for a specific support ticket.
 
 **Request Body:**
+
 ```json
 {
   "ticket_id": "support-request-shipping-issue-abc123"
@@ -267,9 +290,11 @@ Retrieves detailed status information for a specific support ticket.
 ```
 
 **Required Fields:**
+
 - `ticket_id`: The slug/identifier of the ticket to check (not a numeric ID)
 
 **Response:**
+
 ```json
 {
   "success": true,
@@ -320,15 +345,18 @@ Retrieves detailed status information for a specific support ticket.
 **Note on `assignee` and `customer` fields**: If these fields are not available at the top level of the ticket data, the system will attempt to populate them from the first staff and customer messages in the conversation history.
 
 **Status Codes:**
+
 - `0`: Open/Unresolved
 - `2`: Resolved/Closed  
 - `5`: Archived
 
 **Human-Readable Fields:**
+
 - `status_text`: Human-readable version of the status code (e.g., "Unresolved", "Resolved", "Pending")
 - `origin_text`: Human-readable version of origin code (e.g., "API", "Email", "Chat")
 
 **Complete Status Mapping:**
+
 - `0`: Unresolved
 - `1`: Pending
 - `2`: Resolved
@@ -341,6 +369,7 @@ Retrieves detailed status information for a specific support ticket.
 - `9`: Spam - identified by AI
 
 **Complete Origin Mapping:**
+
 - `0`: Chat
 - `1`: Email
 - `2`: Twitter
@@ -360,6 +389,7 @@ Retrieves detailed status information for a specific support ticket.
 Adds additional information or updates to an existing support ticket.
 
 **Request Body:**
+
 ```json
 {
   "ticket_id": "support-request-shipping-issue-abc123",
@@ -370,14 +400,17 @@ Adds additional information or updates to an existing support ticket.
 ```
 
 **Required Fields:**
+
 - `ticket_id`: The slug/identifier of the existing ticket to update (not a numeric ID)
 - `message`: The additional information or update to add
 - `customer_email`: Customer's email address
 
 **Optional Fields:**
+
 - `customer_name`: Customer's name (defaults to email)
 
 **Response:**
+
 ```json
 {
   "success": true,
@@ -389,6 +422,7 @@ Adds additional information or updates to an existing support ticket.
 ```
 
 **Error Responses:**
+
 - `404`: Ticket not found
 - `400`: Missing required fields
 - `500`: Internal server error
@@ -402,6 +436,7 @@ Find and return order status and tracking details by order number (e.g., `1001` 
 Shopify Admin API credentials must be configured.
 
 **Request Body:**
+
 ```json
 {
   "order_number": "1001"
@@ -409,6 +444,7 @@ Shopify Admin API credentials must be configured.
 ```
 
 **Response:**
+
 ```json
 {
   "success": true,
@@ -449,6 +485,7 @@ Shopify Admin API credentials must be configured.
 ```
 
 **Errors:**
+
 - `400`: Missing `order_number`
 - `404`: Order not found
 - `500`: Internal server error
@@ -460,6 +497,7 @@ Shopify Admin API credentials must be configured.
 Return product recommendations based on free-text query and/or structured filters. Designed for chatbot use; provide as much context as available.
 
 **Request Body (example):**
+
 ```json
 {
   "query_text": "apple watch strap",
@@ -475,6 +513,7 @@ Return product recommendations based on free-text query and/or structured filter
 ```
 
 **Response:**
+
 ```json
 {
   "success": true,
@@ -505,6 +544,7 @@ Return product recommendations based on free-text query and/or structured filter
 ```
 
 **Errors:**
+
 - `500`: Internal server error
 
 ### When to use these endpoints
@@ -531,6 +571,7 @@ All endpoints return consistent error responses:
 ```
 
 Common HTTP status codes:
+
 - `200`: Success
 - `400`: Bad Request (missing required fields)
 - `404`: Not Found (article not found)
@@ -542,11 +583,13 @@ Common HTTP status codes:
 ### Manual Testing with cURL
 
 1. **Health Check:**
+
 ```bash
 curl http://localhost:5000/
 ```
 
 2. **Search Knowledge Base:**
+
 ```bash
 curl -X POST http://localhost:5000/search-kb \
   -H "Content-Type: application/json" \
@@ -557,6 +600,7 @@ curl -X POST http://localhost:5000/search-kb \
 ```
 
 3. **Get Instructions:**
+
 ```bash
 curl -X POST http://localhost:5000/get-instructions \
   -H "Content-Type: application/json" \
@@ -565,7 +609,8 @@ curl -X POST http://localhost:5000/get-instructions \
   }'
 ```
 
-⚠️ **Important**: 
+⚠️ **Important**:
+
 - **Ticket Creation**: ✅ Fully working - creates real tickets in your Reamaze "Astra Straps" channel
 - **Knowledge Base**: Currently empty (0 articles) - searches will return empty results until articles are added
 - **All endpoints tested and verified working** as of July 2025
@@ -596,6 +641,7 @@ export SHOPIFY_API_VERSION=2024-10
 ### Deployment Platforms
 
 This app is ready for deployment on:
+
 - Render
 - Heroku
 - AWS Elastic Beanstalk
@@ -607,6 +653,7 @@ This app is ready for deployment on:
 ### Quick Reference - JSON Formats
 
 **Create Support Ticket** (POST /create-ticket):
+
 ```json
 {
   "customer_email": "customer@example.com",
@@ -617,6 +664,7 @@ This app is ready for deployment on:
 ```
 
 **Search Knowledge Base** (POST /search-kb):
+
 ```json
 {
   "query_term": "apple watch sizing",
@@ -625,6 +673,7 @@ This app is ready for deployment on:
 ```
 
 **Get Instructions** (POST /get-instructions):
+
 ```json
 {
   "topic": "installation guide"
@@ -632,6 +681,7 @@ This app is ready for deployment on:
 ```
 
 **Get Previous Conversations** (POST /get-previous-conversations):
+
 ```json
 {
   "customer_email": "customer@example.com",
@@ -649,6 +699,7 @@ This app is ready for deployment on:
 ```
 
 **Check Ticket Status** (POST /check-ticket-status):
+
 ```json
 {
   "ticket_id": "support-request-shipping-issue-abc123"
@@ -656,6 +707,7 @@ This app is ready for deployment on:
 ```
 
 **Add Information to Ticket** (POST /add-ticket-info):
+
 ```json
 {
   "ticket_id": "support-request-shipping-issue-abc123",
@@ -709,6 +761,7 @@ conversations_response = requests.post('http://your-api-url/get-previous-convers
 ## Rate Limiting
 
 The app includes built-in rate limiting protection:
+
 - Automatic retries on rate limit (429) responses
 - Exponential backoff for failed requests
 - Configurable retry attempts and delays
@@ -716,6 +769,7 @@ The app includes built-in rate limiting protection:
 ## Logging
 
 All requests and errors are logged with the following format:
+
 ```
 2024-01-01 12:00:00 - main - INFO - Making GET request to https://subdomain.reamaze.com/api/articles
 ```
@@ -744,7 +798,8 @@ This project is licensed under the MIT License.
 ## Support
 
 For issues or questions:
+
 1. Check the logs for detailed error messages
 2. Verify your environment variables are set correctly
 3. Test with the Reamaze API directly to confirm credentials
-4. Create an issue in the repository 
+4. Create an issue in the repository

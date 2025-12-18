@@ -574,24 +574,26 @@ def create_ticket():
         raw_data = request.get_json()
         data = extract_payload(raw_data)
         
+        # Robust field extraction with aliases
+        customer_email = data.get('customer_email') or data.get('email')
+        issue = data.get('issue') or data.get('issue_summary') or data.get('summary') or data.get('description')
+        customer_name = data.get('customer_name') or customer_email
+        order_number = data.get('order_number')
+        
         # Validate required fields
-        required_fields = ['customer_email', 'issue']
-        missing_fields = [field for field in required_fields if not data.get(field)]
+        missing_fields = []
+        if not customer_email: missing_fields.append('customer_email')
+        if not issue: missing_fields.append('issue')
         
         if missing_fields:
+            logger.warning(f"Ticket creation failed: Missing {', '.join(missing_fields)}")
             return jsonify({
                 "success": False,
                 "error": f"Missing required fields: {', '.join(missing_fields)}"
             }), 400
         
-        # Extract data
-        customer_email = data['customer_email']
-        customer_name = data.get('customer_name', customer_email)
-        issue = data['issue']
-        order_number = data.get('order_number')
-        
         # Create ticket subject and body
-        subject = f"Support Request: {issue}"
+        subject = f"Support Request: {issue[:50]}..." if len(issue) > 50 else f"Support Request: {issue}"
         body_parts = [
             f"Customer: {customer_name}",
             f"Email: {customer_email}",
@@ -604,6 +606,7 @@ def create_ticket():
         body = "\n".join(body_parts)
         
         # Create conversation via Reamaze API
+        logger.info(f"Attempting to create Reamaze ticket for {customer_email}")
         result = reamaze_client.create_conversation(
             subject=subject,
             body=body,
@@ -612,27 +615,32 @@ def create_ticket():
         )
         
         if "error" in result:
-            logger.error(f"Failed to create ticket: {result['error']}")
+            logger.error(f"Reamaze API error: {result['error']}")
             return jsonify({
                 "success": False,
                 "error": result["error"]
             }), result.get("status_code", 500)
         
-        logger.info(f"Successfully created ticket for {customer_email}")
+        # Extract ticket identifier - more robustly
+        ticket_id = (
+            result.get("slug") or 
+            result.get("id") or 
+            result.get("conversation", {}).get("slug") or 
+            result.get("conversation", {}).get("id")
+        )
         
-        # Extract ticket identifier - use slug if no numeric ID available
-        ticket_id = result.get("id") or result.get("conversation", {}).get("id") or result.get("slug")
+        logger.info(f"Successfully created ticket: {ticket_id}")
         
         return jsonify({
             "success": True,
             "message": "Support ticket created successfully",
             "ticket_id": ticket_id,
-            "ticket_slug": result.get("slug"),  # Always provide slug as backup
+            "ticket_slug": result.get("slug") or result.get("conversation", {}).get("slug"),
             "data": result
         })
         
     except Exception as e:
-        logger.error(f"Error creating ticket: {e}")
+        logger.exception(f"Unexpected error creating ticket: {e}")
         return jsonify({
             "success": False,
             "error": "Internal server error"
@@ -1049,12 +1057,26 @@ def track_order():
     try:
         raw_data = request.get_json() or {}
         data = extract_payload(raw_data)
-        order_number = str(data.get('order_number', '')).strip()
-        if not order_number:
+        raw_order_number = str(data.get('order_number', '')).strip()
+        if not raw_order_number:
             return jsonify({
                 "success": False,
                 "error": "Missing required field: order_number"
             }), 400
+
+        # Robust normalization: extract only the last numeric/alphanumeric part if prefixed
+        # e.g. "Order 1001" -> "1001", "Order #1001" -> "1001", "#1001" -> "1001"
+        order_number = raw_order_number
+        if ' ' in order_number:
+            # Take the last part (e.g. from "Order #12345")
+            order_number = order_number.split()[-1]
+        
+        # Strip leading # if present
+        if order_number.startswith('#'):
+            order_number = order_number[1:]
+        
+        # Final cleanup
+        order_number = order_number.strip()
 
         order = shopify_client.get_order_by_number(order_number)
         if not order:
