@@ -64,9 +64,45 @@ SECRET_KEY=your-secret-key-change-this-in-production
 LOG_LEVEL=INFO
 
 # Rate Limiting
-RATE_LIMIT_RETRIES=3
-RATE_LIMIT_DELAY=60
+# RATE_LIMIT_RETRIES=3
+# RATE_LIMIT_DELAY=60
+
+# Convocore Configuration (for transcript analysis)
+# CONVOCORE_AGENT_ID=QTbeXwvOediCAv2
+# CONVOCORE_API_KEY=u0na7hTcezg4enFnCtJA
+# CONVOCORE_BASE_URL=https://na-gcp-api.vg-stuff.com/v3
+
+# Google Gemini API
+# GEMINI_API_KEY=your-gemini-api-key
 ```
+
+## Daily Transcript Analysis
+
+We use Google Gemini Flash to automatically analyze chatbot transcripts for technical errors and customer dissatisfaction. This helps in identifying recurring issues and areas for programmatic improvement.
+
+2. Run the analysis script (defaults to today):
+
+```bash
+python3 analyze_transcripts.py
+```
+
+3. To analyze a specific date or limit results:
+
+```bash
+# Analyze a specific date (YYYY-MM-DD)
+python3 analyze_transcripts.py --date 2025-12-16
+
+# Limit the number of analyzed conversations
+python3 analyze_transcripts.py --limit 5
+```
+
+### Analysis Features
+
+- **Technical Error Detection**: Flags if the bot fails to respond, gets stuck in loops, or provides broken links.
+- **Sentiment Monitoring**: Identifies frustrated or unhappy customers.
+- **Automated Reporting**: Generates a timestamped JSON report (e.g., `analysis_report_20251218_191547.json`) with summaries for each conversation.
+
+---
 
 ## API Endpoints
 

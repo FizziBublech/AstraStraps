@@ -1,0 +1,51 @@
+[
+  {
+    "id": "2tgVKPUrU1cYlIQ",
+    "date": "2025-12-01 22:59:36",
+    "is_technical_error": true,
+    "is_unhappy_customer": true,
+    "analysis": "TECHNICAL_ERROR: [YES] - The chatbot explicitly stated that the product catalog was \"currently unavailable\" and \"experiencing a technical issue,\" which directly prevented the customer from completing their chosen task.\n\nUNHAPPY_CUSTOMER: [YES] - The customer was unable to fulfill their primary intent (shopping for sale bands). After confirming the service failure, the customer abandoned the session, stating they would \"just come back,\" indicating a frustrated inability to proceed.\n\nSUMMARY: The customer initiated the chat attempting to shop for sale items, but the chatbot immediately reported a critical technical error that made the product catalog inaccessible. After confirming the issue was a system limitation, the customer ended the session and promised to return later. The primary customer intent was not met, and the session concluded with the core issue unresolved."
+  },
+  {
+    "id": "98f4mDNnFGPveG9",
+    "date": "2025-12-01 22:56:02",
+    "is_technical_error": false,
+    "is_unhappy_customer": true,
+    "analysis": "TECHNICAL_ERROR: [NO] - The chatbot successfully initiated a conversation, parsed the key information ('49mm'), and executed its programmed intent by pivoting to a general product discovery search.\nUNHAPPY_CUSTOMER: [YES] - The user displayed clear frustration and disappointment through the phrasing (\"What you don\u2019t have...\") and the use of the \ud83d\ude33\ud83e\udd26\u200d\u2642\ufe0f emojis, indicating dissatisfaction with product availability.\nSUMMARY: The customer contacted the bot expressing frustration that a 49mm size option appeared to be unavailable for a product they were viewing (context not retained by the bot). The bot failed to acknowledge the user's expressed frustration or address the specific availability issue. Instead, it immediately launched into a general product search flow by asking for the customer's watch model and preferred material, leaving the initial concern unresolved."
+  },
+  {
+    "id": "YCwsOXf0N5jnTnc",
+    "date": "2025-12-01 22:09:14",
+    "is_technical_error": false,
+    "is_unhappy_customer": false,
+    "analysis": "TECHNICAL_ERROR: [NO] - The chatbot demonstrated effective context switching by correctly interpreting the user's specific product question (\"What size should I order?\") even though the conversation was technically within the flow for \"Open support ticket.\"\n\nUNHAPPY_CUSTOMER: [NO] - The customer's direct question about sizing was answered clearly and definitively by the bot. There is no indication of frustration or dissatisfaction.\n\nSUMMARY: [The customer initiated a request to open a support ticket but immediately pivoted to asking a product sizing question (Arris Silicone Sports watchband for an Apple Watch 5E 40mm). The chatbot successfully ignored the ticket requirements and provided the correct product sizing information (40mm band). The customer's immediate need was resolved, but the initial request to complete the support ticket submission remains unfulfilled.]"
+  },
+  {
+    "id": "6VYJJl9YQ46ATL1",
+    "date": "2025-12-01 20:51:12",
+    "is_technical_error": true,
+    "is_unhappy_customer": false,
+    "analysis": "TECHNICAL_ERROR: [YES] - The bot was explicitly unable to access product details for a specific item, citing a temporary system issue.\nUNHAPPY_CUSTOMER: [NO] - The customer's initial query was not resolved, but the interaction ended immediately after the bot's apology and attempt to pivot, so there is insufficient evidence to definitively label the customer as unhappy yet.\nSUMMARY: [The customer asked a specific product compatibility question regarding the \"Festino Leather Band\" fitting a Google Pixel Watch. The chatbot, AstraBot, failed to retrieve the necessary product information due to a stated system error. The bot attempted to recover by apologizing and asking for more specific information about the customer's watch model to offer general guidance or alternative products, leaving the original question unanswered.]"
+  },
+  {
+    "id": "y3azieEq1NHiWZM",
+    "date": "2025-12-01 18:43:04",
+    "is_technical_error": true,
+    "is_unhappy_customer": true,
+    "analysis": "TECHNICAL_ERROR: [YES] - The chatbot failed to access the product catalog when the customer selected the \"Shop bands on sale\" option, resulting in an immediate service failure.\nUNHAPPY_CUSTOMER: [YES] - The customer's primary goal (shopping) was instantly blocked due to a technical error, leading to a failed user journey.\nSUMMARY: [The customer started the interaction intending to shop for discounted items. The chatbot immediately reported that the product catalog was unavailable, preventing the customer from fulfilling their request. The interaction ended with the customer's goal unmet, and the chatbot only offering alternative administrative options (tracking or support).]"
+  },
+  {
+    "id": "sZtlvlT94q0H5Mx",
+    "date": "2025-12-01 13:47:40",
+    "is_technical_error": false,
+    "is_unhappy_customer": false,
+    "analysis": "TECHNICAL_ERROR: [NO] - The bot successfully understood the customer's intent and navigated to the correct category ('Shop bands on sale'). There were no apparent malfunctions or crashes.\nUNHAPPY_CUSTOMER: [NO] - The customer only initiated the shopping process. The interaction concluded quickly and successfully before any potential frustrations could arise.\nSUMMARY: [The customer successfully used the chatbot menu to select 'Shop bands on sale.' The bot acknowledged the request and presented the next set of relevant options (sizing and material type), indicating a smooth and efficient start to the shopping journey.]"
+  },
+  {
+    "id": "cTcxnac71sMFtL7",
+    "date": "2025-12-01 04:38:52",
+    "is_technical_error": false,
+    "is_unhappy_customer": false,
+    "analysis": "TECHNICAL_ERROR: NO - The chatbot successfully loaded its greeting and menu options without issue.\nUNHAPPY_CUSTOMER: NO - The customer has not yet engaged or stated a need, so no frustration or dissatisfaction has been registered.\nSUMMARY: This transcript contains only the initial greeting and menu options provided by AstraBot. The customer has not yet made a selection, and the interaction has not progressed beyond the introductory phase."
+  }
+]

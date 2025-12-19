@@ -1,8 +1,9 @@
 import os
+import json
 import logging
 import time
 from datetime import datetime
-from flask import Flask, request, jsonify
+from flask import Flask, request, jsonify, send_from_directory
 import requests
 from requests.auth import HTTPBasicAuth
 from config import Config
@@ -67,13 +68,28 @@ CHANNEL_CODES = {
 def extract_payload(raw_data):
     """Extract payload from either flat JSON or nested tool_payload structure."""
     if not raw_data:
-        return {}
+        # Fallback to form data or args if JSON is empty
+        if request.form:
+            raw_data = request.form.to_dict()
+        elif request.args:
+            raw_data = request.args.to_dict()
+        else:
+            return {}
+    
+    logger.info(f"Extracting payload from: {raw_data}")
     
     # Handle nested tool_payload structure
     if 'tool_payload' in raw_data:
-        return raw_data['tool_payload']
+        payload = raw_data['tool_payload']
     else:
-        return raw_data
+        payload = raw_data
+        
+    # Ensure payload is a dict
+    if not isinstance(payload, dict):
+        logger.warning(f"Payload is not a dictionary: {type(payload)}")
+        return {"raw_payload": payload}
+        
+    return payload
 
 def safe_float(value):
     """Safely convert a value to float, returning None if conversion fails."""
@@ -575,10 +591,17 @@ def create_ticket():
         data = extract_payload(raw_data)
         
         # Robust field extraction with aliases
-        customer_email = data.get('customer_email') or data.get('email')
-        issue = data.get('issue') or data.get('issue_summary') or data.get('summary') or data.get('description')
-        customer_name = data.get('customer_name') or customer_email
-        order_number = data.get('order_number')
+        customer_email = data.get('customer_email') or data.get('email') or data.get('user_email')
+        issue = (
+            data.get('issue') or 
+            data.get('issue_summary') or 
+            data.get('summary') or 
+            data.get('description') or 
+            data.get('problem') or
+            data.get('message')
+        )
+        customer_name = data.get('customer_name') or data.get('name') or customer_email
+        order_number = data.get('order_number') or data.get('order') or data.get('order_id')
         
         # Validate required fields
         missing_fields = []
@@ -1046,6 +1069,32 @@ def internal_error(error):
         "success": False,
         "error": "Internal server error"
     }), 500
+
+# ==========================
+# Issue Dashboard Endpoints
+# ==========================
+
+@app.route('/dashboard')
+def serve_dashboard():
+    """Serve the issues dashboard HTML."""
+    return send_from_directory(os.getcwd(), 'issue_dashboard.html')
+
+@app.route('/dashboard.css')
+def serve_dashboard_css():
+    """Serve the dashboard CSS."""
+    return send_from_directory(os.getcwd(), 'dashboard.css')
+
+@app.route('/api/issues')
+def get_logged_issues():
+    """Endpoint for the dashboard to fetch issues from the JSON tracker."""
+    tracker_path = os.path.join(os.getcwd(), 'issue_tracker.json')
+    if os.path.exists(tracker_path):
+        with open(tracker_path, 'r') as f:
+            try:
+                return jsonify(json.load(f))
+            except json.JSONDecodeError:
+                return jsonify({"error": "Failed to parse issue tracker"}), 500
+    return jsonify([])
 
 # ==========================
 # Shopify Endpoints

@@ -9,10 +9,10 @@ from dotenv import load_dotenv
 # Load environment variables from .env if present
 load_dotenv()
 
-AGENT_ID = "QTbeXwvOediCAv2"
-CONVOCORE_API_KEY = "u0na7hTcezg4enFnCtJA"
+AGENT_ID = os.environ.get("CONVOCORE_AGENT_ID", "QTbeXwvOediCAv2")
+CONVOCORE_API_KEY = os.environ.get("CONVOCORE_API_KEY", "u0na7hTcezg4enFnCtJA")
 # User mentioned both na and eu, but export worked on na
-BASE_URL = "https://na-gcp-api.vg-stuff.com/v3"
+BASE_URL = os.environ.get("CONVOCORE_BASE_URL", "https://na-gcp-api.vg-stuff.com/v3")
 
 def fetch_conversations():
     """Download latest conversations via export API."""
@@ -59,7 +59,7 @@ def analyze_with_gemini(transcript):
         api_key=os.environ.get("GEMINI_API_KEY"),
     )
 
-    model = "gemini-flash-latest"
+    model = "gemini-flash-lite-latest"
     prompt = f"""
 Analyze the following customer service chatbot transcript.
 Return your analysis in the following format:
@@ -102,25 +102,59 @@ Transcript:
         
     return full_response.strip()
 
+import argparse
+
 def main():
+    parser = argparse.ArgumentParser(description="Analyze Convocore transcripts with Gemini.")
+    parser.add_argument("--date", help="Date to analyze (YYYY-MM-DD).")
+    parser.add_argument("--month", help="Month to analyze (YYYY-MM).")
+    parser.add_argument("--limit", type=int, help="Limit number of conversations to analyze.", default=20)
+    args = parser.parse_args()
+
     data = fetch_conversations()
     if not data or 'data' not in data:
         print("No conversation data found.")
         return
 
+    target_date = args.date
+    target_month = args.month
+    
+    if not target_date and not target_month:
+        target_date = datetime.now().strftime("%Y-%m-%d")
+        print(f"No date or month specified. Defaulting to today: {target_date}")
+
     convos = data['data']
-    convos.sort(key=lambda x: x['metadata']['convo'].get('ts', 0), reverse=True)
     
-    # We'll group by current date if possible, but for now just analyze latest 10
-    latest_convos = convos[:10]
+    # Filter by date or month
+    filtered_convos = []
+    for convo in convos:
+        ts = convo['metadata']['convo'].get('ts', 0)
+        dt_obj = datetime.fromtimestamp(ts)
+        convo_date = dt_obj.strftime('%Y-%m-%d')
+        convo_month = dt_obj.strftime('%Y-%m')
+        
+        if target_date and convo_date == target_date:
+            filtered_convos.append(convo)
+        elif target_month and convo_month == target_month:
+            filtered_convos.append(convo)
+
+    if not filtered_convos:
+        msg = f"date {target_date}" if target_date else f"month {target_month}"
+        print(f"No conversations found for {msg}.")
+        return
+
+    filtered_convos.sort(key=lambda x: x['metadata']['convo'].get('ts', 0), reverse=True)
     
-    print(f"Analyzing {len(latest_convos)} latest conversations...\n")
+    # Apply limit
+    final_convos = filtered_convos[:args.limit]
+    
+    print(f"Analyzing {len(final_convos)} conversations from {target_date or target_month}...\n")
     
     results = []
     error_count = 0
     dissatisfied_count = 0
 
-    for convo in latest_convos:
+    for convo in final_convos:
         convo_id = convo['metadata']['convo']['id']
         ts = convo['metadata']['convo']['ts']
         dt = datetime.fromtimestamp(ts).strftime('%Y-%m-%d %H:%M:%S')
@@ -149,11 +183,13 @@ def main():
         })
 
     print(f"\n--- Final Report Summary ---")
+    print(f"Date/Month Analyzed: {target_date or target_month}")
     print(f"Total Conversations Analyzed: {len(results)}")
     print(f"Technical Errors Found: {error_count}")
     print(f"Unhappy Customers Found: {dissatisfied_count}")
 
-    report_file = f"analysis_report_{datetime.now().strftime('%Y%m%d_%H%M%S')}.json"
+    label = target_date or target_month
+    report_file = f"analysis_report_{label}_{datetime.now().strftime('%H%M%S')}.json"
     with open(report_file, 'w') as f:
         json.dump(results, f, indent=2)
     print(f"Full report saved to {report_file}")

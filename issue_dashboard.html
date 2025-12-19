@@ -1,0 +1,89 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>AstraStraps | Issue Dashboard</title>
+    <link rel="stylesheet" href="dashboard.css">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;600;800&display=swap" rel="stylesheet">
+</head>
+
+<body>
+    <div class="container">
+        <header>
+            <h1>Issue Dashboard</h1>
+            <p class="subtitle">Actionable insights from Convocore transcripts.</p>
+        </header>
+
+        <div id="dashboard" class="dashboard-grid">
+            <!-- Cards will be injected here -->
+            <div class="loading">Loading issues...</div>
+        </div>
+    </div>
+
+    <script>
+        async function loadIssues() {
+            try {
+                const response = await fetch('/api/issues');
+                const issues = await response.json();
+                renderDashboard(issues);
+            } catch (error) {
+                console.error('Error loading tracker:', error);
+                document.getElementById('dashboard').innerHTML = '<p style="grid-column: 1/-1; text-align: center; color: #ef4444;">Failed to load data from issue_tracker.json</p>';
+            }
+        }
+
+        function renderDashboard(issues) {
+            const dashboard = document.getElementById('dashboard');
+
+            if (issues.length === 0) {
+                dashboard.innerHTML = '<p style="grid-column: 1/-1; text-align: center; color: var(--text-secondary);">No issues logged yet.</p>';
+                return;
+            }
+
+            dashboard.innerHTML = issues.map(issue => {
+                const badges = [];
+                if (issue.is_technical_error) badges.push('<span class="badge badge-error">Technical Error</span>');
+                if (issue.is_unhappy_customer) badges.push('<span class="badge badge-unhappy">Unhappy Customer</span>');
+
+                return `
+                    <div class="card">
+                        <div class="card-header">
+                            <span class="convo-id">${issue.id}</span>
+                            <div style="display: flex; gap: 0.5rem;">${badges.join('')}</div>
+                        </div>
+                        <div class="timestamp">${issue.date}</div>
+                        <div class="analysis-text">${formatAnalysis(issue.analysis)}</div>
+                        <div class="card-footer">
+                            <div class="status-indicator">
+                                <div class="dot dot-${issue.status.toLowerCase()}"></div>
+                                <span>${issue.status}</span>
+                            </div>
+                            ${issue.deleted_from_frontend ? '<span class="delete-tag">DELETED FROM API</span>' : ''}
+                        </div>
+                    </div>
+                `;
+            }).join('');
+        }
+
+        function formatAnalysis(text) {
+            // Simple logic to clean up the Gemini response for the card
+            return text
+                .replace(/TECHNICAL_ERROR: /gi, '<strong>Error: </strong>')
+                .replace(/UNHAPPY_CUSTOMER: /gi, '<br><strong>Sentiment: </strong>')
+                .replace(/SUMMARY: /gi, '<br><br><strong>Summary: </strong>')
+                .replace(/\[YES\]/g, 'YES')
+                .replace(/\[NO\]/g, 'NO');
+        }
+
+        loadIssues();
+
+        // Refresh data every 30 seconds
+        setInterval(loadIssues, 30000);
+    </script>
+</body>
+
+</html>
