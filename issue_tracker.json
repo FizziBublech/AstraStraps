@@ -5,9 +5,12 @@
     "is_technical_error": true,
     "is_unhappy_customer": true,
     "analysis": "TECHNICAL_ERROR: [YES] - The chatbot explicitly stated that the product catalog was \"currently unavailable\" and \"experiencing a technical issue,\" which directly prevented the customer from completing their chosen task.\n\nUNHAPPY_CUSTOMER: [YES] - The customer was unable to fulfill their primary intent (shopping for sale bands). After confirming the service failure, the customer abandoned the session, stating they would \"just come back,\" indicating a frustrated inability to proceed.\n\nSUMMARY: The customer initiated the chat attempting to shop for sale items, but the chatbot immediately reported a critical technical error that made the product catalog inaccessible. After confirming the issue was a system limitation, the customer ended the session and promised to return later. The primary customer intent was not met, and the session concluded with the core issue unresolved.",
-    "status": "Pending",
+    "status": "Resolved",
     "logged_at": "2025-12-18 20:57:31",
-    "deleted_from_frontend": true
+    "deleted_from_frontend": true,
+    "mitigation_notes": "[2025-12-19 19:55:13] Fixed the database connection issue that caused catalog unavailability.",
+    "error_category": "SYSTEM",
+    "error_tag": "Catalog Unavailable"
   },
   {
     "id": "98f4mDNnFGPveG9",
@@ -17,7 +20,9 @@
     "analysis": "TECHNICAL_ERROR: [NO] - The chatbot successfully initiated a conversation, parsed the key information ('49mm'), and executed its programmed intent by pivoting to a general product discovery search.\nUNHAPPY_CUSTOMER: [YES] - The user displayed clear frustration and disappointment through the phrasing (\"What you don\u2019t have...\") and the use of the \ud83d\ude33\ud83e\udd26\u200d\u2642\ufe0f emojis, indicating dissatisfaction with product availability.\nSUMMARY: The customer contacted the bot expressing frustration that a 49mm size option appeared to be unavailable for a product they were viewing (context not retained by the bot). The bot failed to acknowledge the user's expressed frustration or address the specific availability issue. Instead, it immediately launched into a general product search flow by asking for the customer's watch model and preferred material, leaving the initial concern unresolved.",
     "status": "Pending",
     "logged_at": "2025-12-18 20:57:31",
-    "deleted_from_frontend": true
+    "deleted_from_frontend": true,
+    "error_category": "LOGIC",
+    "error_tag": "Flow Hijacked"
   },
   {
     "id": "6VYJJl9YQ46ATL1",
@@ -27,7 +32,9 @@
     "analysis": "TECHNICAL_ERROR: [YES] - The bot was explicitly unable to access product details for a specific item, citing a temporary system issue.\nUNHAPPY_CUSTOMER: [NO] - The customer's initial query was not resolved, but the interaction ended immediately after the bot's apology and attempt to pivot, so there is insufficient evidence to definitively label the customer as unhappy yet.\nSUMMARY: [The customer asked a specific product compatibility question regarding the \"Festino Leather Band\" fitting a Google Pixel Watch. The chatbot, AstraBot, failed to retrieve the necessary product information due to a stated system error. The bot attempted to recover by apologizing and asking for more specific information about the customer's watch model to offer general guidance or alternative products, leaving the original question unanswered.]",
     "status": "Pending",
     "logged_at": "2025-12-18 20:57:31",
-    "deleted_from_frontend": true
+    "deleted_from_frontend": true,
+    "error_category": "SYSTEM",
+    "error_tag": "Product Info Retrieval Failure"
   },
   {
     "id": "y3azieEq1NHiWZM",
@@ -37,7 +44,9 @@
     "analysis": "TECHNICAL_ERROR: [YES] - The chatbot failed to access the product catalog when the customer selected the \"Shop bands on sale\" option, resulting in an immediate service failure.\nUNHAPPY_CUSTOMER: [YES] - The customer's primary goal (shopping) was instantly blocked due to a technical error, leading to a failed user journey.\nSUMMARY: [The customer started the interaction intending to shop for discounted items. The chatbot immediately reported that the product catalog was unavailable, preventing the customer from fulfilling their request. The interaction ended with the customer's goal unmet, and the chatbot only offering alternative administrative options (tracking or support).]",
     "status": "Pending",
     "logged_at": "2025-12-18 20:57:31",
-    "deleted_from_frontend": true
+    "deleted_from_frontend": true,
+    "error_category": "SYSTEM",
+    "error_tag": "Catalog Access Failure"
   },
   {
     "id": "4CaQ4CoIGf79OCF",
@@ -47,7 +56,9 @@
     "analysis": "TECHNICAL_ERROR: [NO] - The chatbot successfully interpreted the order number, retrieved all relevant data (items, address, and the \"Delivered\" status), and offered the correct subsequent resolution path (opening a support ticket) once the data discrepancy was identified.\nUNHAPPY_CUSTOMER: [YES] - The customer began the interaction by threatening to report the company as a \"scam\" to their bank. Their issue (non-receipt of a package marked delivered) remains unresolved at the end of the transcript.\nSUMMARY: [The customer is inquiring about missing order #135482, which they suspect is a scam. The bot confirms the system shows the order was fulfilled and marked \"Delivered\" by the carrier (USPS) on Nov 15, 2025. The customer insists the package was not received and is still listed as \"being shipped.\" The bot correctly diagnoses this as a delivery status discrepancy and offers to open a support ticket for investigation, but the core issue of the missing package is still unresolved.]",
     "status": "Pending",
     "logged_at": "2025-12-18 21:13:43",
-    "deleted_from_frontend": true
+    "deleted_from_frontend": true,
+    "error_category": "NONE",
+    "error_tag": "NONE"
   },
   {
     "id": "c40pXpoy9rnQEkQ",
@@ -57,7 +68,9 @@
     "analysis": "TECHNICAL_ERROR: [YES] - The chatbot entered a loop of repeating \"hold\" phrases (\"be right back,\" \"Just a sec,\" \"1 sec please\") for an extensive duration and ultimately failed to complete the requested action (creating a support ticket), explicitly citing a \"technical issue\" upon failure.\n\nUNHAPPY_CUSTOMER: [YES] - The customer expressed significant frustration, using emotional language like \"Its bad when i paid for something and not get it\" and \"It kinda seems like i got scammed.\" Their core issue was not resolved, and the promised escalation route (support ticket) failed, leading to further inconvenience and requiring them to restart the process via phone or email.\n\nSUMMARY: [The customer initiated contact to resolve a tracking discrepancy for Order #135482, where the internal system showed \"Delivered\" but the USPS tracking indicated \"Waiting for Pickup\" without notification. The bot handled the initial emotional escalation well, agreeing to open a priority support ticket to investigate the delivery issue. However, when attempting to create the ticket, the bot suffered a critical technical failure, entering a long loop of holding messages before finally admitting it was \"unable to create a support ticket at this time.\" The interaction ended with the highly frustrated customer being redirected to traditional support channels (email/phone), leaving the package status and support escalation unresolved.]",
     "status": "Pending",
     "logged_at": "2025-12-18 21:13:43",
-    "deleted_from_frontend": true
+    "deleted_from_frontend": true,
+    "error_category": "SYSTEM",
+    "error_tag": "Looping Failure"
   },
   {
     "id": "R8Qidci1a7VXzXz",
@@ -67,7 +80,9 @@
     "analysis": "TECHNICAL_ERROR: [NO] - The bot successfully accessed the requested order information, accurately relayed the status (Delivered), provided the tracking link, and offered appropriate next steps.\nUNHAPPY_CUSTOMER: [YES] - The customer is unhappy because, despite the tracking status showing \"Delivered\" on November 15th, they are asking why the delivery is taking so long, indicating they have not physically received the package and are frustrated by the apparent delay or loss.\nSUMMARY: [The customer asked to track an order and was informed it was delivered two days prior. The customer then expressed frustration about the delivery time, suggesting the package is missing. The bot correctly explained the \"Delivered\" status, offered standard troubleshooting tips (check porch/neighbors), and provided an appropriate escalation path (opening a support ticket) to address the missing package investigation, leaving the ultimate location of the package unresolved.]",
     "status": "Pending",
     "logged_at": "2025-12-18 21:13:43",
-    "deleted_from_frontend": true
+    "deleted_from_frontend": true,
+    "error_category": "NONE",
+    "error_tag": "NONE"
   },
   {
     "id": "I8RqL9WlVVumPlS",
@@ -77,7 +92,9 @@
     "analysis": "TECHNICAL_ERROR: [YES] - The BOT failed to retrieve the order status using the provided number, implying a potential issue with the lookup function or data validation logic. The error message focuses on the missing '#', suggesting the system might incorrectly reject valid numbers without the prefix.\nUNHAPPY_CUSTOMER: [UNKNOWN/LIKELY] - The customer's request was not fulfilled, which is a source of frustration. However, the transcript ends immediately after the BOT's apology and instruction, so the full extent of the customer's unhappiness is not captured.\nSUMMARY: [The customer attempted to track an order but the BOT failed to locate it. The BOT requested the customer to re-enter the order number, specifically emphasizing the required '#' prefix, despite the customer providing a long numeric ID which might be valid without the prefix. The issue remains unresolved, leaving the customer unable to track their shipment.]",
     "status": "Pending",
     "logged_at": "2025-12-18 21:13:43",
-    "deleted_from_frontend": true
+    "deleted_from_frontend": true,
+    "error_category": "LOGIC",
+    "error_tag": "Order ID Formatting"
   },
   {
     "id": "02GstloOnXzgHzU",
@@ -87,7 +104,9 @@
     "analysis": "TECHNICAL_ERROR: [NO] - The bot consistently understood the user's intent and provided the technically correct and accurate answer (22mm) three separate times.\nUNHAPPY_CUSTOMER: [YES] - The customer repeated the exact same question three times, indicating a lack of trust in the bot's consistent answer or an inability to progress the conversation, resulting in a stalled loop.\nSUMMARY: [The customer asked the same question regarding the band width/size for the Apple Watch SE 3 (44mm) case three consecutive times. The bot correctly identified the required width (22mm) each time but failed to recognize the repetition loop. The bot did not rephrase the answer, offer alternative resources (like a sizing chart link), or attempt to escalate the inquiry, leaving the interaction stuck and the customer potentially frustrated.]",
     "status": "Pending",
     "logged_at": "2025-12-18 21:13:43",
-    "deleted_from_frontend": true
+    "deleted_from_frontend": true,
+    "error_category": "LOGIC",
+    "error_tag": "Conversation Looping"
   },
   {
     "id": "GIFkfCHCwz9fkEL",
@@ -97,7 +116,9 @@
     "analysis": "TECHNICAL_ERROR: [YES] - The chatbot explicitly reported a temporary technical issue preventing it from accessing the product catalog, failing to display the requested sale items (Cyber Monday deals).\nUNHAPPY_CUSTOMER: [YES] - The customer expressed explicit frustration early in the conversation (\"Then I'll buy some other brand\") when the bot initially claimed it couldn't provide discount codes. This frustration was exacerbated by the subsequent technical failure that prevented them from viewing the promised sale items.\nSUMMARY: [A first-time customer asked for discount codes during Cyber Monday and expressed immediate dissatisfaction when the bot couldn't provide them, despite claiming 50% off sales were available. When the customer agreed to view the sale items, a critical technical error occurred, preventing the chatbot from accessing the product catalog. The customer tried to proceed by specifying their watch model, but the bot remained functionally blocked, only able to offer the creation of a support ticket or general care instructions, leaving the customer\u2019s shopping intent completely unresolved.]",
     "status": "Pending",
     "logged_at": "2025-12-18 21:13:43",
-    "deleted_from_frontend": true
+    "deleted_from_frontend": true,
+    "error_category": "SYSTEM",
+    "error_tag": "Catalog Access Failure"
   },
   {
     "id": "zHnZ4rA3ZtvrYAC",
@@ -107,7 +128,9 @@
     "analysis": "TECHNICAL_ERROR: [YES] - The chatbot entered a continuous loop of delay messages (over 150 instances) after the user asked a specific question, failing to retrieve or generate the requested information before eventually outputting \"No response generated.\" This indicates a severe system malfunction or knowledge base access failure.\nUNHAPPY_CUSTOMER: [YES] - Although the customer did not respond further, the core issue was left completely unresolved, and the customer was subjected to an extensive period of repetitive, non-helpful bot spam, resulting in a guaranteed negative experience.\nSUMMARY: [A concise summary of the interaction and any unresolved issues] The customer asked a specific product question regarding the adjustment of the Aveum strap. The bot failed entirely to process this query, locking itself into an extensive loop of generic delay messages (\"Just a sec,\" \"be right back,\" etc.) before timing out. The customer's initial question remains completely unanswered, and the interaction was a total failure.",
     "status": "Pending",
     "logged_at": "2025-12-18 21:13:43",
-    "deleted_from_frontend": true
+    "deleted_from_frontend": true,
+    "error_category": "SYSTEM",
+    "error_tag": "Continuous Looping Error"
   },
   {
     "id": "bqCcgQVz80fxLaO",
@@ -117,7 +140,9 @@
     "analysis": "TECHNICAL_ERROR: [YES] - The chatbot explicitly stated, \"I'm currently unable to access the product catalog,\" preventing it from fulfilling the customer's request for specific strap recommendations.\nUNHAPPY_CUSTOMER: [NO] - The customer remained polite, pivoted their question to sizing, and received a clear, successful answer without expressing frustration over the technical limitation.\nSUMMARY: The interaction was hampered by a technical failure preventing catalog access. While the chatbot could not provide specific product recommendations, it successfully pivoted to offer general material suggestions and accurately confirmed the required band size (46mm). The customer received necessary sizing information but the original intent of receiving specific product suggestions remains unfulfilled.",
     "status": "Pending",
     "logged_at": "2025-12-18 21:13:43",
-    "deleted_from_frontend": true
+    "deleted_from_frontend": true,
+    "error_category": "SYSTEM",
+    "error_tag": "Catalog Access Failure"
   },
   {
     "id": "Xzap4ZMqMv5iJMx",
@@ -127,7 +152,9 @@
     "analysis": "TECHNICAL_ERROR: [YES] - The chatbot failed to perform the necessary logic or transactional query to address the pricing discrepancy directly. It immediately defaulted to collecting data for an asynchronous support ticket after identifying the user via email, indicating a limitation in solving L1 sales/pricing issues.\n\nUNHAPPY_CUSTOMER: [YES] - The customer's central issue (the incorrect discount preventing their purchase) was not resolved. They were asked for identifying information (email) only to be told the bot was creating a ticket and then immediately asked for *more* identifying information (full name, specific product links) to complete the escalation, delaying resolution.\n\nSUMMARY: The customer initiated the chat because the 27% promotion for purchasing two bands was incorrectly applying only a 20% discount at checkout. After the customer provided their email, the chatbot was unable to resolve the pricing issue. The bot confirmed the identity, announced it was creating a support ticket for human review, and then requested a list of additional details necessary for the manual escalation (full name, order number, product names), leaving the customer's purchasing issue unresolved.",
     "status": "Pending",
     "logged_at": "2025-12-18 22:11:25",
-    "deleted_from_frontend": true
+    "deleted_from_frontend": true,
+    "error_category": "LOGIC",
+    "error_tag": "Failed Pricing Resolution"
   },
   {
     "id": "nzCpFZSTTzYdfay",
@@ -137,7 +164,9 @@
     "analysis": "TECHNICAL_ERROR: [YES] - The primary reason for the customer contact is a technical failure within the e-commerce system: the advertised 27% bulk discount is failing to apply to the customer's cart during the checkout process.\nUNHAPPY_CUSTOMER: [NO] - The customer was professional and direct, describing the issue without expressing frustration or escalating. While the underlying purchase issue is frustrating, the customer accepted the bot's process for creating a support ticket.\nSUMMARY: [The customer initiated the chat because an advertised 27% discount for purchasing two bands was not applying in the cart. The chatbot successfully identified the issue, requested the customer's email (pdelk10@gmail.com), and created a detailed support ticket. The bot stalled briefly several times during processing (\"be right back,\" \"Just a sec\"). The issue remains unresolved, but the chatbot provided a clear expectation for resolution (support team response via email within 24 hours).]",
     "status": "Pending",
     "logged_at": "2025-12-18 22:11:26",
-    "deleted_from_frontend": true
+    "deleted_from_frontend": true,
+    "error_category": "DATA",
+    "error_tag": "Discount Not Applying"
   },
   {
     "id": "eUEM7hDeHlpq8Mc",
@@ -147,7 +176,9 @@
     "analysis": "**TECHNICAL_ERROR: [YES]** - The chatbot offered the user a specific option (\"Notify you if it becomes available again?\") but immediately failed to execute it, stating, \"Unfortunately, I don't have the capability to send personal notifications.\" This is a failure in the designed workflow and logic tree.\n\n**UNHAPPY_CUSTOMER: [YES]** - The customer's primary goal (determining restock timing) was not met, as the item is sold out with no ETA. Furthermore, the final attempt to resolve the issue\u2014requesting a notification\u2014was thwarted by the bot's inability to perform the task it just offered, leading to a frustrating conclusion for the user.\n\n**SUMMARY:** The customer inquired about the restock status of a specific silver stainless steel watch band for a Galaxy Watch 6 Classic. After providing a direct URL, the BOT successfully identified the item as sold out but confirmed no estimated restock date is available. The interaction ended negatively when the customer selected the option to be notified upon restock, only for the BOT to immediately state it does not have the capability to send personal notifications, leaving the core issue completely unresolved.",
     "status": "Pending",
     "logged_at": "2025-12-18 22:11:26",
-    "deleted_from_frontend": true
+    "deleted_from_frontend": true,
+    "error_category": "LOGIC",
+    "error_tag": "Offer Capability Mismatch"
   },
   {
     "id": "Iip9InsMhyG8BTU",
@@ -157,7 +188,9 @@
     "analysis": "TECHNICAL_ERROR: [YES] - The BOT failed to perform a successful search using the secondary identifiers provided by the customer (Name, Product, Date). Furthermore, the BOT then asked the customer to re-confirm details (Product name, Date) that were explicitly provided in the initial input, indicating a failure to process or retain context from the previous message.\n\nUNHAPPY_CUSTOMER: [NO] - The customer has not yet expressed frustration or dissatisfaction. However, the system's failure to resolve the issue after the \"1 sec please...\" attempt, and its subsequent request for already-provided information, creates significant friction and a high probability of future dissatisfaction.\n\nSUMMARY: The customer initiated the chat to track an order (Juxta Silicone Sports Whoop Band, ordered Nov 23) but did not have the order number. The system failed to locate the order using the customer's name and/or email and defaulted back to requiring the order number. The conversation ended with the BOT requesting secondary identifiers (shipping address, product name, date confirmation) in an attempt to manually locate the order, even though the product name and date were provided in the initial inquiry. The customer's order remains untracked.",
     "status": "Pending",
     "logged_at": "2025-12-18 22:11:27",
-    "deleted_from_frontend": true
+    "deleted_from_frontend": true,
+    "error_category": "LOGIC",
+    "error_tag": "Context Retention Failure"
   },
   {
     "id": "DWlv6fT3cLENjnh",
@@ -167,7 +200,9 @@
     "analysis": "TECHNICAL_ERROR: [YES] - The chatbot failed to execute its primary function of creating a support/exchange ticket after receiving customer confirmation, citing a \"technical issue.\"\n\nUNHAPPY_CUSTOMER: [YES] - The customer was already following up on a previously lost chat connection. Their simple exchange request was correctly diagnosed but could not be processed by the bot, forcing the customer to manually send an email to support, resulting in channel escalation and inconvenience.\n\nSUMMARY: The customer initiated contact seeking to resume a chat about an exchange (42mm band to 40mm). The chatbot successfully retrieved the order details and confirmed the need to create a support ticket. However, the system failed to create the ticket due to a technical error. The resolution was an immediate escalation, requiring the customer to manually email a pre-drafted message to the support team, leaving the exchange request unresolved within the chat session.",
     "status": "Pending",
     "logged_at": "2025-12-18 22:11:27",
-    "deleted_from_frontend": true
+    "deleted_from_frontend": true,
+    "error_category": "SYSTEM",
+    "error_tag": "Ticket Creation Failure"
   },
   {
     "id": "XtSImkwsV7avD7V",
@@ -177,7 +212,9 @@
     "analysis": "TECHNICAL_ERROR: [YES] - The interaction ended with a clear system failure (\"No response generated\"). Additionally, the bot failed to properly process the order number (135210) to initiate the exchange ticket flow, leading to repetitive requests for details it should have been able to look up or infer.\n\nUNHAPPY_CUSTOMER: [YES] - The customer began the interaction frustrated because the initial exchange attempt was incomplete (no return email received). This frustration escalated as the bot failed to locate the correct information using two different emails, then ignored provided information (order number and name), forcing the user into a repetitive loop of required fields. The final question, \"Are you still there?\" confirms customer annoyance before the session terminated without resolution.\n\nSUMMARY: The customer attempted to open a support ticket to follow up on a previous, unresolved exchange request. The bot struggled significantly with identity verification, failing to locate the customer's previous conversation using two separate emails. Although the customer provided their order number and full name, the bot failed to utilize this data, instead entering a rigid loop requesting band sizes and smartwatch model details. The interaction ended with a technical breakdown, leaving the customer's exchange request completely unresolved and reinforcing their initial dissatisfaction with the support process.",
     "status": "Pending",
     "logged_at": "2025-12-18 22:11:28",
-    "deleted_from_frontend": true
+    "deleted_from_frontend": true,
+    "error_category": "SYSTEM",
+    "error_tag": "No Response Generated"
   },
   {
     "id": "UOEO4PUYCNTpfjH",
@@ -187,7 +224,9 @@
     "analysis": "TECHNICAL_ERROR: [YES] - The chatbot failed to process the order cancellation request through the system, explicitly citing a \"technical issue\" and entering a loop of repetitive delay messages (\"alright 1 sec...\").\n\nUNHAPPY_CUSTOMER: [NO] - Although the bot failed its primary task, the customer accepted the resolution. The bot successfully mitigated dissatisfaction by acknowledging the error, confirming the desired outcome (cancellation, full refund, avoidance of customs charges), and providing a clear escalation path with a follow-up timeline.\n\nSUMMARY: The customer requested the cancellation of order #137157, driven by a concern over potential foreign charges/customs fees. The bot successfully verified the order but failed to execute the cancellation due to a persistent system error. The bot then pivoted, manually recording the cancellation request, guaranteeing a full refund, and escalating the case directly to the support team for manual processing and email confirmation within one business day. The customer accepted this resolution.",
     "status": "Pending",
     "logged_at": "2025-12-18 22:11:29",
-    "deleted_from_frontend": true
+    "deleted_from_frontend": true,
+    "error_category": "SYSTEM",
+    "error_tag": "Execution Failure Loop"
   },
   {
     "id": "ssvUzW7XnZ9BmX3",
@@ -197,7 +236,9 @@
     "analysis": "TECHNICAL_ERROR: NO - The bot functioned correctly, accurately identifying that the \"Pixel Watch 4\" is not a supported or released model and handling the user's input logically.\n\nUNHAPPY_CUSTOMER: YES - The customer's core shopping need (finding a band for the Pixel Watch 4) was not met. The customer received a definitive denial/negative answer to their specific product query.\n\nSUMMARY: The customer initiated the chat asking about band compatibility for the unreleased \"Pixel Watch 4.\" The chatbot correctly identified that this model is not supported or released and politely requested clarification. The customer insisted on the unreleased model (Pixel Watch 4 45mm), leading the bot to confirm that Astra Straps does not carry bands for it. The interaction ended with the bot offering compatible Pixel Watch 2 bands as an alternative, but the customer's primary inquiry remained unresolved.",
     "status": "Pending",
     "logged_at": "2025-12-18 22:11:29",
-    "deleted_from_frontend": false
+    "deleted_from_frontend": false,
+    "error_category": "NONE",
+    "error_tag": "NONE"
   },
   {
     "id": "xIpdlIsOjrwh9Rt",
@@ -207,7 +248,9 @@
     "analysis": "**TECHNICAL_ERROR: [YES]** - The chatbot failed to display the promised list or links to compatible bands after stating, \"All these bands are compatible with your Galaxy Watch 7 40mm.\" The system acknowledged the task but failed to deliver the content, resulting in a broken fulfillment step.\n\n**UNHAPPY_CUSTOMER: [NO]** - The customer's initial, crucial question regarding compatibility was answered quickly and accurately. The transcript ends immediately after the technical failure, so the customer has not yet expressed frustration or dissatisfaction, though their goal remains unmet.\n\n**SUMMARY:** The customer successfully confirmed the size compatibility between the Galaxy Watch 7 40mm and the Galaxy Watch 4 40mm. When asked to see compatible bands, the customer agreed. However, the chatbot then failed to display the product listings/links, despite acting as if it had already done so. The interaction ends with the customer still needing to view the available bands, requiring another command or system restart.",
     "status": "Pending",
     "logged_at": "2025-12-18 22:11:29",
-    "deleted_from_frontend": true
+    "deleted_from_frontend": true,
+    "error_category": "SYSTEM",
+    "error_tag": "Fulfillment Failure"
   },
   {
     "id": "4isY3T2D1JcvlO9",
@@ -217,7 +260,9 @@
     "analysis": "TECHNICAL_ERROR: [YES] - The chatbot experienced multiple critical failures, including the inability to create a support ticket, providing several invalid/unregistered phone numbers, and failing to successfully initiate multiple promised callback attempts and email deliveries.\n\nUNHAPPY_CUSTOMER: [YES] - The customer was extremely frustrated, initially because their pre-shipping cancellation request was ignored, and then because the chatbot repeatedly failed to connect them to a human, confirm an email, or provide accurate contact information, leading the customer to feel ignored and lied to.\n\nSUMMARY: [A concise summary of the interaction and any unresolved issues]\nThe customer contacted the chatbot because their order cancellation request (due to the wrong size) was ignored, and the item shipped. Although the chatbot displayed extreme empathy, high-level apology language (escalating to the CEO/Head of Customer Experience), and ultimately offered a generous resolution (expedited 45mm exchange, 30% refund, prepaid return label), the process was defined by technical failures. The chatbot could not process tickets, provided multiple fake phone numbers, and failed to deliver promised calls and emails. The customer\u2019s primary unresolved need was connecting with a reliable human agent. The conversation ends with the chatbot attempting to transfer the chat session directly to the Head of Customer Experience for a live written response, but the human agent's confirmation or reply is not included in the transcript, leaving the human connection and customer trust issue officially unresolved.",
     "status": "Pending",
     "logged_at": "2025-12-18 22:11:30",
-    "deleted_from_frontend": true
+    "deleted_from_frontend": true,
+    "error_category": "SYSTEM",
+    "error_tag": "Critical Function Failure"
   },
   {
     "id": "OnSoMtHAIbekRJh",
@@ -227,7 +272,9 @@
     "analysis": "TECHNICAL_ERROR: [NO] - The bot correctly identified its capabilities and attempted to gather more specific information from the user after a vague initial input.\nUNHAPPY_CUSTOMER: [YES] - The user explicitly stated \"i have a problem,\" indicating an existing issue or frustration before the interaction progressed.\nSUMMARY: [The customer initiated the interaction by vaguely stating they have a \"problem.\" AstraBot responded appropriately by offering its core capabilities (order tracking, shopping, support) and asking the user to clarify the issue. The interaction ended before the customer provided the necessary detail to begin resolution, leaving the underlying problem completely unresolved.]",
     "status": "Pending",
     "logged_at": "2025-12-18 22:11:30",
-    "deleted_from_frontend": false
+    "deleted_from_frontend": false,
+    "error_category": "NONE",
+    "error_tag": "NONE"
   },
   {
     "id": "WGab3mtbGNWeH96",
@@ -237,7 +284,9 @@
     "analysis": "TECHNICAL_ERROR: [YES] - The chatbot failed repeatedly to submit the internal support ticket required to process the cancellation/exchange. The bot explicitly states, \"I apologize for the technical difficulty. It seems the system requires the issue to be passed as a separate parameter, but I'm unable to include it properly in this environment.\"\n\nUNHAPPY_CUSTOMER: [YES] - The customer was forced into a repetitive loop where the bot asked for confirmation of the issue description multiple times, only to fail at the final submission step. The request was not fulfilled, and the customer was redirected to manually email support, requiring them to restart the process outside of the bot environment.\n\nSUMMARY: The customer initiated an order cancellation and exchange request due to ordering the wrong size (42mm instead of 45mm). The chatbot successfully retrieved the order details and confirmed the cancellation eligibility. However, the bot encountered a technical error and repeatedly failed to submit the required internal support ticket, specifically citing an inability to pass the issue description parameter correctly. The bot was ultimately unable to resolve the request and apologized, redirecting the customer to manually email support with the provided detailed information. The order remains unfulfilled/uncanceled by the chatbot.",
     "status": "Pending",
     "logged_at": "2025-12-18 22:11:30",
-    "deleted_from_frontend": true
+    "deleted_from_frontend": true,
+    "error_category": "SYSTEM",
+    "error_tag": "Parameter Submission Failure"
   },
   {
     "id": "iY7gcUP6zmO0B5b",
@@ -247,7 +296,9 @@
     "analysis": "TECHNICAL_ERROR: [YES] - The chatbot repeatedly failed to execute the core function (submitting a cancellation request/creating a support ticket) due to internal system errors, culminating in a raw JSON parsing error message (\"SyntaxError: Expected double-quoted property name in JSON...\").\n\nUNHAPPY_CUSTOMER: [YES] - The customer was delayed, expressed urgency (\"i need it to be places asap cause i need it before christmas\"), and was forced to exit the chat channel to resolve the issue via manual email, despite the chatbot confirming the action was possible at the beginning of the interaction.\n\nSUMMARY: The customer initiated the chat to cancel an unfulfilled order (#136807) due to selecting the wrong watch size (42mm instead of 45mm) and intended to immediately reorder the correct item. The chatbot successfully confirmed the order status and identified the desired replacement product (Class Stainless Steel Band + Case in Gold). However, the bot failed repeatedly to process the cancellation or create a ticket due to persistent technical issues. Ultimately, the bot could not complete the cancellation and instructed the customer to manually email support using a pre-written template. Crucially, the final template provided by the bot included specific, potentially sensitive Personal Identifiable Information (PII) like a full name (Teresa Rodriguez), email address, and phone number, which is a major data privacy error if the customer is not that named individual. The cancellation remains unresolved at the conclusion of the transcript.",
     "status": "Pending",
     "logged_at": "2025-12-18 22:11:31",
-    "deleted_from_frontend": true
+    "deleted_from_frontend": true,
+    "error_category": "SYSTEM",
+    "error_tag": "JSON Parsing Error"
   },
   {
     "id": "KNs7fCbViMh8Hat",
@@ -257,7 +308,9 @@
     "analysis": "TECHNICAL_ERROR: [YES] - The chatbot encountered multiple, persistent system issues when attempting to create the support ticket, resulting in several loading loops (\"be right back...\") and explicit admissions of technical failure. It ultimately could not complete the core task (ticket creation) despite gathering all necessary information.\nUNHAPPY_CUSTOMER: [YES] - Although the customer remained polite, they endured significant delays, had to confirm the issue description multiple times due to system validation errors, and were ultimately forced to leave the chat and manually email support, failing to achieve immediate service resolution.\nSUMMARY: The customer initiated the chat to report a defective product (case button non-functional) and provided the order number. The chatbot successfully gathered all details but repeatedly failed to process the information and create a support ticket due to internal technical errors. After several failed attempts, including asking the customer to confirm specific formatting, the bot failed completely and redirected the customer to email support, providing the collected details (order number, issue, name) to complete the process externally. The interaction was a service failure, requiring manual intervention outside the chat channel.",
     "status": "Pending",
     "logged_at": "2025-12-18 22:11:31",
-    "deleted_from_frontend": true
+    "deleted_from_frontend": true,
+    "error_category": "SYSTEM",
+    "error_tag": "Persistent Failure Loop"
   },
   {
     "id": "98AkCgaIlxeY7OV",
@@ -267,7 +320,9 @@
     "analysis": "TECHNICAL_ERROR: NO - The chatbot functioned correctly according to its programming, accurately requesting the required order number and offering valid alternative paths (email lookup, support ticket creation) when the customer failed to provide the necessary tracking data.\n\nUNHAPPY_CUSTOMER: YES - The customer was unable to achieve their goal (tracking the order) and expressed frustration by repeatedly stating they did not have the required confirmation information (\"I do not have,\" \"I do not have that\").\n\nSUMMARY: The customer initiated the chat to track an order but could not provide the required order number or locate the confirmation email. The bot failed to locate the order using the provided email address. After repeatedly hitting a dead end due to lack of necessary identifying information, the bot successfully pivoted the conversation to collecting specific purchase details (name, product model, date) needed to create a support ticket for manual investigation by a human agent, leaving the initial tracking request unresolved.",
     "status": "Pending",
     "logged_at": "2025-12-18 22:11:32",
-    "deleted_from_frontend": false
+    "deleted_from_frontend": false,
+    "error_category": "NONE",
+    "error_tag": "NONE"
   },
   {
     "id": "J4Q2QOgPxKMOljz",
@@ -277,7 +332,9 @@
     "analysis": "TECHNICAL_ERROR: [NO] - The chatbot correctly identified the user's skepticism regarding product availability/advertising and responded logically (though defensively). The failure is conversational design, not a technical malfunction.\nUNHAPPY_CUSTOMER: [YES] - The customer is highly skeptical and accusatory, believing the company is running ads without legitimate stock (\"Why you make advertisers if you don't have products?\").\nSUMMARY: [The customer started the interaction with a strong complaint about the company advertising products they seemingly don't possess (likely due to out-of-stock issues or confusing marketing). The chatbot failed to address or validate this core complaint directly. Instead, AstraBot became defensive, repeatedly denying the accusation and immediately attempting to redirect the customer to view current sales, resulting in a defensive loop that left the customer's root concern unresolved.]",
     "status": "Pending",
     "logged_at": "2025-12-18 22:11:32",
-    "deleted_from_frontend": false
+    "deleted_from_frontend": false,
+    "error_category": "OTHER",
+    "error_tag": "Conversational Design Failure"
   },
   {
     "id": "I4ysEnLqy0z9Uof",
@@ -287,7 +344,9 @@
     "analysis": "TECHNICAL_ERROR: [YES] - The chatbot immediately looped back to its initial greeting and menu options without acknowledging or processing the user's input, indicating a parsing error or a critical session reset.\nUNHAPPY_CUSTOMER: [YES] - Although the human's input is only represented by ellipses (`...`), the complete failure of the bot to proceed past the greeting means the customer was unable to state their purpose or receive any service, leading to immediate frustration.\nSUMMARY: [A critical technical loop occurred where the chatbot reset the conversation and repeated its initial greeting and menu options immediately after the user provided an input. The interaction failed completely, and the customer's issue remains entirely unaddressed.]",
     "status": "Pending",
     "logged_at": "2025-12-18 22:11:32",
-    "deleted_from_frontend": true
+    "deleted_from_frontend": true,
+    "error_category": "SYSTEM",
+    "error_tag": "Critical Loop Reset"
   },
   {
     "id": "3QpZoj8zl0zGWqa",
@@ -297,7 +356,9 @@
     "analysis": "TECHNICAL_ERROR: [YES] - The customer reported two separate technical failures: a prior chat session \"disappeared\" after providing information, and a current UI issue preventing them from scrolling to see the full message during the conversation.\n\nUNHAPPY_CUSTOMER: [YES] - The customer explicitly stated, \"This is very frustrating\" early in the transcript due to the repeated need to provide information following the technical failure.\n\nSUMMARY: [A frustrated customer initiated contact following a prior session failure where the chat disappeared. While attempting to open a new support ticket regarding how to resize the Ignotus Retro band, the customer encountered a second technical glitch (inability to scroll and view full messages). The chatbot successfully gathered all necessary details despite these issues and confirmed the creation of the support ticket, promising a response via email within 24 hours. The scrolling issue itself was acknowledged but not resolved.]",
     "status": "Pending",
     "logged_at": "2025-12-18 22:11:33",
-    "deleted_from_frontend": true
+    "deleted_from_frontend": true,
+    "error_category": "UI",
+    "error_tag": "Scrolling Failure"
   },
   {
     "id": "qXtqRIC1WXlTxdc",
@@ -307,7 +368,9 @@
     "analysis": "TECHNICAL_ERROR: [YES] - The bot experienced a significant product knowledge failure (hallucination), incorrectly identifying the \"Ignotus Retro leather band\" as a link-style band requiring a tool. This forced the customer to repeatedly correct the bot on the product specifications.\n\nUNHAPPY_CUSTOMER: [YES] - The customer displayed clear frustration, using capitalization (\"NO TOOL included,\" \"It is not a band with links\"), due to the bot's inaccurate advice and repeated failure to correctly classify the product they owned.\n\nSUMMARY: The customer initiated a support ticket because their Ignotus Retro leather band was too large. The bot initially provided incorrect instructions for adjusting a linked metal band. After being corrected by the customer twice, the bot finally acknowledged it was a leather strap and provided accurate advice (punching holes) while agreeing to pursue a replacement solution. The interaction ended while the bot was still in the process of gathering the necessary intake information (order number) to formally create the ticket.",
     "status": "Pending",
     "logged_at": "2025-12-18 22:11:33",
-    "deleted_from_frontend": true
+    "deleted_from_frontend": true,
+    "error_category": "NLU",
+    "error_tag": "Knowledge Hallucination"
   },
   {
     "id": "1SlWsSf4hVtwu7y",
@@ -317,7 +380,9 @@
     "analysis": "TECHNICAL_ERROR: [YES] - The bot exhibited significant latency feedback loops (\"1 sec please...\", \"Just a moment please...\") occurring four times consecutively during the first request. Furthermore, the inventory lookup functionality failed repeatedly, providing contradictory information (first searching for a kit, suggesting a general kit, then definitively stating no tool kits are available in inventory).\n\nUNHAPPY_CUSTOMER: [YES] - While the user received excellent instructions, the subsequent failure to fulfill the product request (a kit) resulted in a frustrating, high-effort experience. The customer was subjected to multiple delays and conflicting messages about product availability before being told the company carries no compatible products.\n\nSUMMARY: The interaction began positively, with the bot successfully providing detailed, accurate instructions on how to adjust a resin watch band. However, when the user asked to purchase a necessary tool kit, the bot entered a loop of searching, suggesting general alternatives, and then contradictory retraction. The bot ultimately admitted they carry no tool kits whatsoever, forcing the customer to seek third-party solutions, thereby failing to resolve the purchasing request internally.",
     "status": "Pending",
     "logged_at": "2025-12-18 22:11:34",
-    "deleted_from_frontend": true
+    "deleted_from_frontend": true,
+    "error_category": "SYSTEM",
+    "error_tag": "Latency and Contradictory Logic"
   },
   {
     "id": "VvanZVQMaezxQFU",
@@ -327,7 +392,9 @@
     "analysis": "**TECHNICAL_ERROR: [YES]** - The chatbot entered an extended loop of generic \"waiting\" messages (\"Just a sec...\", \"Great looking into it...\") immediately after receiving the customer's order details. The transcript concludes with the explicit system failure message: \"No response generated,\" indicating the system failed to execute the required backend process (looking up the order/initiating the return).\n\n**UNHAPPY_CUSTOMER: [YES]** - Although the customer did not express frustration within the transcript, they provided the necessary account details (email and order number) only to experience a total system collapse. Their request to return straps was left completely unfulfilled and unresolved due to the technical failure.\n\n**SUMMARY: [A concise summary of the interaction and any unresolved issues]**\nThe customer initiated contact to inquire about a product return. They successfully navigated the initial prompts and provided their order number (#135322) and email address (dholland7@cox.net). Immediately following the submission of this critical data, the chatbot failed to progress, instead repeating a loop of waiting messages over twenty times before terminating the session with a system error (\"No response generated\"). The customer's return request remains completely unresolved.",
     "status": "Pending",
     "logged_at": "2025-12-18 22:11:34",
-    "deleted_from_frontend": true
+    "deleted_from_frontend": true,
+    "error_category": "SYSTEM",
+    "error_tag": "Extended Looping Error"
   },
   {
     "id": "giQ2KPV5iJZs6dR",
@@ -337,7 +404,9 @@
     "analysis": "TECHNICAL_ERROR: YES - The chatbot entered a critical loop failure immediately after receiving the user's query. It repeated various delay and processing phrases (e.g., \"1 sec please,\" \"Give me a moment please,\" \"Great looking into it\") hundreds of times without ever resolving the query, escalating the issue, or timing out gracefully.\n\nUNHAPPY_CUSTOMER: YES - The customer received zero assistance, and the sheer volume of identical, non-productive holding messages (over 500 lines) ensures a highly frustrating and unresolved experience.\n\nSUMMARY: The customer asked a specific product inquiry regarding how to select colors for a smartwatch band when the website/interface only showed a fraction of the advertised options. The chatbot, AstraBot, failed to process the request and instead became stuck in an infinite loop of canned delay messages. The interaction ended without any resolution, demonstrating a catastrophic breakdown of the chatbot's conversational and processing logic.",
     "status": "Pending",
     "logged_at": "2025-12-18 22:11:35",
-    "deleted_from_frontend": true
+    "deleted_from_frontend": true,
+    "error_category": "LOGIC",
+    "error_tag": "Infinite Loop Failure"
   },
   {
     "id": "SZKzkPLbnOe9P28",
@@ -347,7 +416,9 @@
     "analysis": "TECHNICAL_ERROR: [YES] - The user explicitly states they lost the previous chat session (\"I lost the chat iwas in\"), and the bot failed to retain context or the data the user had previously submitted, forcing the user to repeat the issue and inputs.\nUNHAPPY_CUSTOMER: [YES] - The customer expressed frustration twice, first regarding the session loss and then regarding the need to repeat data: \"I just did all of this once.\"\nSUMMARY: [The customer had their previous chat session dropped, leading to a complete loss of context. They had to restart the conversation to report receiving the wrong size band. When the bot asked for details to create a support ticket, the customer expressed strong frustration for having to re-submit information. The bot successfully de-escalated the situation by validating the frustration and promising to proceed with creating a ticket using any existing information, but the core issue (wrong size band) remains unresolved and is pending human support intervention.]",
     "status": "Pending",
     "logged_at": "2025-12-18 22:11:35",
-    "deleted_from_frontend": true
+    "deleted_from_frontend": true,
+    "error_category": "SYSTEM",
+    "error_tag": "Context Loss"
   },
   {
     "id": "zuJE8GYflNezRkh",
@@ -357,7 +428,9 @@
     "analysis": "TECHNICAL_ERROR: [YES] - The BOT experienced a technical difficulty or system outage while attempting to execute the order modification/cancellation command, resulting in four repeated delay messages (\"Just a sec...\", \"be right back...\") followed by an explicit apology for the difficulty before manually confirming the resolution.\n\nUNHAPPY_CUSTOMER: [NO] - Although the customer initiated the chat with a problem and experienced a technical delay, the BOT successfully diagnosed the root cause (product incompatibility with the requested size) and resolved the issue quickly by canceling the incompatible item before the order shipped, leading to a satisfactory resolution.\n\nSUMMARY: [The customer contacted the BOT immediately after placing an order to report an issue with the size of the purchased bands. AstraBot efficiently gathered the order details and correctly identified that the order was unfulfilled. Furthermore, the BOT proactively diagnosed that one of the ordered items (the Alti Stainless Steel Band) was physically unavailable in the customer's required 49mm size. The customer opted to cancel the incompatible band, and despite a technical glitch during the cancellation process, the BOT successfully confirmed the order was updated, leaving only the correctly sized Spolium Nylon band to be shipped.]",
     "status": "Pending",
     "logged_at": "2025-12-18 22:11:36",
-    "deleted_from_frontend": true
+    "deleted_from_frontend": true,
+    "error_category": "SYSTEM",
+    "error_tag": "Execution Failure"
   },
   {
     "id": "sGP3CHQsS4yVjIc",
@@ -367,7 +440,9 @@
     "analysis": "TECHNICAL_ERROR: [YES] - The bot had a technical limitation and explicitly stated it could not provide videos, despite the customer making a clear and specific request for a multimedia resource. It substituted a text response but failed to offer a link to an external video resource or route the user to a human agent capable of providing one.\n\nUNHAPPY_CUSTOMER: [YES] - The customer's specific request for a video was unmet. Their final input, \"No,\" is a curt rejection of the bot's closing offers to re-explain or suggest an alternative product, indicating they abandoned the conversation shortly after their primary need was denied.\n\nSUMMARY: The customer initiated the chat seeking customer support and specifically requested a video demonstrating how to use their product band. The chatbot immediately hit a resource limitation, stating it did not have videos, and offered simple text instructions instead. When the bot tried to pivot by offering to re-explain the steps or help find an \"easier\" band, the customer abruptly terminated the conversation with \"No.\" The core issue (providing video instructions) remains entirely unresolved.",
     "status": "Pending",
     "logged_at": "2025-12-18 22:11:36",
-    "deleted_from_frontend": true
+    "deleted_from_frontend": true,
+    "error_category": "SYSTEM",
+    "error_tag": "Resource Limitation Denied"
   },
   {
     "id": "Vj9WtDpWgjUOaqp",
@@ -377,7 +452,9 @@
     "analysis": "TECHNICAL_ERROR: [YES] - The chatbot explicitly identifies multiple systemic technical limitations: repeated stalling/latency, difficulty processing simple text input, and a final, critical failure to submit the ticket due to an inability to properly pass a required API field (`issue` field), even when the user provided the necessary formatting.\n\nUNHAPPY_CUSTOMER: [YES] - Although the customer remained polite, they endured repeated stalling, were forced to comply with strict, complex formatting requirements, and ultimately wasted time as the bot failed to perform its core function (creating a ticket) and forced the customer to abandon the chat and contact support via email manually.\n\nSUMMARY: [The customer attempted to create a support ticket for a defective, water-leaking watch case (Order #132027). The chatbot stalled repeatedly and required the customer to confirm an exact, lengthy description of the issue. After multiple attempts and requiring the customer to try and bypass a technical limitation by typing a highly specific formatted command, the bot failed to submit the ticket due to internal system constraints. The interaction ended with the bot apologizing and instructing the customer to email support directly using a provided template, leaving the customer's issue completely unresolved within the chatbot interface.]",
     "status": "Pending",
     "logged_at": "2025-12-18 22:11:40",
-    "deleted_from_frontend": true
+    "deleted_from_frontend": true,
+    "error_category": "SYSTEM",
+    "error_tag": "API Field Submission Failure"
   },
   {
     "id": "BQJuddruJRmIBu2",
@@ -387,7 +464,9 @@
     "analysis": "TECHNICAL_ERROR: [YES] - The chatbot failed to recognize a standard customer service intent (\"return,\" \"return form\") and became stuck in an infinite loop, resetting the initial greeting and options menu after every customer input.\n\nUNHAPPY_CUSTOMER: [YES] - The customer made five persistent, unsuccessful attempts using similar language to achieve a single goal, indicating high frustration as the bot was unable to process or route the request.\n\nSUMMARY: The customer attempted multiple times to access a return form or initiate the returns process. The chatbot was unable to recognize the keyword \"return\" and instead repeatedly reset the conversation, displaying the initial greeting and three primary options (Shop bands, Track an order, Open support ticket). The customer's request remains entirely unresolved.",
     "status": "Pending",
     "logged_at": "2025-12-18 22:11:41",
-    "deleted_from_frontend": true
+    "deleted_from_frontend": true,
+    "error_category": "NLU",
+    "error_tag": "Intent Recognition Failure"
   },
   {
     "id": "ZQnWvF13TFON6Tz",
@@ -397,7 +476,9 @@
     "analysis": "TECHNICAL_ERROR: YES - The bot entered a functional loop when trying to collect necessary data (the email address). It failed to adapt or pivot after the customer provided vague or non-specific text (\"Sure,\" \"Email,\" \"For restock\") instead of the requested input, resulting in three consecutive identical requests for the email address.\n\nUNHAPPY_CUSTOMER: YES - The customer's primary request (restock notification) remains unresolved. Although the customer's input style contributed to the issue, the interaction failed to progress and ended with the bot still needing the core information, leading to likely customer frustration.\n\nSUMMARY: The customer identified an out-of-stock product and asked to track its restocking. The bot correctly acknowledged the request but explained the process required creating a manual support ticket using the customer's email address. The interaction failed at the data collection stage, as the customer refused or was unable to provide their actual email address, instead replying with vague affirmations or descriptions (\"Sure,\" \"Email,\" \"For restock\"). The bot became stuck in a repetitive loop requesting the email, and the restock notification was never successfully set up.",
     "status": "Pending",
     "logged_at": "2025-12-18 22:11:41",
-    "deleted_from_frontend": true
+    "deleted_from_frontend": true,
+    "error_category": "LOGIC",
+    "error_tag": "Functional Loop Error"
   },
   {
     "id": "lnz3n9LkWDjm8k7",
@@ -407,7 +488,9 @@
     "analysis": "TECHNICAL_ERROR: [YES] - The BOT stated it could help find the last order using the email but failed to do so, resulting in a dead end for the customer's initial request. Although the underlying reason might be data mismatch (customer inputting wrong email) or system limitation, the user expectation set by the BOT was not met.\nUNHAPPY_CUSTOMER: [UNKNOWN] - The interaction ended without the customer receiving the requested information (previous order size), which likely causes frustration, but the transcript doesn't show a direct negative reaction from the customer yet.\nSUMMARY: [The customer needed to find the size of a previous smartwatch band order to inform a new purchase. The chatbot failed to locate the order using the provided email address, contradicting its initial promise to help. The interaction ended with the customer's primary goal unresolved, prompting the BOT to offer alternative methods (order number tracking or size recommendation based on watch model).]",
     "status": "Pending",
     "logged_at": "2025-12-18 22:11:42",
-    "deleted_from_frontend": true
+    "deleted_from_frontend": true,
+    "error_category": "LOGIC",
+    "error_tag": "Fulfillment Failure"
   },
   {
     "id": "UNV9PFBTPmL0gVK",
@@ -417,7 +500,9 @@
     "analysis": "TECHNICAL_ERROR: [YES] - The chatbot entered a rigid, non-responsive validation loop, failing to parse the customer's intent and ignoring direct confirmation (\"Yes\"). It repeatedly demanded the customer type an exact, pre-scripted phrase to proceed, indicating a fundamental failure in natural language processing and ticket creation logic.\n\nUNHAPPY_CUSTOMER: [YES] - The customer was forced through eight back-and-forth interactions to describe a simple issue (missing item). The bot's inability to accept confirmation and its final demand for a copy/pasted phrase caused significant friction and wasted time.\n\nSUMMARY: [A concise summary of the interaction and any unresolved issues]\nThe customer attempted to open a support ticket regarding a missing pink and white strap. After providing their identifying information, the chatbot repeatedly failed to parse the issue description. Despite the customer clearly articulating the problem and eventually confirming the bot's synthesized summary with \"Yes,\" the bot ignored the confirmation and trapped the customer in a loop, demanding they type an exact, specific phrase to submit the ticket. The interaction ended without the support ticket being successfully created, leaving the customer's issue unresolved.",
     "status": "Pending",
     "logged_at": "2025-12-18 22:11:42",
-    "deleted_from_frontend": true
+    "deleted_from_frontend": true,
+    "error_category": "NLU",
+    "error_tag": "Validation Loop Failure"
   },
   {
     "id": "IU3FjBZcnSlBhXi",
@@ -427,7 +512,9 @@
     "analysis": "TECHNICAL_ERROR: [NO] - The chatbot successfully handled multiple inputs, correctly identified an invalid order number, retrieved all data for the valid order number, and provided appropriate policy information and next steps (offering to open a support ticket).\n\nUNHAPPY_CUSTOMER: [YES] - The customer explicitly states \"i have a problem\" and is disputing the delivery status (\"these item have not been delivred\"), indicating high dissatisfaction because their items are missing and their prior refund request was seemingly ignored (\"I again requested a refund\").\n\nSUMMARY: [A concise summary of the interaction and any unresolved issues]\nThe customer initiated the chat complaining of an unresolved issue, which was clarified as a dispute over the delivery of order #134589. Although the bot successfully pulled up the tracking information confirming the order was marked \"Delivered\" by USPS, the customer insists the package was never received and is requesting a refund. The chatbot provided standard self-help steps for missing delivered packages (check porch, contact USPS) and offered to open a support ticket for further investigation, which is necessary as refunds are policy-dependent on confirmed non-delivery. The core issue\u2014the missing package and the requested refund\u2014remains unresolved, contingent upon the customer accepting the offer to open a formal investigation ticket.",
     "status": "Pending",
     "logged_at": "2025-12-18 22:11:43",
-    "deleted_from_frontend": false
+    "deleted_from_frontend": false,
+    "error_category": "NONE",
+    "error_tag": "NONE"
   },
   {
     "id": "4y36DAtrIes0Qw9",
@@ -437,7 +524,9 @@
     "analysis": "TECHNICAL_ERROR: [YES] - The chatbot failed to process the customer's input after receiving all required information, entering an extremely long loop of repetitive \"wait\" messages, indicating a severe processing failure or timeout. It eventually reset and prompted the customer for the same information again.\n\nUNHAPPY_CUSTOMER: [YES] - The customer successfully provided the requested personal and issue details, only to be subjected to an excessive, repetitive holding pattern that yielded no result. The bot lost the provided data, resulting in a completely wasted interaction and failure to resolve the initial request.\n\nSUMMARY: The customer successfully initiated a support ticket request and clearly provided their name, email, and description of the broken product. The chatbot immediately stalled, entering an endless loop of delay messages (\"1 sec please,\" \"Give me a moment please,\" etc.) that lasted for hundreds of lines. The bot ultimately failed to create the ticket or even acknowledge the input, concluding the session by asking the customer to provide the exact same information again. The support ticket remains unresolved.",
     "status": "Pending",
     "logged_at": "2025-12-18 22:11:43",
-    "deleted_from_frontend": true
+    "deleted_from_frontend": true,
+    "error_category": "SYSTEM",
+    "error_tag": "Infinite Loop Failure"
   },
   {
     "id": "uy7LZ7aS14yEz7W",
@@ -447,7 +536,9 @@
     "analysis": "TECHNICAL_ERROR: [YES] - The bot suffered from a rigid logic failure. It repeatedly prioritized its programmed product specialization rules (\"bands only\") over acknowledging the customer's claim of purchase, leading to unnecessary conflict and requiring the customer to argue their transaction history before the bot initiated the necessary step (asking for the order number to verify the order history).\nUNHAPPY_CUSTOMER: [YES] - The customer was forced to repeatedly defend that they purchased the item from this retailer, which is a highly frustrating experience before the support process even begins.\nSUMMARY: The customer initiated an exchange request for cases purchased from the company. The chatbot, AstraBot, repeatedly denied the possibility of selling cases based on its programmed specialization in bands only, suggesting the customer contacted the wrong retailer. After the customer insisted they purchased the items from Astra Straps, the bot finally acknowledged a potential fulfillment mix-up and asked for the order number to verify the transaction history. The core issue (the exchange) remains unresolved, but the bot has finally pivoted to a necessary verification step.",
     "status": "Pending",
     "logged_at": "2025-12-18 22:11:43",
-    "deleted_from_frontend": true
+    "deleted_from_frontend": true,
+    "error_category": "LOGIC",
+    "error_tag": "Rigid Rule Prioritization"
   },
   {
     "id": "Vsttti5zDncmvcZ",
@@ -457,7 +548,9 @@
     "analysis": "TECHNICAL_ERROR: [NO] - The bot functioned as programmed, successfully guiding the user toward providing the specific, structured input required for ticket creation, despite the user's initial vague responses. The friction was a workflow/input compliance issue, not a system failure.\nUNHAPPY_CUSTOMER: [YES] - The customer experienced a protracted process requiring multiple repetitions and clarifications across 6 exchanges before the bot accepted the issue description. This level of effort for a simple support ticket request likely caused significant frustration.\nSUMMARY: [The customer attempted to open a support ticket regarding an order shipped to the wrong address. The interaction was heavily stalled because the bot required specific, detailed comparison information (the incorrect and correct addresses) but the customer repeatedly provided vague responses (e.g., \"wrong shipping address,\" \"wrong location\"). The bot eventually extracted the necessary details through persistent prompting and confirmed the final issue text, but the transcript ends just prior to the final ticket creation confirmation.]",
     "status": "Pending",
     "logged_at": "2025-12-18 22:11:44",
-    "deleted_from_frontend": false
+    "deleted_from_frontend": false,
+    "error_category": "LOGIC",
+    "error_tag": "Workflow Friction"
   },
   {
     "id": "SlWBnEeJacnh1Xg",
@@ -467,7 +560,9 @@
     "analysis": "TECHNICAL_ERROR: [YES] - The BOT explicitly states, \"I apologize \u2014 there appears to be a system issue preventing ticket creation,\" confirming a core technical failure in the support workflow.\nUNHAPPY_CUSTOMER: [YES] - The customer was forced to provide the same summary text multiple times due to poor input validation and workflow looping, followed by the system failing to execute the requested action (ticket creation) after a lengthy data collection process.\nSUMMARY: The customer initiated the chat to track an order but had not received a confirmation email. The bot failed to locate the order using the provided email address, leading to a long manual data collection process (including date, payment, name, and address). After gathering all necessary details, the BOT failed to create the support ticket due to a system error. The issue was ultimately resolved by manually escalating the order details to the support team via email, promising a response within 24 hours, but the primary goal (immediate tracking or ticket confirmation) was not achieved by the chatbot itself.",
     "status": "Pending",
     "logged_at": "2025-12-18 22:11:44",
-    "deleted_from_frontend": true
+    "deleted_from_frontend": true,
+    "error_category": "SYSTEM",
+    "error_tag": "Ticket Creation Failure"
   },
   {
     "id": "fB1fzeOMd5DPJni",
@@ -477,7 +572,9 @@
     "analysis": "TECHNICAL_ERROR: [YES] - The chatbot entered multiple processing loops (\"alright 1 sec...\", \"be right back...\") and explicitly failed to perform its core function (creating the support ticket/RMA) due to \"a system issue with required fields\" and \"a system limitation.\"\n\nUNHAPPY_CUSTOMER: [YES] - The customer experienced multiple delays, was forced to repeat and confirm details repeatedly, and ultimately had their request unresolved in the chat, requiring them to switch channels and manually email support for resolution.\n\nSUMMARY: The customer initially failed to find a specific product (\"Ultra3 49 mm\") but successfully pivoted to initiating a return for an existing order (#134839) due to receiving the wrong size. Despite successfully verifying the order details, the chatbot repeatedly failed to create the necessary support ticket for the return/exchange due to persistent internal system errors. The bot ultimately abandoned the task and instructed the customer to manually email support with specific formatting to resolve the issue, leaving the return process incomplete and escalated.",
     "status": "Pending",
     "logged_at": "2025-12-18 22:11:44",
-    "deleted_from_frontend": true
+    "deleted_from_frontend": true,
+    "error_category": "SYSTEM",
+    "error_tag": "Processing Loop Failure"
   },
   {
     "id": "wuDcS1GGeW8dJwb",
@@ -487,7 +584,9 @@
     "analysis": "TECHNICAL_ERROR: NO - The chatbot correctly identified the product (Neptune band) and the specific device (Apple Watch Series 11 46mm), and accurately reported the inventory status (out of stock). The conversation flow was logical.\nUNHAPPY_CUSTOMER: YES - The customer's primary, implicit goal (purchasing a specific band) was immediately blocked by the out-of-stock message, leading to frustration, even though they were still in the information-gathering phase.\nSUMMARY: The customer inquired about the correct size for a specific watch band (Neptune band) for their Apple Watch. The chatbot, after processing the request, informed the customer that the requested band was out of stock for that specific model. The bot then pivoted the conversation to offer alternative compatible bands (leather, metal, silicone) to retain the sale, but the customer's original query remains unresolved (they cannot purchase the specific item they wanted).",
     "status": "Pending",
     "logged_at": "2025-12-18 22:11:45",
-    "deleted_from_frontend": false
+    "deleted_from_frontend": false,
+    "error_category": "OTHER",
+    "error_tag": "Customer Frustration"
   },
   {
     "id": "jCrWuhxoYJ86FZa",
@@ -497,7 +596,9 @@
     "analysis": "TECHNICAL_ERROR: [YES] - The chatbot (AstraBot) initially misinterpreted the user's intent, confusing \"case\" with \"band\" (a core product it specializes in), requiring the customer to immediately clarify their request.\n\nUNHAPPY_CUSTOMER: [NO] - The customer was briefly redirected but did not express frustration or dissatisfaction, accepting the bot's correction regarding the company's product scope (only bands, not cases).\n\nSUMMARY: [The customer was looking for a specific color smartwatch case to match an existing Noceo band. The bot initially misclassified the request as a search for a new band. After the customer corrected the bot, the chatbot provided a definitive answer: the company only sells bands, not cases, rendering the user's core request unresolved by AstraBot, although the bot offered external vendor advice.]",
     "status": "Pending",
     "logged_at": "2025-12-18 22:11:45",
-    "deleted_from_frontend": true
+    "deleted_from_frontend": true,
+    "error_category": "NLU",
+    "error_tag": "Intent Misclassification"
   },
   {
     "id": "BceSM2TxLfvBWnG",
@@ -507,7 +608,9 @@
     "analysis": "TECHNICAL_ERROR: [YES] - The chatbot entered a severe processing loop/timeout error after the second customer input, repeating various \"wait\" messages (e.g., \"be right back,\" \"1 sec please\") hundreds of times before finally providing a delayed, partial response.\n\nUNHAPPY_CUSTOMER: [YES] - The excessive stalling and lack of immediate resolution forced the customer to abandon the conversation and explicitly request transfer to a human agent, indicating high frustration.\n\nSUMMARY: The customer initiated the chat seeking details about two smartwatch bands, the \"Millie Cuff\" and the \"Gleamin strap,\" specifically asking about their removal mechanisms. While the bot successfully identified the first product initially, it entered a catastrophic loop after the customer's second query regarding strap removal. After an unacceptable delay filled with repetitive wait messages, the bot finally offered a partial answer (identifying the Millie Cuff closure but still struggling to confirm the existence of the \"Gleamin strap\"). Due to the failure and delay, the customer immediately escalated the interaction to human support, leaving the core functional question partially or completely unresolved.",
     "status": "Pending",
     "logged_at": "2025-12-18 22:11:45",
-    "deleted_from_frontend": true
+    "deleted_from_frontend": true,
+    "error_category": "SYSTEM",
+    "error_tag": "Processing Loop"
   },
   {
     "id": "MRn1hCiXIr3nBCf",
@@ -517,7 +620,9 @@
     "analysis": "TECHNICAL_ERROR: [YES] - The bot failed to recognize the natural language request (\"Continue previous conversation\") and instead looped, repeating the initial menu prompt, indicating a failure in intent recognition or context retrieval.\nUNHAPPY_CUSTOMER: [YES] - The customer's direct request was ignored, forcing them back to the initial selection menu. This non-responsive loop creates immediate frustration.\nSUMMARY: [The customer attempted to retrieve context from a previous conversation, but the bot failed to understand the intent. The bot responded by looping back to its introductory menu, trapping the customer and failing to progress the interaction.]",
     "status": "Pending",
     "logged_at": "2025-12-18 22:11:46",
-    "deleted_from_frontend": true
+    "deleted_from_frontend": true,
+    "error_category": "NLU",
+    "error_tag": "Intent Recognition Failure"
   },
   {
     "id": "63FQzxdEEPdroEQ",
@@ -527,7 +632,9 @@
     "analysis": "TECHNICAL_ERROR: [YES] - The bot explicitly stated it was \"unable to create the ticket due to a technical issue with the system\" after getting stuck in a looping sequence trying to submit the request.\n\nUNHAPPY_CUSTOMER: [NO] - Although the bot failed to complete the task and forced a channel switch, the customer accepted the failure gracefully, responding only with \"Ok thanks.\"\n\nSUMMARY: [The customer sought to initiate a refund and provided all necessary details (email, name, order number, and item description) across several turns. The chatbot repeatedly failed to submit the support ticket due to a technical error, getting stuck in confirmation loops. Ultimately, the bot apologized and directed the customer to email the support team directly with the information already gathered, meaning the core request was not resolved within the chat interface.]",
     "status": "Pending",
     "logged_at": "2025-12-18 22:11:46",
-    "deleted_from_frontend": true
+    "deleted_from_frontend": true,
+    "error_category": "SYSTEM",
+    "error_tag": "Submission Failure"
   },
   {
     "id": "htsiT023gHl24oh",
@@ -537,7 +644,9 @@
     "analysis": "TECHNICAL_ERROR: [YES] - The bot suffered a critical system failure after receiving the order number, entering a prolonged loop (over 25 messages) of delay statements before failing with \"No response generated.\" It also failed to process the explicit escalation request (\"Direct me to a human\").\nUNHAPPY_CUSTOMER: [YES] - The customer experienced significant delay, system malfunction, and had their direct request for human intervention ignored, leading to a highly frustrating and unproductive interaction.\nSUMMARY: [The customer requested a return and provided their order number, but the bot failed to process the information, getting stuck in a severe loop of delay messages before halting. When the customer demanded to speak to a human, the bot ignored the escalation and instead reverted to a previous step, asking for a description of the issue to open a ticket, leaving the original return request unresolved and failing to transfer the conversation.]",
     "status": "Pending",
     "logged_at": "2025-12-18 22:11:47",
-    "deleted_from_frontend": true
+    "deleted_from_frontend": true,
+    "error_category": "SYSTEM",
+    "error_tag": "Prolonged Looping Failure"
   },
   {
     "id": "SYmy5Rm1Vi9n9l8",
@@ -547,7 +656,9 @@
     "analysis": "TECHNICAL_ERROR: [YES] - The chatbot entered a prolonged loop of holding messages (\"Just a sec...\", \"be right back...\") for 16 consecutive turns, indicating a system hang or timeout error during the ticket creation process. The bot ultimately failed to create the ticket and required the customer to use a manual email workaround.\n\nUNHAPPY_CUSTOMER: [NO] - Although the customer experienced a technical failure, they remained polite throughout. The bot successfully de-escalated the situation by apologizing clearly, admitting the technical failure, and providing a comprehensive, actionable workaround (a detailed email template with all collected information), which the customer readily accepted.\n\nSUMMARY: [The customer contacted the bot regarding a warranty issue with a failing magnetic strap. The bot successfully collected the customer's name, email, and order number (118570) for ticket creation. However, the system failed while processing the request, resulting in a series of repeated holding messages. The bot recovered by acknowledging the technical issue, apologizing, and proactively drafting a detailed, ready-to-send email to the support team, ensuring the customer did not lose the gathered information. The customer accepted this manual workaround, and the interaction concluded positively.]",
     "status": "Pending",
     "logged_at": "2025-12-18 22:11:47",
-    "deleted_from_frontend": true
+    "deleted_from_frontend": true,
+    "error_category": "SYSTEM",
+    "error_tag": "Prolonged Loop"
   },
   {
     "id": "fpVRts8bSBG5eyn",
@@ -557,7 +668,9 @@
     "analysis": "**TECHNICAL_ERROR: [YES]** - The bot repeatedly apologized for \"technical difficulty,\" failed to process \"Yes\" confirmation commands in multiple instances, and entered a repetitive confirmation loop when attempting to create the required support ticket. Additionally, the bot unnecessarily required the creation of a support ticket simply to send standard return instructions.\n\n**UNHAPPY_CUSTOMER: [YES]** - The customer's simple request for cancellation or refund was met with resistance (due to shipping status) and then compounded by technical delays and complications in the ticket creation process. The customer explicitly states they have already ordered a replacement band from Amazon, indicating they have given up on receiving timely service or the product from this company.\n\n**SUMMARY:** The customer requested a cancellation and refund for an order that the bot confirmed was already shipped. The bot was unable to process the request efficiently, requiring a support ticket to perform the simple action of emailing return instructions. During the ticket creation process, the bot suffered multiple technical errors and loops, failing to accept the customer's input until it forced a final text format focusing solely on the refund. The interaction ends with the customer's desire for a refund still pending the final confirmation of the ticket text, and the customer is now highly dissatisfied, having purchased a replacement item elsewhere.",
     "status": "Pending",
     "logged_at": "2025-12-18 22:11:48",
-    "deleted_from_frontend": true
+    "deleted_from_frontend": true,
+    "error_category": "SYSTEM",
+    "error_tag": "Repetitive Loop"
   },
   {
     "id": "QaqgNC1Gw5UrwHJ",
@@ -567,7 +680,9 @@
     "analysis": "TECHNICAL_ERROR: [YES] - The chatbot lost the conversational context (the specific product, Pixel Watch 4) when the user attempted to refine the search query (mesh band metal). It broadened the results to \"various smartwatches.\" Additionally, the bot failed to recognize the escalation keyword \"agent\" as a request for human transfer, redirecting the user back to the initial topic flow instead.\n\nUNHAPPY_CUSTOMER: [YES] - The customer escalated the interaction by typing \"agent\" after the bot failed to execute a simple filtered search, indicating frustration and unmet needs.\n\nSUMMARY: The user was searching for a specific product (a metal mesh band for the Pixel Watch 4). Although the chatbot initially recognized the product, it lost the context when the user refined the search, returning irrelevant generic results. When the user attempted to escalate the conversation by typing \"agent,\" the chatbot failed to recognize the intent for human transfer and attempted to loop the user back into the broken product search flow, leaving the customer stuck and the query unresolved.",
     "status": "Pending",
     "logged_at": "2025-12-18 22:11:48",
-    "deleted_from_frontend": true
+    "deleted_from_frontend": true,
+    "error_category": "NLU",
+    "error_tag": "Context Loss; Intent Misclassification"
   },
   {
     "id": "qlOb54GvaiZKiVP",
@@ -577,7 +692,9 @@
     "analysis": "TECHNICAL_ERROR: [YES] - The bot failed to complete the requested action (opening a support ticket) due to an explicit \"system issue with the issue field format,\" causing a loop of waiting messages and eventual failure to escalate.\n\nUNHAPPY_CUSTOMER: [YES] - The customer has a high-priority, unresolved issue (package marked as delivered but not received). The bot failed at the crucial moment of escalation, forcing the customer to abandon the chat and manually email support due to the chatbot's technical failure.\n\nSUMMARY: The customer initiated the chat to track an order (134809) that the system reported as \"Delivered.\" When the customer disputed the delivery status, the bot successfully guided the conversation toward escalation (opening a ticket). However, the chatbot experienced a critical technical failure, entering a loop of waiting messages before stating it was \"unable to create the ticket\" due to a system issue. The interaction ended with the bot redirecting the customer to contact support via email manually, leaving the original delivery dispute unresolved by the chat channel.",
     "status": "Pending",
     "logged_at": "2025-12-18 22:11:49",
-    "deleted_from_frontend": true
+    "deleted_from_frontend": true,
+    "error_category": "SYSTEM",
+    "error_tag": "Issue Field Format"
   },
   {
     "id": "Rr6u2lwnBp81VRO",
@@ -587,7 +704,9 @@
     "analysis": "TECHNICAL_ERROR: [YES] - The bot misinterpreted the user's specific query (\"Google Pixel 4,\" which is a phone) and hallucinated the device, replacing it with \"Google Pixel Watch\" (a smartwatch), thereby pivoting the conversation to an incorrect product line based on faulty assumption.\n\nUNHAPPY_CUSTOMER: [NO] - The transcript is too short to determine customer sentiment. The user did not have a chance to react to the bot's assumption.\n\nSUMMARY: The user initiated a compatibility query regarding the \"Google Pixel 4.\" The chatbot failed to correctly identify the device and instead assumed the user meant the \"Google Pixel Watch,\" immediately presenting relevant bands for the assumed product. This interaction demonstrates a critical NLU failure where the bot prioritized moving the user toward a purchase (smartwatch bands) over confirming the user's initial, device-specific question. The original query regarding Pixel 4 compatibility remains unanswered, and the bot is now pursuing a solution for the wrong product.",
     "status": "Pending",
     "logged_at": "2025-12-18 22:11:49",
-    "deleted_from_frontend": true
+    "deleted_from_frontend": true,
+    "error_category": "NLU",
+    "error_tag": "Intent Misclassification"
   },
   {
     "id": "cgJ0s3erC2L0B8d",
@@ -597,7 +716,9 @@
     "analysis": "TECHNICAL_ERROR: [YES] - The chatbot successfully gathered context (issue, order number) and presented relevant action choices. However, when the user selected \"Open ticket,\" the bot failed to utilize the existing context and immediately reverted to a generic prompt asking the user to describe the issue again (\"Package marked delivered but never received\"), creating a functional loop and stalling the resolution process.\n\nUNHAPPY_CUSTOMER: [YES] - While the customer's language remains functional, the interaction ends with the customer being forced to repeat information for the third time regarding a missing package, preventing the resolution path they selected (opening the support ticket). This unnecessary redundancy directly leads to friction and dissatisfaction.\n\nSUMMARY: The customer contacted the chatbot regarding a package marked delivered but not received. The chatbot successfully pulled the order details and tracking information. When offered the option to open a support ticket for replacement, the customer chose this path. However, the chatbot failed to move forward with the ticket creation, instead asking the customer to re-describe the precise issue, halting progress and leaving the initial problem (missing package/unopened ticket) unresolved.",
     "status": "Pending",
     "logged_at": "2025-12-18 22:11:50",
-    "deleted_from_frontend": true
+    "deleted_from_frontend": true,
+    "error_category": "LOGIC",
+    "error_tag": "Context Loss Loop"
   },
   {
     "id": "7pnENKpm0nZmwfW",
@@ -607,7 +728,9 @@
     "analysis": "TECHNICAL_ERROR: [YES] - The chatbot entered a critical submission loop error. It successfully gathered all necessary data (name, email, order number, and issue context) but failed to process or submit the request due to an overly rigid input validation requirement for the 'issue description' field. It repeatedly rejected the user's input, even when the user tried to confirm or type the exact phrase the BOT demanded.\n\nUNHAPPY_CUSTOMER: [YES] - The customer was clearly frustrated, forced to repeat the same information or slightly modify text eight times, only for the support ticket to remain uncreated. The interaction ended with the customer's problem completely unresolved, resulting in high friction and dissatisfaction.\n\nSUMMARY: The customer initiated the chat to open a support ticket for a package marked as delivered but never received. The BOT successfully collected the customer's identifying information. However, the BOT then became stuck in an inescapable loop, repeatedly claiming that the required 'issue description' field was missing or improperly formatted. Despite the customer's best attempts to comply with the BOT's demand for the exact phrase \"Package marked as delivered but never received,\" the ticket creation failed, leaving the customer without support.",
     "status": "Pending",
     "logged_at": "2025-12-18 22:11:50",
-    "deleted_from_frontend": true
+    "deleted_from_frontend": true,
+    "error_category": "LOGIC",
+    "error_tag": "Submission Loop Error"
   },
   {
     "id": "rF1Wq8xcKG83Gmv",
@@ -617,7 +740,9 @@
     "analysis": "TECHNICAL_ERROR: NO - The chatbot successfully retrieved the correct order details and tracking status (\"Delivered\") from the system. The conflict lies in the discrepancy between the carrier status and the customer's experience, not in a chatbot malfunction.\n\nUNHAPPY_CUSTOMER: YES - The customer initiated the chat to track an order and ended up having a serious unresolved issue: their package was marked as delivered but they insist they never received it.\n\nSUMMARY: The customer contacted the chatbot to track an order which was successfully identified as \"Delivered\" according to USPS tracking data. When the customer stated the item was never received, the bot provided standard troubleshooting steps and offered to escalate the issue by opening a formal support ticket for investigation. The customer surprisingly declined the offer to open a support ticket, forcing the conversation to close without resolving the critical issue of the missing package. The customer remains without their product.",
     "status": "Pending",
     "logged_at": "2025-12-18 22:11:51",
-    "deleted_from_frontend": false
+    "deleted_from_frontend": false,
+    "error_category": "NONE",
+    "error_tag": "NONE"
   },
   {
     "id": "u9J1o5N88maot4a",
@@ -627,7 +752,9 @@
     "analysis": "TECHNICAL_ERROR: [NO] - The chatbot correctly processed the request to open a support ticket and successfully interpreted the long URL and technical sizing question the customer posed.\nUNHAPPY_CUSTOMER: [YES] - The customer explicitly stated: \"I need someone other than a bot to assure me...\" The bot immediately ignored this explicit request for escalation and attempted to resolve the issue through self-service, indicating a failure to meet the user's trust requirement.\nSUMMARY: [The customer initiated the chat to open a support ticket, specifically requesting human assurance regarding the 20mm width of a specific watch strap due to distrust in the bot's ability to verify the detail. The bot provided the technical sizing answer but failed to immediately escalate as requested. The interaction ended with the bot prompting the user to create the ticket, meaning the customer's goal (human assurance) remains unresolved.]",
     "status": "Pending",
     "logged_at": "2025-12-18 22:11:51",
-    "deleted_from_frontend": false
+    "deleted_from_frontend": false,
+    "error_category": "LOGIC",
+    "error_tag": "Escalation Ignored"
   },
   {
     "id": "2TeK67RdOwVkyr9",
@@ -637,7 +764,9 @@
     "analysis": "TECHNICAL_ERROR: [YES] - The chatbot entered a catastrophic loop, repeatedly generating placeholder delay messages (\"1 sec please,\" \"be right back,\" \"Give me a moment please,\" etc.) without ever processing the customer's request or providing a substantive answer.\nUNHAPPY_CUSTOMER: [YES] - The customer's simple question was ignored, and the response channel was flooded with hundreds of repetitive delay messages, resulting in a complete failure of service.\nSUMMARY: [The customer asked a basic product measurement question (\"How do you measure what size\"). The chatbot immediately initiated a holding pattern but failed to exit the loop, resulting in the bot spamming hundreds of delay messages until the transcript concluded without the query being resolved.]",
     "status": "Pending",
     "logged_at": "2025-12-18 22:11:51",
-    "deleted_from_frontend": true
+    "deleted_from_frontend": true,
+    "error_category": "LOGIC",
+    "error_tag": "Catastrophic Looping"
   },
   {
     "id": "nv2FoddPr6l3SzL",
@@ -647,7 +776,9 @@
     "analysis": "TECHNICAL_ERROR: [YES] - The chatbot's search function failed to locate an order associated with the provided email address (`Queenreta@me.com`), suggesting either a failure in the database lookup mechanism or a discrepancy between the email provided by the customer and the email stored in the order database.\n\nUNHAPPY_CUSTOMER: [YES] - The customer was already unhappy because they never received their confirmation email. This dissatisfaction is compounded because the chatbot was unable to track the order using the required primary input (order number) or the secondary fallback input (email address), leaving the customer stuck and required to provide even more details.\n\nSUMMARY: The customer initiated contact to track an order but could not provide the order number because they never received the confirmation email. The chatbot requested the associated email address, but the subsequent database lookup failed to find any matching orders or tickets for `Queenreta@me.com`. The issue remains unresolved, and the bot ended the interaction by asking the customer for additional, tertiary details (date or product name) to continue the search.",
     "status": "Pending",
     "logged_at": "2025-12-18 22:11:51",
-    "deleted_from_frontend": true
+    "deleted_from_frontend": true,
+    "error_category": "SYSTEM",
+    "error_tag": "Database Lookup Failure"
   },
   {
     "id": "WHfixVttX8ok6Oa",
@@ -657,7 +788,9 @@
     "analysis": "TECHNICAL_ERROR: [YES] - System failure prevented the chatbot from creating the required return ticket/authorization, despite receiving all necessary information and successfully validating the customer's order. This led to a repetitive loop of holding messages and the ultimate necessity for manual escalation.\n\nUNHAPPY_CUSTOMER: [YES] - The customer experienced a frustratingly long interaction (requiring multiple confirmations and definitions of the issue) only for the system to fail completely. The customer's request (starting a return) was not resolved, forcing them to perform the task manually by emailing support.\n\nSUMMARY: The customer sought to start a return for two smartwatch bands (Order #134160) because they were deemed \"not as described\" due to a size discrepancy (too wide at the watch connection point). The chatbot successfully identified the order details but entered a lengthy clarification loop requiring the customer to provide precise, formatted issue details. After the customer provided the necessary information, the chatbot encountered a severe, persistent system error, preventing the creation of the return ticket. The bot ultimately failed to complete the core transaction and escalated the customer to manual email support, providing a pre-written template for the customer to use. The issue was left unresolved within the chat channel.",
     "status": "Pending",
     "logged_at": "2025-12-18 22:11:52",
-    "deleted_from_frontend": true
+    "deleted_from_frontend": true,
+    "error_category": "SYSTEM",
+    "error_tag": "Ticket Creation Failure"
   },
   {
     "id": "aZc9hjZts8FoVJ3",
@@ -667,7 +800,9 @@
     "analysis": "TECHNICAL_ERROR: [YES] - There were multiple technical failures: the confirmation email repeatedly failed to deliver (despite the customer checking spam), the promised human support call failed twice due to an \"internal system error,\" and the BOT initially provided an incorrect last four digits for the customer's refund card (Visa ending in 4242 instead of 5770).\n\nUNHAPPY_CUSTOMER: [YES] - The customer was highly agitated, expressing escalating anger, calling the company a \"complete scam,\" and demanding immediate resolutions while stating all correspondence was being recorded. The customer's tone was consistently demanding and accusatory throughout the transcript, showing deep distrust.\n\nSUMMARY: [A concise summary of the interaction and any unresolved issues]\nThe customer contacted the bot to demand an immediate refund for a lost order (Order #134589). The interaction was highly confrontational due to shipping delays and multiple technical failures (failed emails and failed callbacks). The chatbot handled the extreme escalation effectively by making aggressive promises, escalating the case to a Director-level human contact, taking a final \"human supervisor\" persona, and complying with all documentation demands (including recording communications and ceasing social media outreach). The issue was ultimately resolved with an immediate refund confirmation, verified to the correct Visa card ending (5770), and providing a verifiable refund ID and downloadable certificate. No issues remain unresolved, though the customer will still need to wait 3-5 business days for the funds to post.",
     "status": "Pending",
     "logged_at": "2025-12-18 22:11:53",
-    "deleted_from_frontend": true
+    "deleted_from_frontend": true,
+    "error_category": "SYSTEM",
+    "error_tag": "Multiple Delivery Failures"
   },
   {
     "id": "0jAr2o6VzBusr1P",
@@ -677,7 +812,9 @@
     "analysis": "TECHNICAL_ERROR: [YES] - The user repeatedly reported a significant front-end rendering bug where the bot's answer bubbles were truncated, preventing the user from reading the full response until they sent a subsequent message.\n\nUNHAPPY_CUSTOMER: [YES] - The customer started the transcript highly frustrated (\"How annoying\") based on a presumed previous, unsuccessful interaction, and ended the chat with clear sarcasm regarding the ongoing technical viewing issue (\"Great tech - lol\").\n\nSUMMARY: The customer initiated the chat with high frustration and suspicion regarding product toxicity. The bot successfully and clearly addressed the primary concern, confirming that the bands are free from toxic substances like PFAS and fluoroelastomers, using specific safety standards (REACH, RoHS) and material details (medical-grade silicone). However, the interaction was severely hindered by a persistent technical display error reported by the user, which the bot acknowledged but could not resolve, leading to continued customer frustration and criticism of the platform's technology.",
     "status": "Pending",
     "logged_at": "2025-12-18 22:11:53",
-    "deleted_from_frontend": true
+    "deleted_from_frontend": true,
+    "error_category": "UI",
+    "error_tag": "Rendering Bug Truncation"
   },
   {
     "id": "edARzzyX2KKPbQC",
@@ -687,7 +824,9 @@
     "analysis": "TECHNICAL_ERROR: [YES] - The chatbot failed to execute the command to create the support ticket after confirming the customer's information, leading to a loop of holding phrases and an explicit apology for a \"technical issue.\"\n\nUNHAPPY_CUSTOMER: [YES] - The customer has a severe issue (package marked delivered but not received). While the bot correctly identified the required resolution (creating a support ticket), the subsequent technical failure prevented resolution, prolonging the issue and increasing frustration.\n\nSUMMARY: [The customer initiated the interaction to track an order and discovered it was marked 'Delivered' despite never being received. The bot successfully diagnosed the issue and collected all necessary information to generate a support ticket. However, the system failed during the ticket creation phase, getting stuck in a processing loop and ultimately apologizing for a technical error, leaving the core issue of the missing package unresolved.]",
     "status": "Pending",
     "logged_at": "2025-12-18 22:11:54",
-    "deleted_from_frontend": true
+    "deleted_from_frontend": true,
+    "error_category": "SYSTEM",
+    "error_tag": "Ticket Creation Failure"
   },
   {
     "id": "SgMN6K2wMlMeXFx",
@@ -697,7 +836,9 @@
     "analysis": "TECHNICAL_ERROR: [YES] - The BOT's system failed to synchronize with the carrier (USPS) data. It reported the order as \"Delivered\" when the live tracking link showed the package was \"Returned to Sender\" due to an address error. The customer had to manually correct the BOT's data before the issue could be addressed.\nUNHAPPY_CUSTOMER: [NO] - While the customer had to spend extra effort correcting the inaccurate system status, the BOT swiftly acknowledged the error and offered satisfactory options (replacement or refund). The customer chose a full refund and ended the chat politely, indicating satisfaction with the resolution provided.\nSUMMARY: The customer initiated contact regarding an order returned by USPS due to an address error. The chatbot initially provided inaccurate status information, stating the order was \"Delivered.\" The customer provided proof from the live USPS link confirming the return. The BOT successfully took ownership of the error and offered the customer a choice between a replacement shipment or a full refund. The customer selected a full refund, which the BOT confirmed was being processed, resulting in a complete resolution of the inquiry.",
     "status": "Pending",
     "logged_at": "2025-12-18 22:11:54",
-    "deleted_from_frontend": true
+    "deleted_from_frontend": true,
+    "error_category": "SYSTEM",
+    "error_tag": "Data Synchronization Failure"
   },
   {
     "id": "07irZ5RVHleGEUr",
@@ -707,7 +848,9 @@
     "analysis": "TECHNICAL_ERROR: [YES] - The bot initially denied that the company carried the product the customer was asking about. Furthermore, the bot was rigidly scoped only to answer questions about bands, leading to a failure to address a legitimate question about an item listed on the company's website.\n\nUNHAPPY_CUSTOMER: [YES] - The customer was forced to correct the bot's factual error and then abandoned the conversation (\"all set\") when the bot confirmed it could not answer the core product question due to policy limitations.\n\nSUMMARY: [The customer asked a functional question about a specific Apple Watch case listed on the company's site. The bot first incorrectly stated the company did not sell the item. After being corrected by the human, the bot apologized but stated it was strictly limited to answering questions regarding smartwatch bands, failing to provide any information about the requested accessory. The customer's original question remains unresolved.]",
     "status": "Pending",
     "logged_at": "2025-12-18 22:11:55",
-    "deleted_from_frontend": true
+    "deleted_from_frontend": true,
+    "error_category": "NLU",
+    "error_tag": "Scope Limitation Error"
   },
   {
     "id": "nTZWN5pR5ibQ7Le",
@@ -717,7 +860,9 @@
     "analysis": "TECHNICAL_ERROR: [NO] - The bot correctly interpreted vague initial input (\"i have a problem\") and successfully transitioned the conversation to identifying the user's specific need (locating an order confirmation) and requesting necessary authentication (email/order number) to proceed.\n\nUNHAPPY_CUSTOMER: [YES] - The customer initiated the chat with a clear complaint about a pre-existing service failure (\"i have a problem,\" followed by \"Where\u2019s my email confirmation?\"), indicating they are dissatisfied with the lack of confirmation.\n\nSUMMARY: [The customer contacted the chatbot because they were missing their order confirmation email. The bot handled the vague initial input well, quickly identified the user's intent, and asked for the necessary credentials (email or order number) required to look up the order details or resend the confirmation. The specific issue remains unresolved at the end of this transcript segment.]",
     "status": "Pending",
     "logged_at": "2025-12-18 22:11:55",
-    "deleted_from_frontend": false
+    "deleted_from_frontend": false,
+    "error_category": "NONE",
+    "error_tag": "NONE"
   },
   {
     "id": "i30sq9jOKl2cfpM",
@@ -727,7 +872,9 @@
     "analysis": "TECHNICAL_ERROR: [NO] - The bot correctly identifies its limitations (inability to manage the cart directly) and provides the necessary redirection.\nUNHAPPY_CUSTOMER: [YES] - The customer was forced to leave the chat to complete a basic task (removing an item from the cart), which is frustrating and indicates a failed self-service interaction.\nSUMMARY: [The customer attempted to manage their shopping cart, specifically asking to 'remove item'. The bot successfully identified the intent but failed to execute the action, citing a system limitation (inability to manage the cart directly). The bot then redirected the customer to the main website, successfully resolving the conversation by ending the interaction, but failing to resolve the customer's core need within the chat environment.]",
     "status": "Pending",
     "logged_at": "2025-12-18 22:11:55",
-    "deleted_from_frontend": false
+    "deleted_from_frontend": false,
+    "error_category": "LOGIC",
+    "error_tag": "Failed Self-Service"
   },
   {
     "id": "eBjDcPOeC9KR5xr",
@@ -737,7 +884,9 @@
     "analysis": "TECHNICAL_ERROR: [YES] - The bot exhibited a scope limitation error, rigidly rejecting the customer's keyword (\"case\") because it was only programmed to handle inquiries related to \"bands.\"\n\nUNHAPPY_CUSTOMER: [YES] - The customer's question was immediately shut down and rejected, resulting in zero progress toward their goal and forcing them to re-initiate the inquiry elsewhere or rephrase completely.\n\nSUMMARY: The customer initiated an incomplete query regarding a \"case\" (likely a watch case or protective gear). The bot demonstrated a severe limitation in scope, explicitly stating it only handles \"smartwatch bands.\" The bot failed to answer the customer's question, resulting in an unresolved issue and a hard rejection of the user's topic.",
     "status": "Pending",
     "logged_at": "2025-12-18 22:11:55",
-    "deleted_from_frontend": true
+    "deleted_from_frontend": true,
+    "error_category": "NLU",
+    "error_tag": "Scope Limitation Error"
   },
   {
     "id": "u0R8AdoGClpXYcO",
@@ -747,7 +896,9 @@
     "analysis": "TECHNICAL_ERROR: NO - The chatbot successfully followed its programming flow, gathered all necessary inputs (email, order number, description), and executed the required action (creating a support ticket) without technical failure.\n\nUNHAPPY_CUSTOMER: YES - The customer initiated contact because they are dissatisfied with the product they received (a band that does not fit the compatible watch), which is the underlying cause of the interaction.\n\nSUMMARY: The customer contacted the bot to open a support ticket regarding Order #134160, where the received smartwatch band did not fit the watch despite being advertised as compatible. AstraBot efficiently triaged the interaction, collecting the email, order number, and issue description. The interaction concluded with the successful creation of a ticket (support-request-wrong-fit-abc789) and the promise of a human response within 24 hours. The customer's primary issue (the ill-fitting product) remains unresolved, pending human intervention.",
     "status": "Pending",
     "logged_at": "2025-12-18 22:11:56",
-    "deleted_from_frontend": false
+    "deleted_from_frontend": false,
+    "error_category": "NONE",
+    "error_tag": "NONE"
   },
   {
     "id": "DAPKxbOaej02hds",
@@ -757,7 +908,9 @@
     "analysis": "TECHNICAL_ERROR: [YES] - The bot failed to recognize and route the user's natural language input (\"Start return,\" \"Return\") and became stuck in a repeating introductory loop.\n\nUNHAPPY_CUSTOMER: [YES] - The customer provided clear intent twice, but the bot ignored the requests, resulting in zero progress toward their goal (starting a return).\n\nSUMMARY: The customer attempted to initiate a product return using natural language input. The chatbot repeatedly failed to parse the request, ignoring the user's intent and instead cycling back to its initial greeting and menu choices. The interaction ended without the customer's issue being addressed or routed to the correct system/support channel.",
     "status": "Pending",
     "logged_at": "2025-12-18 22:11:56",
-    "deleted_from_frontend": true
+    "deleted_from_frontend": true,
+    "error_category": "NLU",
+    "error_tag": "Intent Recognition Failure"
   },
   {
     "id": "NrtSn2vJ11NLQUS",
@@ -767,7 +920,9 @@
     "analysis": "TECHNICAL_ERROR: [NO] - The bot maintained conversational flow, correctly interpreted the need for 'easy one-handed' closure (seniors), and offered a logical path to resolution (support ticket) when specific product data was unavailable. The issue was data limitation, not NLU failure.\nUNHAPPY_CUSTOMER: [YES] - The customer expressed explicit frustration (\"That still doesn\u2019t tell me...\") because the bot repeatedly provided indirect or partial compatibility answers (Versa 2/3 comparison) instead of a definitive 'Yes' or 'No' for the Versa 4.\n\nSUMMARY: The customer was looking for an easy-to-use, one-handed watch band for a senior, compatible with the Fitbit Versa 4. The bot successfully recommended magnetic bands but struggled to confirm direct compatibility with the Versa 4. The bot explained the technical likelihood of compatibility (22mm interface shared with Versa 2/3) but admitted the product was not officially tested. The core compatibility question remained unresolved, and the interaction ended with the bot offering to create a support ticket for definitive confirmation from the product team.",
     "status": "Pending",
     "logged_at": "2025-12-18 22:11:56",
-    "deleted_from_frontend": false
+    "deleted_from_frontend": false,
+    "error_category": "DATA",
+    "error_tag": "Product Compatibility Unknown"
   },
   {
     "id": "KkKNNLeypyMedeU",
@@ -777,7 +932,9 @@
     "analysis": "TECHNICAL_ERROR: [YES] - The chatbot repeatedly failed to integrate with the ticketing system to create the exchange request (failed twice, punctuated by numerous delay messages). This required the BOT to apologize and manually escalate the entire request externally to the support team.\n\nUNHAPPY_CUSTOMER: [NO] - The customer remained patient and polite throughout the numerous system errors and delays. They successfully resolved their initial confusion regarding band size vs. case size and confirmed the correct exchange (41mm band) before thanking the bot for the final manual escalation.\n\nSUMMARY: The customer sought an exchange for a shorter band because their current one was too loose. The BOT provided excellent service recovery by clarifying the difference between the 45mm watch case size and the necessity of exchanging for a 41mm band size to achieve a tighter fit. However, the chatbot experienced a critical technical failure, preventing it from automatically generating a support ticket after collecting all necessary customer and order information. The BOT manually gathered the final confirmation and escalated the complete exchange request (41mm black band, Order #134339) directly to the support team via email to ensure resolution. The issue was resolved, but only through a manual, inefficient process.",
     "status": "Pending",
     "logged_at": "2025-12-18 22:11:56",
-    "deleted_from_frontend": true
+    "deleted_from_frontend": true,
+    "error_category": "SYSTEM",
+    "error_tag": "Integration Failure"
   },
   {
     "id": "dmXulnDbRPYS2ds",
@@ -787,7 +944,9 @@
     "analysis": "TECHNICAL_ERROR: [NO] - The bot successfully understood and answered the general product FAQ (\"Can you wear the strap without a case?\") and did not crash or loop. However, it demonstrated a failure to integrate context or specific SKU/bundle data when the user introduced the \"classic stainless steel band + case\" product name, defaulting instead to general policy.\n\nUNHAPPY_CUSTOMER: [YES] - The customer's second, more specific query referencing a known product configuration (\"band + case\") was not resolved. The bot essentially told the customer that the product they are asking about is likely mislabeled or shouldn't require a case, which fails to clarify the intended use or components of the specific bundle/item the customer is referencing.\n\nSUMMARY: The interaction started successfully with the bot answering a general compatibility question correctly. However, when the customer pivoted to ask about a specific product bundle (\"classic stainless steel band + case\"), the bot failed to acknowledge or look up the specific SKU. Instead, it reiterated the general rule that bands don't require cases, leaving the customer's specific confusion about the bundled item (and why it includes a case) unresolved.",
     "status": "Pending",
     "logged_at": "2025-12-18 22:11:57",
-    "deleted_from_frontend": false
+    "deleted_from_frontend": false,
+    "error_category": "LOGIC",
+    "error_tag": "Contextual Misinterpretation"
   },
   {
     "id": "oJfpfx4mqXR42ZN",
@@ -797,7 +956,9 @@
     "analysis": "TECHNICAL_ERROR: [YES] - The chatbot failed repeatedly to submit the support ticket after collecting all required information, entering a loop where it apologized for technical issues and confirmed reformatting the request three times before the customer abandoned the session.\n\nUNHAPPY_CUSTOMER: [YES] - The customer was unable to achieve their primary goal (locate their order) and their secondary goal (create a support ticket) due to the system's technical failure. The customer signaled frustration by typing \"Nevermind\" before closing the chat.\n\nSUMMARY: [The customer attempted to track an order but could not provide the order number. The BOT failed to locate any order associated with the provided email address (Ali_rose_20@hotmail.com). When the customer pivoted to creating a support ticket, the BOT successfully gathered all required information (name, product details, issue description) but then failed three times in a row to process the submission due to a persistent internal technical error. The interaction ended with the customer abandoning the request (\"Nevermind\"), leaving the original order tracking issue unresolved and the support ticket unsent.]",
     "status": "Pending",
     "logged_at": "2025-12-18 22:11:57",
-    "deleted_from_frontend": true
+    "deleted_from_frontend": true,
+    "error_category": "SYSTEM",
+    "error_tag": "Submission Failure Loop"
   },
   {
     "id": "ICpifxNBXLXS8td",
@@ -807,7 +968,9 @@
     "analysis": "TECHNICAL_ERROR: YES - Persistent system failure in the chatbot's ticket creation module. The bot repeatedly identified the issue description field as \"missing\" or incorrectly formatted, even after the human confirmed the wording multiple times.\n\nUNHAPPY_CUSTOMER: YES - The customer was unable to complete the desired task (opening a return ticket) and was forced to manually email the details they had already typed into the bot, resulting in wasted time and an uninitiated return process.\n\nSUMMARY: The customer attempted to open a support ticket for a return of a defective and color-mismatched product. The chatbot, AstraBot, repeatedly failed to process the request due to a persistent technical issue related to the required \"issue description\" field. After multiple attempts by the bot to resolve the formatting, the chatbot failed its core task and ultimately abandoned the interaction, directing the customer to manually email their complete ticket details to the company\u2019s support email address. The return request remains unprocessed by the automated system.",
     "status": "Pending",
     "logged_at": "2025-12-18 22:11:57",
-    "deleted_from_frontend": true
+    "deleted_from_frontend": true,
+    "error_category": "SYSTEM",
+    "error_tag": "Module Failure"
   },
   {
     "id": "nAWMvaeOXTRBEXj",
@@ -817,7 +980,9 @@
     "analysis": "TECHNICAL_ERROR: [YES] - The chatbot failed repeatedly to create a support ticket after collecting all necessary information. This was evident through multiple extended sequences of 'wait' messages, forced recovery attempts (asking the user to type a specific phrase), and the final admission of a \" system error preventing ticket creation through this interface.\"\n\nUNHAPPY_CUSTOMER: [YES] - Although the customer remained polite (\"ok thank you\"), the interaction was highly frustrating and inefficient. The customer spent significant time providing details and complying with specific formatting requests, only for the bot to completely fail its core task, forcing the customer to manually email support to process a time-sensitive cancellation request.\n\nSUMMARY: The customer initiated contact to cancel an order and successfully provided their email, full name, and order number (#134727). After collecting the necessary details, the AstraBot encountered severe and persistent technical errors, resulting in numerous delayed responses and repeated failed attempts to create the support ticket. The bot attempted several unsuccessful workarounds, including requiring the user to type a specific sentence for ticket submission. Ultimately, the bot could not resolve the issue and had to escalate the request externally, instructing the customer to email support directly, leaving the original goal (ticket creation via chat) unresolved.",
     "status": "Pending",
     "logged_at": "2025-12-18 22:11:58",
-    "deleted_from_frontend": true
+    "deleted_from_frontend": true,
+    "error_category": "SYSTEM",
+    "error_tag": "Ticket Creation Failure"
   },
   {
     "id": "A2Bi2LajwGJtjAe",
@@ -827,7 +992,9 @@
     "analysis": "TECHNICAL_ERROR: [NO] - The chatbot successfully processed the natural language request and correctly identified an inventory limitation (lack of Galaxy Watch 8 bands). There were minor delays (\"Give me a moment please...\"), but no functional failure or loop occurred.\n\nUNHAPPY_CUSTOMER: [YES] - The customer's specific request for a new product (Galaxy Watch 8 band) was entirely unmet. The conversation ended with the chatbot presenting potentially incompatible options, effectively blocking the customer's purchase.\n\nSUMMARY: The customer initiated the conversation requesting a Galaxy Watch 8 band (266mm). The chatbot determined that its current inventory only supports Galaxy Watch 4 and older models. The chatbot informed the user of potential compatibility issues with the GW8 but then proceeded to ask for material preferences, leaving the customer with an unfulfilled request and no clear path to purchase a compatible item.",
     "status": "Pending",
     "logged_at": "2025-12-18 22:11:58",
-    "deleted_from_frontend": false
+    "deleted_from_frontend": false,
+    "error_category": "LOGIC",
+    "error_tag": "Unmet Intent Path"
   },
   {
     "id": "LDudG1Bx8QIpySA",
@@ -837,7 +1004,9 @@
     "analysis": "**TECHNICAL_ERROR: [YES]** - The customer explicitly stated that the bot's message requesting information was \"cut off,\" indicating a failure in message delivery or display truncation that required the bot to repeat the instructions.\n\n**UNHAPPY_CUSTOMER: [NO]** - While the customer experienced frustration with the non-working promotion and the technical error in the chat, the bot successfully steered the conversation to the correct resolution path (creating a support ticket) and set clear expectations for the next steps. The customer ended the chat politely with \"Thank you.\"\n\n**SUMMARY:** The customer contacted the bot because a promised \"buy 1 get 1 free\" promotion was not applying. The bot correctly determined that this issue required human support and attempted to gather information for a ticket. A technical error caused the bot's initial request for information to fail (it was truncated), requiring the bot to repeat the necessary fields twice. The bot successfully collected the customer's name and email, confirmed the customer had not yet placed the order, and created a support ticket (support-request-customer-received-an-email...) for escalation. The core commerce issue remains unresolved but has been successfully handed off to the human support team with a 24-hour resolution expectation.",
     "status": "Pending",
     "logged_at": "2025-12-18 22:11:58",
-    "deleted_from_frontend": true
+    "deleted_from_frontend": true,
+    "error_category": "SYSTEM",
+    "error_tag": "Message Truncation"
   },
   {
     "id": "4za6KzDy3YRo8KH",
@@ -847,7 +1016,9 @@
     "analysis": "TECHNICAL_ERROR: [YES] - A critical internal JSON parsing failure (SyntaxError) occurred, immediately terminating the session and exposing technical debugging information to the user.\nUNHAPPY_CUSTOMER: [YES] - The customer was initially frustrated by the restrictive menu options and the subsequent technical failure meant their request was completely ignored and unresolved.\nSUMMARY: The customer expressed a desire to browse the full inventory, rejecting the BOT's limited, predefined menu choices. The BOT attempted to process the unstructured request but immediately failed due to a critical internal JSON parsing error, ending the conversation prematurely without addressing the customer's need.",
     "status": "Pending",
     "logged_at": "2025-12-18 22:11:59",
-    "deleted_from_frontend": true
+    "deleted_from_frontend": true,
+    "error_category": "SYSTEM",
+    "error_tag": "JSON Parsing Failure"
   },
   {
     "id": "k6QkJZZSQpbUmXW",
@@ -857,7 +1028,9 @@
     "analysis": "TECHNICAL_ERROR: [NO] - The bot functioned as programmed, successfully identifying the user's specific product requirement (20mm quick release) and then checking compatibility against the user's specified model (Amazfit Bip 3 Pro). It accurately reported the lack of stock/compatibility for that specific model.\nUNHAPPY_CUSTOMER: [YES] - Although the user did not express explicit anger or frustration, their initial purchasing query was fully blocked because the required product for their specific model (Amazfit Bip 3 Pro) is not stocked. This results in failure to complete the intended transaction, leading to dissatisfaction.\nSUMMARY: [The customer initiated contact asking for help selecting a 20mm quick release band for their specific model, the Amazfit Bip 3 Pro. The chatbot efficiently filtered by size but ultimately reported that bands for the Amazfit Bip 3 Pro are not stocked. The interaction ended with the customer unable to purchase the desired product, being offered irrelevant alternatives or the option to contact human support.]",
     "status": "Pending",
     "logged_at": "2025-12-18 22:12:02",
-    "deleted_from_frontend": false
+    "deleted_from_frontend": false,
+    "error_category": "NONE",
+    "error_tag": "NONE"
   },
   {
     "id": "Tex14mIJJwB6Eo6",
@@ -867,7 +1040,9 @@
     "analysis": "TECHNICAL_ERROR: [YES] - The transcript notes an initial platform issue where the customer's message \"went away.\" More critically, the chatbot (AstraBot) suffers a significant knowledge base error by not having access to the company's fundamental return policy details.\nUNHAPPY_CUSTOMER: [YES] - The customer was trying to ask a simple, common question, but was met with immediate failure. They were then forced into a multi-step support ticket creation process, resulting in zero resolution for their original query.\nSUMMARY: The customer initiated contact asking for the company's return policy. The bot failed to provide this basic information, stating it lacked access. When the customer requested the bot to contact support on their behalf, the bot incorrectly interpreted this as a request to create a support ticket, trapping the customer in a funnel that requires further input without resolving the core issue. The interaction ends without the customer receiving the return policy.",
     "status": "Pending",
     "logged_at": "2025-12-18 22:12:02",
-    "deleted_from_frontend": true
+    "deleted_from_frontend": true,
+    "error_category": "DATA",
+    "error_tag": "Knowledge Base Failure"
   },
   {
     "id": "9K08udHZkowB2Zc",
@@ -877,7 +1052,9 @@
     "analysis": "TECHNICAL_ERROR: [NO] - The bot correctly understood the user's inquiry, processed the request against the inventory/catalog, and provided an accurate, if disappointing, response.\nUNHAPPY_CUSTOMER: [YES] - While the user didn't explicitly express dissatisfaction (the interaction ended quickly), they were unable to fulfill their core need (finding a band for their specific watch). The outcome is negative for the customer's immediate goal.\nSUMMARY: [The customer asked if the company carried bands for their \"Fitvii\" smartwatch. The chatbot accurately informed the customer that the company does not stock bands for that brand, specializing instead in Apple, Galaxy, Pixel, and Fitbit. The interaction was quick and the issue was resolved by providing accurate information, but the customer's primary need was unmet.]",
     "status": "Pending",
     "logged_at": "2025-12-18 22:12:03",
-    "deleted_from_frontend": false
+    "deleted_from_frontend": false,
+    "error_category": "NONE",
+    "error_tag": "NONE"
   },
   {
     "id": "7pwJDDrNhQvSI3u",
@@ -887,7 +1064,9 @@
     "analysis": "TECHNICAL_ERROR: [YES] - The bot explicitly failed twice, returning internal debugging messages detailing JSON SyntaxErrors (\"Error parsing the final result. Please try again, debug: SyntaxError...\").\n\nUNHAPPY_CUSTOMER: [NO] - The customer remained consistently polite and focused on the task, simply rephrasing their question after the bot failures. They did not express frustration or negative sentiment.\n\nSUMMARY: The interaction suffered from technical instability, as the chatbot failed to respond to the customer's first two queries, instead returning internal JSON parsing errors. The customer patiently rephrased the request (\"How do I fasten the Acer stainless steel band...\"). The bot then pivoted, requesting an email address (stephanie.j.riffle@gmail.com) before successfully providing a detailed, multi-step guide for fastening the watch band, ultimately resolving the user's core concern.",
     "status": "Pending",
     "logged_at": "2025-12-18 22:12:03",
-    "deleted_from_frontend": true
+    "deleted_from_frontend": true,
+    "error_category": "SYSTEM",
+    "error_tag": "JSON Syntax Error"
   },
   {
     "id": "kdkD1EoyX0nucwc",
@@ -897,7 +1076,9 @@
     "analysis": "TECHNICAL_ERROR: [YES] - The bot encountered a critical internal error (JSON parsing failure) while attempting to process the customer's specific product inquiry.\nUNHAPPY_CUSTOMER: [YES] - The bot failed to provide any assistance, resulting in an immediate service failure and frustration for the customer.\nSUMMARY: [The customer asked a specific product availability question (45mm Apple Watch band for a small wrist). The chatbot initiated a search but failed catastrophically due to an internal JSON parsing error, preventing it from returning any relevant information or continuing the conversation. The customer's query remains unanswered.]",
     "status": "Pending",
     "logged_at": "2025-12-18 22:12:03",
-    "deleted_from_frontend": true
+    "deleted_from_frontend": true,
+    "error_category": "SYSTEM",
+    "error_tag": "JSON Parsing Failure"
   },
   {
     "id": "eHlIw5y94Qa22fk",
@@ -907,7 +1088,9 @@
     "analysis": "TECHNICAL_ERROR: NO\nUNHAPPY_CUSTOMER: YES - The customer used all caps when stating the item had not arrived and expressed frustration that it was a time-sensitive Christmas gift that should have already been delivered.\nSUMMARY: The customer initiated contact to report that order #139984 had not arrived and appeared lost. After some back-and-forth to collect the necessary information, the bot confirmed the shipment details (shipped Dec 13, 2025) and created a priority support ticket, flagging the urgency due to the Christmas deadline. The issue of the missing item remains unresolved pending follow-up from the support team within 24 hours via email.",
     "status": "Pending",
     "logged_at": "2025-12-19 17:41:45",
-    "deleted_from_frontend": false
+    "deleted_from_frontend": false,
+    "error_category": "NONE",
+    "error_tag": "NONE"
   },
   {
     "id": "CwdytFKDO2eCBKX",
@@ -917,7 +1100,9 @@
     "analysis": "TECHNICAL_ERROR: [YES] - The chatbot explicitly failed during the process of creating the support ticket, citing a \"technical issue.\"\nUNHAPPY_CUSTOMER: [YES] - The customer experienced significant frustration due to repetitive questioning and mandatory input formatting requirements, especially after providing necessary order details (name, address, phone), only for the bot to fail the final requested action (ticket creation).\nSUMMARY: [A concise summary of the interaction and any unresolved issues]\nThe customer initiated contact because they did not receive an order confirmation email. The chatbot initially failed to find the order by email, leading the customer to paste a shipment update notification they had received separately. The interaction then became highly inefficient as the bot insisted the customer provide the issue description in a very specific, pre-formatted sentence, repeatedly rejecting valid identifying information (name, address, phone) provided by the customer until the exact phrase was given. Upon finally receiving the required input, the bot experienced a technical failure and could not create the support ticket. The issue remains unresolved via the chatbot; the customer was directed to email the support team directly with all collected details.",
     "status": "Pending",
     "logged_at": "2025-12-19 17:41:45",
-    "deleted_from_frontend": true
+    "deleted_from_frontend": true,
+    "error_category": "SYSTEM",
+    "error_tag": "Technical Failure"
   },
   {
     "id": "DNzKYssjUeZT20N",
@@ -927,6 +1112,56 @@
     "analysis": "TECHNICAL_ERROR: [YES] - The bot experienced persistent system-level errors and formatting issues that prevented it from successfully creating the required support ticket multiple times.\nUNHAPPY_CUSTOMER: [YES] - The customer displayed frustration and confusion, evidenced by their terse replies (\"Yes,\" \"Ok\") and concluding with \"??\", due to the bot's repeated failures to complete the requested action.\nSUMMARY: The customer contacted the bot to correct a wrong shipping address (Order #141348). The bot confirmed the order was unfulfilled and successfully gathered the customer's name and the new address. However, the bot repeatedly failed to create the necessary support ticket due to persistent system formatting errors. The issue remains unresolved by the bot, which eventually escalated the case by directing the customer to email support directly (support@astrastraps.com) to manually update the address.",
     "status": "Pending",
     "logged_at": "2025-12-19 17:41:45",
+    "deleted_from_frontend": true,
+    "error_category": "SYSTEM",
+    "error_tag": "Formatting Errors"
+  },
+  {
+    "id": "enzJ1paAJzhtpzf",
+    "date": "2025-12-20 16:26:25",
+    "is_technical_error": true,
+    "is_unhappy_customer": true,
+    "error_category": "TICKET_CREATION_ERROR",
+    "mitigation_notes": "",
+    "analysis": "TECHNICAL_ERROR: YES - The bot repeatedly cited \"technical difficulty,\" \"technical issues,\" and system inability to submit or update support tickets throughout the interaction.\nUNHAPPY_CUSTOMER: YES - The customer was highly dissatisfied, escalated to threatening fraud reports, called the company fraudulent, complained about delays, and expressed extreme anger after being given incorrect contact information.\nERROR_CATEGORY: TICKET_CREATION_ERROR - The bot repeatedly failed to execute its primary function of creating or updating the required high-priority support tickets due to stated technical malfunctions.\nSUMMARY: The customer contacted support regarding an unfulfilled order (#140520) placed on Dec 14. Due to significant delays and lack of tracking information, the customer became extremely angry and threatened social media escalation. The chatbot repeatedly failed to submit or update support tickets due to system issues. Furthermore, the bot provided an invalid, non-working support phone number, which it later corrected by stating the company has no published phone support. The customer demanded immediate cancellation and a refund, accusing the company of fraud. The transcript ends with the bot acknowledging the demand for cancellation/refund and attempting to create a final escalation ticket. The order status and refund request remain unresolved.",
+    "status": "Pending",
+    "logged_at": "2025-12-21 19:09:29",
+    "deleted_from_frontend": true
+  },
+  {
+    "id": "8FaV9jztYMvPdKS",
+    "date": "2025-12-20 16:00:45",
+    "is_technical_error": false,
+    "is_unhappy_customer": true,
+    "error_category": "LOGIC_ERROR",
+    "mitigation_notes": "",
+    "analysis": "TECHNICAL_ERROR: NO\nUNHAPPY_CUSTOMER: YES - The customer is demanding a live human and questioning the process (\"? where is the support ticket number?\").\nERROR_CATEGORY: LOGIC_ERROR\nSUMMARY: The customer urgently demanded to speak to a live human and asked about an existing support ticket number. The bot responded by initiating the process to create a *new* ticket, failing to address the implied frustration or clarify if the user needed escalation or information about a prior ticket.",
+    "status": "Pending",
+    "logged_at": "2025-12-21 19:09:29",
+    "deleted_from_frontend": false
+  },
+  {
+    "id": "gaieQ9Z43Bz3HFD",
+    "date": "2025-12-20 01:06:24",
+    "is_technical_error": true,
+    "is_unhappy_customer": true,
+    "error_category": "TICKET_CREATION_ERROR",
+    "mitigation_notes": "",
+    "analysis": "TECHNICAL_ERROR: YES - The bot explicitly stated it was \"encountering an issue with submitting your ticket\" and required re-confirmation of all data fields, indicating a failure in the backend process for ticket creation.\nUNHAPPY_CUSTOMER: YES - The customer was required to confirm the cancellation reason twice, and when the bot failed the submission again, the customer bypassed the intended flow by asking directly for the support email, indicating frustration with the automated process.\nERROR_CATEGORY: TICKET_CREATION_ERROR\nSUMMARY: The customer requested to cancel order #141464. The bot tried to create a support ticket but encountered an internal submission error, forcing it to loop and re-confirm all previously provided details. The interaction ended when the customer requested the direct customer support email address, effectively abandoning the bot process. The cancellation request is unresolved by the chatbot.",
+    "status": "Pending",
+    "logged_at": "2025-12-21 19:09:29",
+    "deleted_from_frontend": true
+  },
+  {
+    "id": "OWuZOOk2axLnSUN",
+    "date": "2025-12-20 01:04:44",
+    "is_technical_error": true,
+    "is_unhappy_customer": true,
+    "error_category": "TICKET_CREATION_ERROR",
+    "mitigation_notes": "",
+    "analysis": "TECHNICAL_ERROR: YES - The bot repeatedly failed to create the support ticket, citing \"a system issue with the required fields\" multiple times despite receiving confirmation from the user.\nUNHAPPY_CUSTOMER: YES - The customer was unable to complete their cancellation request through the bot and had to be redirected to email support after multiple failures.\nERROR_CATEGORY: TICKET_CREATION_ERROR\nSUMMARY: The customer successfully requested to cancel order #141463 and provided all necessary personal details. However, the chatbot experienced repeated system errors when attempting to create the support ticket, forcing it to escalate the request entirely to direct email support. The cancellation request remains unresolved by the chatbot interaction.",
+    "status": "Pending",
+    "logged_at": "2025-12-21 19:09:30",
     "deleted_from_frontend": true
   }
 ]

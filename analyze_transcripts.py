@@ -65,6 +65,7 @@ Analyze the following customer service chatbot transcript.
 Return your analysis in the following format:
 TECHNICAL_ERROR: [YES/NO] - Briefly explain if any.
 UNHAPPY_CUSTOMER: [YES/NO] - Briefly explain if any.
+ERROR_CATEGORY: [CATEGORY] - Choose one: DATABASE_ERROR, TICKET_CREATION_ERROR, LOGIC_ERROR, NLU_ERROR, PRODUCT_INFO_ERROR, OTHER, NONE (if no error).
 SUMMARY: [A concise summary of the interaction and any unresolved issues]
 
 Transcript:
@@ -171,6 +172,17 @@ def main():
         is_error = "TECHNICAL_ERROR: YES" in analysis.upper().replace('[', '').replace(']', '')
         is_unhappy = "UNHAPPY_CUSTOMER: YES" in analysis.upper().replace('[', '').replace(']', '')
         
+        error_category = "NONE"
+        for line in analysis.split('\n'):
+            if "ERROR_CATEGORY:" in line.upper():
+                # Extract text after colon, remove brackets/whitespace
+                try:
+                    raw_cat = line.split(":", 1)[1].strip()
+                    # simplistic cleanup: remove [ ] and extra chars
+                    error_category = raw_cat.replace('[', '').replace(']', '').split(' - ')[0].strip().upper()
+                except:
+                    pass
+        
         if is_error: error_count += 1
         if is_unhappy: dissatisfied_count += 1
         
@@ -179,6 +191,7 @@ def main():
             "date": dt,
             "is_technical_error": is_error,
             "is_unhappy_customer": is_unhappy,
+            "error_category": error_category,
             "analysis": analysis
         })
 

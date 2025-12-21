@@ -78,6 +78,8 @@ def process_report(report_path, dry_run=False):
                     "date": item['date'],
                     "is_technical_error": is_tech_error,
                     "is_unhappy_customer": item.get('is_unhappy_customer', False),
+                    "error_category": item.get('error_category', 'NONE'),
+                    "mitigation_notes": "",
                     "analysis": item['analysis'],
                     "status": "Pending",
                     "logged_at": datetime.now().strftime("%Y-%m-%d %H:%M:%S"),

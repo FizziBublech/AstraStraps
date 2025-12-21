@@ -78,16 +78,10 @@ def extract_payload(raw_data):
     
     logger.info(f"Extracting payload from: {raw_data}")
     
-    # Handle nested tool_payload structure
-    if 'tool_payload' in raw_data:
-        payload = raw_data['tool_payload']
-    else:
-        payload = raw_data
-        
-    # Ensure payload is a dict
-    if not isinstance(payload, dict):
-        logger.warning(f"Payload is not a dictionary: {type(payload)}")
-        return {"raw_payload": payload}
+    # Merge tool_payload if present, instead of exclusive selection
+    payload = raw_data.copy()
+    if 'tool_payload' in raw_data and isinstance(raw_data['tool_payload'], dict):
+        payload.update(raw_data['tool_payload'])
         
     return payload
 

@@ -1,0 +1,26 @@
+[
+  {
+    "id": "eHlIw5y94Qa22fk",
+    "date": "2025-12-19 15:19:57",
+    "is_technical_error": false,
+    "is_unhappy_customer": true,
+    "error_category": "LOGIC_ERROR",
+    "analysis": "TECHNICAL_ERROR: NO\nUNHAPPY_CUSTOMER: YES - The customer expressed frustration through capitalization and repetition when the bot failed to immediately recognize the issue was ticket-worthy after the order status was provided.\nERROR_CATEGORY: LOGIC_ERROR - The bot exhibited logic failure by repeatedly asking for information (the description/email) that had already been provided earlier in the conversation, requiring the human to input the description multiple times in slightly different ways before finalizing ticket creation.\nSUMMARY: A customer requested support for an order that had not arrived and was needed urgently as a Christmas present. The bot successfully retrieved the tracking information (shipped Dec 13, 2025) but stalled by looping back to request the ticket description after presenting the status. The interaction concluded with the bot creating a priority support ticket and promising contact within 24 hours, along with a working tracking link. The resolution is pending external team follow-up."
+  },
+  {
+    "id": "2YZtJFuJN6cnXTK",
+    "date": "2025-12-19 15:04:16",
+    "is_technical_error": false,
+    "is_unhappy_customer": false,
+    "error_category": "NONE",
+    "analysis": "TECHNICAL_ERROR: NO\nUNHAPPY_CUSTOMER: NO\nERROR_CATEGORY: NONE\nSUMMARY: The customer inquired about watch straps suitable for swimming. The bot successfully understood the intent and provided relevant silicone band suggestions, prompting the user for further clarification on size or color preference. The interaction is ongoing and functional."
+  },
+  {
+    "id": "QyFbrkqjBkJtnXA",
+    "date": "2025-12-19 14:59:04",
+    "is_technical_error": false,
+    "is_unhappy_customer": false,
+    "error_category": "NONE",
+    "analysis": "TECHNICAL_ERROR: [NO]\nUNHAPPY_CUSTOMER: [NO]\nERROR_CATEGORY: [NONE]\nSUMMARY: [The customer inquired about the suitability of a strap for swimming. The bot successfully guided the conversation, gathering required information (material, then size 38mm). The bot identified the single available stainless steel option (Jasper Milanese band) that meets the swim-friendly criteria and provided alternatives, leaving the customer at a selection point.]"
+  }
+]
