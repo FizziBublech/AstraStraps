@@ -299,7 +299,7 @@ class ShopifyAPIClient:
         search_gql = """
         query($q: String!) {
           orders(first: 5, query: $q) {
-            edges { node { id name orderNumber processedAt cancelledAt closedAt displayFinancialStatus displayFulfillmentStatus
+            edges { node { id name processedAt cancelledAt closedAt displayFinancialStatus displayFulfillmentStatus
               customer { displayName email }
               shippingAddress { name address1 address2 city province country zip phone }
               fulfillments { createdAt status trackingInfo { number url company } }
@@ -332,7 +332,7 @@ class ShopifyAPIClient:
         scan_gql = """
         query($first: Int!) {
           orders(first: $first, sortKey: PROCESSED_AT, reverse: true) {
-            edges { node { id name orderNumber processedAt cancelledAt closedAt displayFinancialStatus displayFulfillmentStatus
+            edges { node { id name processedAt cancelledAt closedAt displayFinancialStatus displayFulfillmentStatus
               customer { displayName email }
               shippingAddress { name address1 address2 city province country zip phone }
               fulfillments { createdAt status trackingInfo { number url company } }
@@ -1221,7 +1221,7 @@ def track_order():
             "order": {
                 "id": order.get('id'),
                 "name": order.get('name'),
-                "order_number": order.get('orderNumber'),
+                "order_number": order.get('name'),
                 "processed_at": order.get('processedAt'),
                 "closed_at": order.get('closedAt'),
                 "cancelled_at": order.get('cancelledAt'),
