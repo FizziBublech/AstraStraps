@@ -248,14 +248,17 @@ class ShopifyAPIClient:
     """Client for interacting with the Shopify Admin API (REST + GraphQL)"""
 
     def __init__(self):
-        self.store_domain = app.config.get('SHOPIFY_STORE_DOMAIN')
-        self.admin_token = app.config.get('SHOPIFY_ADMIN_TOKEN')
-        self.api_version = app.config.get('SHOPIFY_API_VERSION')
-        self.rest_base_url = app.config.get('SHOPIFY_ADMIN_REST_BASE_URL')
-        self.graphql_url = app.config.get('SHOPIFY_ADMIN_GRAPHQL_URL')
+        from config import Config
+        self.store_domain = Config.SHOPIFY_STORE_DOMAIN
+        self.admin_token = Config.SHOPIFY_ADMIN_TOKEN
+        self.api_version = Config.SHOPIFY_API_VERSION
+        self.rest_base_url = Config.SHOPIFY_ADMIN_REST_BASE_URL
+        self.graphql_url = Config.SHOPIFY_ADMIN_GRAPHQL_URL
 
         if not self.store_domain or not self.admin_token:
             logger.warning("Shopify configuration not set. Shopify endpoints will not function until configured.")
+        else:
+            logger.info(f"ShopifyAPIClient initialized for domain: {self.store_domain}")
 
         self.rest_headers = {
             'X-Shopify-Access-Token': self.admin_token or '',
@@ -289,11 +292,13 @@ class ShopifyAPIClient:
 
     def get_order_by_number(self, order_number: str):
         """Find a single order by name (e.g., #1001), using GraphQL search and a wider recent scan."""
+        logger.info(f"Searching for order: {order_number}")
+        
         # 1) Try GraphQL search by name (with and without #)
         potential_names = [f"#{str(order_number).strip()}", str(order_number).strip()]
         search_gql = """
         query($q: String!) {
-          orders(first: 1, query: $q) {
+          orders(first: 5, query: $q) {
             edges { node { id name orderNumber processedAt cancelledAt closedAt displayFinancialStatus displayFulfillmentStatus
               customer { displayName email }
               shippingAddress { name address1 address2 city province country zip phone }
@@ -305,13 +310,25 @@ class ShopifyAPIClient:
         """
         for name in potential_names:
             q = f'name:"{name}"'
+            logger.info(f"Attempting GraphQL search with query: {q}")
             data = self._graphql(search_gql, {"q": q})
+            
             if isinstance(data, dict):
                 edges = (((data or {}).get('orders') or {}).get('edges'))
                 if edges:
+                    logger.info(f"GraphQL search found {len(edges)} potential matches for {name}")
+                    # Look for exact match in name
+                    for edge in edges:
+                        node = edge.get('node', {})
+                        if node.get('name') == name:
+                            logger.info(f"Found exact match: {node.get('name')}")
+                            return node
+                    # Fallback to first result if no exact name match but we found something
+                    logger.info(f"No exact name match, using first result: {edges[0].get('node', {}).get('name')}")
                     return edges[0].get('node')
 
         # 2) Scan a wider recent window (up to 250 most recent) and match by name
+        logger.info("GraphQL specific search failed, starting wider recent scan...")
         scan_gql = """
         query($first: Int!) {
           orders(first: $first, sortKey: PROCESSED_AT, reverse: true) {
@@ -326,15 +343,24 @@ class ShopifyAPIClient:
         """
         data = self._graphql(scan_gql, {"first": 250})
         if not isinstance(data, dict):
+            logger.error(f"Scan GraphQL failed: {data}")
             return None
+            
         edges = (((data or {}).get('orders') or {}).get('edges'))
         if not edges:
+            logger.warning("Scan returned no orders")
             return None
+            
+        logger.info(f"Scanning through {len(edges)} recent orders for {potential_names}")
         targets = set(potential_names)
         for edge in edges:
             node = edge.get('node', {})
-            if node.get('name') in targets:
+            node_name = node.get('name')
+            if node_name in targets:
+                logger.info(f"Scan found match: {node_name}")
                 return node
+        
+        logger.warning(f"Order {order_number} not found in top 250 recent orders")
         return None
 
     def _determine_sort_strategy(self, query_text: str = None, filters: dict = None):
