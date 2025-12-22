@@ -69,7 +69,7 @@ def extract_payload(raw_data):
     """
     Extract payload from either flat JSON or nested tool_payload structure.
     Also handles 'stuffed' fields where the LLM incorrectly merges multiple 
-    key-value pairs into a single string (e.g., "order_number": "#123', 'issue': 'break").
+    key-value pairs into a single string.
     """
     if not raw_data:
         # Fallback to form data or args if JSON is empty
@@ -92,23 +92,20 @@ def extract_payload(raw_data):
     final_payload = payload.copy()
     
     for key, value in payload.items():
+        # Only attempt rescue if the value looks like a stuffed string
         if isinstance(value, str) and ("','" in value or "':'" in value or "\",\"" in value):
             logger.info(f"Detected potentially stuffed field: {key}={value}")
             
             # Pattern to match 'key':'value' or similar inside the string
-            # Look for: [quote]key[quote] [colon/equals] [quote]value[quote]
             found_pairs = re.findall(r"['\"]?(\w+)['\"]?\s?[:=]\s?['\"]?(.*?)['\"]?(?=['\"]?,\s?['\"]?\w+['\"]?\s?[:=]|$)", value)
             
             if found_pairs:
                 for k, v in found_pairs:
-                    # Only add if it doesn't exist or is empty in the main payload
                     if k not in final_payload or not final_payload[k]:
                         logger.info(f"Rescued stuffed field: {k}={v}")
                         final_payload[k] = v
                 
-                # Also clean up the primary field (the one that was stuffed)
-                # Usually the primary value is everything before the first stuffed key
-                # e.g. "order_number": "#123', 'issue': '..." -> primary is "#123"
+                # Cleanup the primary field (everything before the first stuffed key)
                 primary_match = re.split(r"['\"]?,\s?['\"]?\w+['\"]?\s?[:=]", value)
                 if primary_match:
                     new_val = primary_match[0].strip("'\" ")
@@ -1156,6 +1153,7 @@ def track_order():
 
         order = shopify_client.get_order_by_number(order_number)
         if not order:
+            logger.error(f"Shopify search returned no results for order_number: {order_number}. Targets searched: {['#'+order_number, order_number]}")
             return jsonify({
                 "success": False,
                 "error": f"Order not found: {order_number}"
