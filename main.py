@@ -66,7 +66,11 @@ CHANNEL_CODES = {
 }
 
 def extract_payload(raw_data):
-    """Extract payload from either flat JSON or nested tool_payload structure."""
+    """
+    Extract payload from either flat JSON or nested tool_payload structure.
+    Also handles 'stuffed' fields where the LLM incorrectly merges multiple 
+    key-value pairs into a single string (e.g., "order_number": "#123', 'issue': 'break").
+    """
     if not raw_data:
         # Fallback to form data or args if JSON is empty
         if request.form:
@@ -76,14 +80,43 @@ def extract_payload(raw_data):
         else:
             return {}
     
-    logger.info(f"Extracting payload from: {raw_data}")
+    logger.info(f"Extracting payload from raw data: {raw_data}")
     
-    # Merge tool_payload if present, instead of exclusive selection
+    # Merge tool_payload if present
     payload = raw_data.copy()
     if 'tool_payload' in raw_data and isinstance(raw_data['tool_payload'], dict):
         payload.update(raw_data['tool_payload'])
         
-    return payload
+    # ROBUSTNESS HEURISTIC: Handle stringified/stuffed fields
+    import re
+    final_payload = payload.copy()
+    
+    for key, value in payload.items():
+        if isinstance(value, str) and ("','" in value or "':'" in value or "\",\"" in value):
+            logger.info(f"Detected potentially stuffed field: {key}={value}")
+            
+            # Pattern to match 'key':'value' or similar inside the string
+            # Look for: [quote]key[quote] [colon/equals] [quote]value[quote]
+            found_pairs = re.findall(r"['\"]?(\w+)['\"]?\s?[:=]\s?['\"]?(.*?)['\"]?(?=['\"]?,\s?['\"]?\w+['\"]?\s?[:=]|$)", value)
+            
+            if found_pairs:
+                for k, v in found_pairs:
+                    # Only add if it doesn't exist or is empty in the main payload
+                    if k not in final_payload or not final_payload[k]:
+                        logger.info(f"Rescued stuffed field: {k}={v}")
+                        final_payload[k] = v
+                
+                # Also clean up the primary field (the one that was stuffed)
+                # Usually the primary value is everything before the first stuffed key
+                # e.g. "order_number": "#123', 'issue': '..." -> primary is "#123"
+                primary_match = re.split(r"['\"]?,\s?['\"]?\w+['\"]?\s?[:=]", value)
+                if primary_match:
+                    new_val = primary_match[0].strip("'\" ")
+                    if new_val != value:
+                        logger.info(f"Cleaned up primary field {key}: {new_val}")
+                        final_payload[key] = new_val
+
+    return final_payload
 
 def safe_float(value):
     """Safely convert a value to float, returning None if conversion fails."""
@@ -264,7 +297,7 @@ class ShopifyAPIClient:
         search_gql = """
         query($q: String!) {
           orders(first: 1, query: $q) {
-            edges { node { id name processedAt cancelledAt closedAt displayFinancialStatus displayFulfillmentStatus
+            edges { node { id name orderNumber processedAt cancelledAt closedAt displayFinancialStatus displayFulfillmentStatus
               customer { displayName email }
               shippingAddress { name address1 address2 city province country zip phone }
               fulfillments { createdAt status trackingInfo { number url company } }
@@ -285,7 +318,7 @@ class ShopifyAPIClient:
         scan_gql = """
         query($first: Int!) {
           orders(first: $first, sortKey: PROCESSED_AT, reverse: true) {
-            edges { node { id name processedAt cancelledAt closedAt displayFinancialStatus displayFulfillmentStatus
+            edges { node { id name orderNumber processedAt cancelledAt closedAt displayFinancialStatus displayFulfillmentStatus
               customer { displayName email }
               shippingAddress { name address1 address2 city province country zip phone }
               fulfillments { createdAt status trackingInfo { number url company } }
