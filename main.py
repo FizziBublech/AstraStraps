@@ -65,11 +65,15 @@ CHANNEL_CODES = {
     9: "SMS"
 }
 
+# Global store for recent raw payloads for debugging
+RECENT_RAW_PAYLOADS = []
+MAX_DEBUG_PAYLOADS = 20
+
 def extract_payload(raw_data):
     """
     Extract payload from either flat JSON or nested tool_payload structure.
     Also handles 'stuffed' fields where the LLM incorrectly merges multiple 
-    key-value pairs into a single string.
+    key-value pairs into a single string, and UI-fragment contamination.
     """
     if not raw_data:
         # Fallback to form data or args if JSON is empty
@@ -80,6 +84,18 @@ def extract_payload(raw_data):
         else:
             return {}
     
+    # Store for debugging
+    try:
+        RECENT_RAW_PAYLOADS.insert(0, {
+            "timestamp": datetime.utcnow().isoformat(),
+            "data": raw_data,
+            "path": request.path
+        })
+        if len(RECENT_RAW_PAYLOADS) > MAX_DEBUG_PAYLOADS:
+            RECENT_RAW_PAYLOADS.pop()
+    except Exception as e:
+        logger.error(f"Failed to store debug payload: {e}")
+
     logger.info(f"Extracting payload from raw data: {raw_data}")
     
     # Merge tool_payload if present
@@ -87,31 +103,49 @@ def extract_payload(raw_data):
     if 'tool_payload' in raw_data and isinstance(raw_data['tool_payload'], dict):
         payload.update(raw_data['tool_payload'])
         
-    # ROBUSTNESS HEURISTIC: Handle stringified/stuffed fields
     import re
     final_payload = payload.copy()
     
     for key, value in payload.items():
-        # Only attempt rescue if the value looks like a stuffed string
-        if isinstance(value, str) and ("','" in value or "':'" in value or "\",\"" in value):
-            logger.info(f"Detected potentially stuffed field: {key}={value}")
+        # 1. UI FRAGMENT RESCUE: Handle list/dict objects that might be UI messages
+        # Example: [{"type": "text", "text": "my issue"}]
+        if isinstance(value, (list, dict)):
+            val_str = str(value)
+            if '"text":' in val_str:
+                # Try to find the actual text content in UI fragments
+                texts = re.findall(r'"text":\s*"([^"]+)"', val_str)
+                if texts:
+                    extracted_text = " ".join(texts)
+                    logger.info(f"Rescued text from UI fragment in '{key}': {extracted_text}")
+                    final_payload[key] = extracted_text
+                    continue
+
+        # 2. STUFFED FIELD RESCUE: Handle stringified/stuffed fields
+        if isinstance(value, str):
+            # Clean up obvious escapes and newline junk often seen in mangled JSON
+            value = value.replace('\\"', '"').replace('\\n', ' ').strip()
             
-            # Pattern to match 'key':'value' or similar inside the string
-            found_pairs = re.findall(r"['\"]?(\w+)['\"]?\s?[:=]\s?['\"]?(.*?)['\"]?(?=['\"]?,\s?['\"]?\w+['\"]?\s?[:=]|$)", value)
-            
-            if found_pairs:
-                for k, v in found_pairs:
-                    if k not in final_payload or not final_payload[k]:
-                        logger.info(f"Rescued stuffed field: {k}={v}")
-                        final_payload[k] = v
+            if ("\",\"" in value or "\", \"" in value or "':'" in value or "',' " in value):
+                logger.info(f"Detected potentially stuffed field: {key}={value}")
                 
-                # Cleanup the primary field (everything before the first stuffed key)
-                primary_match = re.split(r"['\"]?,\s?['\"]?\w+['\"]?\s?[:=]", value)
-                if primary_match:
-                    new_val = primary_match[0].strip("'\" ")
-                    if new_val != value:
-                        logger.info(f"Cleaned up primary field {key}: {new_val}")
-                        final_payload[key] = new_val
+                # More aggressive pattern to catch key-value pairs 
+                # This looks for "key"(could be quoted): "value"(until next key-like pattern or end)
+                found_pairs = re.findall(r'["\']?(\w+)["\']?\s*[:=]\s*["\']?(.*?)(?=["\']?,?\s*["\']?\w+["\']?\s*[:=]|["\']?$)', value)
+                
+                if found_pairs:
+                    for k, v in found_pairs:
+                        clean_v = v.strip('",\' ')
+                        if k not in final_payload or not final_payload[k]:
+                            logger.info(f"Rescued stuffed field: {k}={clean_v}")
+                            final_payload[k] = clean_v
+                
+                # Cleanup primary field (take the part before any obvious key/value pair)
+                primary_split = re.split(r'["\']?,?\s*["\']?\w+["\']?\s*[:=]', value)
+                if primary_split:
+                    primary_val = primary_split[0].strip('",\' ')
+                    if primary_val and primary_val != value:
+                        logger.info(f"Cleaned up primary field '{key}': {primary_val}")
+                        final_payload[key] = primary_val
 
     return final_payload
 
@@ -631,6 +665,14 @@ def health_check():
         "status": "healthy",
         "service": "Reamaze API Bridge",
         "timestamp": datetime.utcnow().isoformat()
+    })
+
+@app.route('/debug-payloads', methods=['GET'])
+def debug_payloads():
+    """Endpoint to inspect recent raw payloads for troubleshooting tool-calling issues."""
+    return jsonify({
+        "count": len(RECENT_RAW_PAYLOADS),
+        "payloads": RECENT_RAW_PAYLOADS
     })
 
 @app.route('/create-ticket', methods=['POST'])

@@ -1,0 +1,37 @@
+[
+  {
+    "timestamp": "2025-12-22T20:04:48.754361",
+    "version": "v_20251222_200448",
+    "author": "Antigravity",
+    "message": "Optimized create-ticket instructions for better JSON stability",
+    "file": "prompts/archive/prompt_v_20251222_200448.md"
+  },
+  {
+    "timestamp": "2025-12-22T19:30:55.586045",
+    "version": "v_20251222_193055",
+    "author": "Antigravity",
+    "message": "Hardened JSON rules against field merging",
+    "file": "prompts/archive/prompt_v_20251222_193055.md"
+  },
+  {
+    "timestamp": "2025-12-22T19:16:34.545286",
+    "version": "v_20251222_191634",
+    "author": "Antigravity",
+    "message": "Renamed tools to underscores and reinforced required fields for ticket creation",
+    "file": "prompts/archive/prompt_v_20251222_191634.md"
+  },
+  {
+    "timestamp": "2025-12-22T19:00:24.406102",
+    "version": "v_20251222_190024",
+    "author": "Antigravity",
+    "message": "Relaxed ticket creation requirements to prevent loops and improve flexibility",
+    "file": "prompts/archive/prompt_v_20251222_190024.md"
+  },
+  {
+    "timestamp": "2025-12-22T18:32:38.387114",
+    "version": "v_20251222_183238",
+    "author": "script",
+    "message": "Test update to test bot",
+    "file": "prompts/archive/prompt_v_20251222_183238.md"
+  }
+]
