@@ -109,6 +109,7 @@ def main():
     parser = argparse.ArgumentParser(description="Analyze Convocore transcripts with Gemini.")
     parser.add_argument("--date", help="Date to analyze (YYYY-MM-DD).")
     parser.add_argument("--month", help="Month to analyze (YYYY-MM).")
+    parser.add_argument("--since-last", action="store_true", help="Analyze conversations since the last run.")
     parser.add_argument("--limit", type=int, help="Limit number of conversations to analyze.", default=20)
     args = parser.parse_args()
 
@@ -119,8 +120,23 @@ def main():
 
     target_date = args.date
     target_month = args.month
+    since_last = args.since_last
     
-    if not target_date and not target_month:
+    last_ts = 0.0
+    TIMESTAMP_FILE = ".last_analyzed_ts"
+
+    if since_last:
+        if os.path.exists(TIMESTAMP_FILE):
+             try:
+                 with open(TIMESTAMP_FILE, "r") as f:
+                     last_ts = float(f.read().strip())
+                 print(f"Resuming analysis from timestamp: {datetime.fromtimestamp(last_ts)}")
+             except Exception as e:
+                 print(f"Error reading timestamp file: {e}")
+        else:
+             print("No previous timestamp found. Analyzing all (within limit).")
+
+    if not target_date and not target_month and not since_last:
         target_date = datetime.now().strftime("%Y-%m-%d")
         print(f"No date or month specified. Defaulting to today: {target_date}")
 
@@ -128,19 +144,35 @@ def main():
     
     # Filter by date or month
     filtered_convos = []
+    
+    # Pre-sort to ensure we process chronologically if needed, 
+    # but the logic below iterates and filters. 
+    # Actually, usually 'data' comes sorted or unsorted. 
+    # Let's filter first.
+
+    new_max_ts = last_ts
+
     for convo in convos:
         ts = convo['metadata']['convo'].get('ts', 0)
         dt_obj = datetime.fromtimestamp(ts)
         convo_date = dt_obj.strftime('%Y-%m-%d')
         convo_month = dt_obj.strftime('%Y-%m')
         
-        if target_date and convo_date == target_date:
-            filtered_convos.append(convo)
-        elif target_month and convo_month == target_month:
-            filtered_convos.append(convo)
+        if since_last:
+            if ts > last_ts:
+                filtered_convos.append(convo)
+                if ts > new_max_ts:
+                    new_max_ts = ts
+        
+        elif target_date: 
+             if convo_date == target_date:
+                filtered_convos.append(convo)
+        elif target_month:
+             if convo_month == target_month:
+                filtered_convos.append(convo)
 
     if not filtered_convos:
-        msg = f"date {target_date}" if target_date else f"month {target_month}"
+        msg = "since last run" if since_last else (f"date {target_date}" if target_date else f"month {target_month}")
         print(f"No conversations found for {msg}.")
         return
 
@@ -149,7 +181,8 @@ def main():
     # Apply limit
     final_convos = filtered_convos[:args.limit]
     
-    print(f"Analyzing {len(final_convos)} conversations from {target_date or target_month}...\n")
+    label = "since_last" if since_last else (target_date or target_month)
+    print(f"Analyzing {len(final_convos)} conversations for {label}...\n")
     
     results = []
     error_count = 0
@@ -196,16 +229,20 @@ def main():
         })
 
     print(f"\n--- Final Report Summary ---")
-    print(f"Date/Month Analyzed: {target_date or target_month}")
+    print(f"Filter Used: {label}")
     print(f"Total Conversations Analyzed: {len(results)}")
     print(f"Technical Errors Found: {error_count}")
     print(f"Unhappy Customers Found: {dissatisfied_count}")
 
-    label = target_date or target_month
     report_file = f"analysis_report_{label}_{datetime.now().strftime('%H%M%S')}.json"
     with open(report_file, 'w') as f:
         json.dump(results, f, indent=2)
     print(f"Full report saved to {report_file}")
+    
+    if since_last and new_max_ts > last_ts:
+        with open(TIMESTAMP_FILE, "w") as f:
+            f.write(str(new_max_ts))
+        print(f"Updated {TIMESTAMP_FILE} to {new_max_ts}")
 
 if __name__ == "__main__":
     main()

@@ -4,16 +4,34 @@ description: Categorize, log, and delete problematic conversations identified du
 
 // turbo-all
 
-1. Ensure you have an analysis report generated from `analyze_transcripts.py`.
-2. Run the remediation script to log issues and delete technical errors from the Convocore frontend (Note: sentiment-only issues are logged but NOT deleted):
+1. Analyze new conversations (defaults to "since last run" for continuity):
+
+```bash
+python3 analyze_transcripts.py --since-last
+```
+
+1. Run the remediation script using the latest generated analysis report:
 
 ```bash
 # Perform a dry-run first to see what will be deleted
-python3 process_issues.py analysis_report_YYYY-MM-DD_HHMMSS.json --dry-run
+python3 process_issues.py analysis_report_YYYYMMDD_HHMMSS.json --dry-run
 
 # Run the actual remediation
-python3 process_issues.py analysis_report_YYYY-MM-DD_HHMMSS.json
+python3 process_issues.py analysis_report_YYYYMMDD_HHMMSS.json
 ```
 
-3. Open `issue_dashboard.html` in your browser to view the logged issues and their status.
-4. Address the technical errors or customer complaints identified in the dashboard.
+1. Run the backfill script to categorize and tag new issues:
+
+```bash
+python3 backfill_categories.py
+```
+
+1. Start or verify the dashboard server is running:
+
+```bash
+# Check if server is on port 5000, start if not
+lsof -i :5000 || ./venv/bin/python3 main.py
+```
+
+1. **CRITICAL**: Always present the dashboard link after completing the steps above:
+   Open [http://localhost:5000/dashboard](http://localhost:5000/dashboard) to view/address the issues.

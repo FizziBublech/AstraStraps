@@ -1,0 +1,802 @@
+[
+  {
+    "id": "WpEBMECYrEHnaqY",
+    "date": "2026-01-30 08:46:50",
+    "is_technical_error": false,
+    "is_unhappy_customer": true,
+    "error_category": "NONE",
+    "analysis": "TECHNICAL_ERROR: [NO] - The bot successfully processed the request and created a ticket.\nUNHAPPY_CUSTOMER: [YES] - The customer reported a critical product failure where the magnetic closure failed, causing their Apple Watch to fall.\nERROR_CATEGORY: [NONE] - No technical errors occurred; the bot correctly escalated the support request.\nSUMMARY: [A customer reported a critical defect with a Vistel Slim Leather Link Band, stating the magnetic closure failed, causing their Apple Watch to fall. The bot apologized, created a support ticket for return/refund review (Ticket Reference: support-request-magnetic-closure-on-vistel-slim-leather-link-band-dot-dot-dot), and confirmed the customer's email address for follow-up by the human support team within 12 to 24 hours.]"
+  },
+  {
+    "id": "jqj37TEUi05zUzl",
+    "date": "2026-01-30 03:57:36",
+    "is_technical_error": false,
+    "is_unhappy_customer": false,
+    "error_category": "NONE",
+    "analysis": "TECHNICAL_ERROR: NO - The bot executed the required steps to collect information and successfully created a support ticket.\nUNHAPPY_CUSTOMER: NO - The customer navigated the process smoothly to achieve their goal of starting a return.\nERROR_CATEGORY: NONE\nSUMMARY: The customer successfully initiated a return process. The bot collected the necessary information (email, name, order number 146080, and reason: \"strap is too thin\") and created support ticket 'support-request-return-request-for-order-number-146080'. The user was informed that the support team will follow up via email within 24 hours."
+  },
+  {
+    "id": "6DWqglN8CRZrKvd",
+    "date": "2026-01-30 03:22:44",
+    "is_technical_error": false,
+    "is_unhappy_customer": false,
+    "error_category": "NONE",
+    "analysis": "TECHNICAL_ERROR: [NO] - The bot functioned correctly throughout, although it encountered a knowledge gap regarding the manufacturing location.\nUNHAPPY_CUSTOMER: [NO] - The customer repeated their query multiple times, indicating a lack of resolution, but did not use language expressing explicit dissatisfaction or anger.\nERROR_CATEGORY: [NONE] - No technical errors were encountered.\nSUMMARY: The customer repeatedly asked for the country where the smartwatch bands are manufactured. The bot initially provided vague answers about global operations and eventually admitted it did not have the specific manufacturing country listed in its database, offering to create a support ticket. The customer then pivoted to asking about shipping origin, which the bot successfully answered with details on processing times and delivery estimates. The issue regarding manufacturing origin remains unresolved by the bot."
+  },
+  {
+    "id": "Vl7hhqnm4N8jdcE",
+    "date": "2026-01-30 02:05:07",
+    "is_technical_error": false,
+    "is_unhappy_customer": false,
+    "error_category": "NONE",
+    "analysis": "TECHNICAL_ERROR: NO - The bot responded appropriately to all inputs.\nUNHAPPY_CUSTOMER: NO - The customer input was a product search query, not an expression of dissatisfaction.\nERROR_CATEGORY: NONE\nSUMMARY: The customer searched for an \"upper arm band.\" The bot failed to find an exact match but successfully transitioned into a guided discovery process, asking for the user's smartwatch model and desired material to help find an alternative. The desired band has not yet been located."
+  },
+  {
+    "id": "gMoalMugbQaVLjv",
+    "date": "2026-01-30 01:58:52",
+    "is_technical_error": false,
+    "is_unhappy_customer": false,
+    "error_category": "NONE",
+    "analysis": "TECHNICAL_ERROR: [NO] - The bot successfully generated responses and created a ticket reference ID.\nUNHAPPY_CUSTOMER: [NO] - The customer was cooperative throughout the data collection process.\nERROR_CATEGORY: [NONE] - The interaction flowed logically, resulting in a successful escalation.\nSUMMARY: [The customer needed to exchange a Fitbit Luxe band that was too large. The bot correctly identified the need for human intervention and successfully collected the required information (name, email, order number) to create a support ticket. The ticket was created, and the customer was informed that an agent would follow up via email within 24 hours.]"
+  },
+  {
+    "id": "KXtMooFa3dnciMe",
+    "date": "2026-01-29 23:38:55",
+    "is_technical_error": false,
+    "is_unhappy_customer": false,
+    "error_category": "NONE",
+    "analysis": "TECHNICAL_ERROR: [NO] - The bot generated responses successfully throughout the interaction.\nUNHAPPY_CUSTOMER: [NO] - The customer initiated contact to open a ticket but did not express dissatisfaction in their textual inputs.\nERROR_CATEGORY: [NONE] - The bot is successfully guiding the user through the mandatory steps required to open a new support ticket.\nSUMMARY: [The customer requested to open a new support ticket and provided their email address. The bot acknowledged the email but then re-prompted the user to provide the remaining required information (name, order number, and issue description) to complete the ticket creation process.]"
+  },
+  {
+    "id": "j3MkTCrQ7FtSRl9",
+    "date": "2026-01-29 23:29:41",
+    "is_technical_error": false,
+    "is_unhappy_customer": false,
+    "error_category": "NONE",
+    "analysis": "TECHNICAL_ERROR: NO - The bot processed the request and provided relevant information.\nUNHAPPY_CUSTOMER: NO - The customer asked a direct question and cooperated with the bot's subsequent navigation steps.\nERROR_CATEGORY: NONE\nSUMMARY: The customer inquired about the material used in Galaxy Watch cases. The bot successfully identified the material as primarily Polycarbonate (PC), described its protective qualities, and then attempted to move the conversation forward by asking which specific Galaxy Watch model the customer owns to verify fit."
+  },
+  {
+    "id": "46CkEgD0H4oY88L",
+    "date": "2026-01-29 22:08:09",
+    "is_technical_error": false,
+    "is_unhappy_customer": false,
+    "error_category": "NONE",
+    "analysis": "TECHNICAL_ERROR: NO - The bot successfully retrieved and displayed the requested order information.\nUNHAPPY_CUSTOMER: NO - The interaction was successful and transactional.\nERROR_CATEGORY: NONE\nSUMMARY: The customer successfully tracked order #145388. The bot provided the order status (Paid, Fulfilled), shipping details, item list, and the USPS tracking number. The interaction concluded with the bot offering further assistance on the order."
+  },
+  {
+    "id": "72Xixh0NoIZG669",
+    "date": "2026-01-29 20:55:53",
+    "is_technical_error": false,
+    "is_unhappy_customer": false,
+    "error_category": "NONE",
+    "analysis": "TECHNICAL_ERROR: [NO] - The bot functioned correctly and successfully generated all necessary responses, including creating a support ticket.\nUNHAPPY_CUSTOMER: [NO] - The customer was cooperative throughout the process, thanking the bot upon resolution/escalation.\nERROR_CATEGORY: [NONE]\nSUMMARY: [The customer successfully tracked order #144809, which showed as Fulfilled and shipped on January 14, 2026. Because the customer indicated they had still not received the item, the bot correctly escalated the issue by creating a support ticket for human investigation into the delivery delay. The interaction concluded successfully with ticket creation.]"
+  },
+  {
+    "id": "2caXhxifuRUYFtp",
+    "date": "2026-01-29 18:36:34",
+    "is_technical_error": false,
+    "is_unhappy_customer": false,
+    "error_category": "NONE",
+    "analysis": "TECHNICAL_ERROR: [NO] - The bot functioned correctly throughout the interaction.\nUNHAPPY_CUSTOMER: [NO] - The user initiated a support request but then switched context to a product inquiry. No generated text expressed dissatisfaction.\nERROR_CATEGORY: [NONE] - No technical errors occurred.\nSUMMARY: [The customer initially requested support but immediately changed the topic to ask a specific product question about whether protective cases are easily removable. The bot successfully answered the product question but did not return to the original workflow of creating or checking a support ticket.]"
+  },
+  {
+    "id": "UQFmJVofdSDVOje",
+    "date": "2026-01-29 17:30:44",
+    "is_technical_error": false,
+    "is_unhappy_customer": false,
+    "error_category": "NONE",
+    "analysis": "TECHNICAL_ERROR: NO - The bot functioned correctly and successfully created a support ticket.\nUNHAPPY_CUSTOMER: NO - The customer reported a service failure (unapplied adjustment) but remained cooperative throughout the ticket creation process.\nERROR_CATEGORY: NONE\nSUMMARY: The customer reported that a previously requested order adjustment was not applied. The bot apologized, collected the necessary details (email, name, order number), and successfully created support ticket `support-request-order-adjustment-was-not-applied-to-the-order-as-e-dot-dot-dot`. The resolution is pending review by the human support team within 12 to 24 hours."
+  },
+  {
+    "id": "PZWgk8rL6WjWLvc",
+    "date": "2026-01-29 17:28:04",
+    "is_technical_error": false,
+    "is_unhappy_customer": true,
+    "error_category": "NONE",
+    "analysis": "TECHNICAL_ERROR: [NO] - The bot successfully retrieved the customer's ticket information.\nUNHAPPY_CUSTOMER: [YES] - The customer is reporting that a promised order adjustment was not made, leading to an incorrect shipment being sent.\nERROR_CATEGORY: [NONE] - No technical errors occurred during this exchange.\nSUMMARY: [The customer followed up on a previous support ticket regarding an order adjustment that was promised but not completed before the order shipped. The bot successfully located the 'Unresolved' ticket and offered the customer options to either add information to the ticket or review the current status before proceeding.]"
+  },
+  {
+    "id": "EOoRvscVipfJ8YG",
+    "date": "2026-01-29 16:08:05",
+    "is_technical_error": false,
+    "is_unhappy_customer": false,
+    "error_category": "NONE",
+    "analysis": "TECHNICAL_ERROR: NO - The conversation flowed normally without system interruptions.\nUNHAPPY_CUSTOMER: NO - The customer was engaged and providing necessary information.\nERROR_CATEGORY: NONE\nSUMMARY: The customer initiated contact asking about band compatibility for a round watch. The bot successfully identified the specific device (Galaxy Watch 6 Samsung) and confirmed the required lug width (20mm). The interaction concluded with the bot asking the customer to specify their preferred material (silicone, metal, or nylon) before presenting final product options."
+  },
+  {
+    "id": "YNnXCPS395yJUYC",
+    "date": "2026-01-29 15:08:08",
+    "is_technical_error": false,
+    "is_unhappy_customer": false,
+    "error_category": "NONE",
+    "analysis": "TECHNICAL_ERROR: [NO] - The conversation flowed logically without any reported system failures or unexpected responses.\nUNHAPPY_CUSTOMER: [NO] - The customer was polite throughout the interaction, ending with a thank you and a smiley face.\nERROR_CATEGORY: [NONE] - No errors were encountered.\nSUMMARY: [The customer initially initiated the process to open a support ticket but quickly pivoted to asking a specific pre-sales product question regarding whether the Attollo Silicone Sports Band with Glass Case allows full touchscreen functionality on an Apple Watch. The bot correctly confirmed that touch sensitivity is maintained. The customer was satisfied with the answer and ended the conversation politely.]"
+  },
+  {
+    "id": "Bj5GSfdiUMkcnw2",
+    "date": "2026-01-29 10:57:39",
+    "is_technical_error": false,
+    "is_unhappy_customer": false,
+    "error_category": "NONE",
+    "analysis": "TECHNICAL_ERROR: [NO] - The bot functioned correctly throughout the interaction, including successfully generating and providing a ticket ID.\nUNHAPPY_CUSTOMER: [NO] - The customer was polite, although the reason for contact was a product issue (ill fit). They expressed satisfaction at the end (\"Thank you\").\nERROR_CATEGORY: [NONE]\nSUMMARY: [The customer successfully initiated a return for an unwanted watch strap. The bot explained the return policy, collected the necessary details (email, name, order number), and created a support ticket for the human team to process the return instructions.]"
+  },
+  {
+    "id": "GhhfpDQ8b5n83dr",
+    "date": "2026-01-29 01:39:52",
+    "is_technical_error": false,
+    "is_unhappy_customer": false,
+    "error_category": "NLU_ERROR",
+    "analysis": "TECHNICAL_ERROR: NO - The bot functioned correctly and provided a detailed response.\nUNHAPPY_CUSTOMER: NO - The customer asked a direct question and did not express frustration.\nERROR_CATEGORY: NLU_ERROR - The bot failed to identify the specific product requested (\"Ferveo band\") in its catalog, although it successfully interpreted the underlying intent (compatibility check).\nSUMMARY: The customer inquired about the compatibility of a specific band ('Ferveo') with the Apple Watch Series 10. The bot could not locate the specific band in the catalog but successfully provided the correct general sizing compatibility information for the Series 10 models and offered alternative popular bands. The specific 'Ferveo' band status remains unknown."
+  },
+  {
+    "id": "2oHspHkT4nI6L7t",
+    "date": "2026-01-29 01:38:30",
+    "is_technical_error": false,
+    "is_unhappy_customer": false,
+    "error_category": "NONE",
+    "analysis": "TECHNICAL_ERROR: NO - The bot responded clearly to the user's inquiry.\nUNHAPPY_CUSTOMER: NO - The user asked a straightforward product compatibility question.\nERROR_CATEGORY: NONE\nSUMMARY: The customer inquired about compatibility between an Astra band and the Apple Watch Series 10. The bot confirmed compatibility and asked follow-up questions regarding case size and style preference to assist with product selection. The conversation proceeded logically."
+  },
+  {
+    "id": "BX0hGNx3NbXytDh",
+    "date": "2026-01-28 23:14:24",
+    "is_technical_error": false,
+    "is_unhappy_customer": false,
+    "error_category": "NONE",
+    "analysis": "TECHNICAL_ERROR: NO - The bot successfully gathered information and created the required support ticket.\nUNHAPPY_CUSTOMER: NO - The customer was polite and thanked the bot at the end of the interaction.\nERROR_CATEGORY: NONE\nSUMMARY: The customer sought instructions on how to shorten/adjust the clasp on a newly purchased rose gold stainless steel band. The bot successfully guided the customer through the ticket creation process, collected the necessary email address, and created a reference ticket (`support-request-needs-instructions-on-how-to-shorten-slash-adjust-the-cl-dot-dot-dot`). The support team is tasked with emailing the instructions within 12 to 24 hours."
+  },
+  {
+    "id": "89CKyLoHLzcs2UG",
+    "date": "2026-01-28 21:40:19",
+    "is_technical_error": false,
+    "is_unhappy_customer": false,
+    "error_category": "NONE",
+    "analysis": "TECHNICAL_ERROR: NO - The bot functioned correctly and provided a response.\nUNHAPPY_CUSTOMER: NO - The customer asked a straightforward technical/compatibility question.\nERROR_CATEGORY: NONE\nSUMMARY: The customer inquired about compatibility between a standard 42mm band and the new Series 11 watch. The bot successfully provided the correct SKU requirement (42MM-S10/S11) for the Series 11 watch, resolving the product guidance request."
+  },
+  {
+    "id": "CBAmTYBgP1rtmKN",
+    "date": "2026-01-28 21:12:45",
+    "is_technical_error": false,
+    "is_unhappy_customer": false,
+    "error_category": "NONE",
+    "analysis": "TECHNICAL_ERROR: NO - The bot executed all functions correctly, including context switching and utilizing existing ticket information.\nUNHAPPY_CUSTOMER: NO - The customer reported a standard product issue (wrong size) and was cooperative in providing necessary details for support.\nERROR_CATEGORY: NONE\nSUMMARY: The customer initially requested order tracking but immediately pivoted to request a return for a watch band that arrived in the wrong size. The bot successfully collected identifying information and the order number (#146058). The bot proactively identified a pre-existing open ticket and, after confirmation, successfully added the new return request to that existing ticket for follow-up by the support team."
+  },
+  {
+    "id": "tXN4qU0AgSn0Rhu",
+    "date": "2026-01-28 21:05:44",
+    "is_technical_error": false,
+    "is_unhappy_customer": false,
+    "error_category": "NLU_ERROR",
+    "analysis": "TECHNICAL_ERROR: NO - The bot functioned correctly and successfully created the required support ticket.\nUNHAPPY_CUSTOMER: NO - While the customer had an issue with a product (\"excessively loose\"), the interaction itself remained transactional, and the bot successfully escalated the issue to human support.\nERROR_CATEGORY: NLU_ERROR - The bot initially misunderstood the user's intent, assuming the user wanted to *shop* for new bands instead of reporting a problem with a purchased band. It corrected itself after the user clarified.\nSUMMARY: The customer reported that a previously purchased watch band was excessively loose. The bot initially offered shopping recommendations but quickly pivoted to opening a support ticket after the customer clarified the issue. The bot successfully collected the customer's name (Eric Bell), email, and order number (#145642) and confirmed the creation of ticket support-request-the-band-received-is-excessively-loose-slash-sizing-issu-dot-dot-dot. The issue is now awaiting follow-up from the human support team."
+  },
+  {
+    "id": "Xvo6odITz6svnS8",
+    "date": "2026-01-28 20:17:42",
+    "is_technical_error": false,
+    "is_unhappy_customer": false,
+    "error_category": "NONE",
+    "analysis": "TECHNICAL_ERROR: NO - The bot functioned correctly throughout the interaction, retrieving and updating ticket information as requested.\nUNHAPPY_CUSTOMER: NO - The customer made transactional requests (check status, escalate) but did not express dissatisfaction in their text input.\nERROR_CATEGORY: NONE\nSUMMARY: The customer successfully inquired about their ticket status using their email address. The bot confirmed the ticket (Order #144998) was unresolved and successfully processed an escalation request. The bot then displayed the full ticket details, showing it was assigned to Juliet. All requested actions were completed by the bot."
+  },
+  {
+    "id": "vYPlqKcaRCiiFf5",
+    "date": "2026-01-28 20:14:42",
+    "is_technical_error": false,
+    "is_unhappy_customer": false,
+    "error_category": "NONE",
+    "analysis": "TECHNICAL_ERROR: NO - The bot functioned correctly throughout the session, identifying the ticket and offering alternatives when direct human transfer was unavailable.\nUNHAPPY_CUSTOMER: NO - The customer's initial prompt was a button label. All subsequent interactions were transactional requests to check or escalate a ticket, and the customer agreed to the suggested alternative path (adding a message).\nERROR_CATEGORY: NONE\nSUMMARY: The customer successfully used their email address to locate an existing, unresolved support ticket (related to Order #144998, last updated Jan 28, 2026). When the customer requested to speak to an agent, the bot correctly stated it could not transfer directly but offered to add a follow-up message to the existing ticket. The customer agreed to this alternative and is currently waiting to input the message content."
+  },
+  {
+    "id": "2JTnAQZ0bByuwlI",
+    "date": "2026-01-28 20:05:38",
+    "is_technical_error": false,
+    "is_unhappy_customer": false,
+    "error_category": "NONE",
+    "analysis": "TECHNICAL_ERROR: NO - The bot functioned correctly throughout the interaction.\nUNHAPPY_CUSTOMER: NO - The customer asked a direct, factual question (\"What size is large\") with no expressed dissatisfaction.\nERROR_CATEGORY: NONE\nSUMMARY: User inquired about the definition of \"large\" band size. The bot correctly identified that sizing is model-dependent and prompted the user to specify their watch model or view the general size guide. The interaction is proceeding logically."
+  },
+  {
+    "id": "cZ8OpfwuPDaEEHR",
+    "date": "2026-01-28 18:28:22",
+    "is_technical_error": false,
+    "is_unhappy_customer": false,
+    "error_category": "NONE",
+    "analysis": "TECHNICAL_ERROR: [NO] - The bot responded correctly to all user input.\nUNHAPPY_CUSTOMER: [NO] - The customer asked a procedural question and received a direct answer.\nERROR_CATEGORY: [NONE]\nSUMMARY: [The customer asked for instructions on how to adjust the clasp on a Milanese slim watch band. The bot successfully provided clear, step-by-step instructions on how to use the included screwdriver tool to adjust and lock the clasp.]"
+  },
+  {
+    "id": "tYNWbMcoV4CcGPk",
+    "date": "2026-01-28 17:24:33",
+    "is_technical_error": false,
+    "is_unhappy_customer": false,
+    "error_category": "NONE",
+    "analysis": "TECHNICAL_ERROR: NO - The bot functioned correctly, processing user input and successfully creating/updating a support ticket.\nUNHAPPY_CUSTOMER: NO - The customer remained cooperative throughout the interaction, needing escalation but not expressing dissatisfaction with the process.\nERROR_CATEGORY: NONE\nSUMMARY: The customer contacted the bot to adjust an order (swap a rainbow band for a pink one). The bot correctly identified that it could not perform the modification directly and successfully created a support ticket, capturing the necessary order details and the specific change required. The issue is now escalated to the human support team for follow-up."
+  },
+  {
+    "id": "Qnt2Qb5Q6A3YQh5",
+    "date": "2026-01-28 12:58:14",
+    "is_technical_error": false,
+    "is_unhappy_customer": false,
+    "error_category": "NONE",
+    "analysis": "TECHNICAL_ERROR: NO - The conversation flowed without technical interruptions or failures.\nUNHAPPY_CUSTOMER: NO - The customer simply stated their need for order assistance.\nERROR_CATEGORY: NONE\nSUMMARY: The customer initiated contact requesting help regarding an existing order. The bot successfully acknowledged the request and prompted the user to provide the order number and specify the issue type (tracking, return/exchange, or damage/incorrect item). The interaction is currently waiting for the customer to provide necessary details."
+  },
+  {
+    "id": "SRjYF0SvVGbKSJ4",
+    "date": "2026-01-28 04:22:10",
+    "is_technical_error": false,
+    "is_unhappy_customer": false,
+    "error_category": "NONE",
+    "analysis": "TECHNICAL_ERROR: NO - The bot operated normally and provided relevant responses.\nUNHAPPY_CUSTOMER: NO - The customer asked factual questions about the company's location and did not express dissatisfaction.\nERROR_CATEGORY: NONE\nSUMMARY: The customer initiated the conversation by asking about the company's physical location and whether they were based in China. The bot correctly identified the query and explained that they are a global e-commerce brand with distributed fulfillment centers, listing the regions they ship to. The interaction ended successfully without any outstanding issues."
+  },
+  {
+    "id": "WiroyF094i5MMIl",
+    "date": "2026-01-28 03:45:19",
+    "is_technical_error": false,
+    "is_unhappy_customer": false,
+    "error_category": "NONE",
+    "analysis": "TECHNICAL_ERROR: [NO]\nUNHAPPY_CUSTOMER: [NO]\nERROR_CATEGORY: [NONE]\nSUMMARY: The customer inquired about the meaning of \"s10 and s11\" in watch sizing. The bot correctly identified these as Apple Watch Series 10 and 11 and offered context-specific options to shop for bands. The interaction was successful."
+  },
+  {
+    "id": "KGFnCVjmNrSFLsp",
+    "date": "2026-01-28 02:20:16",
+    "is_technical_error": false,
+    "is_unhappy_customer": true,
+    "error_category": "NONE",
+    "analysis": "TECHNICAL_ERROR: NO - The bot functioned correctly throughout the interaction, including successfully generating a ticket reference ID.\nUNHAPPY_CUSTOMER: YES - The customer expressed clear frustration regarding the shipping delay (\"Why the hell is it stuck in California\" and \"Im tired of waiting\").\nERROR_CATEGORY: NONE\nSUMMARY: The customer inquired about tracking order #145524, which the bot confirmed was fulfilled but delayed in transit. The customer expressed significant frustration about the delay. The bot correctly informed the customer of its inability to influence carrier tracking details, managed expectations, and successfully escalated the issue by creating a support ticket (reference provided) for human follow-up within 12 to 24 hours."
+  },
+  {
+    "id": "a3dXSWFpegToWc6",
+    "date": "2026-01-28 01:19:21",
+    "is_technical_error": false,
+    "is_unhappy_customer": false,
+    "error_category": "NONE",
+    "analysis": "TECHNICAL_ERROR: [NO] - The bot successfully collected all required information and created a support ticket without failure.\nUNHAPPY_CUSTOMER: [NO] - The customer reported an issue with a previous order (wrong size received) but did not express frustration with the chatbot process itself.\nERROR_CATEGORY: [NONE]\nSUMMARY: [The customer initiated a support ticket request to report receiving the wrong size watch band. The bot successfully collected the name, email, order number (#145761), and detailed issue description, and confirmed ticket creation. Resolution is pending follow-up from the support team within 12-24 hours.]"
+  },
+  {
+    "id": "AuVHeR0YsWNWzZH",
+    "date": "2026-01-28 00:03:44",
+    "is_technical_error": false,
+    "is_unhappy_customer": false,
+    "error_category": "NONE",
+    "analysis": "TECHNICAL_ERROR: NO - The bot successfully processed all inputs and continued the conversation flow, prompting for missing required information.\nUNHAPPY_CUSTOMER: NO - The customer provided data inputs without expressing frustration.\nERROR_CATEGORY: NONE\nSUMMARY: The customer initiated the support ticket creation process. The bot successfully gathered the email address and name but has not yet received the required order number or a description of the issue. The conversation ended while the bot was re-prompting for the missing details."
+  },
+  {
+    "id": "Sv8w1mbHh9u9dBn",
+    "date": "2026-01-27 23:11:30",
+    "is_technical_error": false,
+    "is_unhappy_customer": false,
+    "error_category": "NONE",
+    "analysis": "TECHNICAL_ERROR: [NO] - The bot processed all user requests and generated appropriate responses without system failures.\nUNHAPPY_CUSTOMER: [NO] - The customer expressed confusion regarding missing sizing information on the website, but the bot successfully clarified the sizing standards.\nERROR_CATEGORY: [NONE]\nSUMMARY: [The customer initiated the conversation by asking how to measure their wrist size. They then navigated to view Apple Watch bands and questioned how the S/M/L sizing works, noting a lack of information on the site. The bot provided clear definitions for the standard S-M and M-L sizing conventions for silicone bands and noted adjustability for metal bands, successfully resolving the sizing query.]"
+  },
+  {
+    "id": "wqmnjWovgwxGWM9",
+    "date": "2026-01-27 19:39:26",
+    "is_technical_error": false,
+    "is_unhappy_customer": false,
+    "error_category": "NONE",
+    "analysis": "TECHNICAL_ERROR: NO - The bot handled input confusion (order number vs. tracking number) and successfully created the required support ticket.\nUNHAPPY_CUSTOMER: NO - The customer was seeking support for a sizing issue but remained polite and compliant throughout the process.\nERROR_CATEGORY: NONE\nSUMMARY: The customer initially intended to track an order but quickly clarified that they received a smartwatch band that was too large. The bot transitioned to opening a support ticket. After some confusion where the customer provided a carrier tracking number instead of the required internal order number, the bot successfully defaulted to opening the ticket using the customer's email address. A ticket was created for the sizing issue, and the conversation concluded successfully."
+  },
+  {
+    "id": "Ec81v53mV4QqH6o",
+    "date": "2026-01-27 16:35:06",
+    "is_technical_error": false,
+    "is_unhappy_customer": false,
+    "error_category": "NONE",
+    "analysis": "TECHNICAL_ERROR: NO - The bot successfully collected all necessary information and created the support ticket without crashing or failing to generate output.\nUNHAPPY_CUSTOMER: NO - The customer accepted the policy limitation and agreed to the escalation path (creating a ticket).\nERROR_CATEGORY: NONE\nSUMMARY: The customer initiated contact to open a support ticket regarding an order (#146324) they wished to cancel or refund, even though it had tracking information. The bot correctly informed the customer that cancellation/refunds are restricted after 12 hours of placement, as the order was fulfilled. The bot successfully created support ticket **support-request-customer-wants-to-cancel-order-or-start-a-refund-f-dot-dot-dot** for human review of the request, and the interaction concluded successfully."
+  },
+  {
+    "id": "otmBpar8Lvb24rf",
+    "date": "2026-01-27 16:30:34",
+    "is_technical_error": false,
+    "is_unhappy_customer": false,
+    "error_category": "NONE",
+    "analysis": "TECHNICAL_ERROR: NO - The bot responded appropriately and processed the request path.\nUNHAPPY_CUSTOMER: NO - The customer requested an action that the bot could not perform but was immediately offered an escalation path.\nERROR_CATEGORY: NONE\nSUMMARY: The customer requested an order cancellation. The bot correctly identified that it lacked the capability to cancel orders directly but offered to create a support ticket to handle the request, prompting the user for the required information (email, name, order number)."
+  },
+  {
+    "id": "HNyvVpR6Tsxq4pH",
+    "date": "2026-01-27 13:52:00",
+    "is_technical_error": false,
+    "is_unhappy_customer": false,
+    "error_category": "NONE",
+    "analysis": "TECHNICAL_ERROR: [NO] - The bot successfully gathered necessary information and created the requested support ticket without system failure.\nUNHAPPY_CUSTOMER: [NO] - The customer was seeking resolution for a product fit issue but remained cooperative throughout the ticket creation process.\nERROR_CATEGORY: [NONE]\nSUMMARY: [The customer reported that their Agere band tends to slip when wearing bulky outerwear. The bot appropriately acknowledged the issue and proceeded to create a support ticket after collecting the customer's name (Dylan McMains) and email address (dmacrs@gmail.com). The issue is now escalated to the support team.]"
+  },
+  {
+    "id": "CzdQ5XrTH4hYEQ7",
+    "date": "2026-01-27 09:57:03",
+    "is_technical_error": false,
+    "is_unhappy_customer": false,
+    "error_category": "NONE",
+    "analysis": "TECHNICAL_ERROR: [NO] - The bot processed all requests correctly, including fetching order details and successfully creating a ticket with a reference ID.\nUNHAPPY_CUSTOMER: [NO] - The customer reported a problem (lost order), but the interaction flow was handled successfully by the bot, and no dissatisfaction with the service was expressed.\nERROR_CATEGORY: [NONE] - All intents were understood, and actions (tracking lookup, ticket creation) were completed successfully.\nSUMMARY: [The customer successfully tracked order #145309, confirming it was shipped. When the customer reported the order might be lost, the bot correctly initiated the escalation process, gathered the necessary email address, and successfully created a support ticket for the fulfillment team to investigate.]"
+  },
+  {
+    "id": "r2JThtGH4OiCHVB",
+    "date": "2026-01-27 03:57:51",
+    "is_technical_error": false,
+    "is_unhappy_customer": false,
+    "error_category": "NONE",
+    "analysis": "TECHNICAL_ERROR: [NO] - The bot functioned correctly and retrieved ticket information.\nUNHAPPY_CUSTOMER: [NO] - The customer initiated a standard return request but did not express dissatisfaction with the bot interaction or service provided so far.\nERROR_CATEGORY: [NONE]\nSUMMARY: [The customer sought to return a watch band that was too small. The bot successfully identified an existing support ticket (order #145808) related to the sizing issue and provided its current status, which is Unresolved and pending review by the support team. The resolution is dependent on email follow-up from human agents.]"
+  },
+  {
+    "id": "pQCp1tQphWpphAJ",
+    "date": "2026-01-27 03:20:47",
+    "is_technical_error": false,
+    "is_unhappy_customer": false,
+    "error_category": "NONE",
+    "analysis": "TECHNICAL_ERROR: NO - The bot functioned correctly, handled intent switching, and successfully created and updated a support ticket.\nUNHAPPY_CUSTOMER: NO - The customer maintained a transactional tone, making requests without expressing explicit dissatisfaction in their typed input.\nERROR_CATEGORY: NONE\nSUMMARY: The customer checked the status of order #146866, which was already fulfilled. They initially requested cancellation, leading the bot to create a support ticket. The customer subsequently used the ticket system to modify their request, first asking for an update and then clarifying they wished to change the item color from silver to black instead of canceling. The bot successfully added these updates to the existing support ticket, which will now be handled by the human support team. The final resolution (the color change) is pending human review."
+  },
+  {
+    "id": "TnWSvx7U9HWWXsw",
+    "date": "2026-01-27 03:15:30",
+    "is_technical_error": false,
+    "is_unhappy_customer": false,
+    "error_category": "NONE",
+    "analysis": "TECHNICAL_ERROR: [NO] - The bot functioned correctly and responded to all user input.\nUNHAPPY_CUSTOMER: [NO] - The user simply requested support; no text indicated dissatisfaction with the service or bot interaction.\nERROR_CATEGORY: [NONE] - No errors were encountered.\nSUMMARY: [The customer initiated the conversation by requesting support. The bot successfully identified this intent and prompted the user to provide the necessary information (email, name, order number, issue description) required to create a new support ticket.]"
+  },
+  {
+    "id": "SwWkIjZrfhxaGVS",
+    "date": "2026-01-26 21:14:04",
+    "is_technical_error": true,
+    "is_unhappy_customer": false,
+    "error_category": "TICKET_CREATION_ERROR",
+    "analysis": "TECHNICAL_ERROR: YES - The bot failed twice to create the requested support ticket due to an internal system issue.\nUNHAPPY_CUSTOMER: NO - The customer remained cooperative throughout the interaction, even after the technical failures.\nERROR_CATEGORY: TICKET_CREATION_ERROR\nSUMMARY: The customer sought information regarding shipping times and return policies, but their primary goal was to view accurate, real-life photos of the 'Saddle Brown Marley Magnetic Leather Band.' The bot attempted to resolve this by initiating a support ticket creation process, but this functionality failed repeatedly due to a technical error. The interaction ended with the bot successfully escalating the issue by directing the customer to email the support team directly with the required context. The ticket creation was unresolved by the bot."
+  },
+  {
+    "id": "gHt7OtojcNA7wYg",
+    "date": "2026-01-26 20:11:31",
+    "is_technical_error": false,
+    "is_unhappy_customer": false,
+    "error_category": "NONE",
+    "analysis": "TECHNICAL_ERROR: [NO] - The bot functioned correctly and processed the user's request to seek support.\nUNHAPPY_CUSTOMER: [NO] - The user made a direct request to speak with support, which is not an expression of dissatisfaction.\nERROR_CATEGORY: [NONE]\nSUMMARY: The customer explicitly requested to speak with support. The bot correctly identified this intent and initiated the workflow for either creating a new support ticket or checking existing tickets, prompting the user for required details. The interaction is pending further user input."
+  },
+  {
+    "id": "8OBVXeGrSlWhs2u",
+    "date": "2026-01-26 20:06:16",
+    "is_technical_error": false,
+    "is_unhappy_customer": false,
+    "error_category": "NONE",
+    "analysis": "TECHNICAL_ERROR: [NO] - The bot successfully processed input, searched records, and created a support ticket without crashing or failing to respond.\nUNHAPPY_CUSTOMER: [NO] - The customer remained polite throughout the process, even when dealing with a complex order issue.\nERROR_CATEGORY: [NONE] - The bot successfully handled the request by escalating it to a support ticket.\nSUMMARY: [The customer reported not receiving a confirmation email for a third, recent order placed using a promotional discount. The bot gathered the customer's email and name, searched for existing tickets (finding none), and successfully created a support ticket, providing a reference ID. The bot assured the customer that the support team would investigate the missing confirmation and honor the promotional price.]"
+  },
+  {
+    "id": "7yYxj0hCBIU2KXW",
+    "date": "2026-01-26 19:29:37",
+    "is_technical_error": false,
+    "is_unhappy_customer": false,
+    "error_category": "NONE",
+    "analysis": "TECHNICAL_ERROR: NO - The bot responded appropriately throughout the interaction.\nUNHAPPY_CUSTOMER: NO - The customer asked specific product compatibility questions and received detailed answers.\nERROR_CATEGORY: NONE\nSUMMARY: The customer inquired about the compatibility of the Aere Slim and Sedeo Magnetic bands with an Apple Watch Series 10 (46mm) and a 120mm wrist. The bot confirmed watch compatibility, recommended the fully adjustable Sedeo band for the small wrist, and provided pricing for both options ($39.99 Sedeo, $29.99 Aere), concluding the dialogue awaiting the customer's preference."
+  },
+  {
+    "id": "d3dp2oePBiA9DCS",
+    "date": "2026-01-26 19:08:54",
+    "is_technical_error": false,
+    "is_unhappy_customer": false,
+    "error_category": "LOGIC_ERROR",
+    "analysis": "TECHNICAL_ERROR: NO - The bot handled all inputs and generated responses successfully.\nUNHAPPY_CUSTOMER: NO - The customer's inputs were transactional and did not convey dissatisfaction.\nERROR_CATEGORY: LOGIC_ERROR - The bot initiated the support ticket creation process but abandoned it when the user asked a product question, failing to return to the required fields (email, name, order number).\nSUMMARY: The customer requested to open a support ticket but immediately diverted to ask for a product recommendation (metal band for a 120mm wrist). The bot successfully switched context to product discovery, identifying options for an Apple Watch 10 (46mm). The initial support ticket creation request remains unresolved as the required identifying information was never collected."
+  },
+  {
+    "id": "0FF3wpuU0i20rhG",
+    "date": "2026-01-26 00:54:55",
+    "is_technical_error": false,
+    "is_unhappy_customer": false,
+    "error_category": "NONE",
+    "analysis": "TECHNICAL_ERROR: NO\nUNHAPPY_CUSTOMER: NO\nERROR_CATEGORY: NONE\nSUMMARY: The user inquired about the process for returning bands. The bot successfully detailed the 90-day return policy, noting the customer is responsible for return shipping, and then offered to open a support ticket to provide the specific return address. The interaction concluded awaiting the user's decision to proceed with ticket creation."
+  },
+  {
+    "id": "i9S3wn9Hd8lKQyB",
+    "date": "2026-01-25 23:24:49",
+    "is_technical_error": false,
+    "is_unhappy_customer": false,
+    "error_category": "NONE",
+    "analysis": "TECHNICAL_ERROR: NO - The conversation flowed smoothly without system failures.\nUNHAPPY_CUSTOMER: NO - The customer provided clear specifications for a product search and did not express dissatisfaction.\nERROR_CATEGORY: NONE\nSUMMARY: The customer successfully inquired about a gold stainless steel band suitable for a 42mm titanium gold Apple Watch Series 11, specifying they did not want a bright gold finish. The bot provided two highly relevant product suggestions (Devito and Noceo bands) that match the desired aesthetic and size, concluding by asking if the user wanted more metal or leather options. No issues were encountered."
+  },
+  {
+    "id": "V3xxbHLvewHAfzY",
+    "date": "2026-01-25 22:42:14",
+    "is_technical_error": false,
+    "is_unhappy_customer": false,
+    "error_category": "NONE",
+    "analysis": "TECHNICAL_ERROR: [NO] - The bot responded correctly to all user queries.\nUNHAPPY_CUSTOMER: [NO] - The customer asked informational questions and showed no signs of dissatisfaction.\nERROR_CATEGORY: [NONE] - No technical issues were encountered.\nSUMMARY: [The customer successfully inquired about the company's shipping policy to the USA and their return policy. The bot provided detailed and accurate responses to both informational requests. The interaction concluded without any unresolved issues.]"
+  },
+  {
+    "id": "oiN6VUVXp8iX4n3",
+    "date": "2026-01-25 02:44:38",
+    "is_technical_error": false,
+    "is_unhappy_customer": false,
+    "error_category": "NONE",
+    "analysis": "TECHNICAL_ERROR: [NO] - The conversation flowed logically without system failures.\nUNHAPPY_CUSTOMER: [NO] - The customer successfully narrowed down their request.\nERROR_CATEGORY: [NONE] - No errors detected.\nSUMMARY: [The customer was looking for a bumper case for a 45mm Apple Watch that would complement their existing pink band. The bot successfully gathered the necessary specifications (model/size/color preference) and presented relevant product matches.]"
+  },
+  {
+    "id": "iGzbCAgEf8hTDIq",
+    "date": "2026-01-24 23:04:34",
+    "is_technical_error": false,
+    "is_unhappy_customer": false,
+    "error_category": "NONE",
+    "analysis": "TECHNICAL_ERROR: [NO] - The bot successfully retrieved order status information and proceeded logically to handle a functional limitation (cancellation).\nUNHAPPY_CUSTOMER: [NO] - The customer made neutral transactional requests.\nERROR_CATEGORY: [NONE] - All requested actions (tracking) were successful, and the requested next step (cancellation via ticket) was correctly routed.\nSUMMARY: [The customer successfully tracked Order #146644, which is Paid and Unfulfilled. The customer then requested to cancel the order. The bot correctly stated it cannot process cancellations directly but is setting up a support ticket to escalate the request.]"
+  },
+  {
+    "id": "W5yMqRJxo5uQzzi",
+    "date": "2026-01-24 20:41:54",
+    "is_technical_error": false,
+    "is_unhappy_customer": false,
+    "error_category": "NONE",
+    "analysis": "TECHNICAL_ERROR: [NO]\nUNHAPPY_CUSTOMER: [NO]\nERROR_CATEGORY: [NONE]\nSUMMARY: The customer successfully initiated contact to speak with a live agent. The bot collected the required details and created a support ticket (Reference: support-request-assistance-with-reebok-pulse), setting an expectation for a 24-hour response. Following ticket creation, the customer inquired about a \"Reebok Pulse wristband.\" The bot was unable to find this specific item as its catalog focuses on major smartwatch brands (Apple, Samsung, etc.) but offered to help find a universal band if the user provided the lug width."
+  },
+  {
+    "id": "lDhD7axfY4gSbHb",
+    "date": "2026-01-24 20:30:54",
+    "is_technical_error": false,
+    "is_unhappy_customer": false,
+    "error_category": "NONE",
+    "analysis": "TECHNICAL_ERROR: [NO] - The bot successfully processed the second provided order number.\nUNHAPPY_CUSTOMER: [NO] - The customer provided two different order numbers sequentially without expressing frustration regarding the initial lookup failure.\nERROR_CATEGORY: [NONE]\nSUMMARY: [The customer requested to track an order. The first order number provided (YTHDGH43) was not found, but the customer immediately provided a second, valid number (145708). The bot successfully retrieved and displayed the complete order status, including tracking information.]"
+  },
+  {
+    "id": "JkBv1jdaunC2D7j",
+    "date": "2026-01-24 19:51:34",
+    "is_technical_error": false,
+    "is_unhappy_customer": false,
+    "error_category": "NONE",
+    "analysis": "TECHNICAL_ERROR: NO - The bot responded correctly to the user's query.\nUNHAPPY_CUSTOMER: NO - The customer asked a straightforward informational question.\nERROR_CATEGORY: NONE\nSUMMARY: The customer inquired about the product differences between the \"Alti\" and \"Bellator\" smartwatch bands. The bot provided a detailed and accurate comparison covering design aesthetics and available colors. The interaction was successful."
+  },
+  {
+    "id": "hCc9yua73GDJVWZ",
+    "date": "2026-01-24 19:18:15",
+    "is_technical_error": true,
+    "is_unhappy_customer": false,
+    "error_category": "OTHER",
+    "analysis": "TECHNICAL_ERROR: YES - The bot started by reporting \"Error parsing the final result. Please try again, debug: SyntaxError: Expected double-quoted property name in JSON at position 404\".\nUNHAPPY_CUSTOMER: NO - The user proceeded with their question despite the initial error message.\nERROR_CATEGORY: OTHER\nSUMMARY: The interaction began with a significant technical error (a JSON parsing syntax error). However, the bot immediately recovered and successfully processed the user's subsequent detailed query regarding leather watch band securing mechanisms for their specific watch model (Apple Watch Series 8, 41mm), providing relevant options. No user issues remain unresolved."
+  },
+  {
+    "id": "uGPFP3HXrpEbK2L",
+    "date": "2026-01-24 18:51:11",
+    "is_technical_error": false,
+    "is_unhappy_customer": false,
+    "error_category": "NONE",
+    "analysis": "TECHNICAL_ERROR: NO - The bot successfully gathered all required information and created the support ticket without internal failures.\nUNHAPPY_CUSTOMER: NO - The customer was cooperative throughout the information-gathering process for the return request.\nERROR_CATEGORY: NONE\nSUMMARY: The customer initiated a return request. The chatbot successfully guided the user through providing their email (Judypan710@gmail.com), order number (142483), and name (Guangmin Pan). A support ticket was created, and the bot informed the user that the support team would follow up via email within 24 hours with return instructions."
+  },
+  {
+    "id": "ZutV7V11MAxfpE4",
+    "date": "2026-01-24 18:48:23",
+    "is_technical_error": false,
+    "is_unhappy_customer": false,
+    "error_category": "NONE",
+    "analysis": "TECHNICAL_ERROR: [NO] - The bot functioned correctly throughout the exchange, gathering required information.\nUNHAPPY_CUSTOMER: [NO] - The customer provided necessary information without expressing dissatisfaction.\nERROR_CATEGORY: [NONE] - No technical errors were observed.\nSUMMARY: [The customer initiated a return request. The bot provided the return policy details and began collecting the required information (email provided). The bot is currently waiting for the customer to provide their name, order number, and reason for return to finalize the support ticket creation.]"
+  },
+  {
+    "id": "PMUyuGrtknaN8tV",
+    "date": "2026-01-24 17:57:27",
+    "is_technical_error": false,
+    "is_unhappy_customer": false,
+    "error_category": "NONE",
+    "analysis": "TECHNICAL_ERROR: NO - The bot functioned correctly throughout the interaction, successfully retrieving order status.\nUNHAPPY_CUSTOMER: NO - The customer reported a logistical issue (\"Lost in shipment\") but did not express dissatisfaction with the chatbot's performance.\nERROR_CATEGORY: NONE\nSUMMARY: The customer successfully tracked order #145824, which showed a status of 'Fulfilled'. Upon reporting that the item was lost in shipment, the bot acknowledged the issue and proactively began the process to create a support ticket for investigation."
+  },
+  {
+    "id": "3IBRvf30gKuPIKI",
+    "date": "2026-01-24 17:23:26",
+    "is_technical_error": false,
+    "is_unhappy_customer": false,
+    "error_category": "NONE",
+    "analysis": "TECHNICAL_ERROR: NO - The bot handled the complex styling and compatibility query successfully.\nUNHAPPY_CUSTOMER: NO - The customer was seeking assistance and provided necessary clarifying details.\nERROR_CATEGORY: NONE\nSUMMARY: The customer requested a recommendation for a slim sports band in 'Starlight' that pairs well aesthetically with a 'Natural Titanium' watch case. The bot correctly identified the need for case size, received the input (42mm), and provided a specific, aesthetically suitable recommendation (Civi Silicone in Starlight), concluding by offering to check other materials."
+  },
+  {
+    "id": "0hrktmSEoqIKgXB",
+    "date": "2026-01-24 17:18:06",
+    "is_technical_error": false,
+    "is_unhappy_customer": false,
+    "error_category": "NONE",
+    "analysis": "TECHNICAL_ERROR: [NO] - The bot responded appropriately throughout the session and did not indicate any service outages or failures.\nUNHAPPY_CUSTOMER: [NO] - The customer provided clear, relevant inputs and appeared satisfied with the detailed recommendations provided by the bot.\nERROR_CATEGORY: [NONE]\nSUMMARY: The interaction was highly successful. The customer inquired about the 'Starlight' watch band color and then sought specific recommendations for their Apple Watch Series 11 Natural Titanium (42mm). The bot provided color definitions, compatibility confirmation, and offered specific product suggestions for both sporty and formal needs, ending the session on a positive, informative note without unresolved issues."
+  },
+  {
+    "id": "boWXmBXi8XQjzJA",
+    "date": "2026-01-23 17:50:44",
+    "is_technical_error": false,
+    "is_unhappy_customer": false,
+    "error_category": "NONE",
+    "analysis": "TECHNICAL_ERROR: NO - The bot successfully generated a response.\nUNHAPPY_CUSTOMER: NO - The customer asked a straightforward product inquiry.\nERROR_CATEGORY: NONE\nSUMMARY: The customer asked a specific question regarding the material composition (leather vs. silicone against the skin) of the \"Confero Genuine Leather Band.\" The bot successfully provided a detailed answer, confirming the interior lining against the skin is sweat-resistant silicone. The issue was fully resolved."
+  },
+  {
+    "id": "tvBvRg0z5WdeQ6w",
+    "date": "2026-01-23 17:12:32",
+    "is_technical_error": false,
+    "is_unhappy_customer": true,
+    "error_category": "NONE",
+    "analysis": "TECHNICAL_ERROR: [NO] - The bot successfully gathered user details and created a support ticket.\nUNHAPPY_CUSTOMER: [YES] - The customer explicitly stated dissatisfaction with the product quality (\"the band is so cheap looking. rellay low quality\").\nERROR_CATEGORY: [NONE] - No technical errors occurred during the interaction.\nSUMMARY: The customer initiated the process to open a support ticket specifically to start a return/exchange. After clarifying the 90-day return policy, the bot successfully collected the necessary information (Name: Michael Lasky, Email: mlasky18@gmail.com, Order Number: 145249). A ticket (**support-request-customer-wants-to-initiate-a-return-for-order-number-145-dot-dot-dot**) was created, and the customer added context that the reason for the return was the band's low quality. The request is now escalated to the human support team for follow-up."
+  },
+  {
+    "id": "h6vNpQvMJaQglvk",
+    "date": "2026-01-23 16:37:16",
+    "is_technical_error": false,
+    "is_unhappy_customer": false,
+    "error_category": "NONE",
+    "analysis": "TECHNICAL_ERROR: [NO] - The bot processed all inputs successfully and retrieved existing ticket data.\nUNHAPPY_CUSTOMER: [NO] - The customer made several follow-up inquiries about queue position, but did not express explicit dissatisfaction or frustration in their phrasing.\nERROR_CATEGORY: [NONE]\nSUMMARY: [The customer successfully checked the status of their existing support ticket ('order accidentally placed') after providing their email address. The ticket status is 'Unresolved'. The interaction ended when the customer requested the specific numerical position in the queue, which the bot was unable to provide, instead reiterating the standard 12-24 hour response time.]"
+  },
+  {
+    "id": "kJaahvDdX5gdlRA",
+    "date": "2026-01-23 16:34:00",
+    "is_technical_error": false,
+    "is_unhappy_customer": false,
+    "error_category": "NONE",
+    "analysis": "TECHNICAL_ERROR: [NO] - The bot functioned correctly throughout the lookup and retrieval process.\nUNHAPPY_CUSTOMER: [NO] - The customer was seeking an update on a pending email, but did not express dissatisfaction with the chatbot's performance or service quality during the interaction.\nERROR_CATEGORY: [NONE]\nSUMMARY: [The customer successfully used the bot to look up the status of a previous support ticket concerning an 'order accidentally placed'. The bot located the ticket, confirmed it was unresolved and recently updated, and advised the customer to await a follow-up email from the support team. The interaction concluded successfully.]"
+  },
+  {
+    "id": "n1zdi4XHLmgIRmH",
+    "date": "2026-01-23 16:21:20",
+    "is_technical_error": false,
+    "is_unhappy_customer": false,
+    "error_category": "NONE",
+    "analysis": "TECHNICAL_ERROR: NO - The bot responded appropriately and offered clear next steps.\nUNHAPPY_CUSTOMER: NO - The customer made a standard request to initiate contact with support.\nERROR_CATEGORY: NONE\nSUMMARY: The customer requested to speak with support. The bot correctly initiated the support workflow, asking for required details (email, name, etc.) and presented the choice between creating a new ticket or checking an existing one. The interaction ended awaiting the customer's next selection."
+  },
+  {
+    "id": "L9D5HIrkEGXhPpJ",
+    "date": "2026-01-23 16:20:58",
+    "is_technical_error": false,
+    "is_unhappy_customer": false,
+    "error_category": "NONE",
+    "analysis": "TECHNICAL_ERROR: [NO] - The bot successfully retrieved and displayed the order status and handled the subsequent general service request appropriately.\nUNHAPPY_CUSTOMER: [NO] - The customer asked for general \"Customers service\" after receiving the tracking information, but did not express dissatisfaction.\nERROR_CATEGORY: [NONE] - The interaction was technically sound.\nSUMMARY: The customer successfully tracked Order #145160, which was marked as Fulfilled and shipped via USPS on Jan 13, 2026. After receiving the details, the customer requested general customer service, and the bot correctly presented options to open a support ticket or check an existing one."
+  },
+  {
+    "id": "O1OFsnbGFmVYF0t",
+    "date": "2026-01-23 15:11:07",
+    "is_technical_error": false,
+    "is_unhappy_customer": false,
+    "error_category": "NONE",
+    "analysis": "TECHNICAL_ERROR: [NO] - The bot functioned correctly and created the required ticket ID.\nUNHAPPY_CUSTOMER: [NO] - The customer was transactional and cooperative throughout the return request process.\nERROR_CATEGORY: [NONE] - The interaction completed successfully.\nSUMMARY: [The customer initiated a return request. The bot successfully guided the user, collected the necessary details (email, order number, and reason for return), and created support ticket 'support-request-customer-wants-to-make-a-return'. The bot confirmed that the support team would follow up regarding the fit and pinching issue.]"
+  },
+  {
+    "id": "dHi1CmrBlKYFcgk",
+    "date": "2026-01-23 15:09:57",
+    "is_technical_error": false,
+    "is_unhappy_customer": true,
+    "error_category": "NONE",
+    "analysis": "TECHNICAL_ERROR: NO - The bot successfully accessed order information and responded appropriately to user input.\nUNHAPPY_CUSTOMER: YES - The customer expressed frustration about the lack of tracking updates and threatened to return the item and purchase elsewhere.\nERROR_CATEGORY: NONE\nSUMMARY: The customer inquired about order #145157, concerned about tracking stagnation since January 16th. The bot provided the full order and shipment details, including the USPS tracking number, and explained typical transit delays. The bot offered to open a support ticket regarding the user's intent to return the item, but the customer opted to wait for the package to arrive first."
+  },
+  {
+    "id": "z7DTyROZnSJcuua",
+    "date": "2026-01-23 14:02:01",
+    "is_technical_error": false,
+    "is_unhappy_customer": false,
+    "error_category": "NONE",
+    "analysis": "TECHNICAL_ERROR: [NO] - The bot functioned correctly throughout the interaction, handling requests for photo submission and existing ticket lookup.\nUNHAPPY_CUSTOMER: [NO] - The customer was persistent in trying to get a direct email address but did not express explicit dissatisfaction with the service provided by the bot.\nERROR_CATEGORY: [NONE] - No technical errors observed.\nSUMMARY: The customer attempted to send photos directly to a specific agent named Daniel. The bot located the existing open ticket concerning the magnetic watchband issue, noted that Daniel was handling it, and added a note to the ticket regarding the photos. The bot successfully directed the customer to reply to the follow-up email from support to attach the images, and provided the general support email address when a personal agent email was requested. The ticket remains unresolved pending agent follow-up."
+  },
+  {
+    "id": "jGRWZY4qwkbtaq7",
+    "date": "2026-01-23 13:49:55",
+    "is_technical_error": false,
+    "is_unhappy_customer": false,
+    "error_category": "NONE",
+    "analysis": "TECHNICAL_ERROR: NO - The bot functioned correctly throughout the transaction, handling lookups and information updates.\nUNHAPPY_CUSTOMER: NO - The customer was transactional; the initial emoji button click does not count as expressed dissatisfaction in generated text.\nERROR_CATEGORY: NONE\nSUMMARY: The customer initiated a request for support regarding a defective watchband. The bot identified an existing, 'On Hold' ticket concerning the same item. The user successfully provided clarifying information (that the issue is sporadic and they have a photo). The bot updated the ticket with this text information and instructed the user to email the photo directly to the support team address, as the chatbot cannot receive attachments."
+  },
+  {
+    "id": "2Qa60ipSykZAUnA",
+    "date": "2026-01-23 11:07:28",
+    "is_technical_error": false,
+    "is_unhappy_customer": false,
+    "error_category": "NONE",
+    "analysis": "TECHNICAL_ERROR: [NO] - The bot successfully delivered its opening message and menu options.\nUNHAPPY_CUSTOMER: [NO] - The customer has not yet interacted with the bot.\nERROR_CATEGORY: [NONE] - No errors detected.\nSUMMARY: [The transcript captures only the initial greeting from AstraBot, where it introduced itself and presented the main navigation options: shopping for bands, tracking an order, or opening a support ticket. No user input was recorded.]"
+  },
+  {
+    "id": "dMxuKQzwEOQC38f",
+    "date": "2026-01-23 04:29:44",
+    "is_technical_error": false,
+    "is_unhappy_customer": false,
+    "error_category": "NONE",
+    "analysis": "TECHNICAL_ERROR: NO - The bot successfully processed all inputs and provided relevant information.\nUNHAPPY_CUSTOMER: NO - The customer input was transactional/query-based.\nERROR_CATEGORY: NONE\nSUMMARY: The customer inquired about band compatibility for a specific Galaxy Watch model (SM-R800). The bot successfully identified the required 22mm size, filtered results based on the user's material preference (Nylon), and provided guidance on selecting the correct size during purchase. The interaction resolved the compatibility query."
+  },
+  {
+    "id": "5VyoA1Av3qXu7mS",
+    "date": "2026-01-23 00:03:24",
+    "is_technical_error": false,
+    "is_unhappy_customer": false,
+    "error_category": "LOGIC_ERROR",
+    "analysis": "TECHNICAL_ERROR: [NO] - The bot responded to all inputs successfully.\nUNHAPPY_CUSTOMER: [NO] - The customer inputs were neutral queries/answers.\nERROR_CATEGORY: [LOGIC_ERROR] - The bot provided inconsistent or questionable product sizing advice based on the user's input (\"Series 11\" leading to a recommendation for a non-standard \"46MM\" size).\nSUMMARY: The customer inquired about the difference between two watch sizes. The bot gave a detailed compatibility explanation and then, upon learning the customer had a \"Series 11\" watch, provided specific size guidance that included a non-standard size (46MM), before transitioning to asking about material preference. The sizing logic appears flawed or based on speculative future product data."
+  },
+  {
+    "id": "S4NfD8WsnnoBuC5",
+    "date": "2026-01-22 21:47:06",
+    "is_technical_error": false,
+    "is_unhappy_customer": false,
+    "error_category": "NONE",
+    "analysis": "TECHNICAL_ERROR: [NO]\nUNHAPPY_CUSTOMER: [NO] - The customer stated facts about missing items and delays but did not express explicit frustration or anger in their text inputs.\nERROR_CATEGORY: [NONE]\nSUMMARY: The customer requested order tracking but lacked the confirmation email. They provided extensive details (name, email, purchase description, apparent shipping delay in LA). The bot successfully located previous interactions and created a new support ticket (reference: support-request-customer-has-not-received-confirmation-email-for-dollars-dot-dot-dot) for order #145679, advising the customer that the support team will respond within 12-24 hours. The core issue remains unresolved pending agent follow-up."
+  },
+  {
+    "id": "UEAZ8QMOGS51NEZ",
+    "date": "2026-01-22 21:16:22",
+    "is_technical_error": false,
+    "is_unhappy_customer": false,
+    "error_category": "NONE",
+    "analysis": "TECHNICAL_ERROR: [NO] - The bot functioned correctly, successfully identifying the need to escalate, gathering required information, and creating a ticket.\nUNHAPPY_CUSTOMER: [NO] - The customer was polite and appreciative of the bot's assistance in creating the support ticket.\nERROR_CATEGORY: [NONE]\nSUMMARY: [The customer needed a confirmation email resent because they did not receive the original due to a full inbox. The bot correctly determined it could not perform this action directly and created a support ticket after collecting the user's name (Nicholas Arends) and email (youngkingblaziken@gmail.com). The bot later updated the ticket with product details (Gear Watch 6 Classic strap). A ticket reference ID was provided, and the issue is now pending follow-up from the support team.]"
+  },
+  {
+    "id": "CREa7ZB34kp14b3",
+    "date": "2026-01-22 13:49:31",
+    "is_technical_error": false,
+    "is_unhappy_customer": false,
+    "error_category": "NONE",
+    "analysis": "TECHNICAL_ERROR: [NO] - The ticket creation process completed successfully.\nUNHAPPY_CUSTOMER: [NO] - The customer expressed concern about a faulty product, but was satisfied once the ticket was created and the urgency was acknowledged.\nERROR_CATEGORY: [NONE]\nSUMMARY: The customer initially inquired about locating a lost support conversation but immediately pivoted to reporting a faulty magnetic connection on a Fitbit band requiring a return. The bot successfully handled the intent shift, gathered the required customer information (email and name, though the order number was omitted), and successfully created a support ticket referencing the return request. The interaction concluded with the customer satisfied that the ticket was created and the issue would be prioritized."
+  },
+  {
+    "id": "xdxgsf0NLEqBfQm",
+    "date": "2026-01-22 13:39:42",
+    "is_technical_error": false,
+    "is_unhappy_customer": false,
+    "error_category": "NONE",
+    "analysis": "TECHNICAL_ERROR: [NO] - The bot responded appropriately to the input provided.\nUNHAPPY_CUSTOMER: [NO] - The customer stated they couldn't find emails but did not express explicit dissatisfaction in the provided text.\nERROR_CATEGORY: [NONE] - No technical error occurred.\nSUMMARY: [The human customer attempted to find a previous support interaction with an agent named Daniel by referencing their email address. The bot failed to retrieve any history associated with the email and requested the user to verify the email or provide an order number to proceed with tracking.]"
+  },
+  {
+    "id": "n7N0HFHWDz0wdbv",
+    "date": "2026-01-22 10:40:36",
+    "is_technical_error": false,
+    "is_unhappy_customer": false,
+    "error_category": "NONE",
+    "analysis": "TECHNICAL_ERROR: [NO] - The bot responded correctly and requested necessary clarifying information.\nUNHAPPY_CUSTOMER: [NO] - The customer input was a directive request (\"\ud83d\udd25 items on sale\"), not an expression of dissatisfaction.\nERROR_CATEGORY: [NONE]\nSUMMARY: [The customer intended to view sale items. The bot correctly identified this intent and began the product qualification flow by asking for the user's smartwatch model, size, and material preference.]"
+  },
+  {
+    "id": "c2maxxOownENd9T",
+    "date": "2026-01-21 22:27:53",
+    "is_technical_error": false,
+    "is_unhappy_customer": false,
+    "error_category": "NONE",
+    "analysis": "TECHNICAL_ERROR: [NO] - The bot successfully processed the request and created a ticket.\nUNHAPPY_CUSTOMER: [NO] - The customer was transactional and successfully completed the required steps to open a ticket.\nERROR_CATEGORY: [NONE] - No technical failures occurred.\nSUMMARY: [The customer successfully initiated a support request for a missing custom chain link tool (Order #145065). The bot gathered the necessary details, created ticket support-request-custom-chain-link-tool-missing-from-order-number-145065, and informed the customer of a 24-hour follow-up time. The issue transfer to human agents was successful.]"
+  },
+  {
+    "id": "FnoEYLsmZknPhDm",
+    "date": "2026-01-21 17:35:38",
+    "is_technical_error": false,
+    "is_unhappy_customer": false,
+    "error_category": "NONE",
+    "analysis": "TECHNICAL_ERROR: NO - The bot successfully managed the conversation, acknowledging the complex query and opening a ticket as intended.\nUNHAPPY_CUSTOMER: NO - The customer asked specific follow-up questions but did not express dissatisfaction.\nERROR_CATEGORY: NONE\nSUMMARY: The customer inquired about the chemical composition and safety (specifically regarding PFAs and fluoroelastomer) of the silicone watch bands. The chatbot determined it could not answer these technical questions immediately and successfully escalated the issue by creating a support ticket for the product team to provide a detailed response via email."
+  },
+  {
+    "id": "zZQfRtIXBLN0Fk0",
+    "date": "2026-01-21 17:24:49",
+    "is_technical_error": false,
+    "is_unhappy_customer": false,
+    "error_category": "NONE",
+    "analysis": "TECHNICAL_ERROR: NO - The conversation flowed logically without system failures.\nUNHAPPY_CUSTOMER: NO - The customer was seeking functional assistance (how to open a band), not expressing dissatisfaction with the service itself.\nERROR_CATEGORY: NONE\nSUMMARY: The customer needed instructions on how to open their new Astra Silver Mesh band. The bot correctly identified the product as the Silver Milanese Mesh band and provided detailed, helpful instructions regarding its strong magnetic closure. The interaction concluded after the instructions were given, leaving the resolution unconfirmed."
+  },
+  {
+    "id": "xYlcjojmVWgldpT",
+    "date": "2026-01-21 07:56:42",
+    "is_technical_error": false,
+    "is_unhappy_customer": false,
+    "error_category": "NONE",
+    "analysis": "TECHNICAL_ERROR: [NO] - The bot successfully processed the request and created a ticket ID.\nUNHAPPY_CUSTOMER: [NO] - The customer followed the procedure to open a support ticket without expressing frustration.\nERROR_CATEGORY: [NONE]\nSUMMARY: The customer successfully requested to open a support ticket. The bot collected necessary identification details (email, name, order number) and confirmed that ticket 'support-request-customer-wants-to-open-a-support-ticket-needs-ass-dot-dot-dot' was created, advising a 24-hour response time."
+  },
+  {
+    "id": "CjwtQGx1LMDryF4",
+    "date": "2026-01-21 07:07:00",
+    "is_technical_error": false,
+    "is_unhappy_customer": false,
+    "error_category": "NONE",
+    "analysis": "TECHNICAL_ERROR: NO - The bot responded appropriately to all inputs without crashing or failing to generate text.\nUNHAPPY_CUSTOMER: NO - The customer provided direct, transactional inputs seeking product information.\nERROR_CATEGORY: NONE\nSUMMARY: The customer successfully initiated a query regarding band sizing. The bot correctly identified the Apple Watch Ultra and provided the compatible size range (42mm-49mm). The conversation progressed logically as the bot filtered recommendations based on the customer's material preference (Sport) and offered specific product examples (Neptuse and Nix bands). The interaction concluded successfully with the bot offering further refinement options."
+  },
+  {
+    "id": "wfgMsxtVpYEIc6i",
+    "date": "2026-01-21 00:04:58",
+    "is_technical_error": false,
+    "is_unhappy_customer": true,
+    "error_category": "NONE",
+    "analysis": "TECHNICAL_ERROR: NO - The system successfully processed the request, gathered data, and created the support ticket.\nUNHAPPY_CUSTOMER: YES - The customer explicitly stated they were \"Not happy with the band I ordered\" and requested a return due to dissatisfaction with the color.\nERROR_CATEGORY: NONE\nSUMMARY: The customer contacted support to initiate a return for a band they were unhappy with (color dissatisfaction). The bot successfully collected the required information (email, order number, reason) and created a support ticket. The customer was informed that human review and return instructions would be sent via email within 24 hours."
+  },
+  {
+    "id": "lJx8L8kc9QSgsNb",
+    "date": "2026-01-20 22:26:33",
+    "is_technical_error": false,
+    "is_unhappy_customer": false,
+    "error_category": "LOGIC_ERROR",
+    "analysis": "TECHNICAL_ERROR: NO - The bot responded appropriately to the user's input.\nUNHAPPY_CUSTOMER: NO - The user did not express dissatisfaction.\nERROR_CATEGORY: LOGIC_ERROR - The bot asked for specific information (email, name, order number) but immediately presented irrelevant navigational choices instead of pausing to await the user's input or confirming the ticket creation step.\nSUMMARY: The customer requested to start a return. The bot correctly identified the intent and outlined the required information needed to create a support ticket (email, name, order number). However, the flow was interrupted as the bot immediately offered unrelated navigational choices (\"Track an order\", \"Shop bands on sale\") after requesting details, preventing the user from submitting the required information."
+  },
+  {
+    "id": "kzDq0iEMGdpD5Wf",
+    "date": "2026-01-20 21:03:37",
+    "is_technical_error": false,
+    "is_unhappy_customer": false,
+    "error_category": "NONE",
+    "analysis": "TECHNICAL_ERROR: [NO] - The bot successfully processed inventory inquiries, created a support ticket, and gathered necessary contact information.\nUNHAPPY_CUSTOMER: [NO] - The customer remained polite throughout the interaction and accepted the proposed resolution (ticket creation).\nERROR_CATEGORY: [NONE]\nSUMMARY: [The customer inquired about the restocking date for a specific Diem leather band color/size. The bot confirmed the item was out of stock and could not provide a date. The bot successfully created a support ticket, collected the customer's email address, and informed them the support team would follow up within 12-24 hours. The interaction concluded successfully.]"
+  },
+  {
+    "id": "N4HjWr7yLaYyAXz",
+    "date": "2026-01-20 16:03:18",
+    "is_technical_error": false,
+    "is_unhappy_customer": false,
+    "error_category": "NLU_ERROR",
+    "analysis": "TECHNICAL_ERROR: NO - The bot responded normally throughout the interaction.\nUNHAPPY_CUSTOMER: NO - The customer engaged functionally, although they had to correct the bot's assumptions.\nERROR_CATEGORY: NLU_ERROR - The bot misunderstood the customer's negative constraints regarding material preferences in the second turn (\"i do not want metal either silicone or leather\") by immediately presenting leather and silicone options.\nSUMMARY: The customer attempted to find sale smartwatch bands for an Apple Watch Series 3 (38mm). The bot correctly gathered model information but initially failed to process the customer's stated exclusion of leather and silicone materials. The bot corrected course after the customer specified they wanted non-magnetic bands, proceeding to offer leather and silicone options with traditional buckles, although the initial material exclusion remains a point of confusion."
+  },
+  {
+    "id": "2fdufyg3hDEwYjE",
+    "date": "2026-01-20 15:54:55",
+    "is_technical_error": false,
+    "is_unhappy_customer": false,
+    "error_category": "NLU_ERROR",
+    "analysis": "TECHNICAL_ERROR: [NO]\nUNHAPPY_CUSTOMER: [NO]\nERROR_CATEGORY: [NLU_ERROR]\nSUMMARY: [The customer inquired about M/L Apple Watch band sizing, which the bot confirmed generally works. When the customer provided the input \"Altrim,\" the bot failed to locate the item in the catalog. The bot handled this recognition failure gracefully by asking for clarification and offering suggestions for popular bands that fit M/L sizes, leaving the specific product search unresolved.]"
+  },
+  {
+    "id": "4qsBWnJ7ZKin95v",
+    "date": "2026-01-20 15:50:18",
+    "is_technical_error": false,
+    "is_unhappy_customer": false,
+    "error_category": "NONE",
+    "analysis": "TECHNICAL_ERROR: NO - The bot responded appropriately to all queries.\nUNHAPPY_CUSTOMER: NO - The customer expressed thanks and the issue was resolved to their satisfaction.\nERROR_CATEGORY: NONE\nSUMMARY: The customer inquired about the compatibility of a leather band with their Apple Watch Series 3 38mm, noting confusion regarding size options that referenced newer models (S10/S11). The bot successfully confirmed that the band fits due to universal connector sizing and clarified which size option to select. The interaction concluded successfully."
+  },
+  {
+    "id": "MKNHrWSTL7WC3wY",
+    "date": "2026-01-20 14:31:42",
+    "is_technical_error": false,
+    "is_unhappy_customer": false,
+    "error_category": "NONE",
+    "analysis": "TECHNICAL_ERROR: NO - The bot successfully processed the request and retrieved order details.\nUNHAPPY_CUSTOMER: NO - The customer successfully obtained the requested order status information.\nERROR_CATEGORY: NONE\nSUMMARY: The customer requested to track order #144832. The bot successfully located the order, confirmed it was Paid and Fulfilled, provided the shipping address, and supplied the USPS tracking number (9214490401712464220570). The interaction concluded successfully with no unresolved issues."
+  },
+  {
+    "id": "MlW6xdE7q5Syrh5",
+    "date": "2026-01-20 08:40:37",
+    "is_technical_error": false,
+    "is_unhappy_customer": false,
+    "error_category": "NONE",
+    "analysis": "TECHNICAL_ERROR: NO - The bot processed input correctly and successfully retrieved existing customer data.\nUNHAPPY_CUSTOMER: NO - The customer requested support, but their text does not express dissatisfaction.\nERROR_CATEGORY: NONE\nSUMMARY: The customer initiated a request for support. The bot successfully used the provided email address to locate an existing, unresolved ticket concerning a 'Missing Order' and prompted the user for the next desired action regarding that ticket."
+  },
+  {
+    "id": "A66QZjR5tR8XsNW",
+    "date": "2026-01-20 05:49:12",
+    "is_technical_error": false,
+    "is_unhappy_customer": false,
+    "error_category": "NONE",
+    "analysis": "TECHNICAL_ERROR: NO - The bot processed the request successfully and provided accurate data retrieval.\nUNHAPPY_CUSTOMER: NO - The customer expressed disappointment that the provided status lacked a specific delivery date, but did not express anger or frustration with the bot's functionality.\nERROR_CATEGORY: NONE\nSUMMARY: The customer successfully tracked order #144395, confirming it was Paid and Fulfilled, and received the USPS tracking number. The customer requested an estimated delivery date, which the bot could not provide due to lacking access to real-time carrier transit schedules. The bot advised checking the external USPS link for the most accurate ETA."
+  },
+  {
+    "id": "tByCsM86Yqv8VSJ",
+    "date": "2026-01-19 22:18:37",
+    "is_technical_error": false,
+    "is_unhappy_customer": false,
+    "error_category": "NONE",
+    "analysis": "TECHNICAL_ERROR: NO - The bot successfully processed the request to open a support ticket.\nUNHAPPY_CUSTOMER: NO - The customer requested support; no dissatisfaction expressed in the text provided.\nERROR_CATEGORY: NONE\nSUMMARY: The customer initiated a request to open a support ticket. The bot correctly responded by asking for the required details (email, name, order number, issue description) to proceed with ticket creation."
+  },
+  {
+    "id": "OXTEUzWy7h399BK",
+    "date": "2026-01-19 22:11:55",
+    "is_technical_error": false,
+    "is_unhappy_customer": false,
+    "error_category": "NONE",
+    "analysis": "TECHNICAL_ERROR: [NO] - The bot successfully collected all necessary information and created a support ticket.\nUNHAPPY_CUSTOMER: [NO] - The customer provided information cooperatively to resolve a product issue.\nERROR_CATEGORY: [NONE]\nSUMMARY: [The customer successfully requested to open a new support ticket. The bot collected the customer's email, name, order number (141952), and a detailed description of a broken link on a new band. The ticket was successfully created and referenced.]"
+  },
+  {
+    "id": "5QppjKXLQpt4xrR",
+    "date": "2026-01-19 17:48:16",
+    "is_technical_error": false,
+    "is_unhappy_customer": false,
+    "error_category": "NONE",
+    "analysis": "TECHNICAL_ERROR: [NO] - The bot functioned correctly throughout, including successful ticket creation.\nUNHAPPY_CUSTOMER: [NO] - The customer expressed disappointment about product availability (\"Darn,\" \"not as 'Cute'\") but was cooperative and satisfied with the resolution of opening a support ticket.\nERROR_CATEGORY: [NONE]\nSUMMARY: The customer initially requested support but switched focus to product compatibility, specifically asking if the \"Pallium Bling Diamond Bumper Galaxy Case\" fits a 47mm watch. The bot confirmed it was unavailable in that size and offered alternatives, which the customer declined. The customer then requested a support ticket be opened to inquire about future availability of the specific case. The bot successfully created ticket 'support-request-checking-availability-for-pallium-bling-diamond-bu-dot-dot-dot' and confirmed the support team would follow up via email. The interaction concluded with the bot offering related sale items."
+  },
+  {
+    "id": "NTWeaJewZwdWAfq",
+    "date": "2026-01-19 16:24:36",
+    "is_technical_error": false,
+    "is_unhappy_customer": false,
+    "error_category": "NONE",
+    "analysis": "TECHNICAL_ERROR: NO - The bot processed the input and provided a relevant, multi-part answer.\nUNHAPPY_CUSTOMER: NO - The customer asked a direct informational question.\nERROR_CATEGORY: NONE\nSUMMARY: The customer asked how to determine the correct watch band size. The bot successfully provided instructions for checking sizes across major brands (Apple, Galaxy, Pixel, Fitbit) and then guided the user to select their specific watch brand to continue shopping."
+  },
+  {
+    "id": "7GCVxt0XsAUUYQY",
+    "date": "2026-01-19 03:34:22",
+    "is_technical_error": false,
+    "is_unhappy_customer": false,
+    "error_category": "NONE",
+    "analysis": "TECHNICAL_ERROR: NO - The bot successfully processed all inputs and generated relevant responses, despite the user requesting a visualization the bot could only provide descriptively.\nUNHAPPY_CUSTOMER: NO - The customer remained inquisitive throughout, seeking specific aesthetic confirmation and clarification on visualization, but did not express dissatisfaction.\nERROR_CATEGORY: NONE\nSUMMARY: The customer sought aesthetic advice on whether the Avoco Magnetic Silicone Band in Dark Green Black would complement an aluminum watch frame. The bot confirmed the band's existence and provided extensive textual descriptions of how the colors and textures would contrast with the frame. The interaction concluded successfully with the bot pivoting to offer alternative color suggestions, as it could not provide a direct image."
+  },
+  {
+    "id": "wCAhyGKKiWnpica",
+    "date": "2026-01-19 02:07:39",
+    "is_technical_error": false,
+    "is_unhappy_customer": false,
+    "error_category": "NONE",
+    "analysis": "TECHNICAL_ERROR: [NO] - The interaction proceeded smoothly, and the bot successfully created the required support ticket.\nUNHAPPY_CUSTOMER: [NO] - The customer provided requested information and ended the conversation with a polite \"Thank you.\"\nERROR_CATEGORY: [NONE]\nSUMMARY: [The customer successfully initiated a return request. The bot collected the customer's email and name but was unable to retrieve the order number. The bot successfully created a support ticket and informed the customer that the support team will contact them via email within 24 hours to help locate the order and finalize the return process.]"
+  },
+  {
+    "id": "xJisRkmZLEEXNZ2",
+    "date": "2026-01-19 00:20:03",
+    "is_technical_error": false,
+    "is_unhappy_customer": false,
+    "error_category": "NONE",
+    "analysis": "TECHNICAL_ERROR: NO - The bot responded appropriately to all user inputs.\nUNHAPPY_CUSTOMER: NO - The customer successfully navigated informational queries regarding sizing.\nERROR_CATEGORY: NONE\nSUMMARY: The customer sought clarification on how to determine correct wrist size and later asked if the watch \"mm size\" referred to the wrist or the case. The bot successfully provided step-by-step instructions for measuring the wrist and accurately clarified that the mm size refers to the watch case size, concluding by offering assistance in finding corresponding bands."
+  },
+  {
+    "id": "gYAJKTsblpb5v9O",
+    "date": "2026-01-18 22:16:35",
+    "is_technical_error": false,
+    "is_unhappy_customer": false,
+    "error_category": "NONE",
+    "analysis": "TECHNICAL_ERROR: [NO] - The bot successfully gathered information and created the specified support ticket ID.\nUNHAPPY_CUSTOMER: [NO] - The customer expressed dissatisfaction by requesting support, but this was resolved successfully by creating the appropriate ticket, leading to a thank you message at the end.\nERROR_CATEGORY: [NONE] - The bot successfully navigated the intent fulfillment process.\nSUMMARY: [The customer contacted support regarding an incorrect shipping address for order #145899. The bot successfully retrieved the order details, confirmed the correct address (97936 Lively Ln, Brookings, OR 97415), and created a support ticket (`support-request-update-shipping-address-for-order-number-145899-correct-dot-dot-dot`) for the team to make the necessary change, promising a response within 24 hours.]"
+  }
+]

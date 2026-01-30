@@ -1,0 +1,301 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>AstraStraps | Issue Dashboard</title>
+    <link rel="stylesheet" href="dashboard.css">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;600;800&display=swap" rel="stylesheet">
+    <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
+    <script
+        src="https://cdn.jsdelivr.net/npm/chartjs-adapter-date-fns/dist/chartjs-adapter-date-fns.bundle.min.js"></script>
+</head>
+
+<body>
+    <div class="container">
+        <header>
+            <h1>Issue Dashboard</h1>
+            <p class="subtitle">Actionable insights from Convocore transcripts.</p>
+        </header>
+
+        <div id="stats-panel" class="stats-panel">
+            <!-- Stats will be injected here -->
+        </div>
+
+        <div class="chart-container" style="position: relative; height: 400px; width: 100%; margin-bottom: 3rem;">
+            <canvas id="errorTimeline"></canvas>
+        </div>
+
+        <div id="dashboard" class="dashboard-grid">
+            <!-- Cards will be injected here -->
+            <div class="loading">Loading issues...</div>
+        </div>
+    </div>
+
+    <script>
+        let timelineChart = null;
+
+        async function loadIssues() {
+            try {
+                const response = await fetch('/api/issues');
+                const issues = await response.json();
+                renderDashboard(issues);
+            } catch (error) {
+                console.error('Error loading tracker:', error);
+                document.getElementById('dashboard').innerHTML = '<p style="grid-column: 1/-1; text-align: center; color: #ef4444;">Failed to load data from issue_tracker.json</p>';
+            }
+        }
+
+        function calculateStats(issues) {
+            const stats = {
+                totalErrors: 0,
+                totalUnhappy: 0,
+                categories: {},
+                tags: {}
+            };
+
+            issues.forEach(issue => {
+                if (issue.is_technical_error) stats.totalErrors++;
+                if (issue.is_unhappy_customer) stats.totalUnhappy++;
+
+                const cat = issue.error_category || 'UNCATEGORIZED';
+                if (cat !== 'NONE') {
+                    stats.categories[cat] = (stats.categories[cat] || 0) + 1;
+                }
+
+                const tag = issue.error_tag || 'NONE';
+                if (tag !== 'NONE') {
+                    stats.tags[tag] = (stats.tags[tag] || 0) + 1;
+                }
+            });
+
+            return stats;
+        }
+
+        function renderStats(stats) {
+            const panel = document.getElementById('stats-panel');
+
+            // Sort tags by count
+            const topTags = Object.entries(stats.tags)
+                .sort((a, b) => b[1] - a[1])
+                .slice(0, 4);
+
+            let tagHtml = topTags.map(([tag, count]) => `
+                <div class="stat-card">
+                    <div class="stat-value" style="color: var(--accent-purple)">${count}</div>
+                    <div class="stat-label">${tag}</div>
+                </div>
+            `).join('');
+
+            panel.innerHTML = `
+                <div class="stat-card">
+                    <div class="stat-value" style="color: var(--accent-red)">${stats.totalErrors}</div>
+                    <div class="stat-label">Tech Errors</div>
+                </div>
+                <div class="stat-card">
+                    <div class="stat-value" style="color: #f59e0b">${stats.totalUnhappy}</div>
+                    <div class="stat-label">Unhappy</div>
+                </div>
+                ${tagHtml}
+            `;
+        }
+
+        function renderTimeline(issues) {
+            const ctx = document.getElementById('errorTimeline').getContext('2d');
+
+            // Sort issues by date
+            const sortedIssues = [...issues].sort((a, b) => new Date(a.date) - new Date(b.date));
+
+            // Group by Category and Date (Day)
+            const datasets = {};
+            const categories = ['SYSTEM', 'LOGIC', 'DATA', 'UI', 'NLU', 'OTHER'];
+            const colors = {
+                'SYSTEM': '#ef4444',
+                'LOGIC': '#f59e0b',
+                'DATA': '#3b82f6',
+                'UI': '#10b981',
+                'NLU': '#8b5cf6',
+                'OTHER': '#6b7280'
+            };
+
+            // Generate data points
+            // We want cumulative or daily count? Let's do cumulative count over time for each category to show trends clearly, 
+            // OR simple scatter plot of when errors happened.
+            // Scatter plot is better for specific events.
+
+            categories.forEach(cat => {
+                datasets[cat] = {
+                    label: cat,
+                    data: [],
+                    borderColor: colors[cat] || '#888',
+                    backgroundColor: colors[cat] || '#888',
+                    showLine: false, // Scatter style
+                    pointRadius: 6,
+                    pointHoverRadius: 8
+                };
+            });
+
+            sortedIssues.forEach(issue => {
+                const cat = issue.error_category || 'OTHER';
+                if (datasets[cat]) {
+                    // Y value mostly cosmetic, just to separate them slightly or unified line?
+                    // Let's use a unified timeline where Y = 1 but stacked? No.
+                    // Let's assign an arbitrary Y index per category to separate "swimlanes"
+                    const catIndex = categories.indexOf(cat);
+
+                    datasets[cat].data.push({
+                        x: issue.date,
+                        y: catIndex + 1, // 1-based index
+                        issue: issue // custom data for tooltip
+                    });
+                }
+            });
+
+            if (timelineChart) {
+                timelineChart.destroy();
+            }
+
+            timelineChart = new Chart(ctx, {
+                type: 'scatter',
+                data: {
+                    datasets: Object.values(datasets).filter(d => d.data.length > 0)
+                },
+                options: {
+                    responsive: true,
+                    maintainAspectRatio: false,
+                    scales: {
+                        x: {
+                            type: 'time',
+                            time: {
+                                unit: 'day'
+                            },
+                            grid: {
+                                color: 'rgba(255, 255, 255, 0.1)'
+                            },
+                            ticks: {
+                                color: '#a0a0a0'
+                            }
+                        },
+                        y: {
+                            min: 0,
+                            max: 7,
+                            ticks: {
+                                callback: function (value, index, values) {
+                                    return categories[value - 1] || '';
+                                },
+                                color: '#a0a0a0'
+                            },
+                            grid: {
+                                color: 'rgba(255, 255, 255, 0.1)'
+                            }
+                        }
+                    },
+                    plugins: {
+                        tooltip: {
+                            callbacks: {
+                                label: function (context) {
+                                    const issue = context.raw.issue;
+                                    return `${issue.error_tag || 'Error'}: ${issue.id}`;
+                                },
+                                afterLabel: function (context) {
+                                    const issue = context.raw.issue;
+                                    return issue.mitigation_notes ? 'Has Mitigation' : '';
+                                }
+                            }
+                        },
+                        legend: {
+                            labels: {
+                                color: '#fff'
+                            }
+                        }
+                    }
+                }
+            });
+        }
+
+        function renderDashboard(issues) {
+            const dashboard = document.getElementById('dashboard');
+
+            // Calculate and render stats first
+            const stats = calculateStats(issues);
+            renderStats(stats);
+            renderTimeline(issues);
+
+            if (issues.length === 0) {
+                dashboard.innerHTML = '<p style="grid-column: 1/-1; text-align: center; color: var(--text-secondary);">No issues logged yet.</p>';
+                return;
+            }
+
+            dashboard.innerHTML = issues.map(issue => {
+                const badges = [];
+                if (issue.is_technical_error) badges.push('<span class="badge badge-error">Technical Error</span>');
+                if (issue.is_unhappy_customer) badges.push('<span class="badge badge-unhappy">Unhappy Customer</span>');
+
+                if (issue.error_category && issue.error_category !== 'NONE') {
+                    badges.push(`<span class="badge badge-category">${issue.error_category.replace(/_/g, ' ')}</span>`);
+                }
+
+                if (issue.error_tag && issue.error_tag !== 'NONE') {
+                    badges.push(`<span class="badge" style="background: rgba(255, 255, 255, 0.1); border: 1px solid rgba(255,255,255,0.2);">${issue.error_tag}</span>`);
+                }
+
+                let mitigationHtml = '';
+                if (issue.mitigation_notes) {
+                    mitigationHtml = `
+                        <div class="mitigation-box">
+                            <span class="mitigation-title">Mitigation Actions</span>
+                            <div class="mitigation-content">${issue.mitigation_notes}</div>
+                        </div>
+                    `;
+                }
+
+                let statusBadge = `
+                    <div class="status-indicator">
+                        <div class="dot dot-${issue.status.toLowerCase()}"></div>
+                        <span>${issue.status}</span>
+                    </div>
+                `;
+
+                return `
+                    <div class="card">
+                        <div class="card-header">
+                            <span class="convo-id">${issue.id}</span>
+                        </div>
+                        <div class="timestamp">${issue.date}</div>
+                        <div style="display: flex; gap: 0.5rem; flex-wrap: wrap; margin-bottom: 1rem;">${badges.join('')}</div>
+                        
+                        <div class="analysis-text">${formatAnalysis(issue.analysis)}</div>
+                        
+                        ${mitigationHtml}
+                        
+                        <div class="card-footer">
+                            ${statusBadge}
+                            ${issue.deleted_from_frontend ? '<span class="delete-tag">DELETED FROM API</span>' : ''}
+                        </div>
+                    </div>
+                `;
+            }).join('');
+        }
+
+        function formatAnalysis(text) {
+            if (!text) return '';
+            return text
+                .replace(/TECHNICAL_ERROR: /gi, '<strong>Error: </strong>')
+                .replace(/UNHAPPY_CUSTOMER: /gi, '<br><strong>Sentiment: </strong>')
+                .replace(/ERROR_CATEGORY: /gi, '<br><strong>Category: </strong>')
+                .replace(/SUMMARY: /gi, '<br><br><strong>Summary: </strong>')
+                .replace(/\[YES\]/g, 'YES')
+                .replace(/\[NO\]/g, 'NO');
+        }
+
+        loadIssues();
+
+        // Refresh data every 30 seconds
+        setInterval(loadIssues, 30000);
+    </script>
+</body>
+
+</html>

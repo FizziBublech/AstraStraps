@@ -1,0 +1,1272 @@
+[
+  {
+    "id": "WpEBMECYrEHnaqY",
+    "date": "2026-01-30 08:46:50",
+    "is_technical_error": false,
+    "is_unhappy_customer": true,
+    "error_category": "PRODUCT_DB",
+    "analysis": {
+      "technical_error": false,
+      "unhappy_customer": true,
+      "error_category": "PRODUCT_DB",
+      "summary": "Customer reports a faulty Vistel Slim Leather Link Band where the magnetic closure failed, causing their Apple Watch to fall. The bot created a support ticket and updated it with the customer's email address.",
+      "recommended_products": [],
+      "products_discussed": [
+        "Vistel Slim Leather Link Band"
+      ],
+      "topics_discussed": [
+        "faulty product",
+        "return request",
+        "refund request",
+        "support ticket"
+      ],
+      "sentiment_score": 4,
+      "purchase_intent": false,
+      "primary_intent": "Support"
+    }
+  },
+  {
+    "id": "jqj37TEUi05zUzl",
+    "date": "2026-01-30 03:57:36",
+    "is_technical_error": false,
+    "is_unhappy_customer": false,
+    "error_category": "NONE",
+    "analysis": {
+      "technical_error": false,
+      "unhappy_customer": false,
+      "error_category": "NONE",
+      "summary": "The customer initiated a return request because the strap was too thin. The bot collected the necessary information and created a support ticket for the customer.",
+      "recommended_products": [],
+      "products_discussed": [
+        "strap"
+      ],
+      "topics_discussed": [
+        "return request",
+        "support ticket",
+        "strap size"
+      ],
+      "sentiment_score": 7,
+      "purchase_intent": false,
+      "primary_intent": "Support"
+    }
+  },
+  {
+    "id": "6DWqglN8CRZrKvd",
+    "date": "2026-01-30 03:22:44",
+    "is_technical_error": false,
+    "is_unhappy_customer": false,
+    "error_category": "PRODUCT_DB",
+    "analysis": {
+      "technical_error": false,
+      "unhappy_customer": false,
+      "error_category": "PRODUCT_DB",
+      "summary": "The customer repeatedly asked about the manufacturing country of the bands, but the bot was unable to provide a specific answer from its database. The bot offered to create a support ticket to provide the information via email and provided shipping information.",
+      "recommended_products": [],
+      "products_discussed": [
+        "smartwatch bands",
+        "Apple Watch",
+        "Galaxy Watch",
+        "premium leathers",
+        "stainless steel",
+        "specialized silicones"
+      ],
+      "topics_discussed": [
+        "manufacturing location",
+        "shipping information",
+        "order processing",
+        "fulfillment centers"
+      ],
+      "sentiment_score": 7,
+      "purchase_intent": false,
+      "primary_intent": "General"
+    }
+  },
+  {
+    "id": "Vl7hhqnm4N8jdcE",
+    "date": "2026-01-30 02:05:07",
+    "is_technical_error": false,
+    "is_unhappy_customer": false,
+    "error_category": "PRODUCT_DB",
+    "analysis": {
+      "technical_error": false,
+      "unhappy_customer": false,
+      "error_category": "PRODUCT_DB",
+      "summary": "The bot could not find a band matching \"upper arm band\". It offered to help find an alternative by asking for the smartwatch model/size and preferred material.",
+      "recommended_products": [],
+      "products_discussed": [],
+      "topics_discussed": [
+        "smartwatch bands",
+        "product search",
+        "alternative suggestions"
+      ],
+      "sentiment_score": 7,
+      "purchase_intent": false,
+      "primary_intent": "Sales"
+    }
+  },
+  {
+    "id": "gMoalMugbQaVLjv",
+    "date": "2026-01-30 01:58:52",
+    "is_technical_error": false,
+    "is_unhappy_customer": false,
+    "error_category": "NONE",
+    "analysis": {
+      "technical_error": false,
+      "unhappy_customer": false,
+      "error_category": "NONE",
+      "summary": "The customer wanted to exchange a Fitbit Luxe band because it was too big. The bot created a support ticket for the customer after collecting the necessary information.",
+      "recommended_products": [],
+      "products_discussed": [
+        "Fitbit Luxe band"
+      ],
+      "topics_discussed": [
+        "exchanges",
+        "support ticket",
+        "order information"
+      ],
+      "sentiment_score": 7,
+      "purchase_intent": false,
+      "primary_intent": "Support"
+    }
+  },
+  {
+    "id": "KXtMooFa3dnciMe",
+    "date": "2026-01-29 23:38:55",
+    "is_technical_error": false,
+    "is_unhappy_customer": true,
+    "error_category": "NONE",
+    "analysis": {
+      "technical_error": false,
+      "unhappy_customer": true,
+      "error_category": "NONE",
+      "summary": "Customer wants to open a new support ticket. The bot is collecting the necessary information to create the ticket.",
+      "recommended_products": [],
+      "products_discussed": [],
+      "topics_discussed": [
+        "support ticket",
+        "email address",
+        "order number",
+        "issue description"
+      ],
+      "sentiment_score": 4,
+      "purchase_intent": false,
+      "primary_intent": "Support"
+    }
+  },
+  {
+    "id": "j3MkTCrQ7FtSRl9",
+    "date": "2026-01-29 23:29:41",
+    "is_technical_error": false,
+    "is_unhappy_customer": false,
+    "error_category": "NONE",
+    "analysis": {
+      "technical_error": false,
+      "unhappy_customer": false,
+      "error_category": "NONE",
+      "summary": "The customer inquired about the material of Galaxy Watch cases. The bot provided information about the materials used, specifically Polycarbonate (PC), and offered to verify the fit for specific models.",
+      "recommended_products": [],
+      "products_discussed": [
+        "Galaxy Watch case",
+        "Ceu",
+        "Dignari"
+      ],
+      "topics_discussed": [
+        "product material",
+        "watch case protection",
+        "compatibility"
+      ],
+      "sentiment_score": 7,
+      "purchase_intent": false,
+      "primary_intent": "Sales"
+    }
+  },
+  {
+    "id": "46CkEgD0H4oY88L",
+    "date": "2026-01-29 22:08:09",
+    "is_technical_error": false,
+    "is_unhappy_customer": false,
+    "error_category": "NONE",
+    "analysis": {
+      "technical_error": false,
+      "unhappy_customer": false,
+      "error_category": "NONE",
+      "summary": "The customer asked to track their order, and the bot provided the order status and tracking information. The customer's order included a Durus Upgraded Titanium Steel Band.",
+      "recommended_products": [],
+      "products_discussed": [
+        "Durus Upgraded Titanium Steel Band"
+      ],
+      "topics_discussed": [
+        "order tracking",
+        "order status",
+        "shipping"
+      ],
+      "sentiment_score": 8,
+      "purchase_intent": false,
+      "primary_intent": "Tracking"
+    }
+  },
+  {
+    "id": "72Xixh0NoIZG669",
+    "date": "2026-01-29 20:55:53",
+    "is_technical_error": false,
+    "is_unhappy_customer": false,
+    "error_category": "NONE",
+    "analysis": {
+      "technical_error": false,
+      "unhappy_customer": false,
+      "error_category": "NONE",
+      "summary": "The customer inquired about the status of order #144809, which they had not received. The bot provided the order status and created a support ticket for further investigation.",
+      "recommended_products": [],
+      "products_discussed": [
+        "Crinis Glass Case For Apple Watch Ultra"
+      ],
+      "topics_discussed": [
+        "order status",
+        "shipping",
+        "support ticket"
+      ],
+      "sentiment_score": 8,
+      "purchase_intent": false,
+      "primary_intent": "Tracking"
+    }
+  },
+  {
+    "id": "2caXhxifuRUYFtp",
+    "date": "2026-01-29 18:36:34",
+    "is_technical_error": false,
+    "is_unhappy_customer": false,
+    "error_category": "NONE",
+    "analysis": {
+      "technical_error": false,
+      "unhappy_customer": false,
+      "error_category": "NONE",
+      "summary": "The customer asked about the removability of a protective case. The bot confirmed the cases are easily removable and offered further assistance in finding a case for the customer's watch model.",
+      "recommended_products": [],
+      "products_discussed": [
+        "Tempered Glass Protective Watch Case",
+        "protective case"
+      ],
+      "topics_discussed": [
+        "product features",
+        "protective cases",
+        "removability"
+      ],
+      "sentiment_score": 7,
+      "purchase_intent": false,
+      "primary_intent": "Support"
+    }
+  },
+  {
+    "id": "UQFmJVofdSDVOje",
+    "date": "2026-01-29 17:30:44",
+    "is_technical_error": false,
+    "is_unhappy_customer": false,
+    "error_category": "NONE",
+    "analysis": {
+      "technical_error": false,
+      "unhappy_customer": false,
+      "error_category": "NONE",
+      "summary": "The customer contacted the bot because an order adjustment was not applied. The bot created a support ticket for the customer.",
+      "recommended_products": [],
+      "products_discussed": [],
+      "topics_discussed": [
+        "order adjustment",
+        "support ticket"
+      ],
+      "sentiment_score": 7,
+      "purchase_intent": false,
+      "primary_intent": "Support"
+    }
+  },
+  {
+    "id": "PZWgk8rL6WjWLvc",
+    "date": "2026-01-29 17:28:04",
+    "is_technical_error": false,
+    "is_unhappy_customer": true,
+    "error_category": "LOGIC",
+    "analysis": {
+      "technical_error": false,
+      "unhappy_customer": true,
+      "error_category": "LOGIC",
+      "summary": "Customer's order was not adjusted as requested despite a previous support ticket indicating it was possible. The bot is offering to update the support team and add a message to the existing ticket.",
+      "recommended_products": [],
+      "products_discussed": [
+        "rainbow band",
+        "pink band"
+      ],
+      "topics_discussed": [
+        "order adjustment",
+        "support ticket",
+        "shipping confirmation"
+      ],
+      "sentiment_score": 3,
+      "purchase_intent": false,
+      "primary_intent": "Support"
+    }
+  },
+  {
+    "id": "EOoRvscVipfJ8YG",
+    "date": "2026-01-29 16:08:05",
+    "is_technical_error": false,
+    "is_unhappy_customer": false,
+    "error_category": "NONE",
+    "analysis": {
+      "technical_error": false,
+      "unhappy_customer": false,
+      "error_category": "NONE",
+      "summary": "The customer inquired about band compatibility with round-faced watches. The bot identified the user's watch model as a Samsung Galaxy Watch 6 and provided relevant information about compatible bands and sizes.",
+      "recommended_products": [],
+      "products_discussed": [
+        "Samsung Galaxy Watch",
+        "Google Pixel Watch",
+        "Fitbit Versa",
+        "Fitbit Sense",
+        "Galaxy Watch bands",
+        "Galaxy Watch 6"
+      ],
+      "topics_discussed": [
+        "watch band compatibility",
+        "watch sizes",
+        "product recommendations"
+      ],
+      "sentiment_score": 8,
+      "purchase_intent": false,
+      "primary_intent": "Sales"
+    }
+  },
+  {
+    "id": "YNnXCPS395yJUYC",
+    "date": "2026-01-29 15:08:08",
+    "is_technical_error": false,
+    "is_unhappy_customer": false,
+    "error_category": "NONE",
+    "analysis": {
+      "technical_error": false,
+      "unhappy_customer": false,
+      "error_category": "NONE",
+      "summary": "Customer inquired about the touch screen functionality of the Attollo Silicone Sports Band With Glass Case. The bot confirmed that the band maintains full touch sensitivity. The customer was satisfied and ended the conversation.",
+      "recommended_products": [],
+      "products_discussed": [
+        "Attollo Silicone Sports Band With Glass Case",
+        "Apple Watch"
+      ],
+      "topics_discussed": [
+        "product functionality",
+        "touch screen sensitivity",
+        "screen protection"
+      ],
+      "sentiment_score": 9,
+      "purchase_intent": false,
+      "primary_intent": "Support"
+    }
+  },
+  {
+    "id": "Bj5GSfdiUMkcnw2",
+    "date": "2026-01-29 10:57:39",
+    "is_technical_error": false,
+    "is_unhappy_customer": false,
+    "error_category": "NONE",
+    "analysis": {
+      "technical_error": false,
+      "unhappy_customer": false,
+      "error_category": "NONE",
+      "summary": "The customer wanted to return a strap because her husband didn't like the fit. The bot created a support ticket for the return request and provided information about the return policy and refund process.",
+      "recommended_products": [],
+      "products_discussed": [
+        "strap"
+      ],
+      "topics_discussed": [
+        "return",
+        "refund",
+        "support ticket"
+      ],
+      "sentiment_score": 8,
+      "purchase_intent": false,
+      "primary_intent": "Support"
+    }
+  },
+  {
+    "id": "GhhfpDQ8b5n83dr",
+    "date": "2026-01-29 01:39:52",
+    "is_technical_error": false,
+    "is_unhappy_customer": false,
+    "error_category": "PRODUCT_DB",
+    "analysis": {
+      "technical_error": false,
+      "unhappy_customer": false,
+      "error_category": "PRODUCT_DB",
+      "summary": "The customer inquired about the 'Ferveo' band for the Apple Watch Series 10, but the bot couldn't find it. The bot offered compatible bands and further assistance.",
+      "recommended_products": [],
+      "products_discussed": [
+        "Ferveo band",
+        "Apple Watch Series 10",
+        "leather bands",
+        "metal bands",
+        "silicone bands"
+      ],
+      "topics_discussed": [
+        "product compatibility",
+        "smartwatch bands"
+      ],
+      "sentiment_score": 7,
+      "purchase_intent": false,
+      "primary_intent": "Sales"
+    }
+  },
+  {
+    "id": "2oHspHkT4nI6L7t",
+    "date": "2026-01-29 01:38:30",
+    "is_technical_error": false,
+    "is_unhappy_customer": false,
+    "error_category": "NONE",
+    "analysis": {
+      "technical_error": false,
+      "unhappy_customer": false,
+      "error_category": "NONE",
+      "summary": "The customer inquired about the compatibility of the Astra band with the Apple Watch Series 10. The bot confirmed compatibility and requested the case size and preferred band style to provide specific recommendations.",
+      "recommended_products": [],
+      "products_discussed": [
+        "Astra band",
+        "Apple Watch Series 10"
+      ],
+      "topics_discussed": [
+        "product compatibility",
+        "smartwatch bands"
+      ],
+      "sentiment_score": 8,
+      "purchase_intent": false,
+      "primary_intent": "Sales"
+    }
+  },
+  {
+    "id": "BX0hGNx3NbXytDh",
+    "date": "2026-01-28 23:14:24",
+    "is_technical_error": false,
+    "is_unhappy_customer": false,
+    "error_category": "NONE",
+    "analysis": {
+      "technical_error": false,
+      "unhappy_customer": false,
+      "error_category": "NONE",
+      "summary": "The customer, Nancy Powlas, needed instructions on how to shorten the clasp of her rose gold stainless steel band. The bot created a support ticket for her and promised to email instructions within 12-24 hours.",
+      "recommended_products": [],
+      "products_discussed": [
+        "rosegold stainless steel band"
+      ],
+      "topics_discussed": [
+        "support ticket",
+        "band adjustment",
+        "instructions"
+      ],
+      "sentiment_score": 9,
+      "purchase_intent": false,
+      "primary_intent": "Support"
+    }
+  },
+  {
+    "id": "89CKyLoHLzcs2UG",
+    "date": "2026-01-28 21:40:19",
+    "is_technical_error": false,
+    "is_unhappy_customer": false,
+    "error_category": "NONE",
+    "analysis": {
+      "technical_error": false,
+      "unhappy_customer": false,
+      "error_category": "NONE",
+      "summary": "The customer inquired about the compatibility of a 42mm band with the Apple Watch Series 11. The bot clarified that the customer needs to select the 42MM-S10/S11 option for the best fit.",
+      "recommended_products": [
+        "42MM-S10/S11"
+      ],
+      "products_discussed": [
+        "42 mm",
+        "Apple Watch Series 11",
+        "42MM-S10/S11"
+      ],
+      "topics_discussed": [
+        "product compatibility",
+        "smartwatch bands"
+      ],
+      "sentiment_score": 8,
+      "purchase_intent": false,
+      "primary_intent": "Sales"
+    }
+  },
+  {
+    "id": "CBAmTYBgP1rtmKN",
+    "date": "2026-01-28 21:12:45",
+    "is_technical_error": false,
+    "is_unhappy_customer": true,
+    "error_category": "NONE",
+    "analysis": {
+      "technical_error": false,
+      "unhappy_customer": true,
+      "error_category": "NONE",
+      "summary": "Customer wants to return a watch band because it doesn't fit. The bot adds the return request to an existing support ticket.",
+      "recommended_products": [],
+      "products_discussed": [
+        "Ire Luxury Metal Band"
+      ],
+      "topics_discussed": [
+        "order tracking",
+        "returns",
+        "product sizing",
+        "support ticket"
+      ],
+      "sentiment_score": 5,
+      "purchase_intent": false,
+      "primary_intent": "Support"
+    }
+  },
+  {
+    "id": "tXN4qU0AgSn0Rhu",
+    "date": "2026-01-28 21:05:44",
+    "is_technical_error": false,
+    "is_unhappy_customer": true,
+    "error_category": "NONE",
+    "analysis": {
+      "technical_error": false,
+      "unhappy_customer": true,
+      "error_category": "NONE",
+      "summary": "Customer reports a band purchased from the store is too loose. The bot creates a support ticket for the customer.",
+      "recommended_products": [
+        "silicone sports bands",
+        "stainless steel links"
+      ],
+      "products_discussed": [
+        "watch band"
+      ],
+      "topics_discussed": [
+        "sizing issue",
+        "support ticket"
+      ],
+      "sentiment_score": 6,
+      "purchase_intent": false,
+      "primary_intent": "Support"
+    }
+  },
+  {
+    "id": "Xvo6odITz6svnS8",
+    "date": "2026-01-28 20:17:42",
+    "is_technical_error": false,
+    "is_unhappy_customer": false,
+    "error_category": "NONE",
+    "analysis": {
+      "technical_error": false,
+      "unhappy_customer": false,
+      "error_category": "NONE",
+      "summary": "The customer inquired about the status of their support ticket related to order #144998. The bot provided the ticket status and escalated the ticket as requested by the customer.",
+      "recommended_products": [],
+      "products_discussed": [],
+      "topics_discussed": [
+        "ticket status",
+        "order status",
+        "escalation"
+      ],
+      "sentiment_score": 7,
+      "purchase_intent": false,
+      "primary_intent": "Support"
+    }
+  },
+  {
+    "id": "vYPlqKcaRCiiFf5",
+    "date": "2026-01-28 20:14:42",
+    "is_technical_error": false,
+    "is_unhappy_customer": false,
+    "error_category": "NONE",
+    "analysis": {
+      "technical_error": false,
+      "unhappy_customer": false,
+      "error_category": "NONE",
+      "summary": "The customer wants to talk to a live agent regarding an existing support ticket. The bot is unable to transfer to a live agent but offers to add a message to the existing ticket.",
+      "recommended_products": [],
+      "products_discussed": [],
+      "topics_discussed": [
+        "support ticket",
+        "order status",
+        "live agent"
+      ],
+      "sentiment_score": 7,
+      "purchase_intent": false,
+      "primary_intent": "Support"
+    }
+  },
+  {
+    "id": "2JTnAQZ0bByuwlI",
+    "date": "2026-01-28 20:05:38",
+    "is_technical_error": false,
+    "is_unhappy_customer": false,
+    "error_category": "NONE",
+    "analysis": {
+      "technical_error": false,
+      "unhappy_customer": false,
+      "error_category": "NONE",
+      "summary": "The customer inquired about the size 'large' for a smartwatch band. The bot requested the smartwatch model to provide accurate sizing information.",
+      "recommended_products": [],
+      "products_discussed": [],
+      "topics_discussed": [
+        "smartwatch bands",
+        "size",
+        "sizing guide"
+      ],
+      "sentiment_score": 7,
+      "purchase_intent": false,
+      "primary_intent": "Sales"
+    }
+  },
+  {
+    "id": "cZ8OpfwuPDaEEHR",
+    "date": "2026-01-28 18:28:22",
+    "is_technical_error": false,
+    "is_unhappy_customer": false,
+    "error_category": "NONE",
+    "analysis": {
+      "technical_error": false,
+      "unhappy_customer": false,
+      "error_category": "NONE",
+      "summary": "The customer asked how to adjust the clasp on a Milanese Slim band. The bot provided instructions.",
+      "recommended_products": [],
+      "products_discussed": [
+        "Milanese Slim"
+      ],
+      "topics_discussed": [
+        "band adjustment",
+        "clasp"
+      ],
+      "sentiment_score": 8,
+      "purchase_intent": false,
+      "primary_intent": "Support"
+    }
+  },
+  {
+    "id": "tYNWbMcoV4CcGPk",
+    "date": "2026-01-28 17:24:33",
+    "is_technical_error": false,
+    "is_unhappy_customer": false,
+    "error_category": "NONE",
+    "analysis": {
+      "technical_error": false,
+      "unhappy_customer": false,
+      "error_category": "NONE",
+      "summary": "The customer wanted to adjust their order, specifically changing a rainbow band to a pink band. The bot created a support ticket with the requested changes.",
+      "recommended_products": [],
+      "products_discussed": [
+        "rainbow band",
+        "pink band"
+      ],
+      "topics_discussed": [
+        "order adjustment",
+        "support ticket"
+      ],
+      "sentiment_score": 8,
+      "purchase_intent": false,
+      "primary_intent": "Support"
+    }
+  },
+  {
+    "id": "Qnt2Qb5Q6A3YQh5",
+    "date": "2026-01-28 12:58:14",
+    "is_technical_error": false,
+    "is_unhappy_customer": false,
+    "error_category": "NONE",
+    "analysis": {
+      "technical_error": false,
+      "unhappy_customer": false,
+      "error_category": "NONE",
+      "summary": "The customer requested help with an order. The bot asked for the order number and the issue the customer is experiencing.",
+      "recommended_products": [],
+      "products_discussed": [],
+      "topics_discussed": [
+        "order assistance",
+        "order tracking",
+        "returns",
+        "exchanges",
+        "damaged items",
+        "incorrect items"
+      ],
+      "sentiment_score": 7,
+      "purchase_intent": false,
+      "primary_intent": "Support"
+    }
+  },
+  {
+    "id": "SRjYF0SvVGbKSJ4",
+    "date": "2026-01-28 04:22:10",
+    "is_technical_error": false,
+    "is_unhappy_customer": false,
+    "error_category": "NONE",
+    "analysis": {
+      "technical_error": false,
+      "unhappy_customer": false,
+      "error_category": "NONE",
+      "summary": "The customer inquired about the company's location. The bot explained that they are an e-commerce brand with fulfillment centers in different regions.",
+      "recommended_products": [],
+      "products_discussed": [],
+      "topics_discussed": [
+        "company location",
+        "shipping",
+        "fulfillment centers"
+      ],
+      "sentiment_score": 7,
+      "purchase_intent": false,
+      "primary_intent": "General"
+    }
+  },
+  {
+    "id": "WiroyF094i5MMIl",
+    "date": "2026-01-28 03:45:19",
+    "is_technical_error": false,
+    "is_unhappy_customer": false,
+    "error_category": "NLU",
+    "analysis": {
+      "technical_error": false,
+      "unhappy_customer": false,
+      "error_category": "NLU",
+      "summary": "The customer inquired about the meaning of 'S10 and S11' in relation to watch sizes. The bot correctly identified them as Apple Watch Series 10 and 11 and offered to help find compatible bands.",
+      "recommended_products": [],
+      "products_discussed": [
+        "Apple Watch Series 10",
+        "Apple Watch Series 11"
+      ],
+      "topics_discussed": [
+        "watch sizes",
+        "Apple Watch bands",
+        "product compatibility"
+      ],
+      "sentiment_score": 7,
+      "purchase_intent": false,
+      "primary_intent": "General"
+    }
+  },
+  {
+    "id": "KGFnCVjmNrSFLsp",
+    "date": "2026-01-28 02:20:16",
+    "is_technical_error": false,
+    "is_unhappy_customer": true,
+    "error_category": "NONE",
+    "analysis": {
+      "technical_error": false,
+      "unhappy_customer": true,
+      "error_category": "NONE",
+      "summary": "The customer was frustrated that their order was stuck in California. The bot created a support ticket for the customer.",
+      "recommended_products": [],
+      "products_discussed": [
+        "Perrexi Sport Silicone Galaxy Band"
+      ],
+      "topics_discussed": [
+        "Order tracking",
+        "Shipping delay",
+        "Support ticket"
+      ],
+      "sentiment_score": 3,
+      "purchase_intent": false,
+      "primary_intent": "Tracking"
+    }
+  },
+  {
+    "id": "a3dXSWFpegToWc6",
+    "date": "2026-01-28 01:19:21",
+    "is_technical_error": false,
+    "is_unhappy_customer": false,
+    "error_category": "NONE",
+    "analysis": {
+      "technical_error": false,
+      "unhappy_customer": false,
+      "error_category": "NONE",
+      "summary": "The customer contacted support because they received the wrong size of the Arcere Silicone Sports Band. The bot created a support ticket for the customer.",
+      "recommended_products": [],
+      "products_discussed": [
+        "Arcere Silicone Sports Band"
+      ],
+      "topics_discussed": [
+        "Support ticket",
+        "Wrong SKU",
+        "Order issue"
+      ],
+      "sentiment_score": 7,
+      "purchase_intent": false,
+      "primary_intent": "Support"
+    }
+  },
+  {
+    "id": "AuVHeR0YsWNWzZH",
+    "date": "2026-01-28 00:03:44",
+    "is_technical_error": false,
+    "is_unhappy_customer": false,
+    "error_category": "LOGIC",
+    "analysis": {
+      "technical_error": false,
+      "unhappy_customer": false,
+      "error_category": "LOGIC",
+      "summary": "The bot is stuck in a loop asking for the order number and description of the issue. It has already collected the user's name and email but fails to proceed with opening the support ticket.",
+      "recommended_products": [],
+      "products_discussed": [],
+      "topics_discussed": [
+        "support ticket",
+        "order number",
+        "email",
+        "name",
+        "issue description"
+      ],
+      "sentiment_score": 6,
+      "purchase_intent": false,
+      "primary_intent": "Support"
+    }
+  },
+  {
+    "id": "Sv8w1mbHh9u9dBn",
+    "date": "2026-01-27 23:11:30",
+    "is_technical_error": false,
+    "is_unhappy_customer": false,
+    "error_category": "NONE",
+    "analysis": {
+      "technical_error": false,
+      "unhappy_customer": false,
+      "error_category": "NONE",
+      "summary": "The customer inquired about wrist sizing for Apple Watch bands. The bot explained the S-M and M-L sizing and offered to check availability for specific bands.",
+      "recommended_products": [],
+      "products_discussed": [
+        "Apple Watch bands",
+        "Cypress Silicone Band"
+      ],
+      "topics_discussed": [
+        "wrist size",
+        "sizing information",
+        "Apple Watch bands"
+      ],
+      "sentiment_score": 7,
+      "purchase_intent": false,
+      "primary_intent": "Sales"
+    }
+  },
+  {
+    "id": "wqmnjWovgwxGWM9",
+    "date": "2026-01-27 19:39:26",
+    "is_technical_error": false,
+    "is_unhappy_customer": false,
+    "error_category": "NLU",
+    "analysis": {
+      "technical_error": false,
+      "unhappy_customer": false,
+      "error_category": "NLU",
+      "summary": "The customer initially wanted to track an order but then stated their watch band was too big. The bot created a support ticket for the customer after some confusion about the order number.",
+      "recommended_products": [],
+      "products_discussed": [
+        "watch band"
+      ],
+      "topics_discussed": [
+        "order tracking",
+        "support ticket",
+        "watch band sizing issue"
+      ],
+      "sentiment_score": 8,
+      "purchase_intent": false,
+      "primary_intent": "Support"
+    }
+  },
+  {
+    "id": "Ec81v53mV4QqH6o",
+    "date": "2026-01-27 16:35:06",
+    "is_technical_error": false,
+    "is_unhappy_customer": false,
+    "error_category": "NONE",
+    "analysis": {
+      "technical_error": false,
+      "unhappy_customer": false,
+      "error_category": "NONE",
+      "summary": "The customer wanted to cancel an order or start a refund because it hadn't arrived yet. The bot created a support ticket for the customer since the order was already fulfilled.",
+      "recommended_products": [],
+      "products_discussed": [],
+      "topics_discussed": [
+        "Order cancellation",
+        "Refund",
+        "Support ticket"
+      ],
+      "sentiment_score": 8,
+      "purchase_intent": false,
+      "primary_intent": "Support"
+    }
+  },
+  {
+    "id": "otmBpar8Lvb24rf",
+    "date": "2026-01-27 16:30:34",
+    "is_technical_error": false,
+    "is_unhappy_customer": false,
+    "error_category": "LOGIC",
+    "analysis": {
+      "technical_error": false,
+      "unhappy_customer": false,
+      "error_category": "LOGIC",
+      "summary": "The customer wanted to cancel an order, but the bot cannot directly cancel orders. The bot offered to create a support ticket and requested the customer's email, name, and order number.",
+      "recommended_products": [],
+      "products_discussed": [],
+      "topics_discussed": [
+        "order cancellation",
+        "support ticket"
+      ],
+      "sentiment_score": 6,
+      "purchase_intent": false,
+      "primary_intent": "Support"
+    }
+  },
+  {
+    "id": "HNyvVpR6Tsxq4pH",
+    "date": "2026-01-27 13:52:00",
+    "is_technical_error": false,
+    "is_unhappy_customer": false,
+    "error_category": "NONE",
+    "analysis": {
+      "technical_error": false,
+      "unhappy_customer": false,
+      "error_category": "NONE",
+      "summary": "The customer reported that their Agere band slips when wearing a sweatshirt and coat. The bot created a support ticket for the customer.",
+      "recommended_products": [],
+      "products_discussed": [
+        "Agere band"
+      ],
+      "topics_discussed": [
+        "band slipping",
+        "support ticket"
+      ],
+      "sentiment_score": 7,
+      "purchase_intent": false,
+      "primary_intent": "Support"
+    }
+  },
+  {
+    "id": "CzdQ5XrTH4hYEQ7",
+    "date": "2026-01-27 09:57:03",
+    "is_technical_error": false,
+    "is_unhappy_customer": true,
+    "error_category": "NONE",
+    "analysis": {
+      "technical_error": false,
+      "unhappy_customer": true,
+      "error_category": "NONE",
+      "summary": "The customer tracked their order and then reported it as lost. The bot created a support ticket for the customer.",
+      "recommended_products": [],
+      "products_discussed": [
+        "Aurum Slim Leather Band"
+      ],
+      "topics_discussed": [
+        "order tracking",
+        "lost order",
+        "support ticket"
+      ],
+      "sentiment_score": 4,
+      "purchase_intent": false,
+      "primary_intent": "Tracking"
+    }
+  },
+  {
+    "id": "r2JThtGH4OiCHVB",
+    "date": "2026-01-27 03:57:51",
+    "is_technical_error": false,
+    "is_unhappy_customer": false,
+    "error_category": "NONE",
+    "analysis": {
+      "technical_error": false,
+      "unhappy_customer": false,
+      "error_category": "NONE",
+      "summary": "The customer wants to return a band that is too small. The bot found an existing ticket related to the issue and provided the ticket status.",
+      "recommended_products": [],
+      "products_discussed": [],
+      "topics_discussed": [
+        "return",
+        "order status",
+        "support ticket"
+      ],
+      "sentiment_score": 7,
+      "purchase_intent": false,
+      "primary_intent": "Support"
+    }
+  },
+  {
+    "id": "pQCp1tQphWpphAJ",
+    "date": "2026-01-27 03:20:47",
+    "is_technical_error": false,
+    "is_unhappy_customer": false,
+    "error_category": "NONE",
+    "analysis": {
+      "technical_error": false,
+      "unhappy_customer": false,
+      "error_category": "NONE",
+      "summary": "Customer requested to cancel an order and then requested to change the color of the product. The bot created a support ticket and updated it with the customer's requests.",
+      "recommended_products": [],
+      "products_discussed": [
+        "Infigo Magnetic Milanese Steel Band"
+      ],
+      "topics_discussed": [
+        "order cancellation",
+        "order modification",
+        "support ticket",
+        "order status"
+      ],
+      "sentiment_score": 8,
+      "purchase_intent": false,
+      "primary_intent": "Support"
+    }
+  },
+  {
+    "id": "TnWSvx7U9HWWXsw",
+    "date": "2026-01-27 03:15:30",
+    "is_technical_error": false,
+    "is_unhappy_customer": false,
+    "error_category": "NONE",
+    "analysis": {
+      "technical_error": false,
+      "unhappy_customer": false,
+      "error_category": "NONE",
+      "summary": "The customer wants to get support. The bot is asking for information to create a support ticket.",
+      "recommended_products": [],
+      "products_discussed": [],
+      "topics_discussed": [
+        "support ticket",
+        "order information"
+      ],
+      "sentiment_score": 7,
+      "purchase_intent": false,
+      "primary_intent": "Support"
+    }
+  },
+  {
+    "id": "gHt7OtojcNA7wYg",
+    "date": "2026-01-26 20:11:31",
+    "is_technical_error": false,
+    "is_unhappy_customer": false,
+    "error_category": "NONE",
+    "analysis": {
+      "technical_error": false,
+      "unhappy_customer": false,
+      "error_category": "NONE",
+      "summary": "The customer wants to speak with support. The bot is offering to create a new ticket or check existing tickets.",
+      "recommended_products": [],
+      "products_discussed": [],
+      "topics_discussed": [
+        "support tickets",
+        "contact support"
+      ],
+      "sentiment_score": 7,
+      "purchase_intent": false,
+      "primary_intent": "Support"
+    }
+  },
+  {
+    "id": "8OBVXeGrSlWhs2u",
+    "date": "2026-01-26 20:06:16",
+    "is_technical_error": false,
+    "is_unhappy_customer": false,
+    "error_category": "NONE",
+    "analysis": {
+      "technical_error": false,
+      "unhappy_customer": false,
+      "error_category": "NONE",
+      "summary": "Customer ordered two bands and then a third with a promotional offer but didn't receive a confirmation for the third. A support ticket was created to investigate the missing confirmation and ensure the promotional price is honored.",
+      "recommended_products": [],
+      "products_discussed": [
+        "smartwatch bands"
+      ],
+      "topics_discussed": [
+        "order tracking",
+        "missing order confirmation",
+        "promotional offer",
+        "support ticket"
+      ],
+      "sentiment_score": 8,
+      "purchase_intent": true,
+      "primary_intent": "Support"
+    }
+  },
+  {
+    "id": "7yYxj0hCBIU2KXW",
+    "date": "2026-01-26 19:29:37",
+    "is_technical_error": false,
+    "is_unhappy_customer": false,
+    "error_category": "NONE",
+    "analysis": {
+      "technical_error": false,
+      "unhappy_customer": false,
+      "error_category": "NONE",
+      "summary": "The customer inquired about the compatibility of two bands, Aere Slim and Sedeo Magnetic, with their Apple Watch Series 10 46mm and a 120mm wrist. The bot confirmed compatibility and recommended the Sedeo Magnetic band due to its adjustable magnetic closure.",
+      "recommended_products": [
+        "Sedeo Magnetic Stainless Steel Band"
+      ],
+      "products_discussed": [
+        "Aere Slim Stainless Steel Band",
+        "Sedeo Magnetic Stainless Steel Band",
+        "Apple Watch Series 10 46mm"
+      ],
+      "topics_discussed": [
+        "product compatibility",
+        "wrist size",
+        "product recommendation",
+        "price",
+        "Apple Watch Series 10 46mm"
+      ],
+      "sentiment_score": 8,
+      "purchase_intent": false,
+      "primary_intent": "Sales"
+    }
+  },
+  {
+    "id": "d3dp2oePBiA9DCS",
+    "date": "2026-01-26 19:08:54",
+    "is_technical_error": false,
+    "is_unhappy_customer": false,
+    "error_category": "PRODUCT_DB",
+    "analysis": {
+      "technical_error": false,
+      "unhappy_customer": false,
+      "error_category": "PRODUCT_DB",
+      "summary": "Customer asked about metal bands for a 120mm wrist. The bot requested the smartwatch model and size, then recommended the Slick Stainless Steel mesh band for Apple Watch Series 10 (46mm).",
+      "recommended_products": [
+        "Slick Stainless Steel"
+      ],
+      "products_discussed": [
+        "metal band",
+        "metal link",
+        "mesh band",
+        "Slick Stainless Steel"
+      ],
+      "topics_discussed": [
+        "smartwatch bands",
+        "wrist size",
+        "compatibility",
+        "Apple Watch Series 10"
+      ],
+      "sentiment_score": 7,
+      "purchase_intent": false,
+      "primary_intent": "Sales"
+    }
+  },
+  {
+    "id": "0FF3wpuU0i20rhG",
+    "date": "2026-01-26 00:54:55",
+    "is_technical_error": false,
+    "is_unhappy_customer": false,
+    "error_category": "NONE",
+    "analysis": {
+      "technical_error": false,
+      "unhappy_customer": false,
+      "error_category": "NONE",
+      "summary": "The customer inquired about returning bands, and the bot explained the return policy. The bot offered to create a support ticket to provide the correct return address.",
+      "recommended_products": [],
+      "products_discussed": [
+        "bands"
+      ],
+      "topics_discussed": [
+        "returns",
+        "return policy",
+        "support ticket"
+      ],
+      "sentiment_score": 7,
+      "purchase_intent": false,
+      "primary_intent": "Support"
+    }
+  },
+  {
+    "id": "i9S3wn9Hd8lKQyB",
+    "date": "2026-01-25 23:24:49",
+    "is_technical_error": false,
+    "is_unhappy_customer": false,
+    "error_category": "NONE",
+    "analysis": {
+      "technical_error": false,
+      "unhappy_customer": false,
+      "error_category": "NONE",
+      "summary": "The customer inquired about a gold stainless steel band for their Apple Watch Series 11 42mm titanium gold watch. The bot recommended the Devito Stainless Steel Band in Gold and the Noceo Magnetic Milanese Steel Band.",
+      "recommended_products": [
+        "Devito Stainless Steel Band",
+        "Noceo Magnetic Milanese Steel Band"
+      ],
+      "products_discussed": [
+        "Devito Stainless Steel Band",
+        "Noceo Magnetic Milanese Steel Band",
+        "Apple series 11, 42mm titanium gold watch"
+      ],
+      "topics_discussed": [
+        "smartwatch bands",
+        "Apple Watch Series 11",
+        "gold stainless steel band",
+        "product recommendation"
+      ],
+      "sentiment_score": 8,
+      "purchase_intent": true,
+      "primary_intent": "Sales"
+    }
+  },
+  {
+    "id": "V3xxbHLvewHAfzY",
+    "date": "2026-01-25 22:42:14",
+    "is_technical_error": false,
+    "is_unhappy_customer": false,
+    "error_category": "NONE",
+    "analysis": {
+      "technical_error": false,
+      "unhappy_customer": false,
+      "error_category": "NONE",
+      "summary": "The customer inquired about shipping to the USA and the return policy. The bot provided accurate information regarding shipping costs, processing times, and return conditions.",
+      "recommended_products": [],
+      "products_discussed": [],
+      "topics_discussed": [
+        "Shipping",
+        "Returns",
+        "USA"
+      ],
+      "sentiment_score": 8,
+      "purchase_intent": false,
+      "primary_intent": "General"
+    }
+  },
+  {
+    "id": "oiN6VUVXp8iX4n3",
+    "date": "2026-01-25 02:44:38",
+    "is_technical_error": false,
+    "is_unhappy_customer": false,
+    "error_category": "NONE",
+    "analysis": {
+      "technical_error": false,
+      "unhappy_customer": false,
+      "error_category": "NONE",
+      "summary": "The customer is looking for a bumper case to match a pink band for their 45mm Apple Watch. The bot provides relevant recommendations.",
+      "recommended_products": [],
+      "products_discussed": [
+        "bumper case",
+        "Apple Watch band",
+        "45mm Apple Watch"
+      ],
+      "topics_discussed": [
+        "bumper case",
+        "matching accessories",
+        "Apple Watch"
+      ],
+      "sentiment_score": 8,
+      "purchase_intent": true,
+      "primary_intent": "Sales"
+    }
+  },
+  {
+    "id": "iGzbCAgEf8hTDIq",
+    "date": "2026-01-24 23:04:34",
+    "is_technical_error": false,
+    "is_unhappy_customer": false,
+    "error_category": "NONE",
+    "analysis": {
+      "technical_error": false,
+      "unhappy_customer": false,
+      "error_category": "NONE",
+      "summary": "The customer requested to track and then cancel an order. The bot provided order tracking information and then offered to create a support ticket for the cancellation request, as it cannot directly cancel orders.",
+      "recommended_products": [],
+      "products_discussed": [
+        "Creber Magnetic Galaxy Loop Band"
+      ],
+      "topics_discussed": [
+        "order tracking",
+        "order cancellation",
+        "support ticket"
+      ],
+      "sentiment_score": 7,
+      "purchase_intent": false,
+      "primary_intent": "Tracking"
+    }
+  }
+]

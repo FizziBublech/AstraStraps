@@ -111,9 +111,11 @@ def extract_payload(raw_data):
         # Example: [{"type": "text", "text": "my issue"}]
         if isinstance(value, (list, dict)):
             val_str = str(value)
-            if '"text":' in val_str:
+            # Check for text key with either single or double quotes
+            if '"text":' in val_str or "'text':" in val_str:
                 # Try to find the actual text content in UI fragments
-                texts = re.findall(r'"text":\s*"([^"]+)"', val_str)
+                # Matches "text": "value" or 'text': 'value'
+                texts = re.findall(r'["\']text["\']\s*[:=]\s*["\']([^"\']+)["\']', val_str)
                 if texts:
                     extracted_text = " ".join(texts)
                     logger.info(f"Rescued text from UI fragment in '{key}': {extracted_text}")
@@ -122,25 +124,28 @@ def extract_payload(raw_data):
 
         # 2. STUFFED FIELD RESCUE: Handle stringified/stuffed fields
         if isinstance(value, str):
-            # Clean up obvious escapes and newline junk often seen in mangled JSON
-            value = value.replace('\\"', '"').replace('\\n', ' ').strip()
+            # Clean up obvious escapes and newline junk
+            clean_value = value.replace('\\"', '"').replace('\\n', ' ').strip()
             
-            if ("\",\"" in value or "\", \"" in value or "':'" in value or "',' " in value):
+            # Broadened detection: check for key-value pair separators
+            # Looks for: quote, comma, space(opt), quote
+            if re.search(r'["\'],\s*["\']', clean_value) or re.search(r'["\']\s*[:=]', clean_value):
                 logger.info(f"Detected potentially stuffed field: {key}={value}")
                 
                 # More aggressive pattern to catch key-value pairs 
                 # This looks for "key"(could be quoted): "value"(until next key-like pattern or end)
-                found_pairs = re.findall(r'["\']?(\w+)["\']?\s*[:=]\s*["\']?(.*?)(?=["\']?,?\s*["\']?\w+["\']?\s*[:=]|["\']?$)', value)
+                found_pairs = re.findall(r'["\']?(\w+)["\']?\s*[:=]\s*["\']?(.*?)(?=["\']?,?\s*["\']?\w+["\']?\s*[:=]|["\']?$)', clean_value)
                 
                 if found_pairs:
                     for k, v in found_pairs:
                         clean_v = v.strip('",\' ')
-                        if k not in final_payload or not final_payload[k]:
+                        # Don't overwrite if we already have a clean value (unless it's the stuffed one)
+                        if k not in final_payload or final_payload[k] == value:
                             logger.info(f"Rescued stuffed field: {k}={clean_v}")
                             final_payload[k] = clean_v
                 
                 # Cleanup primary field (take the part before any obvious key/value pair)
-                primary_split = re.split(r'["\']?,?\s*["\']?\w+["\']?\s*[:=]', value)
+                primary_split = re.split(r'["\']?,?\s*["\']?\w+["\']?\s*[:=]', clean_value)
                 if primary_split:
                     primary_val = primary_split[0].strip('",\' ')
                     if primary_val and primary_val != value:
@@ -719,6 +724,21 @@ def create_ticket():
             body_parts.append(f"Order Number: {order_number}")
         
         body = "\n".join(body_parts)
+
+        # MOCK MODE CHECK
+        if os.environ.get('MOCK_REAMAZE', 'false').lower() == 'true':
+            logger.info("MOCK MODE: Skipping Reamaze API call")
+            logger.info(f"WOULD SENT payload to Reamaze: subject='{subject}', customer={customer_email}")
+            
+            # Simulate success response
+            mock_ticket_id = f"mock-ticket-{int(time.time())}"
+            return jsonify({
+                "success": True,
+                "message": "[MOCK] Support ticket created successfully",
+                "ticket_id": mock_ticket_id,
+                "ticket_slug": mock_ticket_id,
+                "data": {"mock": True, "subject": subject}
+            })
         
         # Create conversation via Reamaze API
         logger.info(f"Attempting to create Reamaze ticket for {customer_email}")
@@ -1176,6 +1196,37 @@ def serve_dashboard_css():
     """Serve the dashboard CSS."""
     return send_from_directory(os.getcwd(), 'dashboard.css')
 
+@app.route('/monthly-report')
+@app.route('/monthly-report/<month>')
+def serve_monthly_report(month=None):
+    """Serve the monthly performance report HTML.
+    
+    Args:
+        month: Optional YYYY-MM format (e.g., '2026-01'). If not provided, serves the latest report.
+    """
+    import glob
+    
+    if month:
+        # Serve specific month
+        filename = f'monthly_report_{month}.html'
+        filepath = os.path.join(os.getcwd(), filename)
+        if not os.path.exists(filepath):
+            return jsonify({
+                "error": f"Report for {month} not found. Generate it first with: python3 generate_monthly_report.py --month {month}"
+            }), 404
+        return send_from_directory(os.getcwd(), filename)
+    else:
+        # Find the latest report
+        reports = glob.glob(os.path.join(os.getcwd(), 'monthly_report_*.html'))
+        if not reports:
+            return jsonify({
+                "error": "No monthly reports found. Generate one first with: python3 generate_monthly_report.py --month YYYY-MM"
+            }), 404
+        
+        # Sort by filename (which includes date) and get the latest
+        latest_report = max(reports, key=os.path.getmtime)
+        return send_from_directory(os.getcwd(), os.path.basename(latest_report))
+
 @app.route('/api/issues')
 def get_logged_issues():
     """Endpoint for the dashboard to fetch issues from the JSON tracker."""
@@ -1187,6 +1238,21 @@ def get_logged_issues():
             except json.JSONDecodeError:
                 return jsonify({"error": "Failed to parse issue tracker"}), 500
     return jsonify([])
+
+@app.route('/api/stats')
+def get_daily_stats():
+    """Endpoint for the dashboard to fetch daily total conversation counts."""
+    stats_path = os.path.join(os.getcwd(), 'daily_stats.json')
+    if os.path.exists(stats_path):
+        with open(stats_path, 'r') as f:
+            try:
+                stats = json.load(f)
+                # Convert list of IDs to count to save bandwidth
+                summary = {date: len(ids) for date, ids in stats.items()}
+                return jsonify(summary)
+            except json.JSONDecodeError:
+                return jsonify({"error": "Failed to parse stats"}), 500
+    return jsonify({})
 
 # ==========================
 # Shopify Endpoints

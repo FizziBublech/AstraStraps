@@ -1,0 +1,3548 @@
+[
+  {
+    "id": "WpEBMECYrEHnaqY",
+    "date": "2026-01-30 08:46:50",
+    "is_technical_error": false,
+    "is_unhappy_customer": false,
+    "error_category": "NONE",
+    "analysis": {
+      "technical_error": false,
+      "unhappy_customer": false,
+      "error_category": "NONE",
+      "summary": "Analysis failed due to API error.",
+      "recommended_products": [],
+      "topics_discussed": [],
+      "sentiment_score": 5,
+      "purchase_intent": false,
+      "primary_intent": "General"
+    }
+  },
+  {
+    "id": "jqj37TEUi05zUzl",
+    "date": "2026-01-30 03:57:36",
+    "is_technical_error": false,
+    "is_unhappy_customer": false,
+    "error_category": "NONE",
+    "analysis": {
+      "technical_error": false,
+      "unhappy_customer": false,
+      "error_category": "NONE",
+      "summary": "Analysis failed due to API error.",
+      "recommended_products": [],
+      "topics_discussed": [],
+      "sentiment_score": 5,
+      "purchase_intent": false,
+      "primary_intent": "General"
+    }
+  },
+  {
+    "id": "6DWqglN8CRZrKvd",
+    "date": "2026-01-30 03:22:44",
+    "is_technical_error": false,
+    "is_unhappy_customer": false,
+    "error_category": "NONE",
+    "analysis": {
+      "technical_error": false,
+      "unhappy_customer": false,
+      "error_category": "NONE",
+      "summary": "Analysis failed due to API error.",
+      "recommended_products": [],
+      "topics_discussed": [],
+      "sentiment_score": 5,
+      "purchase_intent": false,
+      "primary_intent": "General"
+    }
+  },
+  {
+    "id": "Vl7hhqnm4N8jdcE",
+    "date": "2026-01-30 02:05:07",
+    "is_technical_error": false,
+    "is_unhappy_customer": false,
+    "error_category": "NONE",
+    "analysis": {
+      "technical_error": false,
+      "unhappy_customer": false,
+      "error_category": "NONE",
+      "summary": "Analysis failed due to API error.",
+      "recommended_products": [],
+      "topics_discussed": [],
+      "sentiment_score": 5,
+      "purchase_intent": false,
+      "primary_intent": "General"
+    }
+  },
+  {
+    "id": "gMoalMugbQaVLjv",
+    "date": "2026-01-30 01:58:52",
+    "is_technical_error": false,
+    "is_unhappy_customer": false,
+    "error_category": "NONE",
+    "analysis": {
+      "technical_error": false,
+      "unhappy_customer": false,
+      "error_category": "NONE",
+      "summary": "Analysis failed due to API error.",
+      "recommended_products": [],
+      "topics_discussed": [],
+      "sentiment_score": 5,
+      "purchase_intent": false,
+      "primary_intent": "General"
+    }
+  },
+  {
+    "id": "KXtMooFa3dnciMe",
+    "date": "2026-01-29 23:38:55",
+    "is_technical_error": false,
+    "is_unhappy_customer": false,
+    "error_category": "NONE",
+    "analysis": {
+      "technical_error": false,
+      "unhappy_customer": false,
+      "error_category": "NONE",
+      "summary": "Analysis failed due to API error.",
+      "recommended_products": [],
+      "topics_discussed": [],
+      "sentiment_score": 5,
+      "purchase_intent": false,
+      "primary_intent": "General"
+    }
+  },
+  {
+    "id": "j3MkTCrQ7FtSRl9",
+    "date": "2026-01-29 23:29:41",
+    "is_technical_error": false,
+    "is_unhappy_customer": false,
+    "error_category": "NONE",
+    "analysis": {
+      "technical_error": false,
+      "unhappy_customer": false,
+      "error_category": "NONE",
+      "summary": "Analysis failed due to API error.",
+      "recommended_products": [],
+      "topics_discussed": [],
+      "sentiment_score": 5,
+      "purchase_intent": false,
+      "primary_intent": "General"
+    }
+  },
+  {
+    "id": "46CkEgD0H4oY88L",
+    "date": "2026-01-29 22:08:09",
+    "is_technical_error": false,
+    "is_unhappy_customer": false,
+    "error_category": "NONE",
+    "analysis": {
+      "technical_error": false,
+      "unhappy_customer": false,
+      "error_category": "NONE",
+      "summary": "Analysis failed due to API error.",
+      "recommended_products": [],
+      "topics_discussed": [],
+      "sentiment_score": 5,
+      "purchase_intent": false,
+      "primary_intent": "General"
+    }
+  },
+  {
+    "id": "72Xixh0NoIZG669",
+    "date": "2026-01-29 20:55:53",
+    "is_technical_error": false,
+    "is_unhappy_customer": false,
+    "error_category": "NONE",
+    "analysis": {
+      "technical_error": false,
+      "unhappy_customer": false,
+      "error_category": "NONE",
+      "summary": "Analysis failed due to API error.",
+      "recommended_products": [],
+      "topics_discussed": [],
+      "sentiment_score": 5,
+      "purchase_intent": false,
+      "primary_intent": "General"
+    }
+  },
+  {
+    "id": "2caXhxifuRUYFtp",
+    "date": "2026-01-29 18:36:34",
+    "is_technical_error": false,
+    "is_unhappy_customer": false,
+    "error_category": "NONE",
+    "analysis": {
+      "technical_error": false,
+      "unhappy_customer": false,
+      "error_category": "NONE",
+      "summary": "Analysis failed due to API error.",
+      "recommended_products": [],
+      "topics_discussed": [],
+      "sentiment_score": 5,
+      "purchase_intent": false,
+      "primary_intent": "General"
+    }
+  },
+  {
+    "id": "UQFmJVofdSDVOje",
+    "date": "2026-01-29 17:30:44",
+    "is_technical_error": false,
+    "is_unhappy_customer": false,
+    "error_category": "NONE",
+    "analysis": {
+      "technical_error": false,
+      "unhappy_customer": false,
+      "error_category": "NONE",
+      "summary": "Analysis failed due to API error.",
+      "recommended_products": [],
+      "topics_discussed": [],
+      "sentiment_score": 5,
+      "purchase_intent": false,
+      "primary_intent": "General"
+    }
+  },
+  {
+    "id": "PZWgk8rL6WjWLvc",
+    "date": "2026-01-29 17:28:04",
+    "is_technical_error": false,
+    "is_unhappy_customer": false,
+    "error_category": "NONE",
+    "analysis": {
+      "technical_error": false,
+      "unhappy_customer": false,
+      "error_category": "NONE",
+      "summary": "Analysis failed due to API error.",
+      "recommended_products": [],
+      "topics_discussed": [],
+      "sentiment_score": 5,
+      "purchase_intent": false,
+      "primary_intent": "General"
+    }
+  },
+  {
+    "id": "EOoRvscVipfJ8YG",
+    "date": "2026-01-29 16:08:05",
+    "is_technical_error": false,
+    "is_unhappy_customer": false,
+    "error_category": "NONE",
+    "analysis": {
+      "technical_error": false,
+      "unhappy_customer": false,
+      "error_category": "NONE",
+      "summary": "Analysis failed due to API error.",
+      "recommended_products": [],
+      "topics_discussed": [],
+      "sentiment_score": 5,
+      "purchase_intent": false,
+      "primary_intent": "General"
+    }
+  },
+  {
+    "id": "YNnXCPS395yJUYC",
+    "date": "2026-01-29 15:08:08",
+    "is_technical_error": false,
+    "is_unhappy_customer": false,
+    "error_category": "NONE",
+    "analysis": {
+      "technical_error": false,
+      "unhappy_customer": false,
+      "error_category": "NONE",
+      "summary": "Analysis failed due to API error.",
+      "recommended_products": [],
+      "topics_discussed": [],
+      "sentiment_score": 5,
+      "purchase_intent": false,
+      "primary_intent": "General"
+    }
+  },
+  {
+    "id": "Bj5GSfdiUMkcnw2",
+    "date": "2026-01-29 10:57:39",
+    "is_technical_error": false,
+    "is_unhappy_customer": false,
+    "error_category": "NONE",
+    "analysis": {
+      "technical_error": false,
+      "unhappy_customer": false,
+      "error_category": "NONE",
+      "summary": "Analysis failed due to API error.",
+      "recommended_products": [],
+      "topics_discussed": [],
+      "sentiment_score": 5,
+      "purchase_intent": false,
+      "primary_intent": "General"
+    }
+  },
+  {
+    "id": "GhhfpDQ8b5n83dr",
+    "date": "2026-01-29 01:39:52",
+    "is_technical_error": false,
+    "is_unhappy_customer": false,
+    "error_category": "NONE",
+    "analysis": {
+      "technical_error": false,
+      "unhappy_customer": false,
+      "error_category": "NONE",
+      "summary": "Analysis failed due to API error.",
+      "recommended_products": [],
+      "topics_discussed": [],
+      "sentiment_score": 5,
+      "purchase_intent": false,
+      "primary_intent": "General"
+    }
+  },
+  {
+    "id": "2oHspHkT4nI6L7t",
+    "date": "2026-01-29 01:38:30",
+    "is_technical_error": false,
+    "is_unhappy_customer": false,
+    "error_category": "NONE",
+    "analysis": {
+      "technical_error": false,
+      "unhappy_customer": false,
+      "error_category": "NONE",
+      "summary": "Analysis failed due to API error.",
+      "recommended_products": [],
+      "topics_discussed": [],
+      "sentiment_score": 5,
+      "purchase_intent": false,
+      "primary_intent": "General"
+    }
+  },
+  {
+    "id": "BX0hGNx3NbXytDh",
+    "date": "2026-01-28 23:14:24",
+    "is_technical_error": false,
+    "is_unhappy_customer": false,
+    "error_category": "NONE",
+    "analysis": {
+      "technical_error": false,
+      "unhappy_customer": false,
+      "error_category": "NONE",
+      "summary": "Analysis failed due to API error.",
+      "recommended_products": [],
+      "topics_discussed": [],
+      "sentiment_score": 5,
+      "purchase_intent": false,
+      "primary_intent": "General"
+    }
+  },
+  {
+    "id": "89CKyLoHLzcs2UG",
+    "date": "2026-01-28 21:40:19",
+    "is_technical_error": false,
+    "is_unhappy_customer": false,
+    "error_category": "NONE",
+    "analysis": {
+      "technical_error": false,
+      "unhappy_customer": false,
+      "error_category": "NONE",
+      "summary": "Analysis failed due to API error.",
+      "recommended_products": [],
+      "topics_discussed": [],
+      "sentiment_score": 5,
+      "purchase_intent": false,
+      "primary_intent": "General"
+    }
+  },
+  {
+    "id": "CBAmTYBgP1rtmKN",
+    "date": "2026-01-28 21:12:45",
+    "is_technical_error": false,
+    "is_unhappy_customer": false,
+    "error_category": "NONE",
+    "analysis": {
+      "technical_error": false,
+      "unhappy_customer": false,
+      "error_category": "NONE",
+      "summary": "Analysis failed due to API error.",
+      "recommended_products": [],
+      "topics_discussed": [],
+      "sentiment_score": 5,
+      "purchase_intent": false,
+      "primary_intent": "General"
+    }
+  },
+  {
+    "id": "tXN4qU0AgSn0Rhu",
+    "date": "2026-01-28 21:05:44",
+    "is_technical_error": false,
+    "is_unhappy_customer": false,
+    "error_category": "NONE",
+    "analysis": {
+      "technical_error": false,
+      "unhappy_customer": false,
+      "error_category": "NONE",
+      "summary": "Analysis failed due to API error.",
+      "recommended_products": [],
+      "topics_discussed": [],
+      "sentiment_score": 5,
+      "purchase_intent": false,
+      "primary_intent": "General"
+    }
+  },
+  {
+    "id": "Xvo6odITz6svnS8",
+    "date": "2026-01-28 20:17:42",
+    "is_technical_error": false,
+    "is_unhappy_customer": false,
+    "error_category": "NONE",
+    "analysis": {
+      "technical_error": false,
+      "unhappy_customer": false,
+      "error_category": "NONE",
+      "summary": "Analysis failed due to API error.",
+      "recommended_products": [],
+      "topics_discussed": [],
+      "sentiment_score": 5,
+      "purchase_intent": false,
+      "primary_intent": "General"
+    }
+  },
+  {
+    "id": "vYPlqKcaRCiiFf5",
+    "date": "2026-01-28 20:14:42",
+    "is_technical_error": false,
+    "is_unhappy_customer": false,
+    "error_category": "NONE",
+    "analysis": {
+      "technical_error": false,
+      "unhappy_customer": false,
+      "error_category": "NONE",
+      "summary": "Analysis failed due to API error.",
+      "recommended_products": [],
+      "topics_discussed": [],
+      "sentiment_score": 5,
+      "purchase_intent": false,
+      "primary_intent": "General"
+    }
+  },
+  {
+    "id": "2JTnAQZ0bByuwlI",
+    "date": "2026-01-28 20:05:38",
+    "is_technical_error": false,
+    "is_unhappy_customer": false,
+    "error_category": "NONE",
+    "analysis": {
+      "technical_error": false,
+      "unhappy_customer": false,
+      "error_category": "NONE",
+      "summary": "Analysis failed due to API error.",
+      "recommended_products": [],
+      "topics_discussed": [],
+      "sentiment_score": 5,
+      "purchase_intent": false,
+      "primary_intent": "General"
+    }
+  },
+  {
+    "id": "cZ8OpfwuPDaEEHR",
+    "date": "2026-01-28 18:28:22",
+    "is_technical_error": false,
+    "is_unhappy_customer": false,
+    "error_category": "NONE",
+    "analysis": {
+      "technical_error": false,
+      "unhappy_customer": false,
+      "error_category": "NONE",
+      "summary": "Analysis failed due to API error.",
+      "recommended_products": [],
+      "topics_discussed": [],
+      "sentiment_score": 5,
+      "purchase_intent": false,
+      "primary_intent": "General"
+    }
+  },
+  {
+    "id": "tYNWbMcoV4CcGPk",
+    "date": "2026-01-28 17:24:33",
+    "is_technical_error": false,
+    "is_unhappy_customer": false,
+    "error_category": "NONE",
+    "analysis": {
+      "technical_error": false,
+      "unhappy_customer": false,
+      "error_category": "NONE",
+      "summary": "Analysis failed due to API error.",
+      "recommended_products": [],
+      "topics_discussed": [],
+      "sentiment_score": 5,
+      "purchase_intent": false,
+      "primary_intent": "General"
+    }
+  },
+  {
+    "id": "Qnt2Qb5Q6A3YQh5",
+    "date": "2026-01-28 12:58:14",
+    "is_technical_error": false,
+    "is_unhappy_customer": false,
+    "error_category": "NONE",
+    "analysis": {
+      "technical_error": false,
+      "unhappy_customer": false,
+      "error_category": "NONE",
+      "summary": "Analysis failed due to API error.",
+      "recommended_products": [],
+      "topics_discussed": [],
+      "sentiment_score": 5,
+      "purchase_intent": false,
+      "primary_intent": "General"
+    }
+  },
+  {
+    "id": "SRjYF0SvVGbKSJ4",
+    "date": "2026-01-28 04:22:10",
+    "is_technical_error": false,
+    "is_unhappy_customer": false,
+    "error_category": "NONE",
+    "analysis": {
+      "technical_error": false,
+      "unhappy_customer": false,
+      "error_category": "NONE",
+      "summary": "Analysis failed due to API error.",
+      "recommended_products": [],
+      "topics_discussed": [],
+      "sentiment_score": 5,
+      "purchase_intent": false,
+      "primary_intent": "General"
+    }
+  },
+  {
+    "id": "WiroyF094i5MMIl",
+    "date": "2026-01-28 03:45:19",
+    "is_technical_error": false,
+    "is_unhappy_customer": false,
+    "error_category": "NONE",
+    "analysis": {
+      "technical_error": false,
+      "unhappy_customer": false,
+      "error_category": "NONE",
+      "summary": "Analysis failed due to API error.",
+      "recommended_products": [],
+      "topics_discussed": [],
+      "sentiment_score": 5,
+      "purchase_intent": false,
+      "primary_intent": "General"
+    }
+  },
+  {
+    "id": "KGFnCVjmNrSFLsp",
+    "date": "2026-01-28 02:20:16",
+    "is_technical_error": false,
+    "is_unhappy_customer": false,
+    "error_category": "NONE",
+    "analysis": {
+      "technical_error": false,
+      "unhappy_customer": false,
+      "error_category": "NONE",
+      "summary": "Analysis failed due to API error.",
+      "recommended_products": [],
+      "topics_discussed": [],
+      "sentiment_score": 5,
+      "purchase_intent": false,
+      "primary_intent": "General"
+    }
+  },
+  {
+    "id": "a3dXSWFpegToWc6",
+    "date": "2026-01-28 01:19:21",
+    "is_technical_error": false,
+    "is_unhappy_customer": false,
+    "error_category": "NONE",
+    "analysis": {
+      "technical_error": false,
+      "unhappy_customer": false,
+      "error_category": "NONE",
+      "summary": "Analysis failed due to API error.",
+      "recommended_products": [],
+      "topics_discussed": [],
+      "sentiment_score": 5,
+      "purchase_intent": false,
+      "primary_intent": "General"
+    }
+  },
+  {
+    "id": "AuVHeR0YsWNWzZH",
+    "date": "2026-01-28 00:03:44",
+    "is_technical_error": false,
+    "is_unhappy_customer": false,
+    "error_category": "NONE",
+    "analysis": {
+      "technical_error": false,
+      "unhappy_customer": false,
+      "error_category": "NONE",
+      "summary": "Analysis failed due to API error.",
+      "recommended_products": [],
+      "topics_discussed": [],
+      "sentiment_score": 5,
+      "purchase_intent": false,
+      "primary_intent": "General"
+    }
+  },
+  {
+    "id": "Sv8w1mbHh9u9dBn",
+    "date": "2026-01-27 23:11:30",
+    "is_technical_error": false,
+    "is_unhappy_customer": false,
+    "error_category": "NONE",
+    "analysis": {
+      "technical_error": false,
+      "unhappy_customer": false,
+      "error_category": "NONE",
+      "summary": "Analysis failed due to API error.",
+      "recommended_products": [],
+      "topics_discussed": [],
+      "sentiment_score": 5,
+      "purchase_intent": false,
+      "primary_intent": "General"
+    }
+  },
+  {
+    "id": "wqmnjWovgwxGWM9",
+    "date": "2026-01-27 19:39:26",
+    "is_technical_error": false,
+    "is_unhappy_customer": false,
+    "error_category": "NONE",
+    "analysis": {
+      "technical_error": false,
+      "unhappy_customer": false,
+      "error_category": "NONE",
+      "summary": "Analysis failed due to API error.",
+      "recommended_products": [],
+      "topics_discussed": [],
+      "sentiment_score": 5,
+      "purchase_intent": false,
+      "primary_intent": "General"
+    }
+  },
+  {
+    "id": "Ec81v53mV4QqH6o",
+    "date": "2026-01-27 16:35:06",
+    "is_technical_error": false,
+    "is_unhappy_customer": false,
+    "error_category": "NONE",
+    "analysis": {
+      "technical_error": false,
+      "unhappy_customer": false,
+      "error_category": "NONE",
+      "summary": "Analysis failed due to API error.",
+      "recommended_products": [],
+      "topics_discussed": [],
+      "sentiment_score": 5,
+      "purchase_intent": false,
+      "primary_intent": "General"
+    }
+  },
+  {
+    "id": "otmBpar8Lvb24rf",
+    "date": "2026-01-27 16:30:34",
+    "is_technical_error": false,
+    "is_unhappy_customer": false,
+    "error_category": "NONE",
+    "analysis": {
+      "technical_error": false,
+      "unhappy_customer": false,
+      "error_category": "NONE",
+      "summary": "Analysis failed due to API error.",
+      "recommended_products": [],
+      "topics_discussed": [],
+      "sentiment_score": 5,
+      "purchase_intent": false,
+      "primary_intent": "General"
+    }
+  },
+  {
+    "id": "HNyvVpR6Tsxq4pH",
+    "date": "2026-01-27 13:52:00",
+    "is_technical_error": false,
+    "is_unhappy_customer": false,
+    "error_category": "NONE",
+    "analysis": {
+      "technical_error": false,
+      "unhappy_customer": false,
+      "error_category": "NONE",
+      "summary": "Analysis failed due to API error.",
+      "recommended_products": [],
+      "topics_discussed": [],
+      "sentiment_score": 5,
+      "purchase_intent": false,
+      "primary_intent": "General"
+    }
+  },
+  {
+    "id": "CzdQ5XrTH4hYEQ7",
+    "date": "2026-01-27 09:57:03",
+    "is_technical_error": false,
+    "is_unhappy_customer": false,
+    "error_category": "NONE",
+    "analysis": {
+      "technical_error": false,
+      "unhappy_customer": false,
+      "error_category": "NONE",
+      "summary": "Analysis failed due to API error.",
+      "recommended_products": [],
+      "topics_discussed": [],
+      "sentiment_score": 5,
+      "purchase_intent": false,
+      "primary_intent": "General"
+    }
+  },
+  {
+    "id": "r2JThtGH4OiCHVB",
+    "date": "2026-01-27 03:57:51",
+    "is_technical_error": false,
+    "is_unhappy_customer": false,
+    "error_category": "NONE",
+    "analysis": {
+      "technical_error": false,
+      "unhappy_customer": false,
+      "error_category": "NONE",
+      "summary": "Analysis failed due to API error.",
+      "recommended_products": [],
+      "topics_discussed": [],
+      "sentiment_score": 5,
+      "purchase_intent": false,
+      "primary_intent": "General"
+    }
+  },
+  {
+    "id": "pQCp1tQphWpphAJ",
+    "date": "2026-01-27 03:20:47",
+    "is_technical_error": false,
+    "is_unhappy_customer": false,
+    "error_category": "NONE",
+    "analysis": {
+      "technical_error": false,
+      "unhappy_customer": false,
+      "error_category": "NONE",
+      "summary": "Analysis failed due to API error.",
+      "recommended_products": [],
+      "topics_discussed": [],
+      "sentiment_score": 5,
+      "purchase_intent": false,
+      "primary_intent": "General"
+    }
+  },
+  {
+    "id": "TnWSvx7U9HWWXsw",
+    "date": "2026-01-27 03:15:30",
+    "is_technical_error": false,
+    "is_unhappy_customer": false,
+    "error_category": "NONE",
+    "analysis": {
+      "technical_error": false,
+      "unhappy_customer": false,
+      "error_category": "NONE",
+      "summary": "Analysis failed due to API error.",
+      "recommended_products": [],
+      "topics_discussed": [],
+      "sentiment_score": 5,
+      "purchase_intent": false,
+      "primary_intent": "General"
+    }
+  },
+  {
+    "id": "gHt7OtojcNA7wYg",
+    "date": "2026-01-26 20:11:31",
+    "is_technical_error": false,
+    "is_unhappy_customer": false,
+    "error_category": "NONE",
+    "analysis": {
+      "technical_error": false,
+      "unhappy_customer": false,
+      "error_category": "NONE",
+      "summary": "Analysis failed due to API error.",
+      "recommended_products": [],
+      "topics_discussed": [],
+      "sentiment_score": 5,
+      "purchase_intent": false,
+      "primary_intent": "General"
+    }
+  },
+  {
+    "id": "8OBVXeGrSlWhs2u",
+    "date": "2026-01-26 20:06:16",
+    "is_technical_error": false,
+    "is_unhappy_customer": false,
+    "error_category": "NONE",
+    "analysis": {
+      "technical_error": false,
+      "unhappy_customer": false,
+      "error_category": "NONE",
+      "summary": "Analysis failed due to API error.",
+      "recommended_products": [],
+      "topics_discussed": [],
+      "sentiment_score": 5,
+      "purchase_intent": false,
+      "primary_intent": "General"
+    }
+  },
+  {
+    "id": "7yYxj0hCBIU2KXW",
+    "date": "2026-01-26 19:29:37",
+    "is_technical_error": false,
+    "is_unhappy_customer": false,
+    "error_category": "NONE",
+    "analysis": {
+      "technical_error": false,
+      "unhappy_customer": false,
+      "error_category": "NONE",
+      "summary": "Analysis failed due to API error.",
+      "recommended_products": [],
+      "topics_discussed": [],
+      "sentiment_score": 5,
+      "purchase_intent": false,
+      "primary_intent": "General"
+    }
+  },
+  {
+    "id": "d3dp2oePBiA9DCS",
+    "date": "2026-01-26 19:08:54",
+    "is_technical_error": false,
+    "is_unhappy_customer": false,
+    "error_category": "NONE",
+    "analysis": {
+      "technical_error": false,
+      "unhappy_customer": false,
+      "error_category": "NONE",
+      "summary": "Analysis failed due to API error.",
+      "recommended_products": [],
+      "topics_discussed": [],
+      "sentiment_score": 5,
+      "purchase_intent": false,
+      "primary_intent": "General"
+    }
+  },
+  {
+    "id": "0FF3wpuU0i20rhG",
+    "date": "2026-01-26 00:54:55",
+    "is_technical_error": false,
+    "is_unhappy_customer": false,
+    "error_category": "NONE",
+    "analysis": {
+      "technical_error": false,
+      "unhappy_customer": false,
+      "error_category": "NONE",
+      "summary": "Analysis failed due to API error.",
+      "recommended_products": [],
+      "topics_discussed": [],
+      "sentiment_score": 5,
+      "purchase_intent": false,
+      "primary_intent": "General"
+    }
+  },
+  {
+    "id": "i9S3wn9Hd8lKQyB",
+    "date": "2026-01-25 23:24:49",
+    "is_technical_error": false,
+    "is_unhappy_customer": false,
+    "error_category": "NONE",
+    "analysis": {
+      "technical_error": false,
+      "unhappy_customer": false,
+      "error_category": "NONE",
+      "summary": "Analysis failed due to API error.",
+      "recommended_products": [],
+      "topics_discussed": [],
+      "sentiment_score": 5,
+      "purchase_intent": false,
+      "primary_intent": "General"
+    }
+  },
+  {
+    "id": "V3xxbHLvewHAfzY",
+    "date": "2026-01-25 22:42:14",
+    "is_technical_error": false,
+    "is_unhappy_customer": false,
+    "error_category": "NONE",
+    "analysis": {
+      "technical_error": false,
+      "unhappy_customer": false,
+      "error_category": "NONE",
+      "summary": "Analysis failed due to API error.",
+      "recommended_products": [],
+      "topics_discussed": [],
+      "sentiment_score": 5,
+      "purchase_intent": false,
+      "primary_intent": "General"
+    }
+  },
+  {
+    "id": "oiN6VUVXp8iX4n3",
+    "date": "2026-01-25 02:44:38",
+    "is_technical_error": false,
+    "is_unhappy_customer": false,
+    "error_category": "NONE",
+    "analysis": {
+      "technical_error": false,
+      "unhappy_customer": false,
+      "error_category": "NONE",
+      "summary": "Analysis failed due to API error.",
+      "recommended_products": [],
+      "topics_discussed": [],
+      "sentiment_score": 5,
+      "purchase_intent": false,
+      "primary_intent": "General"
+    }
+  },
+  {
+    "id": "iGzbCAgEf8hTDIq",
+    "date": "2026-01-24 23:04:34",
+    "is_technical_error": false,
+    "is_unhappy_customer": false,
+    "error_category": "NONE",
+    "analysis": {
+      "technical_error": false,
+      "unhappy_customer": false,
+      "error_category": "NONE",
+      "summary": "Analysis failed due to API error.",
+      "recommended_products": [],
+      "topics_discussed": [],
+      "sentiment_score": 5,
+      "purchase_intent": false,
+      "primary_intent": "General"
+    }
+  },
+  {
+    "id": "W5yMqRJxo5uQzzi",
+    "date": "2026-01-24 20:41:54",
+    "is_technical_error": false,
+    "is_unhappy_customer": false,
+    "error_category": "NONE",
+    "analysis": {
+      "technical_error": false,
+      "unhappy_customer": false,
+      "error_category": "NONE",
+      "summary": "Analysis failed due to API error.",
+      "recommended_products": [],
+      "topics_discussed": [],
+      "sentiment_score": 5,
+      "purchase_intent": false,
+      "primary_intent": "General"
+    }
+  },
+  {
+    "id": "lDhD7axfY4gSbHb",
+    "date": "2026-01-24 20:30:54",
+    "is_technical_error": false,
+    "is_unhappy_customer": false,
+    "error_category": "NONE",
+    "analysis": {
+      "technical_error": false,
+      "unhappy_customer": false,
+      "error_category": "NONE",
+      "summary": "Analysis failed due to API error.",
+      "recommended_products": [],
+      "topics_discussed": [],
+      "sentiment_score": 5,
+      "purchase_intent": false,
+      "primary_intent": "General"
+    }
+  },
+  {
+    "id": "JkBv1jdaunC2D7j",
+    "date": "2026-01-24 19:51:34",
+    "is_technical_error": false,
+    "is_unhappy_customer": false,
+    "error_category": "NONE",
+    "analysis": {
+      "technical_error": false,
+      "unhappy_customer": false,
+      "error_category": "NONE",
+      "summary": "Analysis failed due to API error.",
+      "recommended_products": [],
+      "topics_discussed": [],
+      "sentiment_score": 5,
+      "purchase_intent": false,
+      "primary_intent": "General"
+    }
+  },
+  {
+    "id": "uGPFP3HXrpEbK2L",
+    "date": "2026-01-24 18:51:11",
+    "is_technical_error": false,
+    "is_unhappy_customer": false,
+    "error_category": "NONE",
+    "analysis": {
+      "technical_error": false,
+      "unhappy_customer": false,
+      "error_category": "NONE",
+      "summary": "Analysis failed due to API error.",
+      "recommended_products": [],
+      "topics_discussed": [],
+      "sentiment_score": 5,
+      "purchase_intent": false,
+      "primary_intent": "General"
+    }
+  },
+  {
+    "id": "ZutV7V11MAxfpE4",
+    "date": "2026-01-24 18:48:23",
+    "is_technical_error": false,
+    "is_unhappy_customer": false,
+    "error_category": "NONE",
+    "analysis": {
+      "technical_error": false,
+      "unhappy_customer": false,
+      "error_category": "NONE",
+      "summary": "Analysis failed due to API error.",
+      "recommended_products": [],
+      "topics_discussed": [],
+      "sentiment_score": 5,
+      "purchase_intent": false,
+      "primary_intent": "General"
+    }
+  },
+  {
+    "id": "PMUyuGrtknaN8tV",
+    "date": "2026-01-24 17:57:27",
+    "is_technical_error": false,
+    "is_unhappy_customer": false,
+    "error_category": "NONE",
+    "analysis": {
+      "technical_error": false,
+      "unhappy_customer": false,
+      "error_category": "NONE",
+      "summary": "Analysis failed due to API error.",
+      "recommended_products": [],
+      "topics_discussed": [],
+      "sentiment_score": 5,
+      "purchase_intent": false,
+      "primary_intent": "General"
+    }
+  },
+  {
+    "id": "3IBRvf30gKuPIKI",
+    "date": "2026-01-24 17:23:26",
+    "is_technical_error": false,
+    "is_unhappy_customer": false,
+    "error_category": "NONE",
+    "analysis": {
+      "technical_error": false,
+      "unhappy_customer": false,
+      "error_category": "NONE",
+      "summary": "Analysis failed due to API error.",
+      "recommended_products": [],
+      "topics_discussed": [],
+      "sentiment_score": 5,
+      "purchase_intent": false,
+      "primary_intent": "General"
+    }
+  },
+  {
+    "id": "0hrktmSEoqIKgXB",
+    "date": "2026-01-24 17:18:06",
+    "is_technical_error": false,
+    "is_unhappy_customer": false,
+    "error_category": "NONE",
+    "analysis": {
+      "technical_error": false,
+      "unhappy_customer": false,
+      "error_category": "NONE",
+      "summary": "Analysis failed due to API error.",
+      "recommended_products": [],
+      "topics_discussed": [],
+      "sentiment_score": 5,
+      "purchase_intent": false,
+      "primary_intent": "General"
+    }
+  },
+  {
+    "id": "boWXmBXi8XQjzJA",
+    "date": "2026-01-23 17:50:44",
+    "is_technical_error": false,
+    "is_unhappy_customer": false,
+    "error_category": "NONE",
+    "analysis": {
+      "technical_error": false,
+      "unhappy_customer": false,
+      "error_category": "NONE",
+      "summary": "Analysis failed due to API error.",
+      "recommended_products": [],
+      "topics_discussed": [],
+      "sentiment_score": 5,
+      "purchase_intent": false,
+      "primary_intent": "General"
+    }
+  },
+  {
+    "id": "tvBvRg0z5WdeQ6w",
+    "date": "2026-01-23 17:12:32",
+    "is_technical_error": false,
+    "is_unhappy_customer": false,
+    "error_category": "NONE",
+    "analysis": {
+      "technical_error": false,
+      "unhappy_customer": false,
+      "error_category": "NONE",
+      "summary": "Analysis failed due to API error.",
+      "recommended_products": [],
+      "topics_discussed": [],
+      "sentiment_score": 5,
+      "purchase_intent": false,
+      "primary_intent": "General"
+    }
+  },
+  {
+    "id": "h6vNpQvMJaQglvk",
+    "date": "2026-01-23 16:37:16",
+    "is_technical_error": false,
+    "is_unhappy_customer": false,
+    "error_category": "NONE",
+    "analysis": {
+      "technical_error": false,
+      "unhappy_customer": false,
+      "error_category": "NONE",
+      "summary": "Analysis failed due to API error.",
+      "recommended_products": [],
+      "topics_discussed": [],
+      "sentiment_score": 5,
+      "purchase_intent": false,
+      "primary_intent": "General"
+    }
+  },
+  {
+    "id": "kJaahvDdX5gdlRA",
+    "date": "2026-01-23 16:34:00",
+    "is_technical_error": false,
+    "is_unhappy_customer": false,
+    "error_category": "NONE",
+    "analysis": {
+      "technical_error": false,
+      "unhappy_customer": false,
+      "error_category": "NONE",
+      "summary": "Analysis failed due to API error.",
+      "recommended_products": [],
+      "topics_discussed": [],
+      "sentiment_score": 5,
+      "purchase_intent": false,
+      "primary_intent": "General"
+    }
+  },
+  {
+    "id": "n1zdi4XHLmgIRmH",
+    "date": "2026-01-23 16:21:20",
+    "is_technical_error": false,
+    "is_unhappy_customer": false,
+    "error_category": "NONE",
+    "analysis": {
+      "technical_error": false,
+      "unhappy_customer": false,
+      "error_category": "NONE",
+      "summary": "Analysis failed due to API error.",
+      "recommended_products": [],
+      "topics_discussed": [],
+      "sentiment_score": 5,
+      "purchase_intent": false,
+      "primary_intent": "General"
+    }
+  },
+  {
+    "id": "L9D5HIrkEGXhPpJ",
+    "date": "2026-01-23 16:20:58",
+    "is_technical_error": false,
+    "is_unhappy_customer": false,
+    "error_category": "NONE",
+    "analysis": {
+      "technical_error": false,
+      "unhappy_customer": false,
+      "error_category": "NONE",
+      "summary": "Analysis failed due to API error.",
+      "recommended_products": [],
+      "topics_discussed": [],
+      "sentiment_score": 5,
+      "purchase_intent": false,
+      "primary_intent": "General"
+    }
+  },
+  {
+    "id": "O1OFsnbGFmVYF0t",
+    "date": "2026-01-23 15:11:07",
+    "is_technical_error": false,
+    "is_unhappy_customer": false,
+    "error_category": "NONE",
+    "analysis": {
+      "technical_error": false,
+      "unhappy_customer": false,
+      "error_category": "NONE",
+      "summary": "Analysis failed due to API error.",
+      "recommended_products": [],
+      "topics_discussed": [],
+      "sentiment_score": 5,
+      "purchase_intent": false,
+      "primary_intent": "General"
+    }
+  },
+  {
+    "id": "dHi1CmrBlKYFcgk",
+    "date": "2026-01-23 15:09:57",
+    "is_technical_error": false,
+    "is_unhappy_customer": false,
+    "error_category": "NONE",
+    "analysis": {
+      "technical_error": false,
+      "unhappy_customer": false,
+      "error_category": "NONE",
+      "summary": "Analysis failed due to API error.",
+      "recommended_products": [],
+      "topics_discussed": [],
+      "sentiment_score": 5,
+      "purchase_intent": false,
+      "primary_intent": "General"
+    }
+  },
+  {
+    "id": "z7DTyROZnSJcuua",
+    "date": "2026-01-23 14:02:01",
+    "is_technical_error": false,
+    "is_unhappy_customer": false,
+    "error_category": "NONE",
+    "analysis": {
+      "technical_error": false,
+      "unhappy_customer": false,
+      "error_category": "NONE",
+      "summary": "Analysis failed due to API error.",
+      "recommended_products": [],
+      "topics_discussed": [],
+      "sentiment_score": 5,
+      "purchase_intent": false,
+      "primary_intent": "General"
+    }
+  },
+  {
+    "id": "jGRWZY4qwkbtaq7",
+    "date": "2026-01-23 13:49:55",
+    "is_technical_error": false,
+    "is_unhappy_customer": false,
+    "error_category": "NONE",
+    "analysis": {
+      "technical_error": false,
+      "unhappy_customer": false,
+      "error_category": "NONE",
+      "summary": "Analysis failed due to API error.",
+      "recommended_products": [],
+      "topics_discussed": [],
+      "sentiment_score": 5,
+      "purchase_intent": false,
+      "primary_intent": "General"
+    }
+  },
+  {
+    "id": "2Qa60ipSykZAUnA",
+    "date": "2026-01-23 11:07:28",
+    "is_technical_error": false,
+    "is_unhappy_customer": false,
+    "error_category": "NONE",
+    "analysis": {
+      "technical_error": false,
+      "unhappy_customer": false,
+      "error_category": "NONE",
+      "summary": "Analysis failed due to API error.",
+      "recommended_products": [],
+      "topics_discussed": [],
+      "sentiment_score": 5,
+      "purchase_intent": false,
+      "primary_intent": "General"
+    }
+  },
+  {
+    "id": "dMxuKQzwEOQC38f",
+    "date": "2026-01-23 04:29:44",
+    "is_technical_error": false,
+    "is_unhappy_customer": false,
+    "error_category": "NONE",
+    "analysis": {
+      "technical_error": false,
+      "unhappy_customer": false,
+      "error_category": "NONE",
+      "summary": "Analysis failed due to API error.",
+      "recommended_products": [],
+      "topics_discussed": [],
+      "sentiment_score": 5,
+      "purchase_intent": false,
+      "primary_intent": "General"
+    }
+  },
+  {
+    "id": "5VyoA1Av3qXu7mS",
+    "date": "2026-01-23 00:03:24",
+    "is_technical_error": false,
+    "is_unhappy_customer": false,
+    "error_category": "NONE",
+    "analysis": {
+      "technical_error": false,
+      "unhappy_customer": false,
+      "error_category": "NONE",
+      "summary": "Analysis failed due to API error.",
+      "recommended_products": [],
+      "topics_discussed": [],
+      "sentiment_score": 5,
+      "purchase_intent": false,
+      "primary_intent": "General"
+    }
+  },
+  {
+    "id": "S4NfD8WsnnoBuC5",
+    "date": "2026-01-22 21:47:06",
+    "is_technical_error": false,
+    "is_unhappy_customer": false,
+    "error_category": "NONE",
+    "analysis": {
+      "technical_error": false,
+      "unhappy_customer": false,
+      "error_category": "NONE",
+      "summary": "Analysis failed due to API error.",
+      "recommended_products": [],
+      "topics_discussed": [],
+      "sentiment_score": 5,
+      "purchase_intent": false,
+      "primary_intent": "General"
+    }
+  },
+  {
+    "id": "UEAZ8QMOGS51NEZ",
+    "date": "2026-01-22 21:16:22",
+    "is_technical_error": false,
+    "is_unhappy_customer": false,
+    "error_category": "NONE",
+    "analysis": {
+      "technical_error": false,
+      "unhappy_customer": false,
+      "error_category": "NONE",
+      "summary": "Analysis failed due to API error.",
+      "recommended_products": [],
+      "topics_discussed": [],
+      "sentiment_score": 5,
+      "purchase_intent": false,
+      "primary_intent": "General"
+    }
+  },
+  {
+    "id": "CREa7ZB34kp14b3",
+    "date": "2026-01-22 13:49:31",
+    "is_technical_error": false,
+    "is_unhappy_customer": false,
+    "error_category": "NONE",
+    "analysis": {
+      "technical_error": false,
+      "unhappy_customer": false,
+      "error_category": "NONE",
+      "summary": "Analysis failed due to API error.",
+      "recommended_products": [],
+      "topics_discussed": [],
+      "sentiment_score": 5,
+      "purchase_intent": false,
+      "primary_intent": "General"
+    }
+  },
+  {
+    "id": "xdxgsf0NLEqBfQm",
+    "date": "2026-01-22 13:39:42",
+    "is_technical_error": false,
+    "is_unhappy_customer": false,
+    "error_category": "NONE",
+    "analysis": {
+      "technical_error": false,
+      "unhappy_customer": false,
+      "error_category": "NONE",
+      "summary": "Analysis failed due to API error.",
+      "recommended_products": [],
+      "topics_discussed": [],
+      "sentiment_score": 5,
+      "purchase_intent": false,
+      "primary_intent": "General"
+    }
+  },
+  {
+    "id": "n7N0HFHWDz0wdbv",
+    "date": "2026-01-22 10:40:36",
+    "is_technical_error": false,
+    "is_unhappy_customer": false,
+    "error_category": "NONE",
+    "analysis": {
+      "technical_error": false,
+      "unhappy_customer": false,
+      "error_category": "NONE",
+      "summary": "Analysis failed due to API error.",
+      "recommended_products": [],
+      "topics_discussed": [],
+      "sentiment_score": 5,
+      "purchase_intent": false,
+      "primary_intent": "General"
+    }
+  },
+  {
+    "id": "c2maxxOownENd9T",
+    "date": "2026-01-21 22:27:53",
+    "is_technical_error": false,
+    "is_unhappy_customer": false,
+    "error_category": "NONE",
+    "analysis": {
+      "technical_error": false,
+      "unhappy_customer": false,
+      "error_category": "NONE",
+      "summary": "Analysis failed due to API error.",
+      "recommended_products": [],
+      "topics_discussed": [],
+      "sentiment_score": 5,
+      "purchase_intent": false,
+      "primary_intent": "General"
+    }
+  },
+  {
+    "id": "FnoEYLsmZknPhDm",
+    "date": "2026-01-21 17:35:38",
+    "is_technical_error": false,
+    "is_unhappy_customer": false,
+    "error_category": "NONE",
+    "analysis": {
+      "technical_error": false,
+      "unhappy_customer": false,
+      "error_category": "NONE",
+      "summary": "Analysis failed due to API error.",
+      "recommended_products": [],
+      "topics_discussed": [],
+      "sentiment_score": 5,
+      "purchase_intent": false,
+      "primary_intent": "General"
+    }
+  },
+  {
+    "id": "zZQfRtIXBLN0Fk0",
+    "date": "2026-01-21 17:24:49",
+    "is_technical_error": false,
+    "is_unhappy_customer": false,
+    "error_category": "NONE",
+    "analysis": {
+      "technical_error": false,
+      "unhappy_customer": false,
+      "error_category": "NONE",
+      "summary": "Analysis failed due to API error.",
+      "recommended_products": [],
+      "topics_discussed": [],
+      "sentiment_score": 5,
+      "purchase_intent": false,
+      "primary_intent": "General"
+    }
+  },
+  {
+    "id": "xYlcjojmVWgldpT",
+    "date": "2026-01-21 07:56:42",
+    "is_technical_error": false,
+    "is_unhappy_customer": false,
+    "error_category": "NONE",
+    "analysis": {
+      "technical_error": false,
+      "unhappy_customer": false,
+      "error_category": "NONE",
+      "summary": "Analysis failed due to API error.",
+      "recommended_products": [],
+      "topics_discussed": [],
+      "sentiment_score": 5,
+      "purchase_intent": false,
+      "primary_intent": "General"
+    }
+  },
+  {
+    "id": "CjwtQGx1LMDryF4",
+    "date": "2026-01-21 07:07:00",
+    "is_technical_error": false,
+    "is_unhappy_customer": false,
+    "error_category": "NONE",
+    "analysis": {
+      "technical_error": false,
+      "unhappy_customer": false,
+      "error_category": "NONE",
+      "summary": "Analysis failed due to API error.",
+      "recommended_products": [],
+      "topics_discussed": [],
+      "sentiment_score": 5,
+      "purchase_intent": false,
+      "primary_intent": "General"
+    }
+  },
+  {
+    "id": "wfgMsxtVpYEIc6i",
+    "date": "2026-01-21 00:04:58",
+    "is_technical_error": false,
+    "is_unhappy_customer": false,
+    "error_category": "NONE",
+    "analysis": {
+      "technical_error": false,
+      "unhappy_customer": false,
+      "error_category": "NONE",
+      "summary": "Analysis failed due to API error.",
+      "recommended_products": [],
+      "topics_discussed": [],
+      "sentiment_score": 5,
+      "purchase_intent": false,
+      "primary_intent": "General"
+    }
+  },
+  {
+    "id": "lJx8L8kc9QSgsNb",
+    "date": "2026-01-20 22:26:33",
+    "is_technical_error": false,
+    "is_unhappy_customer": false,
+    "error_category": "NONE",
+    "analysis": {
+      "technical_error": false,
+      "unhappy_customer": false,
+      "error_category": "NONE",
+      "summary": "Analysis failed due to API error.",
+      "recommended_products": [],
+      "topics_discussed": [],
+      "sentiment_score": 5,
+      "purchase_intent": false,
+      "primary_intent": "General"
+    }
+  },
+  {
+    "id": "kzDq0iEMGdpD5Wf",
+    "date": "2026-01-20 21:03:37",
+    "is_technical_error": false,
+    "is_unhappy_customer": false,
+    "error_category": "NONE",
+    "analysis": {
+      "technical_error": false,
+      "unhappy_customer": false,
+      "error_category": "NONE",
+      "summary": "Analysis failed due to API error.",
+      "recommended_products": [],
+      "topics_discussed": [],
+      "sentiment_score": 5,
+      "purchase_intent": false,
+      "primary_intent": "General"
+    }
+  },
+  {
+    "id": "N4HjWr7yLaYyAXz",
+    "date": "2026-01-20 16:03:18",
+    "is_technical_error": false,
+    "is_unhappy_customer": false,
+    "error_category": "NONE",
+    "analysis": {
+      "technical_error": false,
+      "unhappy_customer": false,
+      "error_category": "NONE",
+      "summary": "Analysis failed due to API error.",
+      "recommended_products": [],
+      "topics_discussed": [],
+      "sentiment_score": 5,
+      "purchase_intent": false,
+      "primary_intent": "General"
+    }
+  },
+  {
+    "id": "2fdufyg3hDEwYjE",
+    "date": "2026-01-20 15:54:55",
+    "is_technical_error": false,
+    "is_unhappy_customer": false,
+    "error_category": "NONE",
+    "analysis": {
+      "technical_error": false,
+      "unhappy_customer": false,
+      "error_category": "NONE",
+      "summary": "Analysis failed due to API error.",
+      "recommended_products": [],
+      "topics_discussed": [],
+      "sentiment_score": 5,
+      "purchase_intent": false,
+      "primary_intent": "General"
+    }
+  },
+  {
+    "id": "4qsBWnJ7ZKin95v",
+    "date": "2026-01-20 15:50:18",
+    "is_technical_error": false,
+    "is_unhappy_customer": false,
+    "error_category": "NONE",
+    "analysis": {
+      "technical_error": false,
+      "unhappy_customer": false,
+      "error_category": "NONE",
+      "summary": "Analysis failed due to API error.",
+      "recommended_products": [],
+      "topics_discussed": [],
+      "sentiment_score": 5,
+      "purchase_intent": false,
+      "primary_intent": "General"
+    }
+  },
+  {
+    "id": "MKNHrWSTL7WC3wY",
+    "date": "2026-01-20 14:31:42",
+    "is_technical_error": false,
+    "is_unhappy_customer": false,
+    "error_category": "NONE",
+    "analysis": {
+      "technical_error": false,
+      "unhappy_customer": false,
+      "error_category": "NONE",
+      "summary": "Analysis failed due to API error.",
+      "recommended_products": [],
+      "topics_discussed": [],
+      "sentiment_score": 5,
+      "purchase_intent": false,
+      "primary_intent": "General"
+    }
+  },
+  {
+    "id": "MlW6xdE7q5Syrh5",
+    "date": "2026-01-20 08:40:37",
+    "is_technical_error": false,
+    "is_unhappy_customer": false,
+    "error_category": "NONE",
+    "analysis": {
+      "technical_error": false,
+      "unhappy_customer": false,
+      "error_category": "NONE",
+      "summary": "Analysis failed due to API error.",
+      "recommended_products": [],
+      "topics_discussed": [],
+      "sentiment_score": 5,
+      "purchase_intent": false,
+      "primary_intent": "General"
+    }
+  },
+  {
+    "id": "A66QZjR5tR8XsNW",
+    "date": "2026-01-20 05:49:12",
+    "is_technical_error": false,
+    "is_unhappy_customer": false,
+    "error_category": "NONE",
+    "analysis": {
+      "technical_error": false,
+      "unhappy_customer": false,
+      "error_category": "NONE",
+      "summary": "Analysis failed due to API error.",
+      "recommended_products": [],
+      "topics_discussed": [],
+      "sentiment_score": 5,
+      "purchase_intent": false,
+      "primary_intent": "General"
+    }
+  },
+  {
+    "id": "tByCsM86Yqv8VSJ",
+    "date": "2026-01-19 22:18:37",
+    "is_technical_error": false,
+    "is_unhappy_customer": false,
+    "error_category": "NONE",
+    "analysis": {
+      "technical_error": false,
+      "unhappy_customer": false,
+      "error_category": "NONE",
+      "summary": "Analysis failed due to API error.",
+      "recommended_products": [],
+      "topics_discussed": [],
+      "sentiment_score": 5,
+      "purchase_intent": false,
+      "primary_intent": "General"
+    }
+  },
+  {
+    "id": "OXTEUzWy7h399BK",
+    "date": "2026-01-19 22:11:55",
+    "is_technical_error": false,
+    "is_unhappy_customer": false,
+    "error_category": "NONE",
+    "analysis": {
+      "technical_error": false,
+      "unhappy_customer": false,
+      "error_category": "NONE",
+      "summary": "Analysis failed due to API error.",
+      "recommended_products": [],
+      "topics_discussed": [],
+      "sentiment_score": 5,
+      "purchase_intent": false,
+      "primary_intent": "General"
+    }
+  },
+  {
+    "id": "5QppjKXLQpt4xrR",
+    "date": "2026-01-19 17:48:16",
+    "is_technical_error": false,
+    "is_unhappy_customer": false,
+    "error_category": "NONE",
+    "analysis": {
+      "technical_error": false,
+      "unhappy_customer": false,
+      "error_category": "NONE",
+      "summary": "Analysis failed due to API error.",
+      "recommended_products": [],
+      "topics_discussed": [],
+      "sentiment_score": 5,
+      "purchase_intent": false,
+      "primary_intent": "General"
+    }
+  },
+  {
+    "id": "NTWeaJewZwdWAfq",
+    "date": "2026-01-19 16:24:36",
+    "is_technical_error": false,
+    "is_unhappy_customer": false,
+    "error_category": "NONE",
+    "analysis": {
+      "technical_error": false,
+      "unhappy_customer": false,
+      "error_category": "NONE",
+      "summary": "Analysis failed due to API error.",
+      "recommended_products": [],
+      "topics_discussed": [],
+      "sentiment_score": 5,
+      "purchase_intent": false,
+      "primary_intent": "General"
+    }
+  },
+  {
+    "id": "7GCVxt0XsAUUYQY",
+    "date": "2026-01-19 03:34:22",
+    "is_technical_error": false,
+    "is_unhappy_customer": false,
+    "error_category": "NONE",
+    "analysis": {
+      "technical_error": false,
+      "unhappy_customer": false,
+      "error_category": "NONE",
+      "summary": "Analysis failed due to API error.",
+      "recommended_products": [],
+      "topics_discussed": [],
+      "sentiment_score": 5,
+      "purchase_intent": false,
+      "primary_intent": "General"
+    }
+  },
+  {
+    "id": "wCAhyGKKiWnpica",
+    "date": "2026-01-19 02:07:39",
+    "is_technical_error": false,
+    "is_unhappy_customer": false,
+    "error_category": "NONE",
+    "analysis": {
+      "technical_error": false,
+      "unhappy_customer": false,
+      "error_category": "NONE",
+      "summary": "Analysis failed due to API error.",
+      "recommended_products": [],
+      "topics_discussed": [],
+      "sentiment_score": 5,
+      "purchase_intent": false,
+      "primary_intent": "General"
+    }
+  },
+  {
+    "id": "xJisRkmZLEEXNZ2",
+    "date": "2026-01-19 00:20:03",
+    "is_technical_error": false,
+    "is_unhappy_customer": false,
+    "error_category": "NONE",
+    "analysis": {
+      "technical_error": false,
+      "unhappy_customer": false,
+      "error_category": "NONE",
+      "summary": "Analysis failed due to API error.",
+      "recommended_products": [],
+      "topics_discussed": [],
+      "sentiment_score": 5,
+      "purchase_intent": false,
+      "primary_intent": "General"
+    }
+  },
+  {
+    "id": "gYAJKTsblpb5v9O",
+    "date": "2026-01-18 22:16:35",
+    "is_technical_error": false,
+    "is_unhappy_customer": false,
+    "error_category": "NONE",
+    "analysis": {
+      "technical_error": false,
+      "unhappy_customer": false,
+      "error_category": "NONE",
+      "summary": "Analysis failed due to API error.",
+      "recommended_products": [],
+      "topics_discussed": [],
+      "sentiment_score": 5,
+      "purchase_intent": false,
+      "primary_intent": "General"
+    }
+  },
+  {
+    "id": "drWBly5nQNPslh0",
+    "date": "2026-01-18 21:52:16",
+    "is_technical_error": false,
+    "is_unhappy_customer": false,
+    "error_category": "NONE",
+    "analysis": {
+      "technical_error": false,
+      "unhappy_customer": false,
+      "error_category": "NONE",
+      "summary": "Analysis failed due to API error.",
+      "recommended_products": [],
+      "topics_discussed": [],
+      "sentiment_score": 5,
+      "purchase_intent": false,
+      "primary_intent": "General"
+    }
+  },
+  {
+    "id": "DzlG1KnEjEpoiaZ",
+    "date": "2026-01-18 16:30:26",
+    "is_technical_error": false,
+    "is_unhappy_customer": false,
+    "error_category": "NONE",
+    "analysis": {
+      "technical_error": false,
+      "unhappy_customer": false,
+      "error_category": "NONE",
+      "summary": "Analysis failed due to API error.",
+      "recommended_products": [],
+      "topics_discussed": [],
+      "sentiment_score": 5,
+      "purchase_intent": false,
+      "primary_intent": "General"
+    }
+  },
+  {
+    "id": "0fmfWdS36B25ds0",
+    "date": "2026-01-18 16:29:42",
+    "is_technical_error": false,
+    "is_unhappy_customer": false,
+    "error_category": "NONE",
+    "analysis": {
+      "technical_error": false,
+      "unhappy_customer": false,
+      "error_category": "NONE",
+      "summary": "Analysis failed due to API error.",
+      "recommended_products": [],
+      "topics_discussed": [],
+      "sentiment_score": 5,
+      "purchase_intent": false,
+      "primary_intent": "General"
+    }
+  },
+  {
+    "id": "TIST1GXrBdvKKAa",
+    "date": "2026-01-17 21:32:40",
+    "is_technical_error": false,
+    "is_unhappy_customer": false,
+    "error_category": "NONE",
+    "analysis": {
+      "technical_error": false,
+      "unhappy_customer": false,
+      "error_category": "NONE",
+      "summary": "Analysis failed due to API error.",
+      "recommended_products": [],
+      "topics_discussed": [],
+      "sentiment_score": 5,
+      "purchase_intent": false,
+      "primary_intent": "General"
+    }
+  },
+  {
+    "id": "VoYbST8iGCX9a8q",
+    "date": "2026-01-17 21:28:21",
+    "is_technical_error": false,
+    "is_unhappy_customer": false,
+    "error_category": "NONE",
+    "analysis": {
+      "technical_error": false,
+      "unhappy_customer": false,
+      "error_category": "NONE",
+      "summary": "Analysis failed due to API error.",
+      "recommended_products": [],
+      "topics_discussed": [],
+      "sentiment_score": 5,
+      "purchase_intent": false,
+      "primary_intent": "General"
+    }
+  },
+  {
+    "id": "a5bE6fVMCWSCCK0",
+    "date": "2026-01-17 20:36:40",
+    "is_technical_error": false,
+    "is_unhappy_customer": false,
+    "error_category": "NONE",
+    "analysis": {
+      "technical_error": false,
+      "unhappy_customer": false,
+      "error_category": "NONE",
+      "summary": "Analysis failed due to API error.",
+      "recommended_products": [],
+      "topics_discussed": [],
+      "sentiment_score": 5,
+      "purchase_intent": false,
+      "primary_intent": "General"
+    }
+  },
+  {
+    "id": "NT4rL44NBsLkPYo",
+    "date": "2026-01-17 20:31:32",
+    "is_technical_error": false,
+    "is_unhappy_customer": false,
+    "error_category": "NONE",
+    "analysis": {
+      "technical_error": false,
+      "unhappy_customer": false,
+      "error_category": "NONE",
+      "summary": "Analysis failed due to API error.",
+      "recommended_products": [],
+      "topics_discussed": [],
+      "sentiment_score": 5,
+      "purchase_intent": false,
+      "primary_intent": "General"
+    }
+  },
+  {
+    "id": "7Rh4R0xPjDBgzp5",
+    "date": "2026-01-17 04:45:19",
+    "is_technical_error": false,
+    "is_unhappy_customer": false,
+    "error_category": "NONE",
+    "analysis": {
+      "technical_error": false,
+      "unhappy_customer": false,
+      "error_category": "NONE",
+      "summary": "Analysis failed due to API error.",
+      "recommended_products": [],
+      "topics_discussed": [],
+      "sentiment_score": 5,
+      "purchase_intent": false,
+      "primary_intent": "General"
+    }
+  },
+  {
+    "id": "cfy4AC2eb1flloj",
+    "date": "2026-01-17 04:38:54",
+    "is_technical_error": false,
+    "is_unhappy_customer": false,
+    "error_category": "NONE",
+    "analysis": {
+      "technical_error": false,
+      "unhappy_customer": false,
+      "error_category": "NONE",
+      "summary": "Analysis failed due to API error.",
+      "recommended_products": [],
+      "topics_discussed": [],
+      "sentiment_score": 5,
+      "purchase_intent": false,
+      "primary_intent": "General"
+    }
+  },
+  {
+    "id": "6LlTNkL4cPWufjj",
+    "date": "2026-01-17 01:47:47",
+    "is_technical_error": false,
+    "is_unhappy_customer": false,
+    "error_category": "NONE",
+    "analysis": {
+      "technical_error": false,
+      "unhappy_customer": false,
+      "error_category": "NONE",
+      "summary": "Analysis failed due to API error.",
+      "recommended_products": [],
+      "topics_discussed": [],
+      "sentiment_score": 5,
+      "purchase_intent": false,
+      "primary_intent": "General"
+    }
+  },
+  {
+    "id": "4ymNrpeUcEz3hVC",
+    "date": "2026-01-17 01:45:34",
+    "is_technical_error": false,
+    "is_unhappy_customer": false,
+    "error_category": "NONE",
+    "analysis": {
+      "technical_error": false,
+      "unhappy_customer": false,
+      "error_category": "NONE",
+      "summary": "Analysis failed due to API error.",
+      "recommended_products": [],
+      "topics_discussed": [],
+      "sentiment_score": 5,
+      "purchase_intent": false,
+      "primary_intent": "General"
+    }
+  },
+  {
+    "id": "2a4w6Hs3KtxEPof",
+    "date": "2026-01-17 00:05:17",
+    "is_technical_error": false,
+    "is_unhappy_customer": false,
+    "error_category": "NONE",
+    "analysis": {
+      "technical_error": false,
+      "unhappy_customer": false,
+      "error_category": "NONE",
+      "summary": "Analysis failed due to API error.",
+      "recommended_products": [],
+      "topics_discussed": [],
+      "sentiment_score": 5,
+      "purchase_intent": false,
+      "primary_intent": "General"
+    }
+  },
+  {
+    "id": "i5dM8SXfrZbicXc",
+    "date": "2026-01-16 22:38:52",
+    "is_technical_error": false,
+    "is_unhappy_customer": false,
+    "error_category": "NONE",
+    "analysis": {
+      "technical_error": false,
+      "unhappy_customer": false,
+      "error_category": "NONE",
+      "summary": "Analysis failed due to API error.",
+      "recommended_products": [],
+      "topics_discussed": [],
+      "sentiment_score": 5,
+      "purchase_intent": false,
+      "primary_intent": "General"
+    }
+  },
+  {
+    "id": "Ht3fbxv8FBoOryQ",
+    "date": "2026-01-16 19:57:20",
+    "is_technical_error": false,
+    "is_unhappy_customer": false,
+    "error_category": "NONE",
+    "analysis": {
+      "technical_error": false,
+      "unhappy_customer": false,
+      "error_category": "NONE",
+      "summary": "Analysis failed due to API error.",
+      "recommended_products": [],
+      "topics_discussed": [],
+      "sentiment_score": 5,
+      "purchase_intent": false,
+      "primary_intent": "General"
+    }
+  },
+  {
+    "id": "O9NCSeF3zjdE552",
+    "date": "2026-01-16 19:12:14",
+    "is_technical_error": false,
+    "is_unhappy_customer": false,
+    "error_category": "NONE",
+    "analysis": {
+      "technical_error": false,
+      "unhappy_customer": false,
+      "error_category": "NONE",
+      "summary": "Analysis failed due to API error.",
+      "recommended_products": [],
+      "topics_discussed": [],
+      "sentiment_score": 5,
+      "purchase_intent": false,
+      "primary_intent": "General"
+    }
+  },
+  {
+    "id": "BEPk2oyBsMLvl9X",
+    "date": "2026-01-16 18:49:30",
+    "is_technical_error": false,
+    "is_unhappy_customer": false,
+    "error_category": "NONE",
+    "analysis": {
+      "technical_error": false,
+      "unhappy_customer": false,
+      "error_category": "NONE",
+      "summary": "Analysis failed due to API error.",
+      "recommended_products": [],
+      "topics_discussed": [],
+      "sentiment_score": 5,
+      "purchase_intent": false,
+      "primary_intent": "General"
+    }
+  },
+  {
+    "id": "drrOHdxVIoWJbwp",
+    "date": "2026-01-16 18:46:26",
+    "is_technical_error": false,
+    "is_unhappy_customer": false,
+    "error_category": "NONE",
+    "analysis": {
+      "technical_error": false,
+      "unhappy_customer": false,
+      "error_category": "NONE",
+      "summary": "Analysis failed due to API error.",
+      "recommended_products": [],
+      "topics_discussed": [],
+      "sentiment_score": 5,
+      "purchase_intent": false,
+      "primary_intent": "General"
+    }
+  },
+  {
+    "id": "PtQVxyFc0jmnwTo",
+    "date": "2026-01-16 16:40:51",
+    "is_technical_error": false,
+    "is_unhappy_customer": false,
+    "error_category": "NONE",
+    "analysis": {
+      "technical_error": false,
+      "unhappy_customer": false,
+      "error_category": "NONE",
+      "summary": "Analysis failed due to API error.",
+      "recommended_products": [],
+      "topics_discussed": [],
+      "sentiment_score": 5,
+      "purchase_intent": false,
+      "primary_intent": "General"
+    }
+  },
+  {
+    "id": "KxTOn0C6br5WJJL",
+    "date": "2026-01-16 15:57:18",
+    "is_technical_error": false,
+    "is_unhappy_customer": false,
+    "error_category": "NONE",
+    "analysis": {
+      "technical_error": false,
+      "unhappy_customer": false,
+      "error_category": "NONE",
+      "summary": "Analysis failed due to API error.",
+      "recommended_products": [],
+      "topics_discussed": [],
+      "sentiment_score": 5,
+      "purchase_intent": false,
+      "primary_intent": "General"
+    }
+  },
+  {
+    "id": "quAFVhfaLPZZCwO",
+    "date": "2026-01-16 15:53:09",
+    "is_technical_error": false,
+    "is_unhappy_customer": false,
+    "error_category": "NONE",
+    "analysis": {
+      "technical_error": false,
+      "unhappy_customer": false,
+      "error_category": "NONE",
+      "summary": "Analysis failed due to API error.",
+      "recommended_products": [],
+      "topics_discussed": [],
+      "sentiment_score": 5,
+      "purchase_intent": false,
+      "primary_intent": "General"
+    }
+  },
+  {
+    "id": "KzZAyzYtFQSiOKd",
+    "date": "2026-01-15 20:31:26",
+    "is_technical_error": false,
+    "is_unhappy_customer": false,
+    "error_category": "NONE",
+    "analysis": {
+      "technical_error": false,
+      "unhappy_customer": false,
+      "error_category": "NONE",
+      "summary": "Analysis failed due to API error.",
+      "recommended_products": [],
+      "topics_discussed": [],
+      "sentiment_score": 5,
+      "purchase_intent": false,
+      "primary_intent": "General"
+    }
+  },
+  {
+    "id": "UxEDqf7ekmRe4JB",
+    "date": "2026-01-15 05:50:35",
+    "is_technical_error": false,
+    "is_unhappy_customer": false,
+    "error_category": "NONE",
+    "analysis": {
+      "technical_error": false,
+      "unhappy_customer": false,
+      "error_category": "NONE",
+      "summary": "Analysis failed due to API error.",
+      "recommended_products": [],
+      "topics_discussed": [],
+      "sentiment_score": 5,
+      "purchase_intent": false,
+      "primary_intent": "General"
+    }
+  },
+  {
+    "id": "RVdcC9NPyRxSqpW",
+    "date": "2026-01-15 05:29:53",
+    "is_technical_error": false,
+    "is_unhappy_customer": false,
+    "error_category": "NONE",
+    "analysis": {
+      "technical_error": false,
+      "unhappy_customer": false,
+      "error_category": "NONE",
+      "summary": "Analysis failed due to API error.",
+      "recommended_products": [],
+      "topics_discussed": [],
+      "sentiment_score": 5,
+      "purchase_intent": false,
+      "primary_intent": "General"
+    }
+  },
+  {
+    "id": "TbIhQAADj5CRGHj",
+    "date": "2026-01-14 21:23:50",
+    "is_technical_error": false,
+    "is_unhappy_customer": false,
+    "error_category": "NONE",
+    "analysis": {
+      "technical_error": false,
+      "unhappy_customer": false,
+      "error_category": "NONE",
+      "summary": "Analysis failed due to API error.",
+      "recommended_products": [],
+      "topics_discussed": [],
+      "sentiment_score": 5,
+      "purchase_intent": false,
+      "primary_intent": "General"
+    }
+  },
+  {
+    "id": "J22tAQ9RaXIGo4j",
+    "date": "2026-01-14 14:15:34",
+    "is_technical_error": false,
+    "is_unhappy_customer": false,
+    "error_category": "NONE",
+    "analysis": {
+      "technical_error": false,
+      "unhappy_customer": false,
+      "error_category": "NONE",
+      "summary": "Analysis failed due to API error.",
+      "recommended_products": [],
+      "topics_discussed": [],
+      "sentiment_score": 5,
+      "purchase_intent": false,
+      "primary_intent": "General"
+    }
+  },
+  {
+    "id": "43U4pEo3vUK4zA3",
+    "date": "2026-01-14 14:09:48",
+    "is_technical_error": false,
+    "is_unhappy_customer": false,
+    "error_category": "NONE",
+    "analysis": {
+      "technical_error": false,
+      "unhappy_customer": false,
+      "error_category": "NONE",
+      "summary": "Analysis failed due to API error.",
+      "recommended_products": [],
+      "topics_discussed": [],
+      "sentiment_score": 5,
+      "purchase_intent": false,
+      "primary_intent": "General"
+    }
+  },
+  {
+    "id": "9QOd1RSaUcMg9PH",
+    "date": "2026-01-13 23:34:19",
+    "is_technical_error": false,
+    "is_unhappy_customer": false,
+    "error_category": "NONE",
+    "analysis": {
+      "technical_error": false,
+      "unhappy_customer": false,
+      "error_category": "NONE",
+      "summary": "Analysis failed due to API error.",
+      "recommended_products": [],
+      "topics_discussed": [],
+      "sentiment_score": 5,
+      "purchase_intent": false,
+      "primary_intent": "General"
+    }
+  },
+  {
+    "id": "hCxPMPNGDxDN3NR",
+    "date": "2026-01-13 22:34:36",
+    "is_technical_error": false,
+    "is_unhappy_customer": false,
+    "error_category": "NONE",
+    "analysis": {
+      "technical_error": false,
+      "unhappy_customer": false,
+      "error_category": "NONE",
+      "summary": "Analysis failed due to API error.",
+      "recommended_products": [],
+      "topics_discussed": [],
+      "sentiment_score": 5,
+      "purchase_intent": false,
+      "primary_intent": "General"
+    }
+  },
+  {
+    "id": "t4wqqdau0K9IcpW",
+    "date": "2026-01-13 19:23:34",
+    "is_technical_error": false,
+    "is_unhappy_customer": false,
+    "error_category": "NONE",
+    "analysis": {
+      "technical_error": false,
+      "unhappy_customer": false,
+      "error_category": "NONE",
+      "summary": "Analysis failed due to API error.",
+      "recommended_products": [],
+      "topics_discussed": [],
+      "sentiment_score": 5,
+      "purchase_intent": false,
+      "primary_intent": "General"
+    }
+  },
+  {
+    "id": "LGuhGrZ7WG2jo24",
+    "date": "2026-01-13 17:02:32",
+    "is_technical_error": false,
+    "is_unhappy_customer": false,
+    "error_category": "NONE",
+    "analysis": {
+      "technical_error": false,
+      "unhappy_customer": false,
+      "error_category": "NONE",
+      "summary": "Analysis failed due to API error.",
+      "recommended_products": [],
+      "topics_discussed": [],
+      "sentiment_score": 5,
+      "purchase_intent": false,
+      "primary_intent": "General"
+    }
+  },
+  {
+    "id": "q1uGH71y8hr3FBC",
+    "date": "2026-01-13 14:57:17",
+    "is_technical_error": false,
+    "is_unhappy_customer": false,
+    "error_category": "NONE",
+    "analysis": {
+      "technical_error": false,
+      "unhappy_customer": false,
+      "error_category": "NONE",
+      "summary": "Analysis failed due to API error.",
+      "recommended_products": [],
+      "topics_discussed": [],
+      "sentiment_score": 5,
+      "purchase_intent": false,
+      "primary_intent": "General"
+    }
+  },
+  {
+    "id": "PAsKpSFTF7NoYJ1",
+    "date": "2026-01-13 14:53:03",
+    "is_technical_error": false,
+    "is_unhappy_customer": false,
+    "error_category": "NONE",
+    "analysis": {
+      "technical_error": false,
+      "unhappy_customer": false,
+      "error_category": "NONE",
+      "summary": "Analysis failed due to API error.",
+      "recommended_products": [],
+      "topics_discussed": [],
+      "sentiment_score": 5,
+      "purchase_intent": false,
+      "primary_intent": "General"
+    }
+  },
+  {
+    "id": "y6mHR5Tic0GIPsF",
+    "date": "2026-01-12 02:31:34",
+    "is_technical_error": false,
+    "is_unhappy_customer": false,
+    "error_category": "NONE",
+    "analysis": {
+      "technical_error": false,
+      "unhappy_customer": false,
+      "error_category": "NONE",
+      "summary": "Analysis failed due to API error.",
+      "recommended_products": [],
+      "topics_discussed": [],
+      "sentiment_score": 5,
+      "purchase_intent": false,
+      "primary_intent": "General"
+    }
+  },
+  {
+    "id": "U3gR4WatP57lTh7",
+    "date": "2026-01-12 02:30:35",
+    "is_technical_error": false,
+    "is_unhappy_customer": false,
+    "error_category": "NONE",
+    "analysis": {
+      "technical_error": false,
+      "unhappy_customer": false,
+      "error_category": "NONE",
+      "summary": "Analysis failed due to API error.",
+      "recommended_products": [],
+      "topics_discussed": [],
+      "sentiment_score": 5,
+      "purchase_intent": false,
+      "primary_intent": "General"
+    }
+  },
+  {
+    "id": "yWc2R3uANYzTDgz",
+    "date": "2026-01-12 02:28:29",
+    "is_technical_error": false,
+    "is_unhappy_customer": false,
+    "error_category": "NONE",
+    "analysis": {
+      "technical_error": false,
+      "unhappy_customer": false,
+      "error_category": "NONE",
+      "summary": "Analysis failed due to API error.",
+      "recommended_products": [],
+      "topics_discussed": [],
+      "sentiment_score": 5,
+      "purchase_intent": false,
+      "primary_intent": "General"
+    }
+  },
+  {
+    "id": "YrtQQdKDeNSk3LY",
+    "date": "2026-01-11 22:42:23",
+    "is_technical_error": false,
+    "is_unhappy_customer": false,
+    "error_category": "NONE",
+    "analysis": {
+      "technical_error": false,
+      "unhappy_customer": false,
+      "error_category": "NONE",
+      "summary": "Analysis failed due to API error.",
+      "recommended_products": [],
+      "topics_discussed": [],
+      "sentiment_score": 5,
+      "purchase_intent": false,
+      "primary_intent": "General"
+    }
+  },
+  {
+    "id": "SSYX61Negyr4khc",
+    "date": "2026-01-11 20:47:59",
+    "is_technical_error": false,
+    "is_unhappy_customer": false,
+    "error_category": "NONE",
+    "analysis": {
+      "technical_error": false,
+      "unhappy_customer": false,
+      "error_category": "NONE",
+      "summary": "Analysis failed due to API error.",
+      "recommended_products": [],
+      "topics_discussed": [],
+      "sentiment_score": 5,
+      "purchase_intent": false,
+      "primary_intent": "General"
+    }
+  },
+  {
+    "id": "TPv1dXUWSUfqzgz",
+    "date": "2026-01-11 19:51:57",
+    "is_technical_error": false,
+    "is_unhappy_customer": false,
+    "error_category": "NONE",
+    "analysis": {
+      "technical_error": false,
+      "unhappy_customer": false,
+      "error_category": "NONE",
+      "summary": "Analysis failed due to API error.",
+      "recommended_products": [],
+      "topics_discussed": [],
+      "sentiment_score": 5,
+      "purchase_intent": false,
+      "primary_intent": "General"
+    }
+  },
+  {
+    "id": "TRp0MwvM6Ty0OKS",
+    "date": "2026-01-11 17:41:19",
+    "is_technical_error": false,
+    "is_unhappy_customer": false,
+    "error_category": "NONE",
+    "analysis": {
+      "technical_error": false,
+      "unhappy_customer": false,
+      "error_category": "NONE",
+      "summary": "Analysis failed due to API error.",
+      "recommended_products": [],
+      "topics_discussed": [],
+      "sentiment_score": 5,
+      "purchase_intent": false,
+      "primary_intent": "General"
+    }
+  },
+  {
+    "id": "XRLLc1uH7EjNzR6",
+    "date": "2026-01-11 17:37:26",
+    "is_technical_error": false,
+    "is_unhappy_customer": false,
+    "error_category": "NONE",
+    "analysis": {
+      "technical_error": false,
+      "unhappy_customer": false,
+      "error_category": "NONE",
+      "summary": "Analysis failed due to API error.",
+      "recommended_products": [],
+      "topics_discussed": [],
+      "sentiment_score": 5,
+      "purchase_intent": false,
+      "primary_intent": "General"
+    }
+  },
+  {
+    "id": "Frwq6uRHlSCg6tB",
+    "date": "2026-01-11 17:34:41",
+    "is_technical_error": false,
+    "is_unhappy_customer": false,
+    "error_category": "NONE",
+    "analysis": {
+      "technical_error": false,
+      "unhappy_customer": false,
+      "error_category": "NONE",
+      "summary": "Analysis failed due to API error.",
+      "recommended_products": [],
+      "topics_discussed": [],
+      "sentiment_score": 5,
+      "purchase_intent": false,
+      "primary_intent": "General"
+    }
+  },
+  {
+    "id": "EbDscSV6vquxVI9",
+    "date": "2026-01-11 17:26:09",
+    "is_technical_error": false,
+    "is_unhappy_customer": false,
+    "error_category": "NONE",
+    "analysis": {
+      "technical_error": false,
+      "unhappy_customer": false,
+      "error_category": "NONE",
+      "summary": "Analysis failed due to API error.",
+      "recommended_products": [],
+      "topics_discussed": [],
+      "sentiment_score": 5,
+      "purchase_intent": false,
+      "primary_intent": "General"
+    }
+  },
+  {
+    "id": "pMNl81SxoUthvWN",
+    "date": "2026-01-11 03:12:16",
+    "is_technical_error": false,
+    "is_unhappy_customer": false,
+    "error_category": "NONE",
+    "analysis": {
+      "technical_error": false,
+      "unhappy_customer": false,
+      "error_category": "NONE",
+      "summary": "Analysis failed due to API error.",
+      "recommended_products": [],
+      "topics_discussed": [],
+      "sentiment_score": 5,
+      "purchase_intent": false,
+      "primary_intent": "General"
+    }
+  },
+  {
+    "id": "CZsI89Cm2wRbsLU",
+    "date": "2026-01-11 01:15:35",
+    "is_technical_error": false,
+    "is_unhappy_customer": false,
+    "error_category": "NONE",
+    "analysis": {
+      "technical_error": false,
+      "unhappy_customer": false,
+      "error_category": "NONE",
+      "summary": "Analysis failed due to API error.",
+      "recommended_products": [],
+      "topics_discussed": [],
+      "sentiment_score": 5,
+      "purchase_intent": false,
+      "primary_intent": "General"
+    }
+  },
+  {
+    "id": "oen2VPiYXWJFctP",
+    "date": "2026-01-11 01:13:53",
+    "is_technical_error": false,
+    "is_unhappy_customer": false,
+    "error_category": "NONE",
+    "analysis": {
+      "technical_error": false,
+      "unhappy_customer": false,
+      "error_category": "NONE",
+      "summary": "Analysis failed due to API error.",
+      "recommended_products": [],
+      "topics_discussed": [],
+      "sentiment_score": 5,
+      "purchase_intent": false,
+      "primary_intent": "General"
+    }
+  },
+  {
+    "id": "pZWE8vzcpxIClHo",
+    "date": "2026-01-10 22:34:19",
+    "is_technical_error": false,
+    "is_unhappy_customer": false,
+    "error_category": "NONE",
+    "analysis": {
+      "technical_error": false,
+      "unhappy_customer": false,
+      "error_category": "NONE",
+      "summary": "Analysis failed due to API error.",
+      "recommended_products": [],
+      "topics_discussed": [],
+      "sentiment_score": 5,
+      "purchase_intent": false,
+      "primary_intent": "General"
+    }
+  },
+  {
+    "id": "B4ck3lBsuMDi4k4",
+    "date": "2026-01-10 20:40:40",
+    "is_technical_error": false,
+    "is_unhappy_customer": false,
+    "error_category": "NONE",
+    "analysis": {
+      "technical_error": false,
+      "unhappy_customer": false,
+      "error_category": "NONE",
+      "summary": "Analysis failed due to API error.",
+      "recommended_products": [],
+      "topics_discussed": [],
+      "sentiment_score": 5,
+      "purchase_intent": false,
+      "primary_intent": "General"
+    }
+  },
+  {
+    "id": "QeQ8tvNDu0Q5Fuz",
+    "date": "2026-01-10 20:29:56",
+    "is_technical_error": false,
+    "is_unhappy_customer": false,
+    "error_category": "NONE",
+    "analysis": {
+      "technical_error": false,
+      "unhappy_customer": false,
+      "error_category": "NONE",
+      "summary": "Analysis failed due to API error.",
+      "recommended_products": [],
+      "topics_discussed": [],
+      "sentiment_score": 5,
+      "purchase_intent": false,
+      "primary_intent": "General"
+    }
+  },
+  {
+    "id": "9S5KZK0uvP0LVEH",
+    "date": "2026-01-10 19:11:57",
+    "is_technical_error": false,
+    "is_unhappy_customer": false,
+    "error_category": "NONE",
+    "analysis": {
+      "technical_error": false,
+      "unhappy_customer": false,
+      "error_category": "NONE",
+      "summary": "Analysis failed due to API error.",
+      "recommended_products": [],
+      "topics_discussed": [],
+      "sentiment_score": 5,
+      "purchase_intent": false,
+      "primary_intent": "General"
+    }
+  },
+  {
+    "id": "uo0OyTHa6ldMvyX",
+    "date": "2026-01-10 18:38:07",
+    "is_technical_error": false,
+    "is_unhappy_customer": false,
+    "error_category": "NONE",
+    "analysis": {
+      "technical_error": false,
+      "unhappy_customer": false,
+      "error_category": "NONE",
+      "summary": "Analysis failed due to API error.",
+      "recommended_products": [],
+      "topics_discussed": [],
+      "sentiment_score": 5,
+      "purchase_intent": false,
+      "primary_intent": "General"
+    }
+  },
+  {
+    "id": "qbjV7vZ1mgifUHe",
+    "date": "2026-01-10 18:14:26",
+    "is_technical_error": false,
+    "is_unhappy_customer": false,
+    "error_category": "NONE",
+    "analysis": {
+      "technical_error": false,
+      "unhappy_customer": false,
+      "error_category": "NONE",
+      "summary": "Analysis failed due to API error.",
+      "recommended_products": [],
+      "topics_discussed": [],
+      "sentiment_score": 5,
+      "purchase_intent": false,
+      "primary_intent": "General"
+    }
+  },
+  {
+    "id": "O3HrB4Pa7b4cTIJ",
+    "date": "2026-01-10 17:27:45",
+    "is_technical_error": false,
+    "is_unhappy_customer": false,
+    "error_category": "NONE",
+    "analysis": {
+      "technical_error": false,
+      "unhappy_customer": false,
+      "error_category": "NONE",
+      "summary": "Analysis failed due to API error.",
+      "recommended_products": [],
+      "topics_discussed": [],
+      "sentiment_score": 5,
+      "purchase_intent": false,
+      "primary_intent": "General"
+    }
+  },
+  {
+    "id": "5HwIaNepZ3OijVL",
+    "date": "2026-01-10 15:23:01",
+    "is_technical_error": false,
+    "is_unhappy_customer": false,
+    "error_category": "NONE",
+    "analysis": {
+      "technical_error": false,
+      "unhappy_customer": false,
+      "error_category": "NONE",
+      "summary": "Analysis failed due to API error.",
+      "recommended_products": [],
+      "topics_discussed": [],
+      "sentiment_score": 5,
+      "purchase_intent": false,
+      "primary_intent": "General"
+    }
+  },
+  {
+    "id": "zuTM00s9jRcMEf0",
+    "date": "2026-01-10 15:21:35",
+    "is_technical_error": false,
+    "is_unhappy_customer": false,
+    "error_category": "NONE",
+    "analysis": {
+      "technical_error": false,
+      "unhappy_customer": false,
+      "error_category": "NONE",
+      "summary": "Analysis failed due to API error.",
+      "recommended_products": [],
+      "topics_discussed": [],
+      "sentiment_score": 5,
+      "purchase_intent": false,
+      "primary_intent": "General"
+    }
+  },
+  {
+    "id": "GslV6HJQuW38Z1r",
+    "date": "2026-01-10 14:37:07",
+    "is_technical_error": false,
+    "is_unhappy_customer": false,
+    "error_category": "NONE",
+    "analysis": {
+      "technical_error": false,
+      "unhappy_customer": false,
+      "error_category": "NONE",
+      "summary": "Analysis failed due to API error.",
+      "recommended_products": [],
+      "topics_discussed": [],
+      "sentiment_score": 5,
+      "purchase_intent": false,
+      "primary_intent": "General"
+    }
+  },
+  {
+    "id": "ZB6GXoqpggCYG7r",
+    "date": "2026-01-10 14:36:29",
+    "is_technical_error": false,
+    "is_unhappy_customer": false,
+    "error_category": "NONE",
+    "analysis": {
+      "technical_error": false,
+      "unhappy_customer": false,
+      "error_category": "NONE",
+      "summary": "Analysis failed due to API error.",
+      "recommended_products": [],
+      "topics_discussed": [],
+      "sentiment_score": 5,
+      "purchase_intent": false,
+      "primary_intent": "General"
+    }
+  },
+  {
+    "id": "0XI7yKriAU7OmUl",
+    "date": "2026-01-10 00:44:51",
+    "is_technical_error": false,
+    "is_unhappy_customer": false,
+    "error_category": "NONE",
+    "analysis": {
+      "technical_error": false,
+      "unhappy_customer": false,
+      "error_category": "NONE",
+      "summary": "Analysis failed due to API error.",
+      "recommended_products": [],
+      "topics_discussed": [],
+      "sentiment_score": 5,
+      "purchase_intent": false,
+      "primary_intent": "General"
+    }
+  },
+  {
+    "id": "FmQlHhfH9r2Kblh",
+    "date": "2026-01-10 00:12:26",
+    "is_technical_error": false,
+    "is_unhappy_customer": false,
+    "error_category": "NONE",
+    "analysis": {
+      "technical_error": false,
+      "unhappy_customer": false,
+      "error_category": "NONE",
+      "summary": "Analysis failed due to API error.",
+      "recommended_products": [],
+      "topics_discussed": [],
+      "sentiment_score": 5,
+      "purchase_intent": false,
+      "primary_intent": "General"
+    }
+  },
+  {
+    "id": "kI5FOhZcUkmf1yK",
+    "date": "2026-01-09 21:49:51",
+    "is_technical_error": false,
+    "is_unhappy_customer": false,
+    "error_category": "NONE",
+    "analysis": {
+      "technical_error": false,
+      "unhappy_customer": false,
+      "error_category": "NONE",
+      "summary": "Analysis failed due to API error.",
+      "recommended_products": [],
+      "topics_discussed": [],
+      "sentiment_score": 5,
+      "purchase_intent": false,
+      "primary_intent": "General"
+    }
+  },
+  {
+    "id": "RexTn8RJrCQDX64",
+    "date": "2026-01-09 21:46:29",
+    "is_technical_error": false,
+    "is_unhappy_customer": false,
+    "error_category": "NONE",
+    "analysis": {
+      "technical_error": false,
+      "unhappy_customer": false,
+      "error_category": "NONE",
+      "summary": "Analysis failed due to API error.",
+      "recommended_products": [],
+      "topics_discussed": [],
+      "sentiment_score": 5,
+      "purchase_intent": false,
+      "primary_intent": "General"
+    }
+  },
+  {
+    "id": "zYLISbOXFGp1N5M",
+    "date": "2026-01-09 21:33:19",
+    "is_technical_error": false,
+    "is_unhappy_customer": false,
+    "error_category": "NONE",
+    "analysis": {
+      "technical_error": false,
+      "unhappy_customer": false,
+      "error_category": "NONE",
+      "summary": "Analysis failed due to API error.",
+      "recommended_products": [],
+      "topics_discussed": [],
+      "sentiment_score": 5,
+      "purchase_intent": false,
+      "primary_intent": "General"
+    }
+  },
+  {
+    "id": "kwswZ4x8pcbh4ut",
+    "date": "2026-01-09 16:12:22",
+    "is_technical_error": false,
+    "is_unhappy_customer": false,
+    "error_category": "NONE",
+    "analysis": {
+      "technical_error": false,
+      "unhappy_customer": false,
+      "error_category": "NONE",
+      "summary": "Analysis failed due to API error.",
+      "recommended_products": [],
+      "topics_discussed": [],
+      "sentiment_score": 5,
+      "purchase_intent": false,
+      "primary_intent": "General"
+    }
+  },
+  {
+    "id": "SEnSpO3j4AKm0nZ",
+    "date": "2026-01-09 14:46:10",
+    "is_technical_error": false,
+    "is_unhappy_customer": false,
+    "error_category": "NONE",
+    "analysis": {
+      "technical_error": false,
+      "unhappy_customer": false,
+      "error_category": "NONE",
+      "summary": "Analysis failed due to API error.",
+      "recommended_products": [],
+      "topics_discussed": [],
+      "sentiment_score": 5,
+      "purchase_intent": false,
+      "primary_intent": "General"
+    }
+  },
+  {
+    "id": "VZqLrL0Qrg4wbkR",
+    "date": "2026-01-09 14:33:34",
+    "is_technical_error": false,
+    "is_unhappy_customer": false,
+    "error_category": "NONE",
+    "analysis": {
+      "technical_error": false,
+      "unhappy_customer": false,
+      "error_category": "NONE",
+      "summary": "Analysis failed due to API error.",
+      "recommended_products": [],
+      "topics_discussed": [],
+      "sentiment_score": 5,
+      "purchase_intent": false,
+      "primary_intent": "General"
+    }
+  },
+  {
+    "id": "qIOWxLasLVDu0Et",
+    "date": "2026-01-09 05:05:43",
+    "is_technical_error": false,
+    "is_unhappy_customer": false,
+    "error_category": "NONE",
+    "analysis": {
+      "technical_error": false,
+      "unhappy_customer": false,
+      "error_category": "NONE",
+      "summary": "Analysis failed due to API error.",
+      "recommended_products": [],
+      "topics_discussed": [],
+      "sentiment_score": 5,
+      "purchase_intent": false,
+      "primary_intent": "General"
+    }
+  },
+  {
+    "id": "toV22CMvk04IWQE",
+    "date": "2026-01-09 05:04:20",
+    "is_technical_error": false,
+    "is_unhappy_customer": false,
+    "error_category": "NONE",
+    "analysis": {
+      "technical_error": false,
+      "unhappy_customer": false,
+      "error_category": "NONE",
+      "summary": "Analysis failed due to API error.",
+      "recommended_products": [],
+      "topics_discussed": [],
+      "sentiment_score": 5,
+      "purchase_intent": false,
+      "primary_intent": "General"
+    }
+  },
+  {
+    "id": "07LqjKf7nW8ARol",
+    "date": "2026-01-09 02:36:11",
+    "is_technical_error": false,
+    "is_unhappy_customer": false,
+    "error_category": "NONE",
+    "analysis": {
+      "technical_error": false,
+      "unhappy_customer": false,
+      "error_category": "NONE",
+      "summary": "Analysis failed due to API error.",
+      "recommended_products": [],
+      "topics_discussed": [],
+      "sentiment_score": 5,
+      "purchase_intent": false,
+      "primary_intent": "General"
+    }
+  },
+  {
+    "id": "DRwtArcblsHjmFP",
+    "date": "2026-01-09 01:18:39",
+    "is_technical_error": false,
+    "is_unhappy_customer": false,
+    "error_category": "NONE",
+    "analysis": {
+      "technical_error": false,
+      "unhappy_customer": false,
+      "error_category": "NONE",
+      "summary": "Analysis failed due to API error.",
+      "recommended_products": [],
+      "topics_discussed": [],
+      "sentiment_score": 5,
+      "purchase_intent": false,
+      "primary_intent": "General"
+    }
+  },
+  {
+    "id": "RR6qNIveIcWXaO3",
+    "date": "2026-01-08 18:35:40",
+    "is_technical_error": false,
+    "is_unhappy_customer": false,
+    "error_category": "NONE",
+    "analysis": {
+      "technical_error": false,
+      "unhappy_customer": false,
+      "error_category": "NONE",
+      "summary": "Analysis failed due to API error.",
+      "recommended_products": [],
+      "topics_discussed": [],
+      "sentiment_score": 5,
+      "purchase_intent": false,
+      "primary_intent": "General"
+    }
+  },
+  {
+    "id": "ZHeyCZetmK6Uwjq",
+    "date": "2026-01-08 16:07:36",
+    "is_technical_error": false,
+    "is_unhappy_customer": false,
+    "error_category": "NONE",
+    "analysis": {
+      "technical_error": false,
+      "unhappy_customer": false,
+      "error_category": "NONE",
+      "summary": "Analysis failed due to API error.",
+      "recommended_products": [],
+      "topics_discussed": [],
+      "sentiment_score": 5,
+      "purchase_intent": false,
+      "primary_intent": "General"
+    }
+  },
+  {
+    "id": "KM3WdQLhIipVRjG",
+    "date": "2026-01-08 13:44:20",
+    "is_technical_error": false,
+    "is_unhappy_customer": false,
+    "error_category": "NONE",
+    "analysis": {
+      "technical_error": false,
+      "unhappy_customer": false,
+      "error_category": "NONE",
+      "summary": "Analysis failed due to API error.",
+      "recommended_products": [],
+      "topics_discussed": [],
+      "sentiment_score": 5,
+      "purchase_intent": false,
+      "primary_intent": "General"
+    }
+  },
+  {
+    "id": "Jp2Pes7CWXPuOLR",
+    "date": "2026-01-08 05:00:17",
+    "is_technical_error": false,
+    "is_unhappy_customer": false,
+    "error_category": "NONE",
+    "analysis": {
+      "technical_error": false,
+      "unhappy_customer": false,
+      "error_category": "NONE",
+      "summary": "Analysis failed due to API error.",
+      "recommended_products": [],
+      "topics_discussed": [],
+      "sentiment_score": 5,
+      "purchase_intent": false,
+      "primary_intent": "General"
+    }
+  },
+  {
+    "id": "gq62LPuTzVJ6Wu9",
+    "date": "2026-01-08 02:42:29",
+    "is_technical_error": false,
+    "is_unhappy_customer": false,
+    "error_category": "NONE",
+    "analysis": {
+      "technical_error": false,
+      "unhappy_customer": false,
+      "error_category": "NONE",
+      "summary": "Analysis failed due to API error.",
+      "recommended_products": [],
+      "topics_discussed": [],
+      "sentiment_score": 5,
+      "purchase_intent": false,
+      "primary_intent": "General"
+    }
+  },
+  {
+    "id": "9K9aUCUIDr3aamg",
+    "date": "2026-01-08 02:41:53",
+    "is_technical_error": false,
+    "is_unhappy_customer": false,
+    "error_category": "NONE",
+    "analysis": {
+      "technical_error": false,
+      "unhappy_customer": false,
+      "error_category": "NONE",
+      "summary": "Analysis failed due to API error.",
+      "recommended_products": [],
+      "topics_discussed": [],
+      "sentiment_score": 5,
+      "purchase_intent": false,
+      "primary_intent": "General"
+    }
+  },
+  {
+    "id": "tDB35F5QTb3m2Dq",
+    "date": "2026-01-08 02:34:35",
+    "is_technical_error": false,
+    "is_unhappy_customer": false,
+    "error_category": "NONE",
+    "analysis": {
+      "technical_error": false,
+      "unhappy_customer": false,
+      "error_category": "NONE",
+      "summary": "Analysis failed due to API error.",
+      "recommended_products": [],
+      "topics_discussed": [],
+      "sentiment_score": 5,
+      "purchase_intent": false,
+      "primary_intent": "General"
+    }
+  },
+  {
+    "id": "UUL7uRi3yz8vIGH",
+    "date": "2026-01-08 01:31:04",
+    "is_technical_error": false,
+    "is_unhappy_customer": false,
+    "error_category": "NONE",
+    "analysis": {
+      "technical_error": false,
+      "unhappy_customer": false,
+      "error_category": "NONE",
+      "summary": "Analysis failed due to API error.",
+      "recommended_products": [],
+      "topics_discussed": [],
+      "sentiment_score": 5,
+      "purchase_intent": false,
+      "primary_intent": "General"
+    }
+  },
+  {
+    "id": "aDtNOsIjnyheNpw",
+    "date": "2026-01-07 17:49:42",
+    "is_technical_error": false,
+    "is_unhappy_customer": false,
+    "error_category": "NONE",
+    "analysis": {
+      "technical_error": false,
+      "unhappy_customer": false,
+      "error_category": "NONE",
+      "summary": "Analysis failed due to API error.",
+      "recommended_products": [],
+      "topics_discussed": [],
+      "sentiment_score": 5,
+      "purchase_intent": false,
+      "primary_intent": "General"
+    }
+  },
+  {
+    "id": "GUR2UbD5qAxVLDI",
+    "date": "2026-01-07 17:41:14",
+    "is_technical_error": false,
+    "is_unhappy_customer": false,
+    "error_category": "NONE",
+    "analysis": {
+      "technical_error": false,
+      "unhappy_customer": false,
+      "error_category": "NONE",
+      "summary": "Analysis failed due to API error.",
+      "recommended_products": [],
+      "topics_discussed": [],
+      "sentiment_score": 5,
+      "purchase_intent": false,
+      "primary_intent": "General"
+    }
+  },
+  {
+    "id": "8kFUNS5BXh2qFrt",
+    "date": "2026-01-07 17:00:17",
+    "is_technical_error": false,
+    "is_unhappy_customer": false,
+    "error_category": "NONE",
+    "analysis": {
+      "technical_error": false,
+      "unhappy_customer": false,
+      "error_category": "NONE",
+      "summary": "Analysis failed due to API error.",
+      "recommended_products": [],
+      "topics_discussed": [],
+      "sentiment_score": 5,
+      "purchase_intent": false,
+      "primary_intent": "General"
+    }
+  },
+  {
+    "id": "MUbUaQCVbqrvx44",
+    "date": "2026-01-07 10:20:03",
+    "is_technical_error": false,
+    "is_unhappy_customer": false,
+    "error_category": "NONE",
+    "analysis": {
+      "technical_error": false,
+      "unhappy_customer": false,
+      "error_category": "NONE",
+      "summary": "Analysis failed due to API error.",
+      "recommended_products": [],
+      "topics_discussed": [],
+      "sentiment_score": 5,
+      "purchase_intent": false,
+      "primary_intent": "General"
+    }
+  },
+  {
+    "id": "ypVdh7wqDRxjb1d",
+    "date": "2026-01-07 04:56:32",
+    "is_technical_error": false,
+    "is_unhappy_customer": false,
+    "error_category": "NONE",
+    "analysis": {
+      "technical_error": false,
+      "unhappy_customer": false,
+      "error_category": "NONE",
+      "summary": "Analysis failed due to API error.",
+      "recommended_products": [],
+      "topics_discussed": [],
+      "sentiment_score": 5,
+      "purchase_intent": false,
+      "primary_intent": "General"
+    }
+  },
+  {
+    "id": "pzAeF1SgQZdKymr",
+    "date": "2026-01-06 21:24:48",
+    "is_technical_error": false,
+    "is_unhappy_customer": false,
+    "error_category": "NONE",
+    "analysis": {
+      "technical_error": false,
+      "unhappy_customer": false,
+      "error_category": "NONE",
+      "summary": "Analysis failed due to API error.",
+      "recommended_products": [],
+      "topics_discussed": [],
+      "sentiment_score": 5,
+      "purchase_intent": false,
+      "primary_intent": "General"
+    }
+  },
+  {
+    "id": "fOlSYN4tvtFkDtB",
+    "date": "2026-01-06 19:10:19",
+    "is_technical_error": false,
+    "is_unhappy_customer": false,
+    "error_category": "NONE",
+    "analysis": {
+      "technical_error": false,
+      "unhappy_customer": false,
+      "error_category": "NONE",
+      "summary": "Analysis failed due to API error.",
+      "recommended_products": [],
+      "topics_discussed": [],
+      "sentiment_score": 5,
+      "purchase_intent": false,
+      "primary_intent": "General"
+    }
+  },
+  {
+    "id": "DWC3a6RtcMDFi3y",
+    "date": "2026-01-06 19:06:46",
+    "is_technical_error": false,
+    "is_unhappy_customer": false,
+    "error_category": "NONE",
+    "analysis": {
+      "technical_error": false,
+      "unhappy_customer": false,
+      "error_category": "NONE",
+      "summary": "Analysis failed due to API error.",
+      "recommended_products": [],
+      "topics_discussed": [],
+      "sentiment_score": 5,
+      "purchase_intent": false,
+      "primary_intent": "General"
+    }
+  },
+  {
+    "id": "wCYaBvyx0sGPUWO",
+    "date": "2026-01-06 17:58:01",
+    "is_technical_error": false,
+    "is_unhappy_customer": false,
+    "error_category": "NONE",
+    "analysis": {
+      "technical_error": false,
+      "unhappy_customer": false,
+      "error_category": "NONE",
+      "summary": "Analysis failed due to API error.",
+      "recommended_products": [],
+      "topics_discussed": [],
+      "sentiment_score": 5,
+      "purchase_intent": false,
+      "primary_intent": "General"
+    }
+  },
+  {
+    "id": "MAQfBnSWPm4eOja",
+    "date": "2026-01-06 17:41:37",
+    "is_technical_error": false,
+    "is_unhappy_customer": false,
+    "error_category": "NONE",
+    "analysis": {
+      "technical_error": false,
+      "unhappy_customer": false,
+      "error_category": "NONE",
+      "summary": "Analysis failed due to API error.",
+      "recommended_products": [],
+      "topics_discussed": [],
+      "sentiment_score": 5,
+      "purchase_intent": false,
+      "primary_intent": "General"
+    }
+  },
+  {
+    "id": "1Yw5Ceh7azajFl3",
+    "date": "2026-01-06 16:15:04",
+    "is_technical_error": false,
+    "is_unhappy_customer": false,
+    "error_category": "NONE",
+    "analysis": {
+      "technical_error": false,
+      "unhappy_customer": false,
+      "error_category": "NONE",
+      "summary": "Analysis failed due to API error.",
+      "recommended_products": [],
+      "topics_discussed": [],
+      "sentiment_score": 5,
+      "purchase_intent": false,
+      "primary_intent": "General"
+    }
+  },
+  {
+    "id": "wAQVukQxgM80N5c",
+    "date": "2026-01-06 15:41:39",
+    "is_technical_error": false,
+    "is_unhappy_customer": false,
+    "error_category": "NONE",
+    "analysis": {
+      "technical_error": false,
+      "unhappy_customer": false,
+      "error_category": "NONE",
+      "summary": "Analysis failed due to API error.",
+      "recommended_products": [],
+      "topics_discussed": [],
+      "sentiment_score": 5,
+      "purchase_intent": false,
+      "primary_intent": "General"
+    }
+  },
+  {
+    "id": "U6l2EivMvtdqAea",
+    "date": "2026-01-06 13:26:03",
+    "is_technical_error": false,
+    "is_unhappy_customer": false,
+    "error_category": "NONE",
+    "analysis": {
+      "technical_error": false,
+      "unhappy_customer": false,
+      "error_category": "NONE",
+      "summary": "Analysis failed due to API error.",
+      "recommended_products": [],
+      "topics_discussed": [],
+      "sentiment_score": 5,
+      "purchase_intent": false,
+      "primary_intent": "General"
+    }
+  },
+  {
+    "id": "eVbwW7xH4gz0rzg",
+    "date": "2026-01-06 11:07:30",
+    "is_technical_error": false,
+    "is_unhappy_customer": false,
+    "error_category": "NONE",
+    "analysis": {
+      "technical_error": false,
+      "unhappy_customer": false,
+      "error_category": "NONE",
+      "summary": "Analysis failed due to API error.",
+      "recommended_products": [],
+      "topics_discussed": [],
+      "sentiment_score": 5,
+      "purchase_intent": false,
+      "primary_intent": "General"
+    }
+  },
+  {
+    "id": "W9UBr2RPdVxHLqs",
+    "date": "2026-01-06 04:14:32",
+    "is_technical_error": false,
+    "is_unhappy_customer": false,
+    "error_category": "NONE",
+    "analysis": {
+      "technical_error": false,
+      "unhappy_customer": false,
+      "error_category": "NONE",
+      "summary": "Analysis failed due to API error.",
+      "recommended_products": [],
+      "topics_discussed": [],
+      "sentiment_score": 5,
+      "purchase_intent": false,
+      "primary_intent": "General"
+    }
+  },
+  {
+    "id": "xACFZmzCgzbE3tC",
+    "date": "2026-01-06 02:04:28",
+    "is_technical_error": false,
+    "is_unhappy_customer": false,
+    "error_category": "NONE",
+    "analysis": {
+      "technical_error": false,
+      "unhappy_customer": false,
+      "error_category": "NONE",
+      "summary": "Analysis failed due to API error.",
+      "recommended_products": [],
+      "topics_discussed": [],
+      "sentiment_score": 5,
+      "purchase_intent": false,
+      "primary_intent": "General"
+    }
+  },
+  {
+    "id": "9XqED3LzWxoT0aW",
+    "date": "2026-01-05 18:43:00",
+    "is_technical_error": false,
+    "is_unhappy_customer": false,
+    "error_category": "NONE",
+    "analysis": {
+      "technical_error": false,
+      "unhappy_customer": false,
+      "error_category": "NONE",
+      "summary": "Analysis failed due to API error.",
+      "recommended_products": [],
+      "topics_discussed": [],
+      "sentiment_score": 5,
+      "purchase_intent": false,
+      "primary_intent": "General"
+    }
+  },
+  {
+    "id": "ibn6UHJTlgDcd49",
+    "date": "2026-01-05 17:34:05",
+    "is_technical_error": false,
+    "is_unhappy_customer": false,
+    "error_category": "NONE",
+    "analysis": {
+      "technical_error": false,
+      "unhappy_customer": false,
+      "error_category": "NONE",
+      "summary": "Analysis failed due to API error.",
+      "recommended_products": [],
+      "topics_discussed": [],
+      "sentiment_score": 5,
+      "purchase_intent": false,
+      "primary_intent": "General"
+    }
+  },
+  {
+    "id": "nPc6SNEACtHFoYA",
+    "date": "2026-01-05 04:19:33",
+    "is_technical_error": false,
+    "is_unhappy_customer": false,
+    "error_category": "NONE",
+    "analysis": {
+      "technical_error": false,
+      "unhappy_customer": false,
+      "error_category": "NONE",
+      "summary": "Analysis failed due to API error.",
+      "recommended_products": [],
+      "topics_discussed": [],
+      "sentiment_score": 5,
+      "purchase_intent": false,
+      "primary_intent": "General"
+    }
+  },
+  {
+    "id": "lL6Ndf8M2ntzrPR",
+    "date": "2026-01-05 01:24:01",
+    "is_technical_error": false,
+    "is_unhappy_customer": false,
+    "error_category": "NONE",
+    "analysis": {
+      "technical_error": false,
+      "unhappy_customer": false,
+      "error_category": "NONE",
+      "summary": "Analysis failed due to API error.",
+      "recommended_products": [],
+      "topics_discussed": [],
+      "sentiment_score": 5,
+      "purchase_intent": false,
+      "primary_intent": "General"
+    }
+  },
+  {
+    "id": "vrDIvAYK5iVjtay",
+    "date": "2026-01-01 01:49:25",
+    "is_technical_error": false,
+    "is_unhappy_customer": false,
+    "error_category": "NONE",
+    "analysis": {
+      "technical_error": false,
+      "unhappy_customer": false,
+      "error_category": "NONE",
+      "summary": "Analysis failed due to API error.",
+      "recommended_products": [],
+      "topics_discussed": [],
+      "sentiment_score": 5,
+      "purchase_intent": false,
+      "primary_intent": "General"
+    }
+  },
+  {
+    "id": "lttSnhZUcC2AReE",
+    "date": "2026-01-01 01:45:48",
+    "is_technical_error": false,
+    "is_unhappy_customer": false,
+    "error_category": "NONE",
+    "analysis": {
+      "technical_error": false,
+      "unhappy_customer": false,
+      "error_category": "NONE",
+      "summary": "Analysis failed due to API error.",
+      "recommended_products": [],
+      "topics_discussed": [],
+      "sentiment_score": 5,
+      "purchase_intent": false,
+      "primary_intent": "General"
+    }
+  },
+  {
+    "id": "exHduFUb5GSQwu9",
+    "date": "2026-01-01 00:52:43",
+    "is_technical_error": false,
+    "is_unhappy_customer": false,
+    "error_category": "NONE",
+    "analysis": {
+      "technical_error": false,
+      "unhappy_customer": false,
+      "error_category": "NONE",
+      "summary": "Analysis failed due to API error.",
+      "recommended_products": [],
+      "topics_discussed": [],
+      "sentiment_score": 5,
+      "purchase_intent": false,
+      "primary_intent": "General"
+    }
+  }
+]

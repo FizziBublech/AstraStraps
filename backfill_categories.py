@@ -33,7 +33,7 @@ def classify_issue(analysis_text):
     Analyze the following issue summary and classify the error.
     
     Return the result in this exact format:
-    CATEGORY: [One of: SYSTEM, LOGIC, DATA, UI, NLU, OTHER]
+    CATEGORY: [One of: SYSTEM, LOGIC, DATA, UI, NLU, PRODUCT_DATABASE, LLM_NETWORK, OTHER]
     TAG: [A short, specific 2-4 word tag describing the specific error, e.g., "Database Timeout", "Looping", "Validation Failed"]
     
     If there is no technical error mentioned, return:

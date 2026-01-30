@@ -29,6 +29,8 @@
             <canvas id="errorTimeline"></canvas>
         </div>
 
+        <div id="summary-container"></div>
+
         <div id="dashboard" class="dashboard-grid">
             <!-- Cards will be injected here -->
             <div class="loading">Loading issues...</div>
@@ -40,12 +42,49 @@
 
         async function loadIssues() {
             try {
-                const response = await fetch('/api/issues');
-                const issues = await response.json();
-                renderDashboard(issues);
+                // Check if Chart is available
+                if (typeof Chart === 'undefined') {
+                    console.warn('Chart.js not loaded. Timeline will be disabled.');
+                    const chartContainer = document.getElementById('errorTimeline').parentElement;
+                    if (chartContainer) {
+                        chartContainer.innerHTML =
+                            '<div class="error-msg" style="color: #f59e0b; text-align: center; padding: 2rem; border: 1px dashed #f59e0b; border-radius: 8px;">Chart.js failed to load. Check internet connection.</div>';
+                    }
+                }
+
+                const [issuesResponse, statsResponse] = await Promise.all([
+                    fetch('/api/issues'),
+                    fetch('/api/stats')
+                ]);
+
+                if (!issuesResponse.ok) throw new Error(`Issues API Error: ${issuesResponse.status}`);
+                let issues = await issuesResponse.json();
+
+                if (!Array.isArray(issues)) {
+                    throw new Error('API returned invalid data format (expected array)');
+                }
+
+                let dailyStats = {};
+                if (statsResponse.ok) {
+                    try {
+                        dailyStats = await statsResponse.json();
+                    } catch (e) {
+                        console.error('Failed to parse stats', e);
+                    }
+                } else {
+                    console.warn(`Stats API Error: ${statsResponse.status}`);
+                }
+
+                // Sort newest on top
+                issues.sort((a, b) => new Date(b.date) - new Date(a.date));
+                renderDashboard(issues, dailyStats);
             } catch (error) {
-                console.error('Error loading tracker:', error);
-                document.getElementById('dashboard').innerHTML = '<p style="grid-column: 1/-1; text-align: center; color: #ef4444;">Failed to load data from issue_tracker.json</p>';
+                console.error('Error loading data:', error);
+                document.getElementById('dashboard').innerHTML =
+                    `<p style="grid-column: 1/-1; text-align: center; color: #ef4444;">
+                        Failed to load data.<br>
+                        <small>${error.message}</small>
+                    </p>`;
             }
         }
 
@@ -53,13 +92,25 @@
             const stats = {
                 totalErrors: 0,
                 totalUnhappy: 0,
+                totalMitigated: 0,
+                totalRemediated: issues.length,
                 categories: {},
-                tags: {}
+                tags: {},
+                byDay: {}
             };
 
             issues.forEach(issue => {
                 if (issue.is_technical_error) stats.totalErrors++;
                 if (issue.is_unhappy_customer) stats.totalUnhappy++;
+                if (issue.status === 'Resolved' || issue.mitigation_notes) stats.totalMitigated++;
+
+                const day = issue.date.split(' ')[0];
+                if (!stats.byDay[day]) {
+                    stats.byDay[day] = { count: 0, errors: 0, unhappy: 0 };
+                }
+                stats.byDay[day].count++;
+                if (issue.is_technical_error) stats.byDay[day].errors++;
+                if (issue.is_unhappy_customer) stats.byDay[day].unhappy++;
 
                 const cat = issue.error_category || 'UNCATEGORIZED';
                 if (cat !== 'NONE') {
@@ -97,14 +148,22 @@
                 </div>
                 <div class="stat-card">
                     <div class="stat-value" style="color: #f59e0b">${stats.totalUnhappy}</div>
-                    <div class="stat-label">Unhappy</div>
+                    <div class="stat-label">Unhappy Customers</div>
+                </div>
+                <div class="stat-card">
+                    <div class="stat-value" style="color: var(--accent-green)">${stats.totalMitigated}</div>
+                    <div class="stat-label">Fully Mitigated</div>
                 </div>
                 ${tagHtml}
             `;
         }
 
         function renderTimeline(issues) {
-            const ctx = document.getElementById('errorTimeline').getContext('2d');
+            if (typeof Chart === 'undefined') return;
+
+            const canvas = document.getElementById('errorTimeline');
+            if (!canvas) return;
+            const ctx = canvas.getContext('2d');
 
             // Sort issues by date
             const sortedIssues = [...issues].sort((a, b) => new Date(a.date) - new Date(b.date));
@@ -121,11 +180,6 @@
                 'OTHER': '#6b7280'
             };
 
-            // Generate data points
-            // We want cumulative or daily count? Let's do cumulative count over time for each category to show trends clearly, 
-            // OR simple scatter plot of when errors happened.
-            // Scatter plot is better for specific events.
-
             categories.forEach(cat => {
                 datasets[cat] = {
                     label: cat,
@@ -141,15 +195,11 @@
             sortedIssues.forEach(issue => {
                 const cat = issue.error_category || 'OTHER';
                 if (datasets[cat]) {
-                    // Y value mostly cosmetic, just to separate them slightly or unified line?
-                    // Let's use a unified timeline where Y = 1 but stacked? No.
-                    // Let's assign an arbitrary Y index per category to separate "swimlanes"
                     const catIndex = categories.indexOf(cat);
-
                     datasets[cat].data.push({
                         x: issue.date,
                         y: catIndex + 1, // 1-based index
-                        issue: issue // custom data for tooltip
+                        issue: issue
                     });
                 }
             });
@@ -216,12 +266,52 @@
             });
         }
 
-        function renderDashboard(issues) {
-            const dashboard = document.getElementById('dashboard');
+        function renderRemediationTable(stats, dailyStats) {
+            const container = document.getElementById('summary-container');
+            const allDays = new Set([...Object.keys(stats.byDay), ...Object.keys(dailyStats)]);
+            const dayList = Array.from(allDays).sort((a, b) => new Date(b) - new Date(a));
 
-            // Calculate and render stats first
-            const stats = calculateStats(issues);
-            renderStats(stats);
+            let tableHtml = `
+                <div class="remediation-summary" style="margin-bottom: 2rem; background: var(--card-bg); border-radius: 1rem; padding: 1.5rem; border: 1px solid var(--glass-border);">
+                    <h3 style="margin-top:0; margin-bottom: 1rem; color: var(--text-primary);">Daily Remediation Summary</h3>
+                    <table style="width: 100%; border-collapse: collapse; font-size: 0.9rem;">
+                        <thead>
+                            <tr style="text-align: left; border-bottom: 1px solid var(--glass-border); color: var(--text-secondary);">
+                                <th style="padding: 0.5rem;">Date</th>
+                                <th style="padding: 0.5rem;">Total Convos</th>
+                                <th style="padding: 0.5rem;">Errors (%)</th>
+                                <th style="padding: 0.5rem;">Unhappy (%)</th>
+                            </tr>
+                        </thead>
+                        <tbody>
+                            ${dayList.map(day => {
+                const issueStats = stats.byDay[day] || { errors: 0, unhappy: 0 };
+                const total = dailyStats[day] || issueStats.count || 0;
+                const validTotal = total > 0 ? total : 1;
+                const errorPct = ((issueStats.errors / validTotal) * 100).toFixed(1);
+                const unhappyPct = ((issueStats.unhappy / validTotal) * 100).toFixed(1);
+                return `
+                                    <tr style="border-bottom: 1px solid rgba(255,255,255,0.05);">
+                                        <td style="padding: 0.5rem;">${day}</td>
+                                        <td style="padding: 0.5rem;">${total}</td>
+                                        <td style="padding: 0.5rem; color: ${issueStats.errors > 0 ? 'var(--accent-red)' : 'inherit'}">${issueStats.errors} (${errorPct}%)</td>
+                                        <td style="padding: 0.5rem; color: ${issueStats.unhappy > 0 ? '#f59e0b' : 'inherit'}">${issueStats.unhappy} (${unhappyPct}%)</td>
+                                    </tr>
+                                `;
+            }).join('')}
+                        </tbody>
+                    </table>
+                </div>
+            `;
+
+            container.innerHTML = tableHtml;
+        }
+
+        function renderDashboard(issues, dailyStats) {
+            const dashboard = document.getElementById('dashboard');
+            const localStats = calculateStats(issues);
+            renderStats(localStats);
+            renderRemediationTable(localStats, dailyStats);
             renderTimeline(issues);
 
             if (issues.length === 0) {
@@ -233,11 +323,9 @@
                 const badges = [];
                 if (issue.is_technical_error) badges.push('<span class="badge badge-error">Technical Error</span>');
                 if (issue.is_unhappy_customer) badges.push('<span class="badge badge-unhappy">Unhappy Customer</span>');
-
                 if (issue.error_category && issue.error_category !== 'NONE') {
                     badges.push(`<span class="badge badge-category">${issue.error_category.replace(/_/g, ' ')}</span>`);
                 }
-
                 if (issue.error_tag && issue.error_tag !== 'NONE') {
                     badges.push(`<span class="badge" style="background: rgba(255, 255, 255, 0.1); border: 1px solid rgba(255,255,255,0.2);">${issue.error_tag}</span>`);
                 }
@@ -292,8 +380,6 @@
         }
 
         loadIssues();
-
-        // Refresh data every 30 seconds
         setInterval(loadIssues, 30000);
     </script>
 </body>
