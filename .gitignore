@@ -136,4 +136,5 @@ logs/
 
 # Local development
 local_test.py
-test_local.py 
+test_local.py agent_config.json
+agent_config_upload.json
