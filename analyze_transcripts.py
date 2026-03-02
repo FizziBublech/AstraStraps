@@ -104,6 +104,41 @@ Transcript:
     return full_response.strip()
 
 import argparse
+from concurrent.futures import ThreadPoolExecutor, as_completed
+
+def process_single_convo(convo):
+    """Process a single conversation: format transcript and analyze with Gemini."""
+    convo_id = convo['metadata']['convo']['id']
+    ts = convo['metadata']['convo']['ts']
+    dt = datetime.fromtimestamp(ts).strftime('%Y-%m-%d %H:%M:%S')
+    
+    transcript_text = format_transcript(convo)
+    if not transcript_text:
+        return None
+        
+    print(f"Analyzing ID: {convo_id} | Date: {dt}")
+    analysis = analyze_with_gemini(transcript_text)
+    
+    is_error = "TECHNICAL_ERROR: YES" in analysis.upper().replace('[', '').replace(']', '')
+    is_unhappy = "UNHAPPY_CUSTOMER: YES" in analysis.upper().replace('[', '').replace(']', '')
+    
+    error_category = "NONE"
+    for line in analysis.split('\n'):
+        if "ERROR_CATEGORY:" in line.upper():
+            try:
+                raw_cat = line.split(":", 1)[1].strip()
+                error_category = raw_cat.replace('[', '').replace(']', '').split(' - ')[0].strip().upper()
+            except:
+                pass
+                
+    return {
+        "id": convo_id,
+        "date": dt,
+        "is_technical_error": is_error,
+        "is_unhappy_customer": is_unhappy,
+        "error_category": error_category,
+        "analysis": analysis
+    }
 
 def main():
     parser = argparse.ArgumentParser(description="Analyze Convocore transcripts with Gemini.")
@@ -111,6 +146,7 @@ def main():
     parser.add_argument("--month", help="Month to analyze (YYYY-MM).")
     parser.add_argument("--since-last", action="store_true", help="Analyze conversations since the last run.")
     parser.add_argument("--limit", type=int, help="Limit number of conversations to analyze.", default=20)
+    parser.add_argument("--workers", type=int, help="Number of parallel workers.", default=10)
     args = parser.parse_args()
 
     data = fetch_conversations()
@@ -141,15 +177,7 @@ def main():
         print(f"No date or month specified. Defaulting to today: {target_date}")
 
     convos = data['data']
-    
-    # Filter by date or month
     filtered_convos = []
-    
-    # Pre-sort to ensure we process chronologically if needed, 
-    # but the logic below iterates and filters. 
-    # Actually, usually 'data' comes sorted or unsorted. 
-    # Let's filter first.
-
     new_max_ts = last_ts
 
     for convo in convos:
@@ -163,7 +191,6 @@ def main():
                 filtered_convos.append(convo)
                 if ts > new_max_ts:
                     new_max_ts = ts
-        
         elif target_date: 
              if convo_date == target_date:
                 filtered_convos.append(convo)
@@ -177,56 +204,24 @@ def main():
         return
 
     filtered_convos.sort(key=lambda x: x['metadata']['convo'].get('ts', 0), reverse=True)
-    
-    # Apply limit
     final_convos = filtered_convos[:args.limit]
     
     label = "since_last" if since_last else (target_date or target_month)
-    print(f"Analyzing {len(final_convos)} conversations for {label}...\n")
+    print(f"Analyzing {len(final_convos)} conversations for {label} using {args.workers} workers...\n")
     
     results = []
     error_count = 0
     dissatisfied_count = 0
 
-    for convo in final_convos:
-        convo_id = convo['metadata']['convo']['id']
-        ts = convo['metadata']['convo']['ts']
-        dt = datetime.fromtimestamp(ts).strftime('%Y-%m-%d %H:%M:%S')
-        
-        transcript_text = format_transcript(convo)
-        if not transcript_text:
-            continue
-            
-        print(f"ID: {convo_id} | Date: {dt}")
-        analysis = analyze_with_gemini(transcript_text)
-        print(f"Analysis:\n{analysis}\n")
-        print("-" * 50)
-        
-        is_error = "TECHNICAL_ERROR: YES" in analysis.upper().replace('[', '').replace(']', '')
-        is_unhappy = "UNHAPPY_CUSTOMER: YES" in analysis.upper().replace('[', '').replace(']', '')
-        
-        error_category = "NONE"
-        for line in analysis.split('\n'):
-            if "ERROR_CATEGORY:" in line.upper():
-                # Extract text after colon, remove brackets/whitespace
-                try:
-                    raw_cat = line.split(":", 1)[1].strip()
-                    # simplistic cleanup: remove [ ] and extra chars
-                    error_category = raw_cat.replace('[', '').replace(']', '').split(' - ')[0].strip().upper()
-                except:
-                    pass
-        
-        if is_error: error_count += 1
-        if is_unhappy: dissatisfied_count += 1
-        
-        results.append({
-            "id": convo_id,
-            "date": dt,
-            "is_technical_error": is_error,
-            "is_unhappy_customer": is_unhappy,
-            "error_category": error_category,
-            "analysis": analysis
-        })
+    with ThreadPoolExecutor(max_workers=args.workers) as executor:
+        futures = {executor.submit(process_single_convo, convo): convo for convo in final_convos}
+        for future in as_completed(futures):
+            res = future.result()
+            if res:
+                results.append(res)
+                if res["is_technical_error"]: error_count += 1
+                if res["is_unhappy_customer"]: dissatisfied_count += 1
+                print(f"Completed: {res['id']}")
 
     print(f"\n--- Final Report Summary ---")
     print(f"Filter Used: {label}")

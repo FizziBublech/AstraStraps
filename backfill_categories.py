@@ -78,39 +78,59 @@ def parse_classification(response_text):
             
     return category, tag
 
+from concurrent.futures import ThreadPoolExecutor, as_completed
+
+def process_single_issue(issue):
+    """Classify a single issue and return the result."""
+    if issue.get("analysis"):
+        print(f"Processing issue {issue['id']}...")
+        response = classify_issue(issue['analysis'])
+        if response:
+            category, tag = parse_classification(response)
+            return issue['id'], category, tag
+    return None
+
 def main():
     tracker = load_tracker()
-    updated_count = 0
-    
     print(f"Found {len(tracker)} issues. Starting backfill...")
     
+    # Identify issues that need update
+    to_process = []
     for issue in tracker:
-        # Check if we need to backfill (missing category or it's the old generic 'NONE' without a tag)
         needs_update = "error_category" not in issue or "error_tag" not in issue
-        
-        # Also re-process if it has is_technical_error=True but category is NONE/missing
         if issue.get("is_technical_error") and (issue.get("error_category", "NONE") == "NONE"):
             needs_update = True
             
-        if needs_update and issue.get("analysis"):
-            print(f"Processing issue {issue['id']}...")
+        if needs_update:
+            to_process.append(issue)
             
-            response = classify_issue(issue['analysis'])
-            if response:
-                category, tag = parse_classification(response)
-                issue['error_category'] = category
-                issue['error_tag'] = tag
-                updated_count += 1
-                print(f"  -> Classified as {category} | {tag}")
-            
-            # Rate limiting check (simple)
-            time.sleep(1) 
+    if not to_process:
+        print("\nNo issues needed updating.")
+        return
+
+    print(f"Filtering: {len(to_process)} issues need classification. Using 10 workers...")
+    
+    updated_count = 0
+    with ThreadPoolExecutor(max_workers=10) as executor:
+        futures = {executor.submit(process_single_issue, issue): issue for issue in to_process}
+        for future in as_completed(futures):
+            res = future.result()
+            if res:
+                issue_id, category, tag = res
+                # Find the issue in the original tracker and update it
+                for issue in tracker:
+                    if issue['id'] == issue_id:
+                        issue['error_category'] = category
+                        issue['error_tag'] = tag
+                        updated_count += 1
+                        print(f"  -> {issue_id}: Classified as {category} | {tag}")
+                        break
             
     if updated_count > 0:
         save_tracker(tracker)
         print(f"\nSuccessfully updated {updated_count} issues.")
     else:
-        print("\nNo issues needed updating.")
+        print("\nNo issues updated.")
 
 if __name__ == "__main__":
     main()

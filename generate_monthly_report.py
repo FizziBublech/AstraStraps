@@ -234,6 +234,19 @@ def generate_html(stats, month_str):
             .list-item:last-child {{ border-bottom: none; }}
             
             footer {{ margin-top: 60px; text-align: center; color: var(--text-muted); font-size: 12px; letter-spacing: 1px; border-top: 1px solid #eee; padding-top: 30px; }}
+
+            /* Mobile Responsiveness */
+            @media (max-width: 768px) {{
+                body {{ padding: 20px; }}
+                header {{ flex-direction: column; align-items: flex-start; gap: 20px; text-align: left; }}
+                header div[style*="text-align: right"] {{ text-align: left !important; }}
+                .grid-4 {{ grid-template-columns: 1fr; }}
+                .chart-grid {{ grid-template-columns: 1fr; }}
+                .span-2 {{ grid-column: span 1; }}
+                .metric-value {{ font-size: 32px; }}
+                h1 {{ font-size: 28px; }}
+                .summary-grid {{ grid-template-columns: 1fr !important; gap: 20px !important; }}
+            }}
         </style>
     </head>
     <body>
@@ -317,19 +330,17 @@ def generate_html(stats, month_str):
                 </div>
             </div>
 
-            <div class="card" style="margin-top: 30px; background: #000; color: #fff;">
-                <h2 style="color: #fff; border-color: #fff;">Executive Summary & Insights</h2>
-                <div style="display: grid; grid-template-columns: 1fr 1fr; gap: 40px;">
-                    <div>
-                        <p style="color: #ddd; font-size: 16px; line-height: 1.8;">This month, AstraBot successfully handled <strong>{total} conversations</strong>, acting as the first line of defense for support. By automating {automation_rate}% of interactions, we delivered an estimated <strong>${money_saved}</strong> in operational value.</p>
-                    </div>
-                    <div>
-                        <ul style="color: #ddd; padding-left: 20px; font-size: 16px; line-height: 1.8;">
-                            <li><strong>Top Product:</strong> Customers are asking most about <strong>{product_labels[0] if product_labels else "Catalog"}</strong>.</li>
-                            <li><strong>Efficiency:</strong> {stats['resolved_instantly']} customers received instant answers.</li>
-                            <li><strong>Stability:</strong> Sentiment remained consistent at {happiness_score}/100.</li>
-                        </ul>
-                    </div>
+            <div class="card summary-grid" style="margin-top: 30px; background: #000; color: #fff; display: grid; grid-template-columns: 1fr 1fr; gap: 40px;">
+                <div>
+                    <h2 style="color: #fff; border-color: #fff;">Executive Summary & Insights</h2>
+                    <p style="color: #ddd; font-size: 16px; line-height: 1.8;">This month, AstraBot successfully handled <strong>{total} conversations</strong>, acting as the first line of defense for support. By automating {automation_rate}% of interactions, we delivered an estimated <strong>${money_saved}</strong> in operational value.</p>
+                </div>
+                <div style="display: flex; align-items: center;">
+                    <ul style="color: #ddd; padding-left: 20px; font-size: 16px; line-height: 1.8; margin: 0;">
+                        <li><strong>Top Product:</strong> Customers are asking most about <strong>{product_labels[0] if product_labels else "Catalog"}</strong>.</li>
+                        <li><strong>Efficiency:</strong> {stats['resolved_instantly']} customers received instant answers.</li>
+                        <li><strong>Stability:</strong> Sentiment remained consistent at {happiness_score}/100.</li>
+                    </ul>
                 </div>
             </div>
 

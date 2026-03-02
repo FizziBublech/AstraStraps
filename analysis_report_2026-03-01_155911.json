@@ -1,0 +1,42 @@
+[
+  {
+    "id": "ajp3AgaXd2qaTn0",
+    "date": "2026-03-01 23:29:00",
+    "is_technical_error": false,
+    "is_unhappy_customer": false,
+    "error_category": "NONE",
+    "analysis": "TECHNICAL_ERROR: [NO]\nUNHAPPY_CUSTOMER: [NO]\nERROR_CATEGORY: [NONE]\nSUMMARY: [The customer successfully initiated a return request for order #148463, citing fit issues. The bot created a support ticket referencing the reason. The bot then successfully performed an order lookup and proactively offered relevant alternative product recommendations (replacement bands for a larger wrist) based on the stated return reason.]"
+  },
+  {
+    "id": "6kaNs0H41UFUF9u",
+    "date": "2026-03-01 13:49:06",
+    "is_technical_error": false,
+    "is_unhappy_customer": false,
+    "error_category": "DATABASE_ERROR",
+    "analysis": "TECHNICAL_ERROR: [NO] - The system functioned correctly, acknowledging the question and offering next steps.\nUNHAPPY_CUSTOMER: [NO] - The customer only asked one question and the bot offered immediate alternatives.\nERROR_CATEGORY: [DATABASE_ERROR] - The bot explicitly stated it did not have the specific certification information in its current database.\nSUMMARY: [The customer inquired about PFAS-free certification for nylon straps. The bot acknowledged the question but could not retrieve the specific product specification from its database, offering to escalate the issue to the product team via a support ticket.]"
+  },
+  {
+    "id": "LzczMfBG6FNdAPL",
+    "date": "2026-03-01 06:00:04",
+    "is_technical_error": false,
+    "is_unhappy_customer": false,
+    "error_category": "NONE",
+    "analysis": "TECHNICAL_ERROR: NO\nUNHAPPY_CUSTOMER: NO\nERROR_CATEGORY: NONE\nSUMMARY: The customer requested to see bands currently on sale. The bot successfully identified the intent and proceeded to ask necessary clarifying questions (model, size, material preference) to filter the search results. The interaction is proceeding normally."
+  },
+  {
+    "id": "UGHeKHPlkmkxTq3",
+    "date": "2026-03-01 03:26:03",
+    "is_technical_error": false,
+    "is_unhappy_customer": false,
+    "error_category": "NONE",
+    "analysis": "TECHNICAL_ERROR: [NO]\nUNHAPPY_CUSTOMER: [NO]\nERROR_CATEGORY: [NONE]\nSUMMARY: [The customer inquired about the best watch band for a 5.25-inch wrist wearing a 45mm Apple Watch. The bot provided excellent, specific recommendations (Slim or Milanese styles) due to better adjustability and confirmed the required size option (42MM-49MM) to select during purchase. The interaction concluded with the bot asking a follow-up question.]"
+  },
+  {
+    "id": "oX61kXRGAb3pexV",
+    "date": "2026-03-01 01:21:20",
+    "is_technical_error": false,
+    "is_unhappy_customer": true,
+    "error_category": "NONE",
+    "analysis": "TECHNICAL_ERROR: NO\nUNHAPPY_CUSTOMER: YES - The customer explicitly stated, \"the order is very delayed.\"\nERROR_CATEGORY: NONE - The bot successfully retrieved the order status and handled the subsequent complaint about shipping delays by providing context and offering escalation options. No system error occurred.\nSUMMARY: The customer successfully tracked order #149600, which showed as Paid and Fulfilled with a shipment date of Feb 18, 2026. The customer expressed dissatisfaction about the delay. The bot acknowledged the concern, explained potential causes, and offered to create a support ticket if the item does not arrive within 20 business days, concluding by waiting for the user's decision."
+  }
+]
